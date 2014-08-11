@@ -20,7 +20,8 @@ RewriteCond %{REQUEST_URI} ^/customise/db/{0,1}.* [OR]
 RewriteCond %{REQUEST_URI} ^/showcase/{0,1}.* [OR]
 RewriteCond %{REQUEST_URI} ^/support/tutorials/3.0/{0,1}.* [OR]
 RewriteCond %{REQUEST_URI} ^/kb/{0,1}.* [OR]
-RewriteCond %{REQUEST_URI} ^/hosting/{0,1}.*
+RewriteCond %{REQUEST_URI} ^/hosting/{0,1}.* [OR]
+RewriteCond %{REQUEST_URI} ^/feeds/{0,1}.*
 RewriteRule ^(.*)$ /var/www/phpbb.com/htdocs/old$1 [L]
 
 # Exists in /symfony/web as directory or file and if so serve it
