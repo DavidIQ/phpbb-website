@@ -1,9 +1,4 @@
 parameters:
-
-    # When I refer to a sandbox install I refer to our sandbox and sites
-    # that are on a proper remote server in a domain root (e.g. David's Site).
-    # Local sites are sites on your computer/local network that probably don't have things
-
     # Shouldn't need to touch this
     database_driver:        pdo_mysql
     phpbb_database_driver:  pdo_mysql
@@ -12,19 +7,20 @@ parameters:
     database_port:          ~
     phpbb_database_port:    ~
 
-    # Its not rocket science, the user should have access to make dbs and have full access to it (we create it later)
+    # This DB should NOT EXIST. The user listed should have access to create dbs and have full access to those dbs.
     # This is the DB for Symfony
     database_name:      phpbb_symfony
     database_user:      root
     database_password:  ~
 
-    # phpBB Database
+    # This should be about the install of the phpbb database for the website, likely at phpbb.local/community/
     phpbb_database_name:        phpbb_local
     phpbb_database_user:        root
     phpbb_database_password:    ~
     phpbb_database_prefix:      community_
 
-    # Databases for testing
+    # Databases for testing. These databases should exist
+    # The users should have full access to the databases and access to create/destroy databases.
     test_database_driver:            pdo_mysql
     phpbb_test_database_driver:      pdo_mysql
     test_database_host:              localhost
@@ -38,7 +34,7 @@ parameters:
     phpbb_test_database_user:        root
     phpbb_test_database_password:    ~
 
-    # Mailer Settings, shouldn't need to touch these unless its a live/sandbox install.
+    # Mailer Settings, shouldn't need to touch these unless its a live install.
     mailer_transport:   mail
     mailer_host:        ~
     mailer_user:        ~
@@ -50,10 +46,12 @@ parameters:
     mailer_disable_delivery:   true
 
     locale:             en
+
+    # Change this to something random (just hit random keys on your keyboard if you must)
     secret:             ThisTokenIsNotThatSecretChangeItOnAllInstallations
 
-    # Location should be local, sandbox or live
+    # Location should be local or live
     location:           local
 
-    # Location of java on this computer/server
+    # Ignore this.
     java_location:      /usr/bin/java
