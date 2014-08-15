@@ -16,7 +16,7 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            //new Phpbb\PrivateWebsiteBundle\PhpbbPrivateWebsiteBundle(),
+            new Phpbb\PrivateWebsiteBundle\PhpbbPrivateWebsiteBundle(),
             new Phpbb\WebsiteInterfaceBundle\PhpbbWebsiteInterfaceBundle(),
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
             new Phpbb\PhpbbIntergrationBundle\PhpbbIntergrationBundle(),

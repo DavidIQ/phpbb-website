@@ -2,9 +2,9 @@ PhpbbWebsiteInterfaceBundle:
     resource: "@PhpbbWebsiteInterfaceBundle/Resources/config/routing.yml"
     prefix:   /
 
-# PhpbbPrivateWebsiteBundle:
-#     resource: "@PhpbbPrivateWebsiteBundle/Resources/config/routing.yml"
-#     prefix:   /
+PhpbbPrivateWebsiteBundle:
+    resource: "@PhpbbPrivateWebsiteBundle/Resources/config/routing.yml"
+    prefix:   /
 
 # # Internal routing configuration to handle ESI
 # #_internal:
