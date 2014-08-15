@@ -28,6 +28,7 @@ class GlobalController extends Controller
 		$blogJson = @json_decode($blogFile, true);
 
 		$blogAnnouncements = $blogJson === null ? array() : $blogJson;
+		$finishedAnnouncements = $finishedAnnouncements === null ? array() : $finishedAnnouncements;
 
 		krsort($blogAnnouncements);
 
