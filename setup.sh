@@ -1,10 +1,9 @@
 echo "Ensure you have setup your parameters.yml and have no passkey on your ssh
 key before running this script. If not hit Ctrl + C now."
 sleep 5
-set -ex
+set -x
 
 php composer.phar self-update
-git commit -am 'Update composer'
 git remote add public git@github.com:phpbb/phpbb-website.git
 git remote add private git@github.com:phpbb/phpbb-website-private.git
 git push public master
