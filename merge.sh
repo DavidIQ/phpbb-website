@@ -16,8 +16,8 @@ echo ""
 echo "Git status:"
 git status -sb
 echo "If that showed anything abort now!!!!!!"
-sleep 5
-echo ""
+echo "Hit enter to continue (once you've read the message at the top and checked there was nothing uncommitted on the git status"
+read x
 echo "$ git fetch public"
 git fetch public
 echo ""
