@@ -5,6 +5,6 @@ rm -rf app/cache/test/
 echo "Running phpunit tests:"
 bin/phpunit -c app/
 echo "Running the Sensio Labs Security Checker to ensure no dependencies have outstanding security advisories:"
-bin/security-checker security:check composer.lock
+bin/security-checker security:check composer.lock --timeout 120
 echo "Run Twig syntax linting on all twig files:"
 php app/console twig:lint @PhpbbWebsiteInterfaceBundle
