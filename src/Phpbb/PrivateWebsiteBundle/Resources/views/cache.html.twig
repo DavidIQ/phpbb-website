@@ -1,0 +1,35 @@
+{% extends ':base:base.html.twig' %}
+
+{% block title %}Cache{% endblock title %}
+
+{% block body %}
+<div id="page-body">
+<ul class="linklist navlinks">
+	<li><a href="{{ home_path }}">Home</a>
+	<strong>&#8249;</strong> <a href="/tools/cache/{{ cache }}/B3rt13BeAr/">Cache - {{ cache }}</a>
+	</li>
+</ul>
+
+<div id="main">
+	<h2 class="imgrep">Cache</h2>
+	{% if authorised %}
+	<p>You just completed an action to to {{ cache }} the cache</p>
+	{% else %}
+	<p>You don't have acces to {{ cache }} the cache</p>
+	{% endif %}
+</div>
+
+<div id="extras">
+	<div class="mini-panel">
+		<div class="inner"><span class="corners-top"><span></span></span>
+		<h3>Quick Links</h3>
+		<ul class="menu">
+			<li><a href="/tools/cache/clear/B3rt13BeAr/">Modifications</a></li>
+			<li class="last"><a href="/tools/cache/warmup/B3rt13BeAr/">MODs Database</a></li>
+		</ul>
+		<span class="corners-bottom"><span></span></span></div>
+	</div>
+</div>
+
+</div>
+{% endblock %}
