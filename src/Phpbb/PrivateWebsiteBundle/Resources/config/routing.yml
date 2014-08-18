@@ -1,3 +1,7 @@
-PhpbbPrivateWebsiteBundle_homepage:
-    path: /hello/{name}
-    defaults: { _controller: PhpbbPrivateWebsiteBundle:Default:index }
+PhpbbPrivateWebsiteBundle_cache_clear:
+    path: /tools/cache/clear/{password}/
+    defaults: { _controller: PhpbbPrivateWebsiteBundle:ManagementTools:cacheClear }
+
+PhpbbPrivateWebsiteBundle_cache_warmup:
+    path: /tools/cache/warmup/{password}/
+    defaults: { _controller: PhpbbPrivateWebsiteBundle:ManagementTools:cacheWarmup }
