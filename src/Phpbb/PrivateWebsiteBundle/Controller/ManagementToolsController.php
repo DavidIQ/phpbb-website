@@ -21,7 +21,7 @@ class ManagementToolsController extends Controller
 	{
 		$authorised = false;
 
-		if ($password == 'B3rt13BeAr')
+		if ('13d8e77501a7cc59f8ac2e237c7b4143' == md5(md5($password)))
 		{
 			$command = $this->container->get('phpbb.private_website.cache.clear');
 			$input = new ArgvInput(array('--env=' . $this->container->getParameter('kernel.environment')));
@@ -42,7 +42,7 @@ class ManagementToolsController extends Controller
 	{
 		$authorised = false;
 
-		if ($password == 'B3rt13BeAr')
+		if ('13d8e77501a7cc59f8ac2e237c7b4143' == md5(md5($password)))
 		{
 			$command = $this->container->get('phpbb.private_website.cache.warmup');
 			$input = new ArgvInput(array('--env=' . $this->container->getParameter('kernel.environment')));
