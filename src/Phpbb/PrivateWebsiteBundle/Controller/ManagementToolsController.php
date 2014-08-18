@@ -28,6 +28,11 @@ class ManagementToolsController extends Controller
 			$output = new ConsoleOutput();
 			$command->run($input, $output);
 
+			$command = $this->container->get('phpbb.private_website.cache.warmup');
+			$input = new ArgvInput(array('--env=' . $this->container->getParameter('kernel.environment')));
+			$output = new ConsoleOutput();
+			$command->run($input, $output);
+
 			$authorised = true;
 		}
 
