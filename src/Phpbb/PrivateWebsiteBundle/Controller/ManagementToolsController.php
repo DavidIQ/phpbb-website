@@ -12,32 +12,21 @@ namespace Phpbb\PrivateWebsiteBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Console\Application as ConsoleApp;
-use Symfony\Bundle\FrameworkBundle\Command\CacheClearCommand;
-use Symfony\Bundle\FrameworkBundle\Command\CacheWarmupCommand;
-use Symfony\Component\Console\Tester\CommandTester;
+use Symfony\Component\Console\Input\ArgvInput;
+use Symfony\Component\Console\Output\ConsoleOutput;
 
 class ManagementToolsController extends Controller
 {
 	public function cacheClearAction(Request $request, $password)
 	{
 		$authorised = false;
-		$output = false;
 
 		if ($password == 'B3rt13BeAr')
 		{
-			$consoleApp = new ConsoleApp;
-			$consoleApp->add(new CacheClearCommand());
-
-			$command = $consoleApp->find('cache:clear');
-
-			$commandTester = new CommandTester($command);
-
-			$commandTester->execute(
-				array('command' => $command->getName())
-			);
-
-			$output = $commandTester->getDisplay();
+			$command = $this->container->get('phpbb.private_website.cache.clear');
+			$input = new ArgvInput(array('--env=' . $this->container->getParameter('kernel.environment')));
+			$output = new ConsoleOutput();
+			$command->run($input, $output);
 
 			$authorised = true;
 		}
@@ -45,7 +34,7 @@ class ManagementToolsController extends Controller
 		return $this->render('PhpbbPrivateWebsiteBundle::cache.html.twig', array(
 			'authorised'	=> $authorised,
 			'cache'			=> 'clear',
-			'output'		=> $ouput,
+			'header_css_image'      => 'home',
 		));
 	}
 
@@ -55,18 +44,10 @@ class ManagementToolsController extends Controller
 
 		if ($password == 'B3rt13BeAr')
 		{
-			$consoleApp = new ConsoleApp;
-			$consoleApp->add(new CacheClearCommand());
-
-			$command = $consoleApp->find('cache:warmup');
-
-			$commandTester = new CommandTester($command);
-
-			$commandTester->execute(
-				array('command' => $command->getName())
-			);
-
-			$output = $commandTester->getDisplay();
+			$command = $this->container->get('phpbb.private_website.cache.warmup');
+			$input = new ArgvInput(array('--env=' . $this->container->getParameter('kernel.environment')));
+			$output = new ConsoleOutput();
+			$command->run($input, $output);
 
 			$authorised = true;
 		}
@@ -74,7 +55,7 @@ class ManagementToolsController extends Controller
 		return $this->render('PhpbbPrivateWebsiteBundle::cache.html.twig', array(
 			'authorised'	=> $authorised,
 			'cache'			=> 'warmup',
-			'output'		=> $ouput,
+			'header_css_image'      => 'home',
 		));
 	}
 }
