@@ -35,6 +35,7 @@ class ManagementToolsController extends Controller
 			'authorised'	=> $authorised,
 			'cache'			=> 'clear',
 			'header_css_image'      => 'home',
+			'password'		=> $password,
 		));
 	}
 
@@ -56,6 +57,7 @@ class ManagementToolsController extends Controller
 			'authorised'	=> $authorised,
 			'cache'			=> 'warmup',
 			'header_css_image'      => 'home',
+			'password'		=> $password,
 		));
 	}
 }

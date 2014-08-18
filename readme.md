@@ -42,6 +42,4 @@ Should you have problems with composer retrieving depdenencies you can request a
 
 [GNU GPL v3](http://opensource.org/licenses/gpl-3.0)
 
-By contributing you agree to assign copyright of your code to `phpBB Limited`.
-
-See the `LICENSE` file for the full license
+By contributing you agree to assign copyright of your code to `phpBB Limited` - See the `LICENSE` file for the full license.
