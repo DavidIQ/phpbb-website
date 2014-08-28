@@ -21,15 +21,10 @@ if (!in_array(@$_SERVER['HTTP_X_FORWARDED_FOR'], array(
 $loader = require_once __DIR__.'/../app/bootstrap.php.cache';
 require_once __DIR__.'/../app/AppKernel.php';
 
-\QafooLabs\Profiler::startDevelopment('VTABbprWKJuSlnR9');
-
 $kernel = new AppKernel('dev', true);
 $kernel->loadClassCache();
 Debug::enable();
 $request = Request::createFromGlobals();
 $response = $kernel->handle($request);
 $response->send();
-
-\QafooLabs\Profiler::setTransactionName($request->attributes->get('_controller', 'notfound'));
-
 $kernel->terminate($request, $response);
