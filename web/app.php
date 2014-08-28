@@ -16,10 +16,15 @@ $loader->register(true);
 require_once __DIR__.'/../app/AppKernel.php';
 //require_once __DIR__.'/../app/AppCache.php';
 
+\QafooLabs\Profiler::start('VTABbprWKJuSlnR9');
+
 $kernel = new AppKernel('prod', false);
 $kernel->loadClassCache();
 //$kernel = new AppCache($kernel);
 $request = Request::createFromGlobals();
 $response = $kernel->handle($request);
 $response->send();
+
+\QafooLabs\Profiler::setTransactionName($request->attributes->get('_controller', 'notfound'));
+
 $kernel->terminate($request, $response);
