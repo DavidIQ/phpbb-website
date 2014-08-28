@@ -21,7 +21,7 @@ if (!in_array(@$_SERVER['HTTP_X_FORWARDED_FOR'], array(
 $loader = require_once __DIR__.'/../app/bootstrap.php.cache';
 require_once __DIR__.'/../app/AppKernel.php';
 
-\QafooLabs\Profiler::startDevelopment('VTABbprWKJuSlnR9');
+\QafooLabs\Profiler::startDevelopment('aeyooC3aa5eighio');
 
 $kernel = new AppKernel('dev', true);
 $kernel->loadClassCache();
