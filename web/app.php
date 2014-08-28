@@ -16,7 +16,7 @@ $loader->register(true);
 require_once __DIR__.'/../app/AppKernel.php';
 //require_once __DIR__.'/../app/AppCache.php';
 
-\QafooLabs\Profiler::start('VTABbprWKJuSlnR9');
+\QafooLabs\Profiler::start('aeyooC3aa5eighio');
 
 $kernel = new AppKernel('prod', false);
 $kernel->loadClassCache();
