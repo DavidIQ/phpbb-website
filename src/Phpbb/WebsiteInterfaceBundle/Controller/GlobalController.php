@@ -38,8 +38,7 @@ class GlobalController extends Controller
 			'homepage'              => true,
 			'announcements_forum'   => '/community/viewforum.php?f=' . $announcement_forum,
 			'announcements'         => $announcements,
-			'header_css_image'      => 'home',
-		);
+			'header_css_image'      => 'home',);
 
 		return $this->render('PhpbbWebsiteInterfaceBundle:Global:index.html.twig', $templateVariables);
 	}
