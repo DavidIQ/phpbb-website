@@ -10,6 +10,7 @@
 <meta name="distribution" content="global" />
 <meta name="keywords" content="" />
 <meta name="description" content="phpBB is free and open source forum software that is easy to use, powerful, and highly customisable. Our community offers extensive support to end users." />
+<meta name="viewport" content="width=device-width" />
 <meta name="application-name" content="phpBB" />
 <meta name="msapplication-tooltip" content="phpBB &bull; Free and Open Source Forum Software" />
 <meta name="msapplication-starturl" content="/" />
@@ -23,7 +24,7 @@
 <title>{% block title %}phpBB &bull; Free and Open Source Forum Software{% endblock %}</title>
 
 {% block head_assets %}
-<link rel="stylesheet" href="{{ asset('assets/css/community.css') }}" />
+{{ include(':base:community_css.html.twig') }}
 <link rel="stylesheet" href="{{ asset('assets/css/website.css') }}" />
 <link rel="stylesheet" href="{{ asset('assets/css/headers.css') }}" />
 <link rel="stylesheet" href="{{ asset('assets/css/navigation.css') }}" />
@@ -39,256 +40,264 @@
 
 </head>
 
-{% block body_tag %}<body id="phpbb" class="{{ header_css_image }}">{% endblock %}
+{% block body_tag %}<body id="phpbb" class="nojs notouch {{ header_css_image }}">{% endblock %}
 
 <div id="wrap">
-	<a id="top" name="top" accesskey="t"></a>
+	<a id="top" accesskey="t"></a>
 	<div id="page-header">
-		<span class="side-left"></span>
-		<div class="header" style="position: relative;">
+		<div class="phpbb-header">
 			{% block header_button %}{% endblock %}
 			<h1 id="logo-banner"><a href="/">phpBB &bull; Free and Open Source Forum Software</a></h1>
 			<div id="top-social" class="top-social-home">
 				<div id="top-social-icons">
 					<a href="/feeds/rss/"><img src="{{ asset('assets/images/icons/rss-20.png') }}" alt="RSS" /></a>
 					<a href="http://www.facebook.com/phpBB"><img src="{{ asset ('assets/images/icons/facebook-20.png') }}" alt="Facebook" /></a>
-					<a href="http://www.twitter.com/phpbb"><img src="{{ asset('assets/images/icons/twitter-20.png') }} " alt="Twitter" /></a>
+					<a href="http://www.twitter.com/phpbb"><img src="{{ asset('assets/images/icons/twitter-20.png') }}" alt="Twitter" /></a>
 				</div>
 			</div>
 		</div>
-		<span class="side-right"></span>
 	</div>
 
-	<div id="navbar">
-		<ul>
-			<li class="but-about">
-				<a href="/about/"><span></span>About</a>
-
-				<div class="sub-menu sub-menu-extra">
-					<ul>
-						<li>
-							<h4><a href="/about/features/?from=submenu">Features</a></h4>
-							<p><a href="/about/features/?from=submenu">Learn about the features that phpBB has to offer.</a></p>
-						</li>
-						<li>
-							<h4><a href="/demo/?from=submenu">Demo</a></h4>
-							<p><a href="/demo/?from=submenu">Give phpBB a try with a fully-featured demo board.</a></p>
-						</li>
-						<li>
-							<h4><a href="/showcase/?from=submenu">Showcase</a></h4>
-							<p><a href="/showcase/?from=submenu">A showcase of popular and unique sites using phpBB.</a></p>
-						</li>
-						<li class="last">
-							<h4><a href="/get-involved/">Get Involved</a></h4>
-							<p><a href="/get-involved/">Learn how you can get involved with the project.</a></p>
-						</li>
-					</ul>
-					<ul>
-						<li>
-							<h4><a href="/about/team/?from=submenu">The Team</a></h4>
-							<p><a href="/about/team/?from=submenu">Find out who is responsible for all the mayhem.</a></p>
-						</li>
-						<li>
-							<h4><a href="/about/contact_us.php?from=submenu">Contact Us</a></h4>
-							<p><a href="/about/contact_us.php?from=submenu">Have a question the forums don't answer? Come here.</a></p>
-						</li>
-						<li class="last">
-							<h4><a href="/about/advertise/?from=submenu">Advertising</a></h4>
-							<p><a href="/about/advertise/?from=submenu">Information if you want to advertise on phpBB.com.</a></p>
-						</li>
-					</ul>
-					<div class="sub-menu-bottom"><a href="/about/">Find out more about the project &raquo;</a></div>
-
-				</div>
-
-			</li>
-			<li class="but-downloads"><a href="/downloads/"><span></span>Downloads</a>
+	<div id="phpbb-navbar" class="phpbb-navbar">
+		<div class="nav-button but-menu"><a href="#" id="phpbb-menu-toggle" title="Show menu">Menu</a></div>
+		<div id="searchbox">
+			<!-- Google CSE Search Box Begins -->
+			<form method="get" action="/search/">
+				<input name="q" id="q" type="search" size="40" value="" />
+			</form>
+		</div>
+		<ul id="phpbb-menu" class="phpbb-menu">
+			<li class="nav-button but-about">
+				<a href="{{ U_ABOUT }}">About</a>
 
 				<div class="sub-menu">
 					<ul>
 						<li>
-							<h4><a href="/downloads/?from=submenu">Latest Version</a></h4>
-							<p><a href="/downloads/?from=submenu">Download the latest stable release of phpBB</a></p>
+							<h4><a href="{{ U_ABOUT_FEATURES_SUB }}">Features</a></h4>
+							<p><a href="{{ U_ABOUT_FEATURES_SUB }}">Learn about the features that phpBB has to offer.</a></p>
 						</li>
 						<li>
-							<h4><a href="/downloads/?from=submenu">Update Packages</a></h4>
-							<p><a href="/downloads/?from=submenu">Automatic Update packages for your phpBB release</a></p>
+							<h4><a href="{{ U_DEMO }}">Demo</a></h4>
+							<p><a href="{{ U_DEMO }}">Give phpBB a try with a fully-featured demo board.</a></p>
+						</li>
+						<li>
+							<h4><a href="{{ U_SHOWCASE }}">Showcase</a></h4>
+							<p><a href="{{ U_SHOWCASE }}">A showcase of popular and unique sites using phpBB.</a></p>
 						</li>
 						<li class="last">
-							<h4><a href="/languages/?from=submenu">Language Packs</a></h4>
-							<p><a href="/languages/?from=submenu">Translate phpBB into (almost) any language you like.</a></p>
+							<h4><a href="{{ U_ABOUT_GETINVOLVED_SUB }}">Get Involved</a></h4>
+							<p><a href="{{ U_ABOUT_GETINVOLVED_SUB }}">Learn how you can get involved with the project.</a></p>
 						</li>
 					</ul>
 					<ul>
 						<li>
-							<h4><a href="/customise/db/modifications-1/?from=submenu">Modifications</a></h4>
-							<p><a href="/customise/db/modifications-1/?from=submenu">Download validated MODs to extend phpBB&rsquo;s functionality.</a></p>
+							<h4><a href="{{ U_ABOUT_TEAM_SUB }}">The Team</a></h4>
+							<p><a href="{{ U_ABOUT_TEAM_SUB }}">Find out who is responsible for all the mayhem.</a></p>
 						</li>
 						<li>
-							<h4><a href="/customise/db/styles-2/?from=submenu">Styles</a></h4>
-							<p><a href="/customise/db/styles-2/?from=submenu">Your forums need a new look? Browse our Styles DB.</a></p>
+							<h4><a href="{{ U_ABOUT_CONTACT_SUB }}">Contact Us</a></h4>
+							<p><a href="{{ U_ABOUT_CONTACT_SUB }}">Have a question the forums don't answer? Come here.</a></p>
 						</li>
 						<li class="last">
-							<h4><a href="/demo/">Demo</a></h4>
-							<p><a href="/demo/">Give phpBB a try with a fully-featured demo board.</a></p>
+							<h4><a href="{{ U_ABOUT_ADVERTISE_SUB }}">Advertising</a></h4>
+							<p><a href="{{ U_ABOUT_ADVERTISE_SUB }}">Information if you want to advertise on phpBB.com.</a></p>
 						</li>
-
 					</ul>
-					<div class="sub-menu-bottom"></div>
+					<div class="sub-menu-bottom"><a href="{{ U_ABOUT_INDEX_SUB }}">Find out more about the project &raquo;</a></div>
 				</div>
-
 			</li>
-			<li class="but-customise"><a href="/customise/db/"><span></span>Customise</a>
+
+			<li class="nav-button but-downloads">
+				<a href="{{ U_DOWNLOADS }}">Downloads</a>
 
 				<div class="sub-menu">
 					<ul>
 						<li>
-							<h4><a href="/mods/">Modifications</a></h4>
-							<p><a href="/mods/">Guides on how to use them and how to create your own.</a></p>
+							<h4><a href="{{ U_DOWNLOADS_SUB }}">Latest Version</a></h4>
+							<p><a href="{{ U_DOWNLOADS_SUB }}">Download the latest stable release of phpBB</a></p>
 						</li>
 						<li>
-							<h4><a href="/customise/db/modifications-1/?from=submenu">Modification database</a></h4>
-							<p><a href="/customise/db/modifications-1/?from=submenu">Download and submit your work to the MOD database.</a></p>
-						</li>
-						<li class="external last" title="Opens an external link.">
-							<h4><a href="https://wiki.phpbb.com/?from=submenu">Development Wiki</a></h4>
-							<p><a href="https://wiki.phpbb.com/?from=submenu">Share experience and learn more about the codebase.</a></p>
-						</li>
-
-					</ul>
-
-					<ul>
-						<li>
-							<h4><a href="/styles/">Styles</a></h4>
-							<p><a href="/styles/">Guides on how to use them and to create your own Styles.</a></p>
-						</li>
-						<li>
-							<h4><a href="/customise/db/styles-2/?from=submenu">Styles database</a></h4>
-							<p><a href="/customise/db/styles-2/?from=submenu">Download and submit your Styles to our Styles database.</a></p>
+							<h4><a href="{{ U_DOWNLOADS_UPDATE_SUB }}">Update Packages</a></h4>
+							<p><a href="{{ U_DOWNLOADS_UPDATE_SUB }}">Automatic Update packages for your phpBB release</a></p>
 						</li>
 						<li class="last">
-							<h4><a href="/styles/demo/3.0/?from=submenu">Styles Demo</a></h4>
-							<p><a href="/styles/demo/3.0/?from=submenu">Test drive all the Styles from our database.</a></p>
-						</li>
-
-					</ul>
-					<div class="sub-menu-bottom"></div>
-				</div>
-
-			</li>
-			<li class="but-support"><a href="/support/"><span></span>Support</a>
-
-				<div class="sub-menu sub-menu-extra">
-					<ul>
-						<li>
-							<h4><a href="/support/documentation/3.0/?from=submenu">Documentation</a></h4>
-							<p><a href="/support/documentation/3.0/?from=submenu">Installation guide and the complete documentation.</a></p>
-						</li>
-						<li>
-							<h4><a href="/kb/?from=submenu">Knowledge Base</a></h4>
-							<p><a href="/kb/?from=submenu">Team and user submitted ar&shy;ticles covering support areas.</a></p>
-						</li>
-						<li>
-							<h4><a href="/support/tutorials/3.0/?from=submenu">Flash Tutorials</a></h4>
-							<p><a href="/support/tutorials/3.0/?from=submenu">View Flash Tutorials that help you with the use of phpBB.</a></p>
+							<h4><a href="{{ U_LANGUAGES_SUB }}">Language Packs</a></h4>
+							<p><a href="{{ U_LANGUAGES_SUB }}">Translate phpBB into (almost) any language you like</a></p>
 						</li>
 					</ul>
 					<ul>
 						<li>
-							<h4><a href="/support/forums/?from=submenu">Support Forums</a></h4>
-							<p><a href="/support/forums/?from=submenu">Please use the search facility before posting a question.</a></p>
+							<h4><a href="{{ U_EXT_DB_SUB }}">Extensions</a></h4>
+							<p><a href="{{ U_EXT_DB_SUB }}">Download extensions to enhance phpBB&rsquo;s functionality</a></p>
 						</li>
 						<li>
-							<h4><a href="/support/irc/?from=submenu">IRC Support</a></h4>
-							<p><a href="/support/irc/?from=submenu">Old school? Visit the IRC support channel on freenode.</a></p>
+							<h4><a href="{{ U_STYLES_DB_SUB }}">Styles</a></h4>
+							<p><a href="{{ U_STYLES_DB_SUB }}">Your forums need a new look? Browse our Styles DB</a></p>
 						</li>
 						<li class="last">
-							<h4><a href="/support/intl/?from=submenu">International Support</a></h4>
-							<p><a href="/support/intl/?from=submenu">Find a 3rd party support site in your first language.</a></p>
+							<h4><a href="{{ U_OFFICIAL_TOOLS }}">Official Tools</a></h4>
+							<p><a href="{{ U_OFFICIAL_TOOLS }}">Official tools by the phpBB team to assist you with your board.</a></p>
 						</li>
 					</ul>
-					<div class="sub-menu-bottom"><a href="/support/">More information on support &raquo;</a></div>
 				</div>
-
 			</li>
-			<li class="but-development"><a href="/development/"><span></span>Development</a>
 
-				<div class="sub-menu sub-menu-extra">
-					<ul class="wide-menu">
-						<li class="external wide-menu-item" title="Opens an external link.">
-							<h4><a href="//area51.phpbb.com/">Area51 phpBB Development</a></h4>
+			<li class="nav-button but-customise">
+				<a href="{{ U_CUSTOMISE }}">Customise</a>
+
+				<div class="sub-menu wide-menu">
+					<ul class="wide-list">
+						<li>
+							<h4><a href="{{ U_CDB_SUB }}">Customisation Database</a></h4>
+							<img style="float:right;" src="{{ asset('assets/images/images/customisation-db-icon.png') }}" alt="Customisation Database" />
+							<p><a href="{{ U_CDB_SUB }}">Our customisation database contains just about everything you might need to customise your phpBB board to your liking. In it you will find Extensions (for 3.1.x), MODs (for 3.0.x), Styles, Language Packs, BBCodes, as well as various tools.</a></p>
+						</li>
+					</ul>
+					<ul class="narrow-list">
+						<li>
+							<h4><a href="{{ U_EXT_SUB }}">Extensions <small>(3.1.x)</small></a></h4>
+							<p><a href="{{ U_EXT_SUB }}">Guides on how to use them and how to create your own.</a></p>
+						</li>
+						<li class="last">
+							<h4><a href="{{ U_EXT_DB_SUB }}">Extensions DB</a></h4>
+							<p><a href="{{ U_EXT_DB_SUB }}">Download or submit extensions to our extensions database.</a></p>
+						</li>
+					</ul>
+					<ul class="narrow-list">
+						<li>
+							<h4><a href="{{ U_MODS_SUB }}">Modifications <small>(3.0.x)</small></a></h4>
+							<p><a href="{{ U_MODS_SUB }}">Guides on how to use them and how to create your own.</a></p>
+						</li>
+						<li class="last">
+							<h4><a href="{{ U_MODS_DB_SUB }}">Modifications DB</a></h4>
+							<p><a href="{{ U_MODS_DB_SUB }}">Download or submit modifications to our MODs database.</a></p>
+						</li>
+					</ul>
+					<ul class="narrow-list">
+						<li>
+							<h4><a href="{{ U_STYLES_SUB }}">Styles</a></h4>
+							<p><a href="{{ U_STYLES_SUB }}">Guides on how to use them and to create your own styles.</a></p>
+						</li>
+						<li>
+							<h4><a href="{{ U_STYLES_DB_SUB }}">Styles DB</a></h4>
+							<p><a href="{{ U_STYLES_DB_SUB }}">Download or submit styles to our styles database.</a></p>
+						</li>
+					</ul>
+					<div class="sub-menu-bottom"><a href="{{ U_CUSTOMISE_INDEX_SUB }}">More resources on customising your board &raquo;</a></div>
+				</div>
+			</li>
+
+			<li class="nav-button but-support">
+				<a href="{{ U_SUPPORT }}">Support</a>
+
+				<div class="sub-menu">
+					<ul>
+						<li>
+							<h4><a href="{{ U_DOCUMENTATION_SUB }}">Documentation</a></h4>
+							<p><a href="{{ U_DOCUMENTATION_SUB }}">Installation guide and the complete documentation.</a></p>
+						</li>
+						<li>
+							<h4><a href="{{ U_KB_SUB }}">Knowledge Base</a></h4>
+							<p><a href="{{ U_KB_SUB }}">Team and user submitted ar&shy;ticles covering support areas.</a></p>
+						</li>
+						<li class="last">
+							<h4><a href="{{ U_SUPPORT_TUTORIALS_SUB }}">Flash Tutorials</a></h4>
+							<p><a href="{{ U_SUPPORT_TUTORIALS_SUB }}">View Flash Tutorials that help you with the use of phpBB.</a></p>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<h4><a href="{{ U_SUPPORT_FORUMS_SUB }}">phpBB Support</a></h4>
+							<p><a href="{{ U_SUPPORT_FORUMS_SUB }}">The Support related areas in our community forums.</a></p>
+						</li>
+						<li>
+							<h4><a href="{{ U_SUPPORT_IRC_SUB }}">IRC Support</a></h4>
+							<p><a href="{{ U_SUPPORT_IRC_SUB }}">Old school? Visit the IRC support channel on freenode.</a></p>
+						</li>
+						<li class="last">
+							<h4><a href="{{ U_SUPPORT_INTL_SUB }}">International Support</a></h4>
+							<p><a href="{{ U_SUPPORT_INTL_SUB }}">Find a 3rd party support site in your first language.</a></p>
+						</li>
+					</ul>
+					<div class="sub-menu-bottom"><a href="{{ U_SUPPORT_INDEX_SUB }}">More information on support &raquo;</a></div>
+				</div>
+			</li>
+
+			<li class="nav-button but-development">
+				<a href="{{ U_DEVELOPMENT }}">Development</a>
+
+				<div class="sub-menu">
+					<ul class="wide-list">
+						<li class="external" title="Opens an external link.">
+							<h4><a href="{{ U_DEV_HOME_SUB }}">Area51 phpBB Development</a></h4>
 							<img style="float:right;" src="{{ asset('assets/images/aliens/alien32.png') }}" alt="Area51 Alien" />
-							<p><a href="//area51.phpbb.com/">All Development Discussion takes place at Area51. Bug tracker, development wiki, continuous integration and other development tools are located here. Find out how to get involved in phpBB development.</a></p>
+							<p><a href="{{ U_DEV_HOME_SUB }}">All Development Discussion takes place at Area51. Bug tracker, development wiki, continuous integration and other development tools are located here. Find out how to get involved in phpBB development.</a></p>
 						</li>
 					</ul>
 					<ul>
 						<li class="external" title="Opens an external link.">
-							<h4><a href="http://tracker.phpbb.com/">phpBB Bug Tracker</a></h4>
-							<p><a href="http://tracker.phpbb.com/">Report problems with phpBB core and other sub-projects such as the Website, Customisation DB, and Team Tools here.</a></p>
+							<h4><a href="{{ U_BUGS_PHPBB_SUB }}">phpBB Bug Tracker</a></h4>
+							<p><a href="{{ U_BUGS_PHPBB_SUB }}">Report problems with phpBB core and other sub-projects such as the Website, Customisation DB, and Team Tools here.</a></p>
 						</li>
-						<li class="last">
-							<h4><a href="/ideas/?from=submenu">phpBB Ideas</a></h4>
-							<p><a href="/ideas/?from=submenu">Suggest, vote on and comment on ideas for phpBB.</a></p>
-						</li>
+                        <li class="last">
+                            <h4><a href="{{ U_IDEAS }}">phpBB Ideas</a></h4>
+                            <p><a href="{{ U_IDEAS }}">Suggest, vote on and comment on ideas for phpBB.</a></p>
+                        </li>
 					</ul>
 					<ul>
 						<li>
-							<h4><a href="/security/?from=submenu">Security Tracker</a></h4>
-							<p><a href="/security/?from=submenu">The tracker for security issues in phpBB or validated MODs.</a></p>
+							<h4><a href="{{ U_SECURITY_SUB }}">Security Tracker</a></h4>
+							<p><a href="{{ U_SECURITY_SUB }}">The tracker for security issues in phpBB or validated MODs.</a></p>
 						</li>
 						<li class="external last" title="Opens an external link.">
-							<h4><a href="//wiki.phpbb.com/">Development Wiki</a></h4>
-							<p><a href="//wiki.phpbb.com/">Share experience and learn more about the codebase.</a></p>
+							<h4><a href="{{ U_DEV_WIKI_SUB }}">Development Wiki</a></h4>
+							<p><a href="{{ U_DEV_WIKI_SUB }}">Share experience and learn more about the codebase.</a></p>
 						</li>
 					</ul>
-					<div class="sub-menu-bottom"><a href="/development/">Participate in phpBB development now &raquo;</a></div>
+					<div class="sub-menu-bottom"><a href="{{ U_DEV_INDEX_SUB }}">Participate in phpBB development now &raquo;</a></div>
 				</div>
-
 			</li>
-			<li class="but-blog"><a href="//blog.phpbb.com/"><span></span>Blog</a></li>
-			<li class="but-community"><a href="/community/"><span></span>Community</a>
 
-				<div class="sub-menu sub-menu-extra">
+			<li class="nav-button but-blog"><a href="{{ U_BLOG }}">Blog</a></li>
+
+			<li class="nav-button but-community">
+				<a href="{{ U_COMMUNITY }}">Community</a>
+
+				<div class="sub-menu">
 					<ul>
 						<li>
-							<h4><a href="/community/viewforum.php?from=submenu&amp;f=46">Support Forums</a></h4>
-							<p><a href="/community/viewforum.php?from=submenu&amp;f=46">Help with installation &amp; running phpBB &ndash; search first!</a></p>
+							<h4><a href="{{ U_FORUM_SUPPORT_SUB }}">Support Forums</a></h4>
+							<p><a href="{{ U_FORUM_SUPPORT_SUB }}">Help with installation &amp; running phpBB &ndash; search first!</a></p>
 						</li>
 						<li>
-							<h4><a href="/community/viewforum.php?from=submenu&amp;f=81">Modification Forums</a></h4>
-							<p><a href="/community/viewforum.php?from=submenu&amp;f=81">Discuss and view MODs that are available for download.</a></p>
+							<h4><a href="{{ U_FORUM_EXT_SUB }}">Extensions Forums</a></h4>
+							<p><a href="{{ U_FORUM_EXT_SUB }}">Discuss and view Extensions that are available for download.</a></p>
 						</li>
-						<li class="last">
-							<h4><a href="/community/viewforum.php?from=submenu&amp;f=80">Styles Forums</a></h4>
-							<p><a href="/community/viewforum.php?from=submenu&amp;f=80">Discuss and view Styles that are available for download.</a></p>
-						</li>
+                        <li class="last">
+                            <h4><a href="{{ U_FORUM_STYLES_SUB }}">Styles Forums</a></h4>
+                            <p><a href="{{ U_FORUM_STYLES_SUB }}">Discuss and view Styles that are available for download.</a></p>
+                        </li>
 					</ul>
 					<ul>
 						<li>
-							<h4><a href="/community/viewforum.php?from=submenu&amp;f=64">phpBB Discussion</a></h4>
-							<p><a href="/community/viewforum.php?from=submenu&amp;f=64">Discussions on all things phpBB: features, future, etc.</a></p>
+							<h4><a href="{{ U_FORUM_PHPBBDISC_SUB }}">phpBB Discussion</a></h4>
+							<p><a href="{{ U_FORUM_PHPBBDISC_SUB }}">Discussions on all things phpBB: features, future, etc.</a></p>
 						</li>
 						<li>
-							<h4><a href="/community/viewforum.php?from=submenu&amp;f=6">General Discussion</a></h4>
-							<p><a href="/community/viewforum.php?from=submenu&amp;f=6">General discussion and intelligent conversations.</a></p>
+							<h4><a href="{{ U_FORUM_GENDISC_SUB }}">General Discussion</a></h4>
+							<p><a href="{{ U_FORUM_GENDISC_SUB }}">General discussion and intelligent conversations.</a></p>
 						</li>
-						<li class="external" title="Opens an external link.">
-							<h4><a href="//area51.phpbb.com/phpBB/">Area51</a></h4>
-							<p><a href="//area51.phpbb.com/phpBB/">Bleeding edge testing and development discussion.</a></p>
+						<li class="external last" title="Opens an external link.">
+							<h4><a href="{{ U_DEV_BOARD }}">Area51</a></h4>
+							<p><a href="{{ U_DEV_BOARD }}">Bleeding edge testing and development discussion.</a></p>
 						</li>
 					</ul>
-					<div class="sub-menu-bottom"><a href="/community/">&#0133; and many more forums &raquo;</a></div>
+					<div class="sub-menu-bottom"><a href="{{ U_FORUM_INDEX_SUB }}">&#0133; and many more forums &raquo;</a></div>
 				</div>
-
 			</li>
-			<li class="but-hosting"><a href="/hosting/"><span></span>Hosting</a></li>
-			<li id="searchbox">
-				<fieldset>
-					<!-- Google CSE Search Box Begins -->
-					<form method="get" action="/search/">
-						<p><input name="q" id="q" type="text" size="40" value="" /></p>
-					</form>
-				</fieldset>
+
+			<li class="nav-button but-hosting">
+				<a href="{{ U_HOSTING }}">Hosting</a>
 			</li>
 		</ul>
 	</div>
@@ -299,7 +308,7 @@
 {# END BODY #}
 {# BEGIN FOOTER #}
 
-<div id="page-footer">
+	<div id="page-footer">
 		<h3 style="padding-top: 8px;">&#097;&#100;&#118;&#101;&#114;&#116;&#105;&#115;&#101;&#109;&#101;&#110;&#116;&#115;</h3>
 		<div id="footer_banner_leaderboard">
 			{% include ':base:ads_footer_banner.html.twig' %}
@@ -313,7 +322,6 @@
 			<a href="http://hosting.fastdomain.com/track/phpbbsoftwareltd/footer"{% if bot is defined %} rel="nofollow"{% endif %}>FastDomain Hosting</a> &bull;
 			<a href="{{ advertise_path }}"><em>Advertise on phpBB.com</em></a>
 		</p>
-		<span class="fcorners-bottom"><span></span></span>
 	</div>
 </div>
 

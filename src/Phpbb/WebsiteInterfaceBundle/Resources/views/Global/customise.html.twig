@@ -1,53 +1,35 @@
 {% extends ':base:base.html.twig' %}
 
-{% block title %}Customise{% endblock title %}
+{% block title %}Customise phpBB{% endblock title %}
 
 {% block body %}
 <div id="page-body">
-<ul class="linklist navlinks">
-	<li><a href="{{ home_path }}">Home</a>
-	<strong>&#8249;</strong> <a href="{{ customise_path }}">Customise</a>
-	</li>
-</ul>
+	<ul class="linklist navlinks">
+		<li><a href="{{ home_path }}">Home</a>
+			<strong>&#8249;</strong> <a href="{{ customise_path }}">Customise phpBB</a>
+		</li>
+	</ul>
 
-<div id="main">
-	<h2 class="imgrep customise">Customise</h2>
-	<div class="column1">
-		<h3><a href="{{ mods_path }}">Modifications</a></h3>
-		<p>Here you will find guides on how to use them to create your own modifications for phpBB2 and phpBB3. You can also find here the MODs database, where you can download MODs for phpBB2 and phpBB3.</p>
+	<div id="main">
+		<h2 class="imgrep customise">Customise phpBB</h2>
+		<div class="column1">
+			<h3><a href="{{ extensions_path }}">Extensions</a></h3>
+			<p>Here you will find guides to installing, using and creating extensions for phpBB 3.1 forums. You will also find the Extensions Database and other areas where you can download extensions for phpBB.</p>
+			<h3><a href="{{ mods_path }}">Modifications</a></h3>
+			<p>Here you will find guides to installing, using and creating modifications for phpBB 3.0 forums. You will also find the MODs Database and other areas where you can download MODs for phpBB.</p>
+		</div>
+
+		<div class="column2">
+			<h3><a href="{{ styles_path }}">Styles</a></h3>
+			<p>Here you will find information on how to install and create styles for phpBB3. You will also find the Styles Database and other areas where you can download styles for phpBB.</p>
+			<h3><a href="{{ languages_path }}">Language Packs</a></h3>
+			<p>phpBB has been localised to over 50 different languages and language variations. Here you can search for translations in your native language.</p>
+		</div>
 	</div>
-	<div class="column2">
-		<h3><a href="{{ styles_path }}">Styles</a></h3>
-		<p>Here you will find guides on how to use them to create your own styles for phpBB2 and phpBB3. You can also find here the styles database, where you can download styles for phpBB2 and phpBB3.</p>
-	</div>
-</div>
-<div id="extras">
-	<div class="mini-panel">
-		<div class="inner"><span class="corners-top"><span></span></span>
-		<h3>Modifications Quick Links</h3>
-		<ul class="menu">
-			<li><a href="{{ mods_path }}">Modifications</a></li>
-			<li><a href="{{ mods_db_path }}">MODs Database</a></li>
-			<li><a href="{{ FORUM_MODS_OLYMPUS }}">Modifications Forums</a></li>
-			<li><a href="{{ MODS_AUTOMOD }}">AutoMOD</a></li>
-			<li><a href="{{ MODS_UMIL }}">UMIL</a></li>
-			<li class="last"><a href="{{ kb_path }}">Knowledge Base</a></li>
-		</ul>
-		<span class="corners-bottom"><span></span></span></div>
+	<div id="extras">
+		{{ include('PhpbbWebsiteInterfaceBundle:Extensions:menu.html.twig') }}
+		{{ include('PhpbbWebsiteInterfaceBundle:Styles:mini-menu.html.twig') }}
 	</div>
 
-	<div class="mini-panel">
-		<div class="inner"><span class="corners-top"><span></span></span>
-		<h3>Styles Quick Links</h3>
-		<ul class="menu">
-			<li><a href="{{ styles_path }}">Styles</a></li>
-			<li><a href="{{ styles_db_path }}">Styles Database</a></li>
-			<li><a href="{{ STYLES_DEMO_OLYMPUS }}">Styles Demo</a></li>
-			<li><a href="{{ FORUM_STYLES }}">Styles Forums</a></li>
-			<li class="last"><a href="{{ kb_path }}">Knowledge Base</a></li>
-		</ul>
-		<span class="corners-bottom"><span></span></span></div>
-	</div>
-</div>
 </div>
 {% endblock %}

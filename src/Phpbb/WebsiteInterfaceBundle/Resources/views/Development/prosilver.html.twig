@@ -28,14 +28,14 @@
 </div>
 <div id="extras">
 	<div class="mini-panel">
-		<div class="inner"><span class="corners-top"><span></span></span>
+		<div class="inner">
 		<h3><a href="{{ DEV_PROSILVER }}">Designing prosilver</a></h3>
 		<ul class="menu">
 			{% for i in TOC %}
 				<li{% if MENU_COUNT == i.ID %} class="last"{% endif %}>{% if i.ID == PAGE %}<strong>{% endif %}<a href="{{ i.ITEM }}">{{ i.TITLE }}</a>{% if i.ID == PAGE %}</strong>{% endif %}</li>
 			{% endfor %}
 		</ul>
-		<span class="corners-bottom"><span></span></span></div>
+		</div>
 	</div>
 </div>
 </div>

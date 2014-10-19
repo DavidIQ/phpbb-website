@@ -1,0 +1,102 @@
+{% extends ':base:base.html.twig' %}
+
+{% block title %}Extension Development Rules and Guidelines{% endblock title %}
+
+{% block body %}
+<div id="page-body">
+	<ul class="linklist navlinks">
+		<li><a href="{{ home_path }}">Home</a>
+			<strong>&#8249;</strong> <a href="{{ customise_path }}">Customise phpBB</a>
+			<strong>&#8249;</strong> <a href="{{ extensions_path }}">Extensions</a>
+			<strong>&#8249;</strong> <a href="{{ extensions_rules }}">Rules and Policies</a>
+		</li>
+	</ul>
+
+	<div id="main">
+		<h2 class="imgrep mods">Extension Development Forum Rules</h2>
+		<p>The Extensions in Development Forum is provided for extension authors to develop their extensions, from feature requests through the debugging and testing phases.</p>
+
+		<ol id="rules">
+			<li id="support-rules">
+				<h3>Support for Extensions in Development</h3>
+				<ol type="a">
+					<li id="ext-support"><a name="rule1a"></a>Extension support is offered by the extension author(s) only. phpBB.com and the phpBB Teams take no responsibility for supporting extensions listed anywhere on phpBB.com or other sites. The only exception is those extensions created by and published by the <a href="{{ extensions_offical_exts }}">Extensions Development Team</a>. <a class="permalink" href="#ext-support">#</a></li>
+					<li id="support-topics"><a name="rule1b"></a>If the extension was downloaded from this site and was not obtained from the Customisation Database, there will be a support topic dedicated to the extension in the [3.1.x] Extensions in Development Forum. Please ask all questions relating to the extension in this topic. <a class="permalink" href="#support-topics">#</a></li>
+					<li id="security"><a name="rule1c"></a>Any security vulnerabilities discovered in extensions listed on phpBB.com must be reported to the extension author as well as the Extension Security Tracker. The Extensions Team will then take the appropriate steps to remove the extension and notify the author. phpBB.com does not take responsibility for vulnerabilities contained within extensions and is not responsible for any extensions listed outside of phpBB.com. <a class="permalink" href="#security">#</a></li>
+				</ol>
+			</li>
+			<li id="licensing-rules">
+				<h3>Licensing your Extension</h3>
+				<ol type="a">
+					<li id="license-info"><a name="rule2a"></a>The phpBB Software is released under the GNU GPL v2 and extension authors are encouraged to release their extensions under this license as this is the most compatible license for usage of extensions for phpBB. <a class="permalink" href="#license-info">#</a></li>
+					<li id="restricted-licenses"><a name="rule2b"></a>Extensions that are given a license that restricts redistribution are not allowed to be posted on phpBB.com. <a class="permalink" href="#restricted-licenses">#</a></li>
+					<li id="licensing-requirements"><a name="rule2c"></a>If an extension relies on code from the phpBB software, it is required to also be licensed under the GPL v2 as per the GPL. <a class="permalink" href="#licensing-requirements">#</a></li>
+					<li id="proprietary-licenses"><a name="rule2d"></a>Extensions cannot contain code from libraries which contain a proprietary license as this license does not grant phpBB or the extension author rights to redistribute the code. <a class="permalink" href="#proprietary-licenses">#</a></li>
+				</ol>
+			</li>
+			<li id="prefixing-rules">
+				<h3>Extension Prefixes</h3>
+				<ol type="a">
+					<li id="prefixes"><a name="rule3a"></a>All extensions listed in the Development forum must have a Topic Prefix. Allowed topic prefixes are: [DEV], [ALPHA], [BETA], [RC], [CDB], and [ABD]. <a class="permalink" href="#prefixes">#</a></li>
+					<li id="dev-prefix"><a name="rule3b"></a><strong>[DEV]</strong> - Extension is listed as in Development stage. <a class="permalink" href="#dev-prefix">#</a></li>
+					<li id="alpha-prefix"><a name="rule3c"></a><strong>[ALPHA]</strong> - Extension is listed as Alpha stage. A download may or may not be provided. <a class="permalink" href="#alpha-prefix">#</a></li>
+					<li id="beta-prefix"><a name="rule3d"></a><strong>[BETA]</strong> - Extension is listed as Beta stage. A download is required for extensions listed in BETA. <a class="permalink" href="#beta-prefix">#</a></li>
+					<li id="rc-prefix"><a name="rule3e"></a><strong>[RC]</strong> - Extension is listed as RC (Release Candidate) stage. Feature frozen version. -- Generally the stage just before submission to the Customisation Database, and the stage that is usually listed while the extension is in the validation queue. <a class="permalink" href="#rc-prefix">#</a></li>
+					<li id="cdb-prefix"><a name="rule3f"></a><strong>[CDB]</strong> - Extension is listed as CDB (Customisation Database) stage. The extension has been accepted into the Customisation Database and at this stage, all further support and discussions related to the extension will take place in the CDB and the original development topic will be locked. <a class="permalink" href="#cdb-prefix">#</a></li>
+					<li id="abd-prefix"><a name="rule3g"></a><strong>[ABD]</strong> - An extension that is no longer in development and the extension author has abandoned is listed with this prefix. The extension author may close (lock) the topic him or herself. If the extension author wishes to continue development of an abandoned extension, he or she should PM an Extensions Team member to re-open the topic. <a class="permalink" href="#abd-prefix">#</a></li>
+				</ol>
+			</li>
+			<li id="topicformat-rules">
+				<h3>Starting an Extension Development Topic</h3>
+				<ol type="a">
+					<li id="topicformat"><a name="rule4a"></a>Below is the recommended Topic Format for your in-Development Extension Topic. However, its usage is optional and may be modified to suit your needs:<br />
+						<br />
+						<dl class="codebox">
+							<dt>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></dt>
+							<dd><code>&#91;color=purple&#93;&#91;size=120&#93;&#91;b&#93;Extension Name:&#91;/b&#93;&#91;/size&#93;&#91;/color&#93; The title of your extension<br />&#91;color=purple&#93;&#91;size=120&#93;&#91;b&#93;Author:&#91;/b&#93;&#91;/size&#93;&#91;/color&#93; &#91;url=http://www.phpbb.com/community/memberlist.php?mode=viewprofile&amp;u=xxxxx&#93;&#91;b&#93;Author Username&#91;/b&#93;&#91;/url&#93;<br /><br />&#91;color=purple&#93;&#91;size=120&#93;&#91;b&#93;Extension Description:&#91;/b&#93;&#91;/size&#93;&#91;/color&#93; Description of your extension<br />&#91;color=purple&#93;&#91;size=120&#93;&#91;b&#93;Extension Version:&#91;/b&#93;&#91;/size&#93;&#91;/color&#93; Current version of your extension<br /><br />&#91;color=purple&#93;&#91;size=120&#93;&#91;b&#93;Requirements:&#91;/b&#93;&#91;/size&#93;&#91;/color&#93; If the extension has any special requirements (such as PHP5.4), enter those here. ** Optional **<br /><br />&#91;color=purple&#93;&#91;size=120&#93;&#91;b&#93;Features:&#91;/b&#93;&#91;/size&#93;&#91;/color&#93; Feature List. Use the &#91;list&#93;&#91;/list&#93; BBCode for easier readability. ** Optional **<br /><br />&#91;color=purple&#93;&#91;size=120&#93;&#91;b&#93;Screenshots:&#91;/b&#93;&#91;/size&#93;&#91;/color&#93; Screenshots for the extension ** Optional **<br /><br />&#91;color=purple&#93;&#91;size=120&#93;&#91;b&#93;Demo URL:&#91;/b&#93;&#91;/size&#93;&#91;/color&#93; URL to the DEMO for the extension ** Optional **<br />&#91;color=purple&#93;&#91;size=120&#93;&#91;b&#93;Demo Username:&#91;/b&#93;&#91;/size&#93;&#91;/color&#93; If your demo requires login, enter the username required to view the demo -- see guidelines on extension demos<br />&#91;color=purple&#93;&#91;size=120&#93;&#91;b&#93;Demo Password:&#91;/b&#93;&#91;/size&#93;&#91;/color&#93; The password for the above login<br /><br />&#91;color=purple&#93;&#91;size=120&#93;&#91;b&#93;Extension Download:&#91;/b&#93;&#91;/size&#93;&#91;/color&#93; Enter the URL of the extension to download<br /></code></dd>
+						</dl>
+						<a class="permalink" href="#topicformat">#</a>
+					</li>
+				</ol>
+			</li>
+			<li id="downloads-rules">
+				<h3>Extension Downloads</h3>
+				<ol type="a">
+					<li id="download-requirement"><a name="rule5a"></a>Extensions that are listed as either [BETA] or [RC] are required to have a download accessible as a link. <a class="permalink" href="#download-requirement">#</a></li>
+					<li id="extension-files"><a name="rule5b"></a>Extensions files may not be posted directly in the topic but must be made available as a download instead. <a class="permalink" href="#extension-files">#</a></li>
+					<li id="download-links"><a name="rule5c"></a>All downloads must be publicly accessible. A direct download link is preferred but a link to a page where the extension can be downloaded is also accepted. In the latter case the page or download link must be in English. Downloads that require registration to access will not be allowed. <a class="permalink" href="#download-links">#</a></li>
+				</ol>
+			</li>
+			<li id="requirements-rules">
+				<h3>Extension Development Requirements</h3>
+				<ol type="a">
+					<li id="ext-dev-forum"><a name="rule6a"></a>The Extensions in Development forum is not meant as a release forum. The purpose of this forum is to be a step in the development process for extension authors to receive feedback on their extensions so that a more complete extension is submitted to the Customisation Database. Extensions posted must be posted with the intent of the extension author to submit the extension to the Customisation Database. <a class="permalink" href="#ext-dev-forum">#</a></li>
+					<li id="ext-dev-forum-requirements"><a name="rule6b"></a>All extensions posted in the Extensions in Development Forum are subject to the same requirements as for the Customisation Database with regards to packaging and license. These requirements can be found under "Packaging and Version" in the <a href="{{ extensions_validation_policy }}">Extension Validation Policy</a>. <a class="permalink" href="#ext-dev-forum-requirements">#</a></li>
+					<li id="ext-dev-forum-locking"><a name="rule6c"></a>If an extension is listed as in Development and the Author does not intend for the extension to be submitted to the Customisation Database, or the extension cannot meet the requirements for the Customisation Database (including license or packaging), the extension topic may be locked. <a class="permalink" href="#ext-dev-forum-locking">#</a></li>
+				</ol>
+			</li>
+			<li id="abandoned-rules">
+				<h3>Abandoned Extensions Forum</h3>
+				<ol type="a">
+					<li id="abandoned-extensions"><a name="rule7a"></a>Extensions that have been marked as abandoned mean that they are no longer being supported by the original author of the extension. To ensure that the Extensions in Development Forum is kept in a clean way and the extension is being actively supported by the extension author, extensions that are marked abandoned will be moved by an Extensions Team member to the Abandoned Extensions forum. <a class="permalink" href="#abandoned-extensions">#</a></li>
+					<li id="abandoned-ext-forum"><a name="rule7b"></a>The purpose of the Abandoned Extensions forum is to allow users of the phpBB software to be able to pickup where the original extension author left off. In other words, to take ownership of the extension as is allowed per the GNU GPL. <a class="permalink" href="#abandoned-ext-forum">#</a></li>
+					<li id="abandoned-support"><a name="rule7c"></a>There is no support within the Abandoned Extensions forum and posting of topics and/or replies is not permitted. <a class="permalink" href="#abandoned-support">#</a></li>
+					<li id="abandoned-takeover"><a name="rule7d"></a>If there is an extension within this forum that you would like to take over, please feel free to start a new topic in the Extensions in Development forum. Also please remember that all copyrights MUST remain intact from the abandoned extension when you take over the extension per the GNU GPL. You may also contact a member of the Extensions Team so that a link to your new topic is added to the abandoned extension's topic. <a class="permalink" href="#abandoned-takeover">#</a></li>
+				</ol>
+			</li>
+		</ol>
+	</div>
+
+	<div id="extras">
+		{{ include('PhpbbWebsiteInterfaceBundle:Extensions:menu.html.twig') }}
+		<div class="mini-panel js-sections js-scroll" style="display: none"></div>
+	</div>
+</div>
+{% endblock %}
+
+{% block javascriptFooter %}
+	{{ parent() }}
+
+	<!-- JS for Rule Highlighting -->
+	<script type="text/javascript" src="{{ asset('assets/js/rules.js') }}"></script>
+{% endblock %}

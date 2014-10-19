@@ -1,0 +1,37 @@
+{% extends ':base:base.html.twig' %}
+
+{% block title %}Extensions Team Overview{% endblock title %}
+
+{% block body %}
+<div id="page-body">
+	<ul class="linklist navlinks">
+		<li><a href="{{ home_path }}">Home</a>
+			<strong>&#8249;</strong> <a href="{{ customise_path }}">Customise phpBB</a>
+			<strong>&#8249;</strong> <a href="{{ extensions_path }}">Extensions</a>
+			<strong>&#8249;</strong> <a href="{{ extensions_team_overview }}">Extensions Team Overview</a>
+		</li>
+	</ul>
+
+	<div id="main">
+		<h2 class="imgrep mods">Extensions Team Overview</h2>
+		<p>The Extensions Team oversees all activities on phpBB.com with relation to extensions, including the validation of extensions submitted to the Customisation Database, maintaining useful extension related tools and scripts such as QuickInstall and EPV and ensuring the smooth running of the extensions forums on phpBB.com.</p>
+
+		<h3>Extensions Team</h3>
+		<p>The Extensions Team is a great place to get involved with open source software and to help the phpBB project.</p>
+		<p>After getting invited to join the Extensions Team, you will undergo training on how to moderate or how to validate extensions and use the validation tools.</p>
+		<p><em>As with all phpBB Teams, all positions on the Extensions Team are unpaid volunteer positions.</em></p>
+
+		<h3>Junior Validators</h3>
+		<p>The Extensions Team is always on the look-out for new Junior Validators. Junior Validators are extension authors that assist the Extensions Team with the validation of extensions submitted to the Customisation Database. The task of a Junior Validator is to test extensions in the Extensions Queue (in the Customisation Database), and to offer feedback about the extension.</p>
+		<p>Apply to become a <a href="{{ extensions_junior_validators }}">Junior Validator</a> here.</p>
+
+		<h3>Extension Development Team</h3>
+		<p>The Extensions Development Team is a junior team that assists the Extensions Team with the creation, testing and support of phpBB's official extensions. Members of the Extension Development Team typically have demonstrated a strong background in developing extensions for phpBB. This team is an ideal position for anybody interested more in developing, rather than validating extensions.</p>
+		<p>Learn more about joining the <a href="{{ extensions_offical_exts_team }}">Extension Development Team</a> here.</p>
+	</div>
+
+	<div id="extras">
+		{{ include('PhpbbWebsiteInterfaceBundle:Extensions:menu.html.twig') }}
+	</div>
+</div>
+{% endblock %}

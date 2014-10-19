@@ -20,4 +20,4 @@
  phpBBWebsite_Support_home                    GET    ANY    ANY  /support/
  phpBBWebsite_Support_irc                     GET    ANY    ANY  /support/irc/
  phpBBWebsite_Extensions_home                 GET    ANY    ANY  /extensions/
- phpBBWebsite_Extensions_rules_and_guidelines GET    ANY    ANY  /extensions/rules-and-guidelines/
+ phpBBWebsite_Extensions_rules_and_guidelines GET    ANY    ANY  /extensions/rules-and-policies/

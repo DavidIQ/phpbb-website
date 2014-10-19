@@ -26,9 +26,11 @@
         "doctrine/migrations": "dev-master@dev",
         "symfony/icu": "1.0.*",
         "php": ">=5.3.3",
+        "phpbb/epv": "~0.0.1",
         "sensio/distribution-bundle": "~3.0",
         "sensio/framework-extra-bundle": "~3.0",
         "sensio/generator-bundle": "~2.3",
+        "sensiolabs/ansi-to-html": "~1.1",
         "symfony/assetic-bundle": "~2.3",
         "symfony/monolog-bundle": "~2.4",
         "symfony/swiftmailer-bundle": "~2.3",
@@ -41,6 +43,9 @@
     "require-dev": {
         "phpunit/phpunit": "4.1.*",
         "sensiolabs/security-checker": "1.*"
+    },
+    "provide": {
+        "phpbb/phpbb":  "3.1.0-RC3"
     },
     "scripts": {
         "post-install-cmd": [

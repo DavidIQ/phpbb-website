@@ -1,0 +1,95 @@
+{% extends ':base:base.html.twig' %}
+
+{% block title %}Styles Support{% endblock title %}
+
+{% block body %}
+<div id="page-body">
+	<ul class="linklist navlinks">
+		<li><a href="{{ home_path }}">Home</a>
+			<strong>&#8249;</strong> <a href="{{ customise_path }}">Customise phpBB</a>
+			<strong>&#8249;</strong> <a href="{{ styles_path }}">Styles</a>
+			<strong>&#8249;</strong> <a href="{{ styles_support }}">Support</a>
+		</li>
+	</ul>
+
+	<div id="main">
+		<h2 class="imgrep styles">Styles Support</h2>
+
+		<h3>Installing &amp; Using Styles</h3>
+		<div class="content">
+			<dl class="faq">
+				<dt>Where can I find styles?</dt>
+				<dd><span class="mini-tag blue">3.1.x</span><a href="{{ styles_db_path }}">Styles Database</a> (validated) or <a href="{{ forum_styles_31x_dev }}">3.1.x Styles in Development Forum</a> (unvalidated).</dd>
+				<dd><span class="mini-tag dirty-green">3.0.x</span><a href="{{ styles_db_path }}">Styles Database</a> (validated) or <a href="{{ forum_styles_30x_dev }}">3.0.x Styles in Development Forum</a> (unvalidated).</dd>
+			</dl>
+			<dl class="faq">
+				<dt>How do I install a style?</dt>
+				<dd><span class="mini-tag blue">3.1.x</span>Visit the <a href="{{ styles_installing }}">Installing & Using Styles</a> page.</dd>
+				<dd><span class="mini-tag dirty-green">3.0.x</span>Read the <a href="{{ styles_docs_30x }}">3.0.x documentation</a> or this <a href="{{ styles_kb_30x_install }}">knowledge base article</a>.</dd>
+			</dl>
+			<dl class="faq">
+				<dt>Will you guys install a style for me?</dt>
+				<dd>Unfortunately we cannot. If you're having difficulty, first try <a href="{{ community_search }}">searching</a> the community to see if someone else has had and resolved the same problem. If to no avail, you may post in the <a href="{{ forum_styles_30x_support }}">Styles Support & Discussion forum</a> for assistance.</dd>
+			</dl>
+			<dl class="faq">
+				<dt>Where can I get support for a specific style?</dt>
+				<dd>Styles downloaded from the <a href="{{ styles_db_path }}">Styles Database</a> have their own dedicated support forums. If you downloaded the style from the 3.1.x/3.0.x Styles in Development Forums, you should ask for support in the development topic. To find support for styles downloaded elsewhere, you should seek support from the author or forum where it was downloaded.</dd>
+			</dl>
+		</div>
+
+		<h3>Creating and Editing Styles</h3>
+		<div class="content">
+			<dl class="faq">
+				<dt>How do I create a new style?</dt>
+				<dd><span class="mini-tag blue">3.1.x</span>Visit the <a href="{{ styles_create }}">Creating & Modifying Styles</a> page.</dd>
+				<dd><span class="mini-tag dirty-green">3.0.x</span>Read this <a href="{{ styles_kb_30x_create }}">knowledge base article</a>.</dd>
+			</dl>
+			<dl class="faq">
+				<dt>How do I modify an existing style?</dt>
+				<dd><span class="mini-tag blue">3.1.x</span>Visit the <a href="{{ styles_create }}">Creating & Modifying Styles</a> page.</dd>
+				<dd><span class="mini-tag dirty-green">3.0.x</span>There are multiple articles available in the <a href="{{ styles_kb }}">knowledge base</a> for common tasks.</dd>
+			</dl>
+			<dl class="faq">
+				<dt>Where can I get help with my style edits/development?</dt>
+				<dd>First, you should read the available resources and guides. If you cannot find what you are looking for, use the <a href="{{ community_search }}">search function</a>. If that doesn't provide any results, you can ask for support in the following community forums:</dd>
+				<dd><span class="mini-tag blue">3.1.x</span>Visit the <a href="{{ forum_styles_31x_support }}">[3.1.x] Styles Support & Discussion</a>.</dd>
+				<dd><span class="mini-tag dirty-green">3.0.x</span>Visit the <a href="{{ forum_styles_30x_support }}">[3.0.x] Styles Support & Discussion</a>.</dd>
+			</dl>
+			<dl class="faq">
+				<dt>Are there any more advanced documentation resources that can help me?</dt>
+				<dd>There are multiple pages on the <a href="{{ styles_wiki }}">phpBB Development Wiki</a> which are dedicated to styles and the template-engine. These can provide more information on advanced features that you can use.</dd>
+			</dl>
+			<dl class="faq">
+				<dt>Where can I see the (default) style changes for each version of phpBB?</dt>
+				<dd>You can find the style changes for all prosilver and subsilver2 versions on the <a href="{{ styles_changes }}">Style Changes</a> page. These can help you to update your style, by seeing what has changed in the default styles.</dd>
+			</dl>
+		</div>
+
+		<h3>Submitting Styles</h3>
+		<div class="content">
+			<dl class="faq">
+				<dt>Can I submit a style to the phpBB.com Styles Database?</dt>
+				<dd>Yes, you may submit a style that <span class="underline">you</span> created and you'd like to share with the community. The phpBB Styles Team will review your submission and if it is error-free it will be added to our database.</dd>
+			</dl>
+			<dl class="faq">
+				<dt>Are there rules I need to read before submitting a style to the Styles Database?</dt>
+				<dd>Yes. All submitters should read the <a href="{{ styles_ssp }}">Styles Submission Policy</a> to see the rules for submitting styles to our database and to learn how to actually submit the files.</dd>
+			</dl>
+			<dl class="faq">
+				<dt>If a style has not been updated by the original author, can I update it myself and submit it to the database?</dt>
+				<dd>We generally allow updates only by the original author of the style. If the original author no longer wishes to update it themselves, they must give express permission to someone to take over their work.<br /><br />
+					If the original author is unreachable, however, then you may update the style and submit it (specifying that this is the case in the submission, in the "Message to Styles Team" field). If the original author returns after this, though, then they can then reclaim the style if they wish. The original author would have the option to keep any updates done by you or to use/integrate them as they wish.</dd>
+			</dl>
+		</div>
+
+		<small>If you have any suggestions or remarks relating to this guide, feel free to contact the <a href="{{ styles_team_overview }}">Styles Team</a>.</small>
+		<br />
+		<br />
+	</div>
+
+	<div id="extras">
+		{{ include('PhpbbWebsiteInterfaceBundle:Styles:menu.html.twig') }}
+		<div class="mini-panel js-sections js-scroll" style="display: none"></div>
+	</div>
+</div>
+{% endblock %}

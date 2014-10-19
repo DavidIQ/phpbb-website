@@ -3,7 +3,71 @@ phpBBWebsite_Extensions_home:
     defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:home }
     methods:  [GET]
 
-phpBBWebsite_Extensions_rules_and_guidelines:
-    path:  /rules-and-guidelines/
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:rules }
+phpBBWebsite_Extensions_rules_and_policies:
+    path:  /rules-and-policies/
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:policies }
+    methods:  [GET]
+
+phpBBWebsite_Extensions_epv:
+    path:  /epv/
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:epv }
+    methods:  [GET, POST]
+
+phpBBWebsite_Extensions_recognised_developer:
+    path:  /recognised-developer/
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:recognisedDeveloper }
+    methods:  [GET]
+
+phpBBWebsite_Extensions_official_extensions:
+    path:  /official-extensions/
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:officialExtensions }
+    methods:  [GET]
+
+phpBBWebsite_Extensions_official_extensions_team:
+    path:  /official-extensions/team/
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:officialExtensionsTeam }
+    methods:  [GET]
+
+phpBBWebsite_Extensions_junior_validators:
+    path:  /junior-validators/
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:juniorValidators }
+    methods:  [GET]
+
+phpBBWebsite_Extensions_installing:
+    path:  /installing/
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:installing }
+    methods:  [GET]
+
+phpBBWebsite_Extensions_writing:
+    path:  /writing/
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:writing }
+    methods:  [GET]
+
+phpBBWebsite_Extensions_team_overview:
+    path:  /team-overview/
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:teamOverview }
+
+phpBBWebsite_Extensions_rules_and_policies_validation_policy:
+    path:  /rules-and-policies/validation-policy/
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:validationPolicy }
+    methods:  [GET]
+
+phpBBWebsite_Extensions_rules_and_policies_repack:
+    path:  /rules-and-policies/repack/
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:repackPolicy }
+    methods:  [GET]
+
+phpBBWebsite_Extensions_rules_and_policies_insta_deny:
+    path:  /rules-and-policies/insta-deny/
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:instadenyPolicy }
+    methods:  [GET]
+
+phpBBWebsite_Extensions_dev_forum_rules:
+    path: /rules-and-policies/development-rules/
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:devRules }
+    methods:  [GET]
+
+phpBBWebsite_Extensions_writers_forum_rules:
+    path: /rules-and-policies/writers-rules/
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:writersRules }
     methods:  [GET]
