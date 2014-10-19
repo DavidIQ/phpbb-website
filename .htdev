@@ -9,8 +9,9 @@
 # Include old .htdev
 Include /var/www/phpbb.com/htdocs/old/.htdev
 
-# Cesar, Will, Derk, Yuriy, Michael, Bas, Tristan, Paul
+# Cesar, Marc, Will, Derk, Yuriy, Michael, Bas, Tristan, Paul
 RewriteCond %{REMOTE_HOST} !^107\.132\.148\.174
+RewriteCond %{REMOTE_HOST} !^162\.228\.33\.77
 RewriteCond %{REMOTE_HOST} !^24\.89\.40\.1
 RewriteCond %{REMOTE_HOST} !^77\.160\.28\.24
 RewriteCond %{REMOTE_HOST} !^68\.196\.98\.132
