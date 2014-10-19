@@ -1,0 +1,38 @@
+{% extends ':base:base.html.twig' %}
+
+{% block title %}Junior Validators{% endblock title %}
+
+{% block body %}
+<div id="page-body">
+	<ul class="linklist navlinks">
+		<li><a href="{{ home_path }}">Home</a>
+			<strong>&#8249;</strong> <a href="{{ customise_path }}">Customise phpBB</a>
+			<strong>&#8249;</strong> <a href="{{ extensions_path }}">Extensions</a>
+			<strong>&#8249;</strong> <a href="{{ extensions_team_overview }}">Extensions Team Overview</a>
+			<strong>&#8249;</strong> <a href="{{ extensions_offical_exts_team }}">Junior Validators</a>
+		</li>
+	</ul>
+
+	<div id="main">
+		<h2 class="imgrep mods">Junior Validators</h2>
+		<p>Junior Validators are extension authors that assist the Extension Team with the validation of extensions submitted to the phpBB.com Extension Database. The task of a Junior Validator is test submitted extensions which are in the Customisation Database Queue, and to offer feedback on how the validation is performed on the extension submitted.</p>
+
+		<p>The Extensions Team will select new Extensions Team Validators primarily from the Junior Validators team. If you would like to become a Junior Validator, please read the requirements below, and if you meet them, you can apply to become a Junior Validator by contacting <a href="{{ ext_tl_contact }}">{{ ext_tl_name }}</a>.</p>
+
+		<h3>What are the requirements?</h3>
+		<p>The requirements for becoming a Junior Validator are not as high as as the requirements for becoming an Extensions Team Validator. The most important requirements are listed below:</p>
+		<ul>
+			<li>You are an extension author/writer.</li>
+			<li>You have submitted extensions to the Customisation Database.</li>
+			<li>You are able to communicate well in English.</li>
+			<li>Understand how the phpBB code works.</li>
+			<li>Familiarity with the extension validation process.</li>
+		</ul>
+		<br /><br />
+	</div>
+
+	<div id="extras">
+		{{ include('PhpbbWebsiteInterfaceBundle:Extensions:menu.html.twig') }}
+	</div>
+</div>
+{% endblock %}

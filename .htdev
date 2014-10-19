@@ -9,7 +9,17 @@
 # Include old .htdev
 Include /var/www/phpbb.com/htdocs/old/.htdev
 
-# RewriteEngine On
+# Cesar, Yuriy, Michael, Bas, Tristan, Paul
+RewriteCond %{REMOTE_HOST} !^107\.132\.148\.174
+RewriteCond %{REMOTE_HOST} !^68\.196\.98\.132
+RewriteCond %{REMOTE_HOST} !^90\.209\.210\.140
+RewriteCond %{REMOTE_HOST} !^87\.211\.215\.203
+RewriteCond %{REMOTE_HOST} !^90\.42\.166\.210
+RewriteCond %{REMOTE_HOST} !^92\.108\.128\.155
+RewriteRule ^(.*)$ /var/www/phpbb.com/htdocs/old/maintenance.html [L]
+
+# Titania
+RewriteRule ^/customise/db/(.*)$ /var/www/phpbb.com/htdocs/old/community/app.php/db/$1 [L]
 
 # Exists in /old as directory or file and if so serve it
 RewriteCond /var/www/phpbb.com/htdocs/old%{REQUEST_URI} -f [OR]
@@ -80,7 +90,9 @@ RewriteCond %{REQUEST_URI} !^/search/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/shop/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/showcase/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/stats/{0,1}.*
-RewriteCond %{REQUEST_URI} !^/styles/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/styles/demo/2.0/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/styles/demo/3.0/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/styles/statistics.php
 RewriteCond %{REQUEST_URI} !^/theme/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/updatecheck/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/website/{0,1}.*

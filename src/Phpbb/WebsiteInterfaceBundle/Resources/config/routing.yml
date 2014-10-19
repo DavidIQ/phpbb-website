@@ -43,3 +43,7 @@ phpBBWebsite_Support:
 phpBBWebsite_Extensions:
     resource: "@PhpbbWebsiteInterfaceBundle/Resources/config/routing/extensions.yml"
     prefix:   /extensions
+
+phpBBWebsite_Styles:
+    resource: "@PhpbbWebsiteInterfaceBundle/Resources/config/routing/styles.yml"
+    prefix:   /styles

@@ -1,0 +1,46 @@
+{% extends ':base:base.html.twig' %}
+
+{% block title %}Recognised Extension Developers{% endblock title %}
+
+{% block body %}
+<div id="page-body">
+	<ul class="linklist navlinks">
+		<li><a href="{{ home_path }}">Home</a>
+			<strong>&#8249;</strong> <a href="{{ customise_path }}">Customise phpBB</a>
+			<strong>&#8249;</strong> <a href="{{ extensions_path }}">Extensions</a>
+			<strong>&#8249;</strong> <a href="{{ extensions_recognised_devs }}">Recognised Extension Developers</a>
+		</li>
+	</ul>
+
+	<div id="main">
+		<h2 class="imgrep mods">Recognised Extension Developers</h2>
+		<p>Calling all developers!</p>
+		<p>Have you got an awesome extension idea? Do you write great code? The Extensions Team wants to recognise your talent and we want the whole phpBB community to know about it. We have created a brand new rank, “Recognised Extension Developer”, and we are excited to be able to share it with you!</p>
+
+		<h3>Why?</h3>
+		<p>There’s three reasons why we are doing this:</p>
+		<ol>
+			<li>People who write great code and sought after extensions deserve to be rewarded publicly with a cool rank.</li>
+			<li>Extensions written by Recognised Extension Developers will be specially highlighted, giving them greater exposure.</li>
+			<li>Users reading messages posted by Recognised Extension Developers can trust in the high quality of the poster.</li>
+		</ol>
+
+		<h3>How?</h3>
+		<p>Write high quality extensions! The Extensions Team loves to see well written code that follows the <a href="https://area51.phpbb.com/docs/31x/coding-guidelines.html">phpBB coding standards</a>. When we notice developers showing a history of this, we will contact them privately informing them of their new Recognised Extension Developer status.</p>
+
+		<h3>I Need To Know More!</h3>
+		<p>If you’ve read down this far, you’re probably keen to get on the fast track to the Recognised Extension Developer rank! Everything you need to know is outlined below.</p>
+
+		<p><strong>The Fine Print</strong></p>
+		<p>Recognised Extension Developer is an honourary rank that can be given to a member of the phpBB extensions community. This signifies their high standing and track record of submitting high quality extensions.</p>
+		<p>The bestowment of the rank is solely at the discretion of the Extensions Team, but there is a broad criteria that needs to be met for a community member to be eligible.</p>
+		<p>The member must contribute clean and easily validated code which follows the phpBB coding guidelines. This is very important, as the rank will indicate to the wider community that the members code is of a high quality and that aspiring programmers can observe and analyse the code to better their skills.</p>
+		<p>The member needs to have extensions listed in the <a href="{{ extensions_cdb }}">Customisation Database</a>. While there is no fixed minimum number of submissions, regular activity in the form of new submissions, updates or support is essential to ensure that the rank reflects a sustained and continued pattern of community contribution.</p>
+		<p>Members who attain the rank will have it reviewed annually by the Extensions Team. Except in cases where a members contributions to the community has ceased the rank will be renewed for another year.</p>
+	</div>
+
+	<div id="extras">
+		{{ include('PhpbbWebsiteInterfaceBundle:Extensions:menu.html.twig') }}
+	</div>
+</div>
+{% endblock %}

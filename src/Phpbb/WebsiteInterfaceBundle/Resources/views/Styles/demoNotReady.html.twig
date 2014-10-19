@@ -1,0 +1,25 @@
+{% extends ':base:base.html.twig' %}
+
+{% block title %}Styles Demo{% endblock title %}
+
+{% block body %}
+<div id="page-body">
+	<ul class="linklist navlinks">
+		<li><a href="{{ home_path }}">Home</a>
+			<strong>&#8249;</strong> <a href="{{ customise_path }}">Customise phpBB</a>
+			<strong>&#8249;</strong> <a href="{{ styles_path }}">Styles</a>
+			<strong>&#8249;</strong> <a href="{{ styles_demo }}">Demo</a>
+		</li>
+	</ul>
+
+	<div id="main">
+		<h2 class="imgrep styles">Styles Demo</h2>
+		<p>We currently aren't accepting styles for phpBB 3.1 into the customisation database quite yet.</p>
+		<span class="clear"></span>
+	</div>
+
+	<div id="extras">
+		{{ include('PhpbbWebsiteInterfaceBundle:Styles:menu.html.twig') }}
+	</div>
+</div>
+{% endblock %}

@@ -14,7 +14,8 @@ framework:
     csrf_protection: ~
     validation:      { enable_annotations: true }
     templating:
-        assets_version:         201408101515
+        assets_version:         2014091901
+        #Assets Version format: YYYYMMDDCC (CC for count of number of updates in that day)
         assets_version_format:  %%s?v%%s
         engines:
             - twig
@@ -64,6 +65,7 @@ doctrine:
         entity_managers:
             default:
                 connection:       default
+                auto_mapping: true
 
 # Swiftmailer Configuration
 swiftmailer:

@@ -5,9 +5,6 @@
 {% block javascriptHeader %}
 	{{ parent() }}
 
-	<!-- JS for Advertise Page -->
-	<script type="text/javascript" src="{{ asset('assets/js/about/ad_vertise/ad_vertise_fn.js') }}"></script>
-
 	<!-- CSS Stuff for Advertise Page -->
 	<link href="{{ asset('assets/css/ad_vertise.css') }}" rel="stylesheet" type="text/css"/>
 {% endblock %}
@@ -26,7 +23,7 @@
 	<h2 class="imgrep advertise-contact">Why advertise on phpBB.com?</h2>
 
 	<div class="information" style="margin-bottom: 1.5em;">
-		<div class="inner"><span class="corners-top"><span></span></span>
+		<div class="inner">
 		<strong>Why advertise on phpBB.com?</strong>
 		<ul>
 			<li>Over 5 million visits per month.</li>
@@ -34,8 +31,7 @@
 			<li>Thriving community with over 400,000 registered users.</li>
 			<li>A very targeted audience of males between 16 and 45 years of age who are interested in technology, hosting, development and other web-related topics.</li>
 		</ul>
-
-		<span class="corners-bottom"><span></span></span></div>
+		</div>
 	</div>
 
 	<div style="margin-bottom: 1.5em;">
@@ -45,7 +41,7 @@
 
 	<div class="column1" style="margin-bottom: 1.5em;">
 		<div class="mini-panel" id="enhancements">
-			<div class="inner"><span class="corners-top"><span></span></span>
+			<div class="inner">
 			<h3>Sample text-link enhancements</h3>
 			<ul class="text-links">
 				<li><a href="{{ advertise_path }}#linksentence" class="text-links-favicon" style="background-image: url({{ home_path }}theme/images/favicons/silverbod.png); padding-left: 21px;">The <strong>exclusive</strong> link sentence</a> is a great way to <em>gain exposure</em> to a wide audience that visits <a href="{S_ROOT_PATH}"><strong>phpBB.com</strong></a>!</li>
@@ -54,7 +50,7 @@
 				<li><a href="{{ advertise_path }}#faviconlink" class="text-links-favicon" style="background-image: url({{ home_path }}theme/images/favicons/mozilla.png); padding-left: 21px;">Apply branding with favicons!</a></li>
 				<li class="last"><a href="{{ advertise_path }}#boldiconlink" class="text-links-favicon" style="background-image: url({{ home_path }}theme/images/favicons/squares.png); padding-left: 21px;"><strong>Combine both at a discounted rate</strong></a></li>
 			</ul>
-			<span class="corners-bottom"><span></span></span></div>
+			</div>
 		</div>
 	</div>
 
@@ -154,8 +150,8 @@
 <div id="extras">
 	{{ include('PhpbbWebsiteInterfaceBundle:About:menu.html.twig') }}
 <hr />
-	<div class="mini-panel panel-text" id="contact">
-		<div class="inner"><span class="corners-top"><span></span></span>
+	<div class="mini-panel panel-text js-scroll" id="contact">
+		<div class="inner">
 		<img src="{{ home_path }}theme/images/about/advertise/email.png" alt="mail" style="float:right" />
 		<h3>Ready to buy?</h3>
 		<p>
@@ -169,7 +165,7 @@
 		<p>
 			Once the information above is received, we will respond to your request within 3 working days, although usually much sooner.
 		</p>
-		<span class="corners-bottom"><span></span></span></div>
+		</div>
 	</div>
 </div>
 

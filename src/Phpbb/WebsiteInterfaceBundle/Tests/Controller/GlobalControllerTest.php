@@ -86,7 +86,7 @@ class GlobalControllerTest extends BootstrapTestSuite
         $crawler = $objs['crawler'];
 
         // Title Check
-        $this->assertTrue(strpos(($crawler->filter('title')->first()->text()), 'Customise') !== false, 'Title contains Customise');
+        $this->assertTrue(strpos(($crawler->filter('title')->first()->text()), 'Customise phpBB') !== false, 'Title contains Customise phpBB');
 
         // Content Check
         $this->assertTrue($crawler->filter('html:contains("Styles")')->count() > 0, 'Customise Page Content Check');
