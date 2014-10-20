@@ -17,6 +17,11 @@ phpBBWebsite_customise:
     defaults: { _controller: PhpbbWebsiteInterfaceBundle:Global:customise }
     methods:  [GET]
 
+phpBBWebsite_ideas:
+    path:  /ideas/
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Global:ideas }
+    methods:  [GET]
+
 phpBBWebsite_About_contact_redirect:
     path:  /contact/
     defaults:

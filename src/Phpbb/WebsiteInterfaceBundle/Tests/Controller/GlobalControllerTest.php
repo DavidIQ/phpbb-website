@@ -94,4 +94,13 @@ class GlobalControllerTest extends BootstrapTestSuite
         // Standard All Page Checks
         $this->globalTests();
     }
+
+    public function testIdeasMain()
+    {
+        $objs = $this->setupTest('/ideas/');
+        $crawler = $objs['crawler'];
+
+        // Standard All Page Checks
+        $this->globalTests();
+    }
 }
