@@ -61,6 +61,15 @@ class GlobalController extends Controller
 		return $this->render('PhpbbWebsiteInterfaceBundle:Global:customise.html.twig', $templateVariables);
 	}
 
+	public function ideasAction()
+	{
+		$templateVariables = array(
+			'header_css_image'      => 'misc',
+		);
+
+		return $this->render('PhpbbWebsiteInterfaceBundle:Global:ideas.html.twig', $templateVariables);
+	}
+
 	/**
 	 * @param integer $announcement_forum
 	 */
