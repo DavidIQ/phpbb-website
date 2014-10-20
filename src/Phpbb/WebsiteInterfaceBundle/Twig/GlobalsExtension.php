@@ -97,8 +97,8 @@ class GlobalsExtension extends \Twig_Extension
 
 			'customise_path'	=> '/customise/',
 
-			'mods_db_path'		=> '/customise/db/modifications-1/',
-			// 'MODS_DB_SUB'		=> '/customise/db/modifications-1/',
+			'mods_db_path'		=> '/customise/db/modifications-1',
+			// 'MODS_DB_SUB'		=> '/customise/db/modifications-1',
 
 			'mods_path'			=> '/mods/',
 			'MODS'				=> '/mods/',
@@ -165,10 +165,10 @@ class GlobalsExtension extends \Twig_Extension
 			'ABOUT_INDEX_SUB'					=> '/about/',
 			'SUPPORT_INDEX_SUB'				=> '/support/',
 
-			'CDB_MOD_SUPPORT'					=> '/customise/db/support/modifications-1/',
-			'CDB_STYLE_SUPPORT'				=> '/customise/db/support/styles-2/',
-			'CDB_CONVERTOR_SUPPORT'			=> '/customise/db/support/converter/',
-			'CDB_TRANSLATION_SUPPORT'			=> '/customise/db/support/translation/',
+			'CDB_MOD_SUPPORT'					=> '/customise/db/support/modifications-1', // TODO: remove (used in support_forums.html)
+			'CDB_STYLE_SUPPORT'				=> '/customise/db/support/styles-2', // TODO: remove
+			'CDB_CONVERTOR_SUPPORT'			=> '/customise/db/support/converter/', // TODO: remove (used in support_forums.html)
+			'CDB_TRANSLATION_SUPPORT'			=> '/customise/db/support/translation/', // TODO: remove
 		);
 
 		return $menuVars;
@@ -225,7 +225,7 @@ class GlobalsExtension extends \Twig_Extension
 			'MODS_AUTOMOD'		=> '/mods/automod/',
 			'MODS_GENERATOR'		=> '/mods/utilities/generator/',
 			'MODS_CHECKIST'		=> '/mods/validator/checklist.php',
-			'MODS_DB'				=> '/customise/db/modifications-1/',
+			'MODS_DB'				=> '/customise/db/modifications-1',
 			'MODS_FAQ'			=> '/mods/faq/',
 			'MODS_VOLUNTEER'		=> '/mods/volunteer/',
 			'MODS_DOCUMENTATION'	=> '/mods/documentation/',
@@ -296,7 +296,7 @@ class GlobalsExtension extends \Twig_Extension
 			//'MODX_VERSION'			=> MODX_VERSION,
 
 			// Bridges
-			'BRIDGES_DB'				=> '/customise/db/bridges-24/',
+			'BRIDGES_DB'				=> '/customise/db/bridges-24',
 			'BRIDGES_POLICIES'	=> '/mods/bridges/',
 
 			// installing mods
@@ -323,7 +323,7 @@ class GlobalsExtension extends \Twig_Extension
 		$styleVars = array(
 			// To be removed
 			'STYLES'                          => '/styles/',
-			'STYLES_DB'                       => '/customise/db/styles-2/',
+			'STYLES_DB'                       => '/customise/db/styles-2',
 
 			// Main pages
 			'styles_create'                   => '/styles/create/',
@@ -341,11 +341,11 @@ class GlobalsExtension extends \Twig_Extension
 			'styles_demo_30x'                 => '/styles/demo/3.0/',
 
 			// Styles CDB
-			'styles_db_path'                  => '/customise/db/styles-2/',
-			'styles_gdk_31x_commercial_fonts' => '/customise/db/style/prosilver_gdk_31x_commercial_fonts/', // TODO: create
-			'styles_gdk_31x_free_fonts'       => '/customise/db/style/prosilver_gdk_31x_free_fonts/', // TODO: create
-			'styles_gdk_30x_commercial_fonts' => '/customise/db/style/prosilver_gdk_commercial_fonts/', // TODO: rename in Titania?
-			'styles_gdk_30x_free_fonts'       => '/customise/db/style/prosilver_gdk_free_fonts/', // TODO: rename in Titania?
+			'styles_db_path'                  => '/customise/db/styles-2',
+			'styles_gdk_31x_commercial_fonts' => '/customise/db/style/prosilver_gdk_31x_commercial_fonts/',
+			'styles_gdk_31x_free_fonts'       => '/customise/db/style/prosilver_gdk_31x_free_fonts/',
+			'styles_gdk_30x_commercial_fonts' => '/customise/db/style/prosilver_gdk_commercial_fonts/',
+			'styles_gdk_30x_free_fonts'       => '/customise/db/style/prosilver_gdk_free_fonts/',
 			'styles_gdk_20x'                  => '/customise/db/style/phpbb_subsilver_gdk/',
 
 			// Documentation resources
@@ -405,7 +405,7 @@ class GlobalsExtension extends \Twig_Extension
 	private function getExtensionVars()
 	{
 		$extensionVars = array(
-			'extensions_cdb'						=> '/customise/db/modifications-1/',
+			'extensions_cdb'						=> '/customise/db/modifications-1',
 			'extensions_wiki'						=> '//wiki.phpbb.com/Category:Extensions',
 
 			'extensions_quickinstall'				=> '/mods/quickinstall/', //replace later
@@ -547,7 +547,7 @@ class GlobalsExtension extends \Twig_Extension
 			'CHANGELOG'			=> '/support/documents.php?mode=changelog&amp;version=3',
 			'INSTALL_DOCUMENT'	=> '/support/documents.php?mode=install&amp;version=3',
 			'LICENSE'				=> '/downloads/license/',
-			'OFFICIAL_TOOLS'				=> '/customise/db/official_tools-23/',
+			'OFFICIAL_TOOLS'				=> '/customise/db/official_tools-23',
 
 			'SHOWCASE_SUGGEST'		=> '/showcase/suggest/',
 
@@ -615,15 +615,15 @@ class GlobalsExtension extends \Twig_Extension
 			'U_DOWNLOADS_HEADER'				=> '/downloads/?from=header',
 			'U_DOWNLOADS_SUB'					=> '/downloads/',
 			'U_DOWNLOADS_UPDATE_SUB'			=> '/downloads/#update',
-			'U_STYLES_DB_SUB'					=> '/customise/db/styles-2/',
+			'U_STYLES_DB_SUB'					=> '/customise/db/styles-2',
 			'U_LANGUAGES_SUB'					=> '/languages/',
 
 			'U_CUSTOMISE'						=> '/customise/',
 			'U_CDB_SUB'							=> '/customise/db/',
 			'U_EXT_SUB'							=> '/extensions/',
-			'U_EXT_DB_SUB'						=> '/customise/db/extensions-36/',
+			'U_EXT_DB_SUB'						=> '/customise/db/extensions-36',
 			'U_MODS_SUB'						=> '/mods/',
-			'U_MODS_DB_SUB'						=> '/customise/db/modifications-1/',
+			'U_MODS_DB_SUB'						=> '/customise/db/modifications-1',
 			'U_STYLES_SUB'						=> '/styles/',
 			'U_STYLES_DEMO_SUB'					=> '/styles/demo/3.0/',
 
@@ -659,15 +659,15 @@ class GlobalsExtension extends \Twig_Extension
 			'U_SUPPORT_INDEX_SUB'				=> '/support/',
 			'U_DEV_INDEX_SUB'					=> '/development/',
 
-			'U_CDB_MOD_SUPPORT'					=> '/customise/db/support/modifications-1/',
-			'U_CDB_STYLE_SUPPORT'				=> '/customise/db/support/styles-2/',
-			'U_CDB_CONVERTOR_SUPPORT'			=> '/customise/db/support/converter/',
-			'U_CDB_TRANSLATION_SUPPORT'			=> '/customise/db/support/translation/',
+			'U_CDB_MOD_SUPPORT'					=> '/customise/db/support/modifications-1', // TODO: remove (used in support_forums.html)
+			'U_CDB_STYLE_SUPPORT'				=> '/customise/db/support/styles-2', // TODO: remove
+			'U_CDB_CONVERTOR_SUPPORT'			=> '/customise/db/support/converter/', // TODO: remove (used in support_forums.html)
+			'U_CDB_TRANSLATION_SUPPORT'			=> '/customise/db/support/translation/', // TODO: remove
 
 			'U_DEMO'							=> '/demo/',
 			'U_SHOWCASE'						=> '/showcase/',
 			'U_DOWNLOADS'						=> '/downloads/',
-			'U_OFFICIAL_TOOLS'					=> '/customise/db/official_tools-23/',
+			'U_OFFICIAL_TOOLS'					=> '/customise/db/official_tools-23',
 			'U_SUPPORT'							=> '/support/',
 			'U_BLOG'							=> '//blog.phpbb.com/',
 			'U_COMMUNITY'						=> '/community/',
