@@ -70,4 +70,13 @@ class AboutController extends Controller
 
         return $this->render('PhpbbWebsiteInterfaceBundle:About:features.html.twig', $templateVariables);
     }
+
+    public function launchAction()
+    {
+        $templateVariables = array(
+            'header_css_image'  => 'about launch',
+        );
+
+        return $this->render('PhpbbWebsiteInterfaceBundle:About:launch.html.twig', $templateVariables);
+    }
 }
