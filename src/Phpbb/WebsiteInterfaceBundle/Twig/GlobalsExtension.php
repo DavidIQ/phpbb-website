@@ -337,8 +337,8 @@ class GlobalsExtension extends \Twig_Extension
 			'styles_demo'                     => '/styles/demo/',
 
 			// Demo pages (handled by Titania)
-			'styles_demo_31x'                 => '/styles/demo/3.1/', // TODO: needs to be up and running
-			'styles_demo_30x'                 => '/styles/demo/3.0/',
+			'styles_demo_31x'                 => '/customise/db/style/prosilver/demo/3.1', // TODO: needs to be up and running
+			'styles_demo_30x'                 => '/customise/db/style/prosilver/demo/3.0',
 
 			// Styles CDB
 			'styles_db_path'                  => '/customise/db/styles-2',
@@ -405,7 +405,7 @@ class GlobalsExtension extends \Twig_Extension
 	private function getExtensionVars()
 	{
 		$extensionVars = array(
-			'extensions_cdb'						=> '/customise/db/modifications-1',
+			'extensions_cdb'						=> '/customise/db/extensions-36',
 			'extensions_wiki'						=> '//wiki.phpbb.com/Category:Extensions',
 
 			'extensions_quickinstall'				=> '/mods/quickinstall/', //replace later
