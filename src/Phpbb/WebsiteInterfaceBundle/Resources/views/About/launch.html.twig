@@ -1,0 +1,301 @@
+{% extends ':base:base.html.twig' %}
+
+{% block head_assets %}
+{{ parent() }}
+<link rel="stylesheet" href="{{ asset('assets/css/launch/launch.css') }}" />
+<!--[if lte IE 9]>
+		<link rel="stylesheet" href="{{ asset('assets/css/launch/ie9.css') }}' />
+<![endif]-->
+{% endblock %}
+
+{% block javascriptHeader %}
+	{{ parent() }}
+
+	<!-- JS for Launch Page -->
+	<script src="{{ asset('assets/js/about/launch/waypoints.min.js') }}"></script>
+	<script src="{{ asset('assets/js/about/launch/waypoints-sticky.min.js') }}"></script>
+	<script src="{{ asset('assets/js/about/launch/launch_fn.js') }}"></script>
+{% endblock %}
+
+
+{% block body %}
+<div id="page-body">
+	<ul class="linklist navlinks">
+		<li><a href="{{ home_path }}">Home</a>
+			<strong>&#8249;</strong> <a href="{{ about_path }}">About</a>
+			<strong>&#8249;</strong> <a href="{{ about_launch }}">Launch</a>
+		</li>
+	</ul>
+</div>
+
+<div class="features-container">
+	<div class="features-header">
+		<div class="lead lead-masthead">
+			<h2 class="lead-title text-center">phpBB 3.1 <span class="lead-clear-outline">Ascraeus</span></h2>
+			<p class="lead-sub-title text-center">Over 1k bug fixes, 1.5k improvements & 11k commits. </p>
+		</div>
+	</div>
+	<div class="features-nav">
+		<div class="nav nav-pills text-center">
+			<a class="active nav-link admin" href="#admin"></a>
+			<a class="nav-link user" href="#user"></a>
+			<a class="nav-link dev" href="#dev"></a>
+			<a class="nav-link design" href="#design"></a>
+			<a class="nav-link top" href="#top"></a>
+		</div>
+	</div>
+	<div id="admin" class="feature feature-admin">
+		<div class="lead">
+			<h2 class="lead-title text-center">Administrator</h2>
+			<p class="lead-sub-title text-center">Features, changes and improvements</p>
+		</div>
+		<div class="feature-row">
+			<div id="extensions" class="media-lg">
+				<h2 class="media-title text-center">
+					<img class="media-image" src="{{ asset('assets/images/images/about/launch/extension@2x.png') }}" alt="phpBB Extensions">
+					Extensions
+				</h2>
+				<p class="media-copy text-center">Manually editing code is a thing of the past. Quickly installed in the ACP, extensions are to phpBB 3.1 what MODs were to phpBB 2.0 & 3.0. Our huge customization community is hard at work building new extensions to help you get the most out of your forum.</p>
+			</div>
+		</div>
+
+		<div class="feature-row">
+			<div id="security" class="media-lg">
+				<h2 class="media-title text-center">
+					<img class="security-image" src="{{ asset('assets/images/images/about/launch/security@2x.png') }}" alt="PHPBB Security">Unmatched Security
+				</h2>
+				<p class="media-copy text-center">
+					Nothing is more important than keeping your data safe, and our record speaks for itself. In the past 4 years, there have been no reported vulnerabilities in the phpBB software. Meanwhile SMF, vBulletin, IPB, and MyBB have had an average of 10, and as many as 16. That's an average of 10 more reasons to choose phpBB. And just to make sure, we hired a professional security company to audit the entire phpBB 3.1 codebase.
+				</p>
+			</div>
+		</div>
+		<div class="feature-row">
+			<div id="updating" class="media-lg">
+				<h2 class="media-title text-center">
+					<img class="media-image" src="{{ asset('assets/images/images/about/launch/version@2x.png') }}" alt="Version Check">
+					Simplified Updating
+				</h2>
+				<p class="media-copy text-center"> If you're tired of complicated updating procedures, you'll love phpBB 3.1. Whether it's extensions or phpBB itself, updating is as simple as uploading the new package and clicking a few buttons. You can even check to make sure you're running the latest versions, right in the ACP.</p>
+			</div>
+		</div>
+
+		<div class="feature-row">
+			<div id="soft-delete" class="media-md">
+				<h2 class="media-title text-center">
+					<img class="media-image" src="{{ asset('assets/images/images/about/launch/soft-delete@2x.png') }}" alt="Soft Delete">
+					Soft Delete
+				</h2>
+				<p class="media-copy text-center">Posts and topics can now be removed from public view without being permanently deleted. You can determine this behavior per user or group.</p>
+			</div>
+			<div id="global-announcemnets" class="media-md">
+				<h2 class="media-title text-center">
+					<img class="media-image" src="{{ asset('assets/images/images/about/launch/global-announcements@2x.png') }}" alt="Improved Global Announcments">
+					Improved Global Announcements
+				</h2>
+				<p class="media-copy text-center">Global announcements are now tied to a specific forum, greatly simplifying permissions.</p>
+			</div>
+		</div>
+		<div class="feature-row">
+			<div id="teams-page" class="media-md">
+				<h2 class="media-title text-center">
+					<img class="media-image" src="{{ asset('assets/images/images/about/launch/team@2x.png') }}" alt="Improved Teams Page">
+					Improved Teams Page
+				</h2>
+				<p class="media-copy text-center">
+					The new teams page is highly customizable and sorted by groups.
+				</p>
+			</div>
+			<div id="contact-page" class="media-md">
+				<h2 class="media-title text-center">
+					<img class="media-image" src="{{ asset('assets/images/images/about/launch/contact@2x.png') }}" alt="Contact Page">
+					Contact Page
+				</h2>
+				<p class="media-copy text-center">
+					Visitors, including guests, can now get in touch with the board administrator by using the built-in contact page.
+				</p>
+			</div>
+		</div>
+	</div>
+	<div id="user" class="feature feature-user">
+		<div class="lead">
+			<h2 class="lead-title text-center">User</h2>
+			<p class="lead-sub-title text-center">Features, changes and improvements</p>
+		</div>
+		<div class="feature-row">
+			<div id="responsive" class="media-lg">
+				<h2 class="media-title text-center">
+					<img class="media-image" src="{{ asset('assets/images/images/about/launch/responsive@2x.png') }}" alt="Responsive Theme">
+					Responsive Theme
+				</h2>
+				<p class="media-copy text-center">
+					Our default style, prosilver, has been completely overhauled to ensure a modern experience on all of your devices. Give it a try on a tablet on smart-phone.
+				</p>
+			</div>
+		</div>
+		<div class="feature-row">
+			<div id="notifications" class="media-lg">
+				<h2 class="media-title text-center">
+					<img class="media-image" src="{{ asset('assets/images/images/about/launch/notifications@2x.png') }}" alt="Notification System">
+					Notification System
+				</h2>
+				<p class="media-copy text-center">
+					Easily configure how you prefer to be notified about various events, such as when you are quoted in a post. The new extensible notifications feature lives in the header of every page and provides a centralized place to receive alerts and other information.
+				</p>
+			</div>
+		</div>
+		<div class="feature-row">
+			<div id="gravatar" class="media-md">
+				<h2 class="media-title text-center">
+					<img class="media-image" src="{{ asset('assets/images/images/about/launch/gravatar@2x.png') }}" alt="Gravatar Support">
+					Gravatar Support
+				</h2>
+				<p class="media-copy text-center">
+					Avatars may now be fetched from the <a href="http://www.gravatar.com">Gravatar</a> service, in addition to the previously available options.
+				</p>
+			</div>
+			<div id="oauth" class="media-md">
+				<h2 class="media-title text-center">
+					<img class="media-image" src="{{ asset('assets/images/images/about/launch/oauth@2x.png') }}" alt="OAuth Login">
+					OAuth Login
+				</h2>
+				<p class="media-copy text-center">
+					Register and login using your Google, Bit.ly, or Facebook accounts. Extensions can easily add other authentication services.
+				</p>
+			</div>
+		</div>
+	</div>
+	<div id="dev" class="feature feature-dev">
+		<div class="lead">
+			<h2 class="lead-title text-center">Developer</h2>
+			<p class="lead-sub-title text-center">Features, changes and improvements</p>
+		</div>
+		<div class="feature-row">
+			<div id="symfony" class="media-lg">
+				<h2 class="media-title text-center">
+					<img class="media-image" src="{{ asset('assets/images/images/about/launch/symfony@2x.png') }}" alt="Symfony Components">
+					Symfony Components
+				</h2>
+				<p class="media-copy text-center">
+					<a href="http://symfony.com/">Symfony</a> is a well documented and adopted framework in the PHP world being developed by SensioLabs. It is used by several popular projects including Drupal & Laravel. phpBB is now also built using Symfony.
+				</p>
+			</div>
+		</div>
+		<div class="feature-row">
+			<div id="routing-controllers" class="media-md">
+				<h2 class="media-title text-center">
+					<img class="media-image" src="{{ asset('assets/images/images/about/launch/routing-controller@2x.png') }}" alt="Routing & Controllers">
+					Routing & Controllers
+				</h2>
+				<p class="media-copy text-center">
+					phpBB is now being generated using Routes & Controllers in order to provide better API calls & adhere to a more modern MVC construct.
+				</p>
+			</div>
+			<div id="migrations" class="media-md">
+				<h2 class="media-title text-center">
+					<img class="media-image" src="{{ asset('assets/images/images/about/launch/migrations@2x.png') }}" alt="Migrations">
+					Migrations
+				</h2>
+				<p class="media-copy text-center">
+					Migrations have been added to provide the ability for maintaining states of the database based on the installation and removal of features & extensions.
+				</p>
+			</div>
+		</div>
+		<div class="feature-row">
+			<div id="dependency-injection" class="media-sm">
+				<h2 class="media-title text-center">
+					<img class="media-image" src="{{ asset('assets/images/images/about/launch/dependency-injection@2x.png') }}" alt="Dependency Injection">
+					Dependency Injection
+				</h2>
+				<p class="media-copy text-center">
+					New and refactored code is now consistently following the Dependency Injection design pattern.
+				</p>
+			</div>
+			<div id="composer" class="media-sm">
+				<h2 class="media-title text-center">
+					<img class="media-image" src="{{ asset('assets/images/images/about/launch/composer@2x.png') }}" alt="Composer">
+					Composer
+				</h2>
+				<p class="media-copy text-center">
+					We now rely on Composer for dependency management. You can also find phpBB on <a href="https://packagist.org/packages/phpbb/phpbb">Packagist</a>.
+				</p>
+			</div>
+			<div id="functional-testing" class="media-sm">
+				<h2 class="media-title text-center">
+					<img class="media-image" src="{{ asset('assets/images/images/about/launch/functional@2x.png') }}" alt="Functional Testing">
+					Functional Testing
+				</h2>
+				<p class="media-copy text-center">
+					Now leverage PHPUnit for creating functional tests. Ensure your code is performing how it should
+				</p>
+			</div>
+		</div>
+	</div>
+	<div id="design" class="feature feature-design">
+		<div class="lead">
+			<h2 class="lead-title text-center">Designer</h2>
+			<p class="lead-sub-title text-center">Features, changes and improvements</p>
+		</div>
+		<div class="feature-row">
+			<div id="ajax" class="media-md">
+				<h2 class="media-title text-center">
+					<img class="media-image" src="{{ asset('assets/images/images/about/launch/ajax@2x.png') }}" alt="Ajax">
+					AJAX
+				</h2>
+				<p class="media-copy text-center">
+					Traditionally with phpBB, even simple operations like deleting a post or reordering forums have involved multiple requests and full page loads, which was slow and heavy on bandwidth. We've added AJAX functionality to a lot of these simple operations, making them faster and easier to do.
+				</p>
+			</div>
+			<div id="style-inheritance" class="media-md">
+				<h2 class="media-title text-center">
+					<img class="media-image" src="{{ asset('assets/images/images/about/launch/style-inhertance@2x.png') }}" alt="Improved Style Inheritance">
+					Improved Style Inheritance
+				</h2>
+				<p class="media-copy text-center">
+					The tempting system has been completely overhauled. Cleaning up the folder structure and providing an increased ability to inherit from the other styles. No more unnecessary an confusing configuration files!
+				</p>
+			</div>
+		</div>
+		<div class="feature-row">
+			<div id="improved-navigation" class="media-md">
+				<h2 class="media-title text-center">
+					<img class="media-image" src="{{ asset('assets/images/images/about/launch/navigation@2x.png') }}" alt="Improved Navigation">
+					Improved Navigation
+				</h2>
+				<p class="media-copy text-center">
+					Redesigned and laid out to provide better UX/UI. The addition of menus to group similar functionality. Improved consistency across the design. Completely reworked buttons leveraging CSS rather than images.
+				</p>
+			</div>
+			<div id="html5-css3" class="media-md">
+				<h2 class="media-title text-center">
+					<img class="media-image" src="{{ asset('assets/images/images/about/launch/html-css@2x.png') }}" alt="HTML5 & CSS3 Enhancements">
+					HTML5 & CSS3 Enhancements
+				</h2>
+				<p class="media-copy text-center">
+					We're now using the HTML5 doctype and CSS3 to modernize the codebase, reduce the number of requests made to the server, and speed up page load times.
+				</p>
+			</div>
+		</div>
+		<div class="feature-row">
+			<div id="twig" class="media-md">
+				<h2 class="media-title text-center">
+					<img class="media-image" src="{{ asset('assets/images/images/about/launch/twig@2x.png') }}" alt="Twig Templating Engine">
+					Twig Templating Engine
+				</h2>
+				<p class="media-copy text-center">
+					You can now leverage the power of Twig Templating with your styles.
+				</p>
+			</div>
+			<div id="jquery" class="media-md">
+				<h2 class="media-title text-center">
+					<img class="media-image" src="{{ asset('assets/images/images/about/launch/jquery@2x.png') }}" alt="jQuery">
+					jQuery
+				</h2>
+				<p class="media-copy text-center">
+					Leverage <a href="http://www.jquery.com">jQuery</a> for your extensions and styles. We use it ourselves (mostly for the new AJAX functionality).
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+

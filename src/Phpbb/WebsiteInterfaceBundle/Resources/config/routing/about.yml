@@ -23,6 +23,11 @@ phpBBWebsite_About_features:
     defaults: { _controller: PhpbbWebsiteInterfaceBundle:About:feature }
     methods:  [GET]
 
+phpBBWebsite_About_launch:
+    path:  /launch/
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:About:launch }
+    methods:  [GET]
+
 phpBBWebsite_About_getInvolved:
     path:  /get-involved/
     defaults:
