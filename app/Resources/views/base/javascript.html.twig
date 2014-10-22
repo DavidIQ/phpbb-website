@@ -41,3 +41,14 @@
 	})();
 // ]]>
 </script>
+
+{# 3.1 launch countdown timer. Can be removed after launch #}
+<script type="text/javascript" src="{{ asset('assets/js/jquery.countdown.min.js') }}"></script>
+<script type="text/javascript">
+	$(function() {
+		var utc = new Date('2014-10-28T00:00:00-0500');
+		$('#countdown-timer').countdown(utc, function(event) {
+			$(this).html(event.strftime('<div class="timer-unit days"><span class="timer-big">%D</span><span class="timer-small">days left</span></div>'));
+		});
+	});
+</script>
