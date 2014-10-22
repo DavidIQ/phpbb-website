@@ -46,7 +46,7 @@
 	<a id="top" accesskey="t"></a>
 	<div id="page-header">
 		<div class="phpbb-header">
-			<div id="countdown-timer" class="countdown-block"><div class="timer-unit days"><span class="timer-big">5</span><span class="timer-small">days left</span></div></div>{# Remove after 3.1 launch #}
+			<a id="countdown-timer" class="countdown-block" style="display: none" href="{{ U_ABOUT_LAUNCH_SUB }}"></a>{# Remove after 3.1 launch #}
 			{% block header_button %}{% endblock %}
 			<h1 id="logo-banner"><a href="/">phpBB &bull; Free and Open Source Forum Software</a></h1>
 			<div id="top-social" class="top-social-home">
@@ -91,10 +91,10 @@
 						</li>
 					</ul>
 					<ul>
-						{#<li>
+						<li>
 							<h4><a href="{{ U_ABOUT_LAUNCH_SUB }}">3.1 New Features</a></h4>
 							<p><a href="{{ U_ABOUT_LAUNCH_SUB }}">An overview of the new features and improvements in phpBB 3.1 (The new version of phpBB).</a></p>
-						</li>#}
+						</li>
 						<li>
 							<h4><a href="{{ U_ABOUT_TEAM_SUB }}">The Team</a></h4>
 							<p><a href="{{ U_ABOUT_TEAM_SUB }}">Find out who is responsible for all the mayhem.</a></p>
