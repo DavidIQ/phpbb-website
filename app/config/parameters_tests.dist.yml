@@ -52,6 +52,17 @@ parameters:
     locale:             en
     secret:             ThisTokenIsNotSoSecretChangeIt
 
+    # See services.yml for options
+    cacheDriver:        phpbb.filesystem_cache
+    # memcached or array
+    ormCache:           array
+    # localhost or ~
+    ormCacheHost:       ~
+    # 11211 or ~
+    ormCachePort:       ~
+    # Memcached or ~
+    ormCacheInstanceClass: ~
+
     # Location should be local, sandbox or live
     location:           local
 

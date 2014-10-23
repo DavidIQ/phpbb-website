@@ -12,6 +12,7 @@ namespace Phpbb\WebsiteInterfaceBundle\Controller;
 
 use Phpbb\WebsiteInterfaceBundle\Wrappers\PhpbbHandling;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
 
 class GlobalController extends Controller
 {
@@ -22,8 +23,19 @@ class GlobalController extends Controller
 
 		$finishedAnnouncements = $this->getForumAnnouncements($announcement_forum);
 
-		// Get announcements file
-		$blogFile = @file_get_contents('https://www.phpbb.com/website/wp_announcements.php?password=thisisnotverysecretbutitdoesntreallyneedtobe');
+		$cache = $this->get('phpbb.cache');
+
+		if ($cache->contains('blog_announcements_file') !== FALSE)
+		{
+			$blogFile = $cache->fetch('blog_announcements_file');
+			$cacheStatus = 'Hit';
+		}
+		else
+		{
+			$blogFile = @file_get_contents('https://www.phpbb.com/website/wp_announcements.php?password=thisisnotverysecretbutitdoesntreallyneedtobe');
+			$cache->save('blog_announcements_file', $blogFile, 3600);
+			$cacheStatus = 'Miss';
+		}
 
 		$blogJson = @json_decode($blogFile, true);
 
@@ -40,7 +52,10 @@ class GlobalController extends Controller
 			'announcements'         => $announcements,
 			'header_css_image'      => 'home',);
 
-		return $this->render('PhpbbWebsiteInterfaceBundle:Global:index.html.twig', $templateVariables);
+		$content = $this->renderView('PhpbbWebsiteInterfaceBundle:Global:index.html.twig', $templateVariables);
+		$response = new Response($content);
+		$response->headers->set('X-Cache-Blog', $cacheStatus);
+		return $response;
 	}
 
 	public function demoAction()
@@ -102,7 +117,7 @@ class GlobalController extends Controller
 				if (substr($preview_clean, 0, 8) == 'https://' || substr($preview_clean, 0, 7) == 'http://') {
 					$preview = preg_replace('/^(\S*)\s/', '', $preview);
 				}
-	
+
 				// Truncate to the maximum length
 				$preview = substr($preview, 0, $preview_max_len);
 

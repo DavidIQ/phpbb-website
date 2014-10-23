@@ -49,9 +49,19 @@ parameters:
     mailer_delivery_address:   ~
     mailer_disable_delivery:   true
 
-
     locale:             en
     secret:             TravisRandomToken
+
+    # See services.yml for options
+    cacheDriver:        phpbb.filesystem_cache
+    # memcached or array
+    ormCache:           array
+    # localhost or ~
+    ormCacheHost:       ~
+    # 11211 or ~
+    ormCachePort:       ~
+    # Memcached or ~
+    ormCacheInstanceClass: ~
 
     # Location should be local, sandbox or live
     location:           local

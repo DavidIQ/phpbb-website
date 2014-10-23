@@ -41,6 +41,10 @@
 				<dt>Where can I see the template changes for each version of phpBB?</dt>
 				<dd>You can find the style changes for all prosilver and subsilver2 versions on the <a href="{{ styles_changes }}">Style Changes</a> page.</dd>
 			</dl>
+			<dl class="faq" id="a-imageset">
+				<dt>Why do some styles (such as prosilver) still have an <code class="inline">imageset.css?</code> file, when phpBB 3.1 no longer uses imagesets?</dt>
+				<dd>This is for backwards-compatibility and legacy reasons. In most normal circumstances, this file will hardly be used. If you want to change image icons for prosilver 3.1, you should edit <code class="inline">colours.css</code> instead.</dd>
+			</dl>
 			<dl class="faq">
 				<dt>If a style has not been updated by the original author, can I update it myself and submit it to the database?</dt>
 				<dd>We generally allow updates only by the original author of the style. If the original author no longer wishes to update it themselves, they must give express permission to someone to take over their work.<br /><br />
@@ -167,8 +171,9 @@ parent = prosilver Special Edition</pre>
 		<ul class="list-margin">
 			<li><a href="https://wiki.phpbb.com/Tutorial.Template_syntax">Template Syntax Tutorial</a></li>
 			<li><a href="https://wiki.phpbb.com/Category:Template_Variables">Catalogue of available Template Variables</a></li>
-			<li><a href="https://wiki.phpbb.com/Category:Template_Variables">Common Template Errors</a></li>
+			<li><a href="https://wiki.phpbb.com/Template_errors">Common Template Errors</a></li>
 		</ul><br />
+		<div class="note-box green"><strong>Pro-Tip:</strong> Since version 3.1, phpBB uses <a href="http://twig.sensiolabs.org/">Twig</a> as the base of it's template engine. You can use Twig syntax for your style, which can have numerous advantages. For more information, visit <a href="http://twig.sensiolabs.org/doc/templates.html">Twig's template documentation website</a>.</div>
 
 		<hr />
 
@@ -256,7 +261,7 @@ parent = prosilver Special Edition</pre>
 		<div class="column2 compare">
 			<h4 class="cons">Cons</h4>
 			<ul class="list-margin">
-				<li>Relative path <samp>@import</samp> rules are bad practice (avoid if possible)</li>
+				<li>Relative path <samp>@import</samp> rules are a potential <a href="http://www.thespanner.co.uk/2014/03/21/rpo/">security risk</a>! (avoid if possible)</li>
 				<li>Still requires a copy of all assets that aren't included in <samp>stylesheet.css</samp> (<samp>responsive.css</samp>, <samp>/en/stylesheet.css</samp>, etc.)</li>
 			</ul>
 		</div>
@@ -304,7 +309,7 @@ parent = prosilver Special Edition</pre>
 &lt;link href="{T_STYLESHEET_LINK}" rel="stylesheet" /&gt;
 
 &lt;link href="{ROOT_PATH}styles/prosilver/theme/{T_THEME_LANG_NAME}/stylesheet.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" /&gt;</pre>
-		<p>Notice that we didn't include <samp>colours.css</samp> and <samp>imageset.css</samp>, since we want to use our own custom rules (which we will specify inside our own <samp>stylesheet.css</samp>) instead of prosilver's.</p>
+		<p>Notice that we didn't include <samp>colours.css</samp> and <a href="#a-imageset"><samp>imageset.css</samp></a>, since we want to use our own custom rules (which we will specify inside our own <samp>stylesheet.css</samp>) instead of prosilver's.</p>
 		<div class="column1 compare">
 			<h4 class="pros">Pros</h4>
 			<ul class="list-margin">
@@ -351,7 +356,7 @@ parent = prosilver Special Edition</pre>
 
 		<hr />
 
-		<h2 class="title" id="a-validation">Tips &amp; Tricks</h2>
+		<h2 class="title" id="a-tipstricks">Tips &amp; Tricks</h2>
 
 		<h3>Mimic prosilver CSS classes</h3>
 		<p>Since most extensions will be developed primarily for prosilver, they will naturally utilize prosilver's style assets whenever possible. This helps extension authors to significantly reduce the amount of CSS rules that they need to write.</p>
