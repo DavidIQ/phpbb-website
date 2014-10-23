@@ -132,4 +132,12 @@ class AboutControllerTest extends BootstrapTestSuite
         // Standard All Page Checks
         $this->globalTests();
     }
+
+    public function testLaunch()
+    {
+        $objs = $this->setupTest('/about/launch/');
+
+        // Standard All Page Checks
+        $this->globalTests();
+    }
 }
