@@ -50,6 +50,17 @@ parameters:
     # Change this to something random (just hit random keys on your keyboard if you must)
     secret:             ThisTokenIsNotThatSecretChangeItOnAllInstallations
 
+    # See services.yml for options
+    cacheDriver:        phpbb.filesystem_cache
+    # memcached or array
+    ormCache:           array
+    # localhost or ~
+    ormCacheHost:       ~
+    # 11211 or ~
+    ormCachePort:       ~
+    # Memcached or ~
+    ormCacheInstanceClass: ~
+
     # Location should be local or live
     location:           local
 

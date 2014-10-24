@@ -97,7 +97,7 @@ class GlobalControllerTest extends BootstrapTestSuite
 
     public function testIdeasMain()
     {
-        $objs = $this->setupTest('/ideas/');
+        $this->setupTest('/ideas/');
 
         // Standard All Page Checks
         $this->globalTests();

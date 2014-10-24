@@ -357,15 +357,15 @@ class GlobalsExtension extends \Twig_Extension
 			'styles_docs_30x'                 => '/support/documentation/3.0/adminguide/acp_styles.php',
 
 			// Related community topics
-			'styles_ssp_31x_feedback'         => '/community/viewtopic.php?f=66666&t=66666', // TODO: create
-			'styles_ssp_30x_feedback'         => '/community/viewtopic.php?f=74&p=12931323',
+			'styles_ssp_31x_feedback'         => '/community/viewforum.php?f=481&t=66666', // TODO: create topic
+			'styles_ssp_30x_feedback'         => '/community/viewtopic.php?f=74&p=12931323', // TODO: move topic to 3.0 styles?
 
 			// Team members
 			'styles_team_members'             => '/community/memberlist.php?mode=group&g=7332',
 			'styles_jv_team_members'          => '/community/memberlist.php?mode=group&g=228778',
 
 			// Other
-			'styles_db_my_styles'             => '/styles/db/index.php?i=author&mode=mylist', // TODO: what do we prefer? This uses rewrite-rule
+			'styles_db_my_styles'             => '/customise/db/author/USERNAME/contributions', // TODO: this dynamic link needs the current username (used on SSP pages)
 		);
 
 		return $styleVars;
@@ -436,6 +436,11 @@ class GlobalsExtension extends \Twig_Extension
 			'extensions_security_tracker'			=> 'https://tracker.phpbb.com/browse/EXTSEC',
 
 			'extension_quickstart_zip'				=> '/store/quickstart_extension_1.0.0.zip',
+
+			// Team members
+			'extension_team_members'				=> '/community/memberlist.php?mode=group&g=7331',
+			'extension_dev_team_members'			=> '/community/memberlist.php?mode=group&g=228787',
+			'extension_jv_team_members'				=> '/community/memberlist.php?mode=group&g=228685',
 		);
 
 		return $extensionVars;
@@ -501,8 +506,8 @@ class GlobalsExtension extends \Twig_Extension
 			'styles_tl_contact'		=> '/community/memberlist.php?mode=viewprofile&u=253197',
 			'WEBSITE_TL_NAME'		=> 'Marshalrusty',
 			'WEBSITE_TL_CONTACT'	=> '/community/memberlist.php?mode=viewprofile&u=151944',
-			'ext_dev_tl_name'		=> 'EXreaction',
-			'ext_dev_tl_contact'	=> '/community/memberlist.php?mode=viewprofile&u=202401',
+			'ext_dev_tl_name'		=> 'VSE',
+			'ext_dev_tl_contact'	=> '/community/memberlist.php?mode=viewprofile&u=868795',
 			'ext_tl_name'			=> 'DavidIQ',
 			'ext_tl_contact'		=> '/community/memberlist.php?mode=viewprofile&u=159755',
 		);

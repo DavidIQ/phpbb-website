@@ -135,7 +135,7 @@ class AboutControllerTest extends BootstrapTestSuite
 
     public function testLaunch()
     {
-        $objs = $this->setupTest('/about/launch/');
+        $this->setupTest('/about/launch/');
 
         // Standard All Page Checks
         $this->globalTests();
