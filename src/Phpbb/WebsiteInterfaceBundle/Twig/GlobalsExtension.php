@@ -87,8 +87,8 @@ class GlobalsExtension extends \Twig_Extension
 			'community_path'	=> '/community/',
 			'COMMUNITY'			=> '/community',
 
-			'contact_path'		=> '/about/contact_us.php',
-			'ABOUT_CONTACT'		=> '/about/contact_us.php',
+			'contact_path'		=> '/about/contact/',
+			'ABOUT_CONTACT'		=> '/about/contact/',
 
 			'get_involved_path'		=> '/get-involved/', // Usage = 2
 			// 'ABOUT_GETINVOLVED_SUB'	=> '/get-involved/',
@@ -140,7 +140,7 @@ class GlobalsExtension extends \Twig_Extension
 			// 'ABOUT_HISTORY_SUB'				=> '/about/history/',
 
 			// 'ABOUT_TEAM_SUB'					=> '/about/team/',
-			//'ABOUT_CONTACT_SUB'				=> '/about/contact_us.php',
+			//'ABOUT_CONTACT_SUB'				=> '/about/contact/',
 			// 'ABOUT_ADVERTISE_SUB'				=> '/about/advertise/',
 
 			'DOWNLOADS_UPDATE_SUB'			=> '/downloads/#update',
@@ -196,8 +196,8 @@ class GlobalsExtension extends \Twig_Extension
 			'BUGS_PHPBB'			=> 'http://tracker.phpbb.com/',
 			'BUGS_WEBSITE'		=> '/bugs/website/',
 			'INCIDENTS'			=> '/incidents/',
-			'SECURITY'			=> '/security/',
-			'SECURITY_MODS'		=> '/security/mods/',
+			'SECURITY'			=> 'https://tracker.phpbb.com/secure/BrowseProjects.jspa#10020',
+			'SECURITY_MODS'		=> 'https://tracker.phpbb.com/browse/EXTSEC/',
 			'BUGS_30X'			=> 'http://tracker.phpbb.com/',
 			'BUGS_DOCS'			=> '/bugs/docs/',
 			'BUGS_MODTOOLS'		=> '/bugs/modteamtools/',
@@ -615,7 +615,7 @@ class GlobalsExtension extends \Twig_Extension
 			'U_ABOUT_HISTORY_SUB'				=> '/about/history/',
 			'U_ABOUT_GETINVOLVED_SUB'			=> '/get-involved/',
 			'U_ABOUT_TEAM_SUB'					=> '/about/team/',
-			'U_ABOUT_CONTACT_SUB'				=> '/about/contact_us.php',
+			'U_ABOUT_CONTACT_SUB'				=> '/about/contact/',
 			'U_ABOUT_ADVERTISE_SUB'				=> '/about/advertise/',
 			'U_ABOUT_LAUNCH_SUB'				=> '/about/launch/',
 
