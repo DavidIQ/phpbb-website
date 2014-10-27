@@ -22,7 +22,7 @@
 
 <div class="wide">
 	<h2 class="imgrep features">Features of phpBB<sup>&reg;</sup></h2>
-	<p class="feature-page-desc">phpBB<sup>&reg;</sup> is now in its third major version. Version 3.0 incorporates a professional-quality modular
+	<p class="feature-page-desc">phpBB<sup>&reg;</sup> is now in its third major version. Version 3 incorporates a professional-quality modular
 		design, high security, multiple-language interface, support for a multitude of database servers
 		and complete layout customisation, all with a low execution overhead.</p>
 </div>
@@ -46,7 +46,7 @@
 					</div>
 					<div class="feature-item">
 						<h4><a name="php" href="#php">Written in PHP</a></h4>
-						<p>True to its name, phpBB was written in the <a href="http://php.net" rel="external">PHP</a> programming language.</p>
+						<p>True to its name, phpBB was written in the <a href="http://php.net" rel="external">PHP</a> programming language. phpBB 3.1 has the added benefit of being built upon the Symfony framework.</p>
 					</div>
 					<div class="feature-item">
 						<h4><a name="version" href="#version"><strong>Latest Version:</strong> {{ package_version }}</a></h4>
@@ -69,7 +69,11 @@
 					<p>phpBB is fully compatible with <span class="definition define-utf8">UTF-8</span> and uses it as the default character encoding. This ensures complete compatibility with nearly every language on the planet.</p>
 				</div>
 				<div class="feature-item">
-					<h4><a name ="xhtml" href="#xhtml">XHTML 1.0 Strict Compliant</a></h4>
+					<h4><a name ="html5" href="#html5"><span class="mini-tag blue">3.1.x</span> HTML5, CSS3, Responsive Design</a></h4>
+					<p>prosilver, phpBB's default style, utilises the latest specifications for HTML5 and CSS3 for a modern and responsive design. This ensures optimal performance and cross-browser support for all modern browsers on desktop and mobile platforms.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name ="xhtml" href="#xhtml"><span class="mini-tag dirty-green">3.0.x</span> XHTML 1.0 Strict Compliant</a></h4>
 					<p>prosilver, phpBB's default style, complies 100% with the W3C specifications for XHTML 1.0 Strict, ensuring optimal performance and cross-browser support.</p>
 				</div>
 				<div class="feature-item">
@@ -318,7 +322,7 @@
 				</div>
 				<div class="feature-item">
 					<h4><a name="userpref" href="#userpref">User Preferences &amp; Profile Settings</a></h4>
-					<p>Individual users can customise their board preferences, such as the way the board looks, the sorting of topics, or the language used. Users can customise their profile and add additional information such as an email address or IM accounts.</p>
+					<p>Individual users can customise their board preferences, such as the way the board looks, the sorting of topics, or the language used. Users can customise their profile and add additional information such as an email address or IM and social media accounts.</p>
 				</div>
 				<div class="feature-item">
 					<h4><a name="managedrafts" href="#managedrafts">Manage Saved Drafts</a></h4>
@@ -405,12 +409,16 @@
 					<p>Moderators can permanently delete a topic and all of its replies from the board.</p>
 				</div>
 				<div class="feature-item">
-					<h4><a name="globaltopic" href="#globaltopic">Global Topics/Announcements</a></h4>
-					<p>Moderators can create topics which are present as announcements in all forums on the board.</p>
+					<h4><a name="topicdelete" href="#topicdelete"><span class="mini-tag blue">3.1.x</span> Soft Delete</a></h4>
+					<p>Posts and topics can be removed from public view without being permanently deleted. This behaviour can be configured per user or group.</p>
 				</div>
 				<div class="feature-item">
 					<h4><a name="topiccopy" href="#topiccopy">Copy Topics</a></h4>
 					<p>Moderators can duplicate a topic to another forum.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="globaltopic" href="#globaltopic">Global Topics/Announcements</a></h4>
+					<p>Moderators can create topics which are present as announcements in all forums on the board.</p>
 				</div>
 				<div class="feature-item">
 					<h4><a name="sticky" href="#sticky">Announcement/Sticky Topics</a></h4>
@@ -518,8 +526,8 @@
 			</div>
 			<div class="features-item-content" style="clear:both;">
 				<div class="feature-item">
-					<h4><a name="audit" href="#audit"><strong>Paid Code Security Audit</strong></a></h4>
-					<p>Before its initial release, phpBB3 underwent a rigorous security audit by the well-known organisation <a href="http://www.sektioneins.de/de/index/">SektionEins</a>, and most notably Stefan Esser, a highly respected PHP security consultant.</p>
+					<h4><a name="audit" href="#audit"><strong>Unmatched Code Security</strong></a></h4>
+					<p>Before its initial release, phpBB3 underwent a rigorous security audit by the well-known organisation <a href="http://www.sektioneins.de/de/index/">SektionEins</a>, and most notably Stefan Esser, a highly respected PHP security consultant. phpBB 3.1 underwent a second security audit and to date, there have been no reported major vulnerabilities in the phpBB software.</p>
 				</div>
 				<div class="feature-item">
 					<h4><a name="passhash" href="#passhash"><strong>Password Hashing</strong></a></h4>
@@ -594,15 +602,19 @@
 				</div>
 				<div class="feature-item">
 					<h4><a name="oracle" href="#oracle">Oracle Database</a></h4>
-					<p>Using an Oracle database in an business or enterprise environment? No problem. phpBB fully supports this database.</p>
+					<p>Using an Oracle database in a business or enterprise environment? No problem. phpBB fully supports this database.</p>
 				</div>
 				<div class="feature-item">
-					<h4><a name="firebird" href="#firebird">Firebird</a></h4>
+					<h4><span class="mini-tag dirty-green">3.0.x</span> <a name="firebird" href="#firebird">Firebird</a></h4>
 					<p>Firebird is an open-source database system which is available on multiple platforms.</p>
 				</div>
 				<div class="feature-item">
 					<h4><a name="sqllite" href="#sqllite">SQLite</a></h4>
 					<p>SQLite is a small, lightweight, and fast database server.</p>
+				</div>
+				<div class="feature-item">
+					<h4><span class="mini-tag blue">3.1.x</span> <a name="sqllite3" href="#sqllite3">SQLite 3</a></h4>
+					<p>phpBB 3.1 extends SQLite compatibility with support for SQLite 3.</p>
 				</div>
 				<div class="feature-item">
 					<h4><a name="dbbackup" href="#dbbackup">Backup &amp; Restore</a></h4>
@@ -629,7 +641,7 @@
 				</div>
 				<div class="feature-item">
 					<h4><a name="refreshcache" href="#refreshcache">Manually Refresh Cache</a></h4>
-					<p>Options in the ACP allow board owners to manually clear the template cache, the theme cache, or everything all in one go.</p>
+					<p>Options in the ACP allow board owners to manually clear the data and template cache.</p>
 				</div>
 				<div style="clear: both;"></div>
 				<span class="feature-collapse"><img src="{{ asset('/assets/images/images/features/sm-arrow-up.gif') }}" alt="Collapse" class="floatleft collapse" /> Collapse</span>
@@ -652,8 +664,8 @@
 					<p>phpBB's style is fully customisable. Either tweak an existing style or create one from scratch.</p>
 				</div>
 				<div class="feature-item">
-					<h4><a name="editstyle" href="#editstyle">Customise Style Components</a></h4>
-					<p>Individual style components, such as CSS themes, template files, and images, can be customised right from within the ACP without having to touch the files on the server.</p>
+					<h4><span class="mini-tag dirty-green">3.0.x</span> <a name="editstyle" href="#editstyle">Customise Style Components</a></h4>
+					<p>Individual style components, such as CSS themes, template files, and images, can be customised right from within the ACP without having to touch the files on the server. Note: this seldom used functionality has been removed from phpBB 3.1.x.</p>
 				</div>
 				<div style="clear: both;"></div>
 				<span class="feature-collapse"><img src="{{ asset('/assets/images/images/features/sm-arrow-up.gif') }}" alt="Collapse" class="floatleft collapse" /> Collapse</span>
@@ -732,6 +744,10 @@
 					<p>Send out a bulk email to all of your board's users simultaneously.</p>
 				</div>
 				<div class="feature-item">
+					<h4><span class="mini-tag blue">3.1.x</span> <a name="contactpage" href="#contactpage">Contact Page</a></h4>
+					<p>Visitors, including guests, can get in touch with the board administrator using the built-in contact page.</p>
+				</div>
+				<div class="feature-item">
 					<h4><a name="managereport" href="#managereport">Manage report/denial Reasons</a></h4>
 					<p>When users report posts, they have the option to select a reason for the report. Administrators can create, edit, or remove these reasons from the ACP.</p>
 				</div>
@@ -756,10 +772,6 @@
 			</div>
 			<div class="features-item-content" style="clear:both;">
 				<div class="feature-item">
-					<h4><a name="searchnative" href="#searchnative">Fulltext Native</a></h4>
-					<p>Database fulltext native support is available with the use of a plugin.</p>
-				</div>
-				<div class="feature-item">
 					<h4><a name="topicsearch" href="#topicsearch">Customised Topic Search</a></h4>
 					<p>Users can search for a particular post from within a topic using various filters and sorting options.</p>
 				</div>
@@ -768,8 +780,20 @@
 					<p>Users can search for a particular post or topic from within a forum using various filters and sorting options.</p>
 				</div>
 				<div class="feature-item">
+					<h4><a name="searchnative" href="#searchnative">Fulltext Native</a></h4>
+					<p>Database fulltext native is the built-in search backend used for searching the forum.</p>
+				</div>
+				<div class="feature-item">
 					<h4><a name="mysqlfulltext" href="#mysqlfulltext">MySQL Fulltext</a></h4>
-					<p>phpBB includes a fully functional MySQL fulltext plugin which allows for improved search capabilities.</p>
+					<p>phpBB includes a fully functional MySQL fulltext plugin which allows for improved search capabilities in MySQL databases.</p>
+				</div>
+				<div class="feature-item">
+					<h4><span class="mini-tag blue">3.1.x</span> <a name="postgresqlfulltext" href="#postgresqlfulltext">PostgreSQL Fulltext</a></h4>
+					<p>phpBB includes a fully functional PostgreSQL fulltext plugin which allows for improved search capabilities in PostgreSQL databases.</p>
+				</div>
+				<div class="feature-item">
+					<h4><span class="mini-tag blue">3.1.x</span> <a name="sphinxfulltext" href="#sphinxfulltext">Sphinx Fulltext</a></h4>
+					<p>phpBB includes a fully functional Sphinx fulltext plugin which allows for improved search capabilities.</p>
 				</div>
 				<div class="feature-item">
 					<h4><a name="searchauthor" href="#searchauthor">Author Search</a></h4>
@@ -809,7 +833,7 @@
 			<div class="features-item-content" style="clear:both;">
 				<div class="feature-item">
 					<h4><a name="authplugin" href="#authplugin">Authentication Plugins</a></h4>
-					<p>phpBB can, by default, authentication with a database, Apache, and LDAP. Additional plugins are available.</p>
+					<p>phpBB can, by default, authenticate with a database, Apache, LDAP, and new in 3.1.x Oauth. Additional plugins are available.</p>
 				</div>
 				<div class="feature-item">
 					<h4><a name="searchplugin" href="#searchplugin">Search Plugins</a></h4>
@@ -824,8 +848,8 @@
 					<p>phpBB includes Classic GD, 3D Wave, Q&amp;A, and reCAPTCHA plugins by default.</p>
 				</div>
 				<div class="feature-item">
-					<h4><a name="hooks" href="#hooks">Hooks System</a></h4>
-					<p>phpBB was designed with a hooks system at a low level, enabling external applications to gain access to phpBB's functions.</p>
+					<h4><span class="mini-tag blue">3.1.x</span> <a name="extensions" href="#extensions">Extensions</a></h4>
+					<p>phpBB's features and functionality can be extended using self-contained extensions. These community built extensions are easily installed via the ACP with just a few clicks.</p>
 				</div>
 				<div class="feature-item">
 					<h4><a name="moduals" href="#moduals">Expandable Modules</a></h4>
@@ -843,6 +867,10 @@
 				<p>phpBB offers multiple methods of notifying users of activities on the board.</p>
 			</div>
 			<div class="features-item-content" style="clear:both;">
+				<div class="feature-item">
+					<h4><span class="mini-tag blue">3.1.x</span> <a name="notificationmenu" href="#notificationmenu">Live Notifications Menu</a></h4>
+					<p>phpBB's header contains a notifications menu which provides a centralised place to receive alerts and other information.</p>
+				</div>
 				<div class="feature-item">
 					<h4><a name="email" href="#email">Email</a></h4>
 					<p>phpBB can send users notifications via email about new posts in subscribed topics or when a PM is received.</p>
