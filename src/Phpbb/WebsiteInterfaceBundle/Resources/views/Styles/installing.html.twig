@@ -32,7 +32,7 @@
 
 		<hr />
 
-		<h2 class="title" id="a-installing">Installing an Style</h2>
+		<h2 class="title" id="a-installing">Installing a Style</h2>
 		<div class="note-box blue"><strong>Note:</strong> This guide assumes that you have correctly set up phpBB 3.1.x and have it operational. Direct write-access to your server's files (via FTP or other) is also required.</div>
 
 		<h3>1. Choosing a Style</h3>
@@ -43,7 +43,7 @@
 
 		<h3>2. Download and unzip</h3>
 		<p>Once you have downloaded a style, you will need to unpackage it on your computer, as styles are typically available in the compressed "zip" file format.</p>
-		<p>In Windows, to unzip the extension, simply double click it from the Windows Explorer view (for instance, if you downloaded the style to My Documents, you would open My Documents and double click the file). Proceed to click "Extract all files" under the address bar (Windows Vista, 7 and 8) or under the Folder Tasks menu (Windows XP) from within the Explorer window and follow the prompts.</p>
+		<p>In Windows, to unzip the style, simply double click it from the Windows Explorer view (for instance, if you downloaded the style to My Documents, you would open My Documents and double click the file). Proceed to click "Extract all files" under the address bar (Windows Vista, 7 and 8) or under the Folder Tasks menu (Windows XP) from within the Explorer window and follow the prompts.</p>
 		<p>On Mac, zipped files are automatically unzipped upon download by Safari (this setting can be disabled by unticking "Open safe files" in Safari's preferences) and can be accessed through the downloads list.</p>
 		<p>Make sure that your style includes all the required parts as described in the <a href="#a-anatomy">Anatomy of a Style</a> section (templates, theme assets, and style.cfg).</p>
 
@@ -115,7 +115,7 @@ newstyle pro
 			<li><a href="https://wiki.phpbb.com/Template_errors">Common Template Errors</a></li>
 		</ul>
 		<br />
-		<div class="note-box blue"><strong>Note:</strong> phpBB's template-engine has to process (compile) the style's templates before it can display them. This is resource-intensive process, so it "caches" the finished pages for quicker access. If you make changes to template files, you will need to "purge" (clear) the board's cache (or else your changes will not appear). You can do this by navigating to the board's ACP and clicking "Purge the cache".</div>
+		<div class="note-box blue"><strong>Note:</strong> phpBB's template-engine has to process (compile) the style's templates before it can display them. This is resource-intensive process, so it "caches" the finished pages for quicker access. If you make changes to template files, you will need to "purge" (clear) the board's cache (or else your changes will not appear). You can do this by navigating to the board's ACP and clicking the button at "Purge the cache".</div>
 
 		<h3>Theme Editing</h3>
 		<p>Themes are where the creativity comes into play. Editing the CSS files inside the <code class="inline">theme/</code> directory can have a wide range of effects. Most users however, simply want to change a few colours, images, fonts, or text-size. This is where a good text-editor can really save time (since it will warn you about syntax and other errors).</p>
@@ -127,13 +127,13 @@ newstyle pro
 
 		<h2 class="title" id="a-updating">Updating a Style</h2>
 		<p>Styles can be updated without any prior steps. All you need to do is simply upload the style's files to the same location as the old style, and let the files be overwritten.</p>
-		<p>Finally, simply navigate in the board's ACP to Customise -> Style Management, and click "<samp>Purge Cache</samp>".</p>
+		<p>Finally, simply navigate to your board's ACP index, and click the button at "<samp>Purge the cache</samp>".</p>
 		<div class="note-box red"><strong>Warning:</strong> If you have made changes to the style you are about to update, you will lose all your changes! So be sure to make a backup of your style's files before updating. After updating your style, you can reapply your changes.</div>
 
 		<hr />
 
 		<h2 class="title" id="a-removing">Removing a Style</h2>
-		<p>Sometimes it is necessary to remove an style. phpBB allows you to deactivate a style or to permanently uninstall it from your board.</p>
+		<p>Sometimes it is necessary to remove a style. phpBB allows you to deactivate a style or to permanently uninstall it from your board.</p>
 
 		<h3>1. Deactivate</h3>
 		<p>Deactivating a style will effectively turn it off, hiding it from your board. However, all the style's files will remain on your server as well as entries in your database. So you can re-enable the style without your users losing their original style preference. To deactivate a style, simply click its "<samp>Deactivate</samp>" link in the Style Management page.</p>
