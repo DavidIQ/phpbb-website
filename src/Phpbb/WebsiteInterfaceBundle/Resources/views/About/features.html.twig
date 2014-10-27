@@ -22,7 +22,7 @@
 
 <div class="wide">
 	<h2 class="imgrep features">Features of phpBB<sup>&reg;</sup></h2>
-	<p class="feature-page-desc">phpBB<sup>&reg;</sup> is now in its third major version. Version 3 incorporates a professional-quality modular
+	<p class="feature-page-desc">phpBB<sup>&reg;</sup> is now in its third major version. Version 3.1 incorporates a professional-quality modular
 		design, high security, multiple-language interface, support for a multitude of database servers
 		and complete layout customisation, all with a low execution overhead.</p>
 </div>
@@ -67,6 +67,10 @@
 				<div class="feature-item">
 					<h4><a name ="utf8" href="#utf8">UTF-8 Support</a></h4>
 					<p>phpBB is fully compatible with <span class="definition define-utf8">UTF-8</span> and uses it as the default character encoding. This ensures complete compatibility with nearly every language on the planet.</p>
+				</div>
+				<div class="feature-item">
+					<h4><span class="mini-tag blue">3.1.x</span> <a name="extensions" href="#extensions">Extensions</a></h4>
+					<p>phpBB's features and functionality can be extended using self-contained extensions. These community built extensions are easily installed via the ACP with just a few clicks.</p>
 				</div>
 				<div class="feature-item">
 					<h4><a name ="html5" href="#html5"><span class="mini-tag blue">3.1.x</span> HTML5, CSS3, Responsive Design</a></h4>
@@ -305,12 +309,20 @@
 			</div>
 			<div class="features-item-content" style="clear:both;">
 				<div class="feature-item">
+					<h4><a name="oauth" href="#oauth">OAuth Login</a></h4>
+					<p>Register and login using your Google, Bit.ly, or Facebook accounts. Extensions can easily add other authentication services.</p>
+				</div>
+				<div class="feature-item">
 					<h4><a name="signatures" href="#signatures">Signatures</a></h4>
 					<p>A signature is small bit of text or images that is inserted after a user's post. Each user can customise their own signature, if allowed.</p>
 				</div>
 				<div class="feature-item">
 					<h4><a name="avatars" href="#avatars">Avatars</a></h4>
 					<p>Avatars are a personal image displayed above the user's username on a post and in their profile. If avatars are enabled, each user can customise their own.</p>
+				</div>
+				<div class="feature-item">
+					<h4><span class="mini-tag blue">3.1.x</span> <a name="gravatar" href="#gravatar">Gravatar</a></h4>
+					<p>Avatars may be fetched from the Gravatar service, in addition to the previously available options.</p>
 				</div>
 				<div class="feature-item">
 					<h4><a name="ranks" href="#ranks">Ranks</a></h4>
@@ -636,6 +648,10 @@
 					<p>phpBB will cache the results of commonly executed queries in order to decrease page load times.</p>
 				</div>
 				<div class="feature-item">
+					<h4><span class="mini-tag blue">3.1.x</span> <a name="redis" href="#redis">Redis Caching</a></h4>
+					<p>phpBB also supports the advanced open-source Redis caching system.</p>
+				</div>
+				<div class="feature-item">
 					<h4><a name="stylecache" href="#stylecache">Template Caching</a></h4>
 					<p>Rather than recompiling the template on each page load, phpBB has the ability to cache its output in order to save on CPU cycles and decrease page load times.</p>
 				</div>
@@ -662,6 +678,10 @@
 				<div class="feature-item">
 					<h4><a name="customstyle" href="#customstyle">Install/Manage Custom Styles</a></h4>
 					<p>phpBB's style is fully customisable. Either tweak an existing style or create one from scratch.</p>
+				</div>
+				<div class="feature-item">
+					<h4><span class="mini-tag blue">3.1.x</span> <a name="responsive" href="#responsive">Responsive Style Design</a></h4>
+					<p>phpBB's default style, prosilver, is a responsive design that provides a modern and unified experience across all your devices, including desktops, tablets and smart-phones.</p>
 				</div>
 				<div class="feature-item">
 					<h4><span class="mini-tag dirty-green">3.0.x</span> <a name="editstyle" href="#editstyle">Customise Style Components</a></h4>
@@ -759,6 +779,10 @@
 					<h4><a name="adminban" href="#adminban">Manage Bans</a></h4>
 					<p>View a list of banned users, unban users, or initialise a new ban by username, email address, or IP address.</p>
 				</div>
+				<div class="feature-item">
+					<h4><span class="mini-tag blue">3.1.x</span> <a name="teamspage" href="#teamspage">Teams Page</a></h4>
+					<p>The teams page displays all administrators and moderators of a forum in one central place, and is highly customisable and sorted by groups.</p>
+				</div>
 				<div style="clear: both;"></div>
 				<span class="feature-collapse"><img src="{{ asset('/assets/images/images/features/sm-arrow-up.gif') }}" alt="Collapse" class="floatleft collapse" /> Collapse</span>
 			</div>
@@ -833,7 +857,7 @@
 			<div class="features-item-content" style="clear:both;">
 				<div class="feature-item">
 					<h4><a name="authplugin" href="#authplugin">Authentication Plugins</a></h4>
-					<p>phpBB can, by default, authenticate with a database, Apache, LDAP, and new in 3.1.x Oauth. Additional plugins are available.</p>
+					<p>phpBB can, by default, authenticate with a database, Apache, LDAP, and new in 3.1.x OAuth. Additional plugins are available.</p>
 				</div>
 				<div class="feature-item">
 					<h4><a name="searchplugin" href="#searchplugin">Search Plugins</a></h4>
@@ -841,15 +865,11 @@
 				</div>
 				<div class="feature-item">
 					<h4><a name="cacheplugin" href="#cacheplugin">Cache Plugins</a></h4>
-					<p>phpBB includes plugins for file-based cache, memcache, X-Cache, APC, and eAccelerator.</p>
+					<p>phpBB includes plugins for file-based cache, memcache, X-Cache, APC, eAccelerator, and new in 3.1.x, Redis.</p>
 				</div>
 				<div class="feature-item">
 					<h4><a name="captchaplugin" href="#captchaplugin">CAPTCHA Plugins</a></h4>
 					<p>phpBB includes Classic GD, 3D Wave, Q&amp;A, and reCAPTCHA plugins by default.</p>
-				</div>
-				<div class="feature-item">
-					<h4><span class="mini-tag blue">3.1.x</span> <a name="extensions" href="#extensions">Extensions</a></h4>
-					<p>phpBB's features and functionality can be extended using self-contained extensions. These community built extensions are easily installed via the ACP with just a few clicks.</p>
 				</div>
 				<div class="feature-item">
 					<h4><a name="moduals" href="#moduals">Expandable Modules</a></h4>
