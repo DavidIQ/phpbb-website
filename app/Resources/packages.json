@@ -1,0 +1,126 @@
+{
+  "3.0": {
+    "release": "3.0.12",
+    "package": {
+        "release": {
+            "name": "phpBB 3.0.12",
+            "filename": "phpBB-3.0.12",
+            "type": "full"
+        },
+        "updates": {
+            "from": "3.0.12-RC3,3.0.12-RC2,3.0.12-RC1,3.0.11,3.0.10,3.0.9,3.0.8,3.0.7-PL1,3.0.7,3.0.6,3.0.5,3.0.4,3.0.3,3.0.2",
+            "patch": {
+                "name": "phpBB 3.0.12 Patch Files",
+                "filename": "phpBB-3.0.12-patch",
+                "subtype": "patch",
+                "from": "3.0.12"
+            },
+            "changed-files": {
+                "name": "phpBB 3.0.12 Changed Files",
+                "filename": "phpBB-3.0.12-files",
+                "subtype": "files",
+                "from": "3.0.12"
+            },
+            "code-changes": [
+                {
+                    "name": "phpBB 3.0.12-RC3 to 3.0.12 Code Changes",
+                    "filename": "phpBB-3.0.12-RC3_to_3.0.12-codechanges",
+                    "subtype": "code",
+                    "from": "3.0.12-RC3"
+                },
+                {
+                    "name": "phpBB 3.0.11 to 3.0.12 Code Changes",
+                    "filename": "phpBB-3.0.11_to_3.0.12-codechanges",
+                    "subtype": "code",
+                    "from": "3.0.11"
+                },
+            ],
+            "automatic-updaters": [
+                {
+                    "name": "phpBB 3.0.12-RC3 to 3.0.12 Update Package",
+                    "filename": "phpBB-3.0.12-RC3_to_3.0.12",
+                    "subtype": "update",
+                    "from": "3.0.12-RC3"
+                },
+                {
+                    "name": "phpBB 3.0.12-RC2 to 3.0.12 Update Package",
+                    "filename": "phpBB-3.0.12-RC2_to_3.0.12",
+                    "subtype": "update",
+                    "from": "3.0.12-RC2"
+                },
+                {
+                    "name": "phpBB 3.0.12-RC1 to 3.0.12 Update Package",
+                    "filename": "phpBB-3.0.12-RC1_to_3.0.12",
+                    "subtype": "update",
+                    "from": "3.0.12-RC1"
+                },
+                {
+                    "name": "phpBB 3.0.11 to 3.0.12 Update Package",
+                    "filename": "phpBB-3.0.11_to_3.0.12",
+                    "subtype": "update",
+                    "from": "3.0.11"
+                },
+                {
+                    "name": "phpBB 3.0.10 to 3.0.12 Update Package",
+                    "filename": "phpBB-3.0.10_to_3.0.12",
+                    "subtype": "update",
+                    "from": "3.0.10"
+                },
+                {
+                    "name": "phpBB 3.0.9 to 3.0.12 Update Package",
+                    "filename": "phpBB-3.0.9_to_3.0.12",
+                    "subtype": "update",
+                    "from": "3.0.9"
+                },
+                {
+                    "name": "phpBB 3.0.8 to 3.0.12 Update Package",
+                    "filename": "phpBB-3.0.8_to_3.0.12",
+                    "subtype": "update",
+                    "from": "3.0.8"
+                },
+                {
+                    "name": "phpBB 3.0.7-PL1 to 3.0.12 Update Package",
+                    "filename": "phpBB-3.0.7-PL1_to_3.0.12",
+                    "subtype": "update",
+                    "from": "3.0.7-PL1"
+                },
+                {
+                    "name": "phpBB 3.0.7 to 3.0.12 Update Package",
+                    "filename": "phpBB-3.0.7_to_3.0.12",
+                    "subtype": "update",
+                    "from": "3.0.7"
+                },
+                {
+                    "name": "phpBB 3.0.6 to 3.0.12 Update Package",
+                    "filename": "phpBB-3.0.6_to_3.0.12",
+                    "subtype": "update",
+                    "from": "3.0.6"
+                },
+                {
+                    "name": "phpBB 3.0.5 to 3.0.12 Update Package",
+                    "filename": "phpBB-3.0.5_to_3.0.12",
+                    "subtype": "update",
+                    "from": "3.0.5"
+                },
+                {
+                    "name": "phpBB 3.0.4 to 3.0.12 Update Package",
+                    "filename": "phpBB-3.0.4_to_3.0.12",
+                    "subtype": "update",
+                    "from": "3.0.4"
+                },
+                {
+                    "name": "phpBB 3.0.3 to 3.0.12 Update Package",
+                    "filename": "phpBB-3.0.3_to_3.0.12",
+                    "subtype": "update",
+                    "from": "3.0.3"
+                },
+                {
+                    "name": "phpBB 3.0.2 to 3.0.12 Update Package",
+                    "filename": "phpBB-3.0.2_to_3.0.12",
+                    "subtype": "update",
+                    "from": "3.0.2"
+                }
+            ]
+        }
+    }}
+}
