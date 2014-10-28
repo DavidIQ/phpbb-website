@@ -123,20 +123,20 @@
 			<li>Included third-party JavaScript/CSS libraries and frameworks should utilise a special template <code class="inline">&lt;!-- DEFINE --&gt;</code> tag to prevent duplicate inclusion. For example:<br />
 				<br />
 					<pre class="codesnippet">
-&lt;!-- IF not $INCLUDEDED_HIGHSLIDEJS --&gt;
+&lt;!-- IF not $INCLUDED_HIGHSLIDEJS --&gt;
     &lt;!-- INCLUDEJS highslide-full.js --&gt;
-    &lt;!-- DEFINE $INCLUDEDED_HIGHSLIDEJS = true --&gt;
+    &lt;!-- DEFINE $INCLUDED_HIGHSLIDEJS = true --&gt;
 &lt;!-- ENDIF --&gt;</pre>
 				Some example template variable definitions to use with common libraries:<br />
 				<ol class="list-margin" type="a">
-					<li>HighSlide JS: <code class="inline">$INCLUDEDED_HIGHSLIDEJS</code></li>
-					<li>Font Awesome CSS: <code class="inline">$INCLUDEDED_FONTAWESOMECSS</code></li>
-					<li>ColorBox JS: <code class="inline">$INCLUDEDED_COLORBOXJS</code></li>
-					<li>ColPick JS: <code class="inline">$INCLUDEDED_COLPICKJS</code></li>
-					<li>MoTools JS: <code class="inline">$INCLUDEDED_MOTOOLSJS</code></li>
-					<li>Dojo JS: <code class="inline">$INCLUDEDED_DOJOJS</code></li>
+					<li>HighSlide JS: <code class="inline">$INCLUDED_HIGHSLIDEJS</code></li>
+					<li>Font Awesome CSS: <code class="inline">$INCLUDED_FONTAWESOMECSS</code></li>
+					<li>ColorBox JS: <code class="inline">$INCLUDED_COLORBOXJS</code></li>
+					<li>ColPick JS: <code class="inline">$INCLUDED_COLPICKJS</code></li>
+					<li>MoTools JS: <code class="inline">$INCLUDED_MOTOOLSJS</code></li>
+					<li>Dojo JS: <code class="inline">$INCLUDED_DOJOJS</code></li>
 				</ol>
-				<div class="note-box blue"><strong>Note:</strong> The common practice should be to name the variable definition after the library filename, e.g.: <samp>highslide.js</samp> becomes <samp>HIGHSLIDEJS</samp>. Discussion of this technique can be found <a href="https://www.phpbb.com/community/viewtopic.php?f=20&t=2144227&p=13076522#p13076522">here</a>.</div>
+				<div class="note-box blue"><strong>Note:</strong> The common practice should be to name the variable definition after the library filename, e.g.: <samp>highslide.js</samp> becomes <samp>HIGHSLIDEJS</samp>.</div>
 			</li>
 		</ol>
 
