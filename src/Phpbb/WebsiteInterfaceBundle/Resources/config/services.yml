@@ -45,3 +45,7 @@ services:
         class: Phpbb\WebsiteInterfaceBundle\Factory\CacheFactory
         factory_service: phpbb.cacheFactory
         factory_method: get
+
+    phpbb.downloadManager:
+        class: Phpbb\WebsiteInterfaceBundle\Utilities\downloadManager
+        arguments: [ @phpbb.cache, @kernel ]
