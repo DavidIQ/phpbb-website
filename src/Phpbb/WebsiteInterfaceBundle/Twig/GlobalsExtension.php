@@ -112,15 +112,15 @@ class GlobalsExtension extends \Twig_Extension
 			'feeds_rss_path'	=> '/feeds/rss/',
 			'FEEDS_RSS'			=> '/feeds/rss/',
 
-			'kb_path'			=> '/kb/',
-			'KB'				=> '/kb/',
+			'kb_path'			=> '/support/docs/en/3.1/kb/',
+			'KB'				=> '/support/docs/en/3.1/kb/',
 			//'KB'				=> '/knowledgebase/',
 
 			'showcase_path'		=> '/showcase/',
 			'SHOWCASE'			=> '/showcase/',
 
-			'documentation_path'=> '/support/documentation/',
-			'DOCUMENTATION'		=> '/support/documentation/',
+			'documentation_path'=> '/support/docs/',
+			'DOCUMENTATION'		=> '/support/docs/',
 
 			'ideas_path'		=> '/ideas/',
 			'IDEAS'				=> '/ideas/',
@@ -270,8 +270,8 @@ class GlobalsExtension extends \Twig_Extension
 			'MODS_DB_SEARCH'			=> '/customise/db/search/',
 
 			// MODs faq
-			'MODS_KB'					=> '/kb/3.0/modifications/',
-			'MODS_KB_20X'				=> '/kb/2.0/modifications/',
+			'MODS_KB'					=> '/support/docs/en/3.0/kb/modifications/',
+			'MODS_KB_20X'				=> '/support/docs/en/3.0/kb/modifications/',
 			//'MODS_DB_MYLIST'			=> '/customise/db/author/' . $user->data['username_clean'] . '/contributions/',
 			//'MODS_DB_CREATE'			=> '/customise/db/author/' . $user->data['username_clean'] . '/create/',
 
@@ -351,10 +351,10 @@ class GlobalsExtension extends \Twig_Extension
 
 			// Documentation resources
 			'styles_wiki'                     => '//wiki.phpbb.com/Category:Styles',
-			'styles_kb'                       => '/kb/category/styles/',
-			'styles_kb_30x_install'           => '/kb/article/how-to-install-styles-on-phpbb3/',
-			'styles_kb_30x_create'            => '/kb/article/how-to-create-a-style-basics/',
-			'styles_docs_30x'                 => '/support/documentation/3.0/adminguide/acp_styles.php',
+			'styles_kb'                       => '/support/docs/en/3.0/kb/styles/',
+			'styles_kb_30x_install'           => '/support/docs/en/3.0/kb/article/how-to-install-styles-on-phpbb3/',
+			'styles_kb_30x_create'            => '/support/docs/en/3.0/kb/article/how-to-create-a-style-basics/',
+			'styles_docs_30x'                 => '/support/docs/en/3.0/ug/adminguide/styles/',
 
 			// Related community topics
 			'styles_ssp_31x_feedback'         => '/community/viewforum.php?f=481&t=66666', // TODO: create topic
@@ -375,11 +375,10 @@ class GlobalsExtension extends \Twig_Extension
 	{
 		$supportVars = array(
 
-			'DOCUMENTATION_3_0'	=> '/support/documentation/3.0/',
-			'QUICK_START_3_0'		=> '/support/documentation/3.0/quickstart/',
+			'DOCUMENTATION_3_0'	=> '/support/docs/en/3.0/ug/',
+			'QUICK_START_3_0'		=> '/support/docs/en/3.0/ug/quickstart/',
 			'SUPPORT_FORUMS'		=> '/support/forums/',
 
-			'SUPPORT_FAQ'				=> '/support/faq/',
 			'SUPPORT_IRC'				=> '/support/irc/',
 			'SUPPORT_TUTORIALS'		=> '/support/tutorials/',
 			'SUPPORT_TUTORIALS_2_0'	=> '/support/tutorials/2.0/',
@@ -395,8 +394,8 @@ class GlobalsExtension extends \Twig_Extension
 			'SUPPORT_CODE_CHANGES'	=> '//area51.phpbb.com/code-changes/',
 
 			'SUPPORT_DOCS'			=> '/support/docs/',
-			'SUPPORT_DOCS_UG'			=> '/support/docs/en/3.0/ug/',
-			'SUPPORT_DOCS_KB'			=> '/support/docs/kb/',
+			'SUPPORT_DOCS_UG'			=> '/support/docs/en/3.1/ug/',
+			'SUPPORT_DOCS_KB'			=> '/support/docs/en/3.1/kb/',
 			'SUPPORT_DOCS_FLASH'		=> '/support/docs/flash/',
 		);
 
@@ -538,13 +537,6 @@ class GlobalsExtension extends \Twig_Extension
 			'CONTACT'				=> '/contact/',
 
 			// Old KB - Remove after the conversion
-			'PHPBB2'				=> '/kb/2.0/',
-			'PHPBB3'				=> '/kb/3.0/',
-			'KB_SUBMIT'			=> '/kb/submit/',
-			'KB_MODERATE'			=> '/kb/moderate/',
-			'KB_MANAGE'			=> '/kb/mcp.php',
-			//'KB_ADD'				=> $auth->acl_get('s_kb_add'),
-			//'KB_MOD'				=> $auth->acl_get('s_kb_approve'),
 			'KB_PHPBB_TEAM'		=> '/community/memberlist.php?mode=leaders',
 
 			'LONDONVASION_POST'	=> '/community/viewtopic.php?f=14&amp;t=1058455',
@@ -636,8 +628,8 @@ class GlobalsExtension extends \Twig_Extension
 			'U_STYLES_SUB'						=> '/styles/',
 			'U_STYLES_DEMO_SUB'					=> '/styles/demo/3.0/',
 
-			'U_DOCUMENTATION_SUB'				=> '/support/documentation/3.0/',
-			'U_KB_SUB'							=> '/kb/',
+			'U_SUPPORT_DOCS_SUB'				=> '/support/docs/',
+			'U_SUPPORT_KB_SUB'					=> '/support/docs/en/3.1/kb/',
 			'U_SUPPORT_IRC_SUB'					=> '/support/irc/',
 			'U_SUPPORT_TUTORIALS_SUB'			=> '/support/tutorials/3.0/',
 			'U_SUPPORT_FORUMS_SUB'				=> '/support/forums/',
