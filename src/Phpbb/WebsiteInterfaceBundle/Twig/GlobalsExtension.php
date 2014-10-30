@@ -520,7 +520,7 @@ class GlobalsExtension extends \Twig_Extension
 			'package_version'		=> '3.1.0',
 			'package_release_date'	=> '2014-10-28',
 			'PACKAGE_VERSION'		=> '3.1.0',
-			'PACKAGE_ANNOUNCE_URL'	=> '/community/viewtopic.php?f=14&amp;t=2268701',
+			'PACKAGE_ANNOUNCE_URL'	=> '/community/viewtopic.php?f=14&t=2268866',
 			'PACKAGE_RELEASE_DATE'	=> '2014-10-28',
 
 			'bot'					=> false, // @TODO Set this to true for bots // Usage = 1

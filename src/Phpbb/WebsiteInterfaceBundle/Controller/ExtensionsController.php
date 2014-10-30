@@ -49,7 +49,7 @@ class ExtensionsController extends Controller
 			'Board Rules',
 			'The Board Rules Extension adds a dedicated Rules page to a board. It offers an ACP module from which an unlimited number of rules and rule categories can be created in each language installed on a board. It also supports sending out notifications to all board members notifying them that the rules have been changed, and can require newly registering users read the board rules as part of the terms of agreement for registering on a board.',
 			'The Board Rules Extension is a fairly advanced design compared to previous phpBB modifications. Abstract classes implemented through interfaces are used to specify the methods that handle most of the code logic. There is an Entity class for manipulating a single rule and an Operator class for manipulating sets of rules. Controller classes are used to process the front-end of the ACP module and the Rules page itself. It also makes use of phpBB\'s new notification system, nestedsets/trees, and AJAX functionality in the ACP user-interface. There is also extensive PHP unit test coverage of the code to ensure its stability and reliability and prevent regressions. We think testing code is so important, we\'ve made it possible for any extension (on Github) to use phpBB\'s PHPUnit testing framework with Travis Continuous Integration hosted servers; just look through our tests and travis files/folders to see how we did it.',
-			'https://www.phpbb.com/community/viewtopic.php?f=456&t=2208976',
+			'https://www.phpbb.com/customise/db/extension/boardrules/',
 			'https://github.com/phpbb-extensions/boardrules',
 			'/assets/images/images/extensions/boardrules.png'
 		);
@@ -58,7 +58,7 @@ class ExtensionsController extends Controller
 			'Board Announcements',
 			'The Board Announcements Extension allows board admins to create a special board-wide announcement. Unlike phpBB\'s native global announcements which only appear inside forums, Board Announcements appear near the top of any page being viewed. Users have the option to dismiss the announcement after they have read it.',
 			'Board Announcements is an entry-level extension by design. We built this extension using techniques that will be more familiar to MOD developers. Code changes are injected directly from the event listener, and all ACP module logic is contained in its ACP module class. Overall, this extension is a good example that shows how to inject new code, add an ACP module, utilize a controller file to run some functional code in combination with AJAX, and how to use new config_text table in phpBB 3.1.x to store textual data.',
-			'https://www.phpbb.com/community/viewtopic.php?f=456&t=2245901',
+			'https://www.phpbb.com/customise/db/extension/boardannouncements/',
 			'https://github.com/phpbb-extensions/boardannouncements',
 			'/assets/images/images/extensions/boardannouncements.png'
 		);
@@ -67,7 +67,7 @@ class ExtensionsController extends Controller
 			'Google Analytics',
 			'The Google Analytics Extension simply adds a Google Analytics tracking code with your Property ID to your phpBB forum.',
 			'This extension is the simplest of extensions in form and function. It adds a single new field to the ACP for a Google Analytics Property ID, validates it, and inserts the Universal Analytics a-synchronous javascript code into the head of your board\'s HTML pages, just before the closing </head> tag, as recommended by Google. In addition to allowing boards to easily add Google\'s powerful analytics, this extension is an ideal starting example for new extension authors, demonstrating how to effectively add an ACP config option implement that config setting using template events.',
-			'https://www.phpbb.com/community/viewtopic.php?f=456&t=2249256',
+			'https://www.phpbb.com/customise/db/extension/googleanalytics/',
 			'https://github.com/phpbb-extensions/googleanalytics',
 			'/assets/images/images/extensions/googleanalytics.png'
 		);
