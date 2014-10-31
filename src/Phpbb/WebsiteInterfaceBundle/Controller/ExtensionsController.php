@@ -76,7 +76,7 @@ class ExtensionsController extends Controller
 			'Pages',
 			'The Pages Extension allows administrators to create custom static pages for their phpBB forum. With Pages you can add an unlimited number of new static pages to your board, such as an About Us page, News page, or even a simple forum Blog. The ACP\'s page editor allows you to create page content using BBCodes or HTML, making it possible to embed media from other sites and create truly unique pages.',
 			'This extension provides another opportunity for developers to analyse an object-oriented and abstracted approach to developing an extension for phpBB. Because the Pages extension can create an unlimited number of pages, it is set up to account for dynamic page routes and links. It allows users to choose a number of possible link locations for each page using mutliple template events, and leverages the power of phpBB\'s finder object to allow users to upload their own custom link icons and page template files. As with all our extensions, there is complete test coverage of all code to ensure maximum stability and reliability.',
-			'https://www.phpbb.com/community/viewtopic.php?f=456&t=2257876',
+			'https://www.phpbb.com/customise/db/extension/pages/',
 			'https://github.com/phpbb-extensions/pages',
 			'/assets/images/images/extensions/pages.png'
 		);
