@@ -45,10 +45,15 @@
 				<dt>Why do some styles (such as prosilver) still have an <code class="inline">imageset.css?</code> file, when phpBB 3.1 no longer uses imagesets?</dt>
 				<dd>This is for backwards-compatibility and legacy reasons. In most normal circumstances, this file will hardly be used. If you want to change image icons for prosilver 3.1, you should edit <code class="inline">colours.css</code> instead.</dd>
 			</dl>
+			<dl class="faq" id="a-purgecache">
+				<dt>Why don't my changes to templates or CSS files appear on my website?</dt>
+				<dd>This is most likely due to caching. phpBB's template-engine has to process (compile) the style's templates before it can display them. This is resource-intensive process, so it "caches" the finished pages for quicker access. If you make changes to template files, you will need to "purge" (clear) the board's cache (or else your changes will not appear). You can do this by navigating to the board's ACP and clicking the button at "Purge the cache".<br /></dd>
+				<dd>Additionally, your browser might also be loading an old cached version of the assets. Be sure to "hard-refresh" your browser, by using a command like CTRL+F5.</dd>
+			</dl>
 			<dl class="faq">
 				<dt>If a style has not been updated by the original author, can I update it myself and submit it to the database?</dt>
-				<dd>We generally allow updates only by the original author of the style. If the original author no longer wishes to update it themselves, they must give express permission to someone to take over their work.<br /><br />
-					If the original author is unreachable, however, then you may update the style and submit it (specifying that this is the case in the submission, in the "Message to Styles Team" field). If the original author returns after this, though, then they can then reclaim the style if they wish. The original author would have the option to keep any updates done by you or to use/integrate them as they wish.</dd>
+				<dd>We generally allow updates only by the original author of the style. If the original author no longer wishes to update it themselves, they must give express permission to someone to take over their work.<br />
+				<dd>If the original author is unreachable, however, then you may update the style and submit it (specifying that this is the case in the submission, in the "Message to Styles Team" field). If the original author returns after this, though, then they can then reclaim the style if they wish. The original author would have the option to keep any updates done by you or to use/integrate them as they wish.</dd>
 			</dl>
 		</div>
 
@@ -173,7 +178,7 @@ parent = prosilver Special Edition</pre>
 			<li><a href="https://wiki.phpbb.com/Category:Template_Variables">Catalogue of available Template Variables</a></li>
 			<li><a href="https://wiki.phpbb.com/Template_errors">Common Template Errors</a></li>
 		</ul><br />
-		<div class="note-box green"><strong>Pro-Tip:</strong> Since version 3.1, phpBB uses <a href="http://twig.sensiolabs.org/">Twig</a> as the base of it's template engine. You can use Twig syntax for your style, which can have numerous advantages. For more information, visit <a href="http://twig.sensiolabs.org/doc/templates.html">Twig's template documentation website</a>.</div>
+		<div class="note-box green"><strong>Pro-Tip:</strong> Since version 3.1, phpBB uses <a href="http://twig.sensiolabs.org/">Twig</a> as the base of it's template engine. You can use Twig syntax for your style, which can have numerous advantages. For more information, read the <a href="#a-twig">Using Twig in phpBB</a> section.</div>
 
 		<hr />
 
@@ -223,6 +228,7 @@ parent = prosilver Special Edition</pre>
 
 		<h3><a id="a-method1" class="anchor"></a>Method 1. Copy-paste all theme assets</h3>
 		<p>The easiest (and probably most (ab)used method) has been to simply copy-paste all the assets (the entire <code class="inline">theme/</code> directory) of the "parent" style to the "child" style's <code class="inline">theme/</code> directory, and edit the various CSS files to suit your needs.</p>
+		<p>While this is the easiest method, it is strongly discouraged to use it, especially if you plan on releasing your style publicly, for the following reasons:</p>
 		<div class="column1 compare">
 			<h4 class="pros">Pros</h4>
 			<ul class="list-margin">
@@ -268,7 +274,7 @@ parent = prosilver Special Edition</pre>
 		<span class="clear"></span>
 
 		<h3><a id="a-method3" class="anchor"></a>Method 3. Multiple overriding stylesheets.css in <samp>&lt;head&gt;</samp></h3>
-		<p>Instead of copying assets and editing them, you could also write new rules that override the parent style's CSS rules.</p>
+		<p>Instead of copying assets and editing them, you could also write new rules in the <samp>overall_header.html</samp> template of your new style that override the parent style's CSS rules.</p>
 		<pre class="codesnippet">&lt;link href="{ROOT_PATH}styles/prosilver/theme/stylesheet.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" /&gt;
 
 &lt;link href="{T_STYLESHEET_LINK}" rel="stylesheet" /&gt;</pre>
@@ -276,7 +282,7 @@ parent = prosilver Special Edition</pre>
 		<div class="note-box blue"><strong>Note:</strong> We use <code class="inline">{T_ASSETS_VERSION}</code> as rudimentary form of browser cache control.</div>
 		<div class="note-box yellow"><strong>Note:</strong> Although <code class="inline">{T_SUPER_TEMPLATE_NAME}</code> is still supported, it only traverses the styles tree 1 level. So it isn't suitable for use in complex inheritance situations.</div>
 
-		<p>What this does is load prosilver's <samp>stylesheet.css</samp> first (and load all the subsequent components via the <samp>@import</samp> method as specified in that file). After that, it will load the <samp>stylesheet.css</samp> of your custom style. You can use <samp>@import</samp> rules in your own stylesheet.css file as well of course (if you want to split up your code into multiple files), or you could simply put all your CSS rules in the file itself.</p>
+		<p>What this does is load prosilver's <samp>stylesheet.css</samp> first (and load all the subsequent components via the <samp>@import</samp> method as specified in that file). After that, it will load the <samp>stylesheet.css</samp> of your custom style. You can use <samp>@import</samp> rules in your own stylesheet.css file as well of course (if you want to split up your code into multiple files), or you could simply put all your CSS rules in the <samp>stylesheet.css</samp> file itself.</p>
 
 		<div class="note-box yellow"><strong>Note:</strong> Using both <samp>@import</samp> rules <span class="underline">and</span> regular CSS rules in the same file is not advised.</div>
 
@@ -298,7 +304,8 @@ parent = prosilver Special Edition</pre>
 		<span class="clear"></span>
 
 		<h3><a id="a-method4" class="anchor"></a>Method 4. Detailed overriding link components in <samp>&lt;head&gt;</samp></h3>
-		<p>This method works the same way as <a href="#a-method3">Method 3</a>, but instead of including the parent's (prosilver) <samp>stylesheet.css</samp>, we load the various CSS assets directly (without relying on <samp>@import</samp>). This allows for greater control of which files to include/exclude.</p>
+		<p>This method works the same way as <a href="#a-method3">Method 3</a>, but instead of including the parent's (prosilver) <samp>stylesheet.css</samp>, we load the various CSS assets directly (without relying on <samp>@import</samp>) from the <samp>overall_header.html</samp> template of your new style. This allows for greater control of which files to include/exclude.</p>
+		<p>From a technical perspective, this is the best method to use.</p>
 		<pre class="codesnippet">&lt;link href="{ROOT_PATH}styles/prosilver/theme/common.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" /&gt;
 &lt;link href="{ROOT_PATH}styles/prosilver/theme/links.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" /&gt;
 &lt;link href="{ROOT_PATH}styles/prosilver/theme/content.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" /&gt;
@@ -353,6 +360,39 @@ parent = prosilver Special Edition</pre>
 		<h2 class="title" id="a-update">Updating a 3.0.x Style to 3.1.x</h2>
 		<p>Since most of the template-engine of phpBB 3.1.x is backwards compatible with 3.0.x, it shouldn't be too hard to update outdated styles to version 3.1.x.</p>
 		<p>To make the most of the features that are available, we suggest you take a look at the Development Wiki page on <a href="https://wiki.phpbb.com/Template_Engine_Changes_in_3.1">Template Engine Changes in 3.1</a>. Combining the information found there with the various sections of this guide, updating a style should be possible (although it might take some effort).</p>
+
+		<hr />
+
+		<h2 class="title" id="a-twig">Using Twig in phpBB</h2>
+		<p>Since version 3.1, phpBB uses <a href="http://twig.sensiolabs.org/">Twig</a> as the base of it's template engine. You can use Twig syntax for your style, which can have numerous advantages.</p>
+		<p>In order to guarantee backwards-compatibility, the old phpBB syntax is still supported (and widely used), but these are translated into the Twig syntax by the backend. So <code class="inline">&lt;-- IF FOO --&gt;{BAR}&lt;-- ENDIF --&gt;</code> becomes <code class="inline">{% verbatim %}{% if FOO %}{{ BAR }}{% endif %}{% endverbatim %}</code> by being translated into the native Twig syntax.</p>
+		<p>Sensiolabs provides comprehensive <a href="http://twig.sensiolabs.org/documentation">documentation</a> for the Twig template engine on their website. Especially the <a href="http://twig.sensiolabs.org/doc/templates.html">Twig for Template Designers</a> section will be a useful resource for style authors, so we won't be covering the contents here. Instead, we will address some of specifics of the current Twig implementation in phpBB 3.1.</p>
+
+		<h3>Available features</h3>
+		<p>phpBB 3.1.x was shipped with Twig version <strong>1.13.2</strong>. Any features of Twig implemented thereafter are currently unavailable until Twig is updated in the phpBB package to a more recent version.</p>
+
+		<h3>Language vars</h3>
+		<p>phpBB has supported multiple languages for ages, and these are traditionally output to the template using <code class="inline">{% verbatim %}{L_FOO}{% endverbatim %}</code>. If you wish to use native Twig syntax for this, you should use <code class="inline">{% verbatim %}{{ lang(FOO) }}{% endverbatim %}</code> instead.</p>
+
+		<h3>Template events</h3>
+		<p>Like language vars, template events can also be used in native Twig syntax. The following event: <code class="inline">&lt;-- EVENT event_name --&gt;</code> equals <code class="inline">{% verbatim %}{% EVENT event_name %}{% endverbatim %}</code>.</p>
+
+		<h3>Including dynamic templates</h3>
+		<p>Many templates in phpBB include other templates in order to keep the code organized. This usually isn't a problem, unless the template to be included is assigned dynamically (based on a phpBB configuration or user setting).</p>
+		<p>These templates are often included using the following syntax: <code class="inline">{% verbatim %}&lt;-- INCLUDE {FOO_TEMPLATE_FILE} --&gt;{% endverbatim %}</code>. Twig uses virtually the same construct (although you can choose to use the include <a href="http://twig.sensiolabs.org/doc/functions/include.html">function</a> or <a href="http://twig.sensiolabs.org/doc/tags/include.html">tag</a>). Using the tag syntax, the resulting code would be <code class="inline">{% verbatim %}{% include FOO_TEMPLATE_FILE %}{% endverbatim %}</code>.</p>
+		<p>If you wish to edit the path of the included file (perhaps using a .twig extension or a different file path), you can alter the include rule without having to rewrite the template variable output by the back-end. This can be done by constructing an array and imploding (joining) it immediately.<br />
+			Example: <code class="inline">{% verbatim %}{% include ['includes/', FOO_TEMPLATE_FILE, '.twig']|join %}{% endverbatim %}</code></p>
+
+		<h3>Loops</h3>
+		<p>Due to backwards-compatibility considerations, phpBB 3.1 implements template loops in a somewhat unconventional way. Because of the way block-vars are assigned to the template by the <samp>assign_block_vars()</samp> function (they are stored under the "loops" context), they are not available in the "root" context. Take this simple example of a template loop:</p>
+		<pre class="codesnippet">{% verbatim %}&lt;-- BEGIN my_items --&gt;
+	{my_items.VALUE}
+&lt;-- END my_items --&gt;{% endverbatim %}</pre>
+		<p>Using Twig, the following code should work.</p>
+		<pre class="codesnippet">{% verbatim %}{% for item in <strong>loops.</strong>my_items %}
+	{{ item.VALUE }}
+{% endfor %}{% endverbatim %}</pre>
+		<div class="note-box yellow"><strong>Note:</strong> The current loops implementation is temporary, undocumented, and subject to change. But you can use it if you feel comfortable with Twig.</div>
 
 		<hr />
 
