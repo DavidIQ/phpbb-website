@@ -351,9 +351,12 @@ class GlobalsExtension extends \Twig_Extension
 
 			// Documentation resources
 			'styles_wiki'                     => '//wiki.phpbb.com/Category:Styles',
-			'styles_kb'                       => '/support/docs/en/3.0/kb/styles/',
+			'styles_kb'                       => '/support/docs/en/3.1/kb/styles/',
+			'styles_kb_31x'                   => '/support/docs/en/3.1/kb/styles/',
+			'styles_kb_30x'                   => '/support/docs/en/3.0/kb/styles/',
 			'styles_kb_30x_install'           => '/support/docs/en/3.0/kb/article/how-to-install-styles-on-phpbb3/',
 			'styles_kb_30x_create'            => '/support/docs/en/3.0/kb/article/how-to-create-a-style-basics/',
+			'styles_docs_31x'                 => '/support/docs/en/3.1/ug/adminguide/customise_styles/',
 			'styles_docs_30x'                 => '/support/docs/en/3.0/ug/adminguide/styles/',
 
 			// Related community topics
