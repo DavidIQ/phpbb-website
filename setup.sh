@@ -16,10 +16,9 @@ git status -sb
 git fetch public
 git fetch private
 git checkout -b master public/master
-git checkout -b develop public/develop
-git checkout -b sandbox private/sandbox
 git checkout -b private private/private
+git checkout -b private private/www1-stable
 git checkout master
-git push origin master develop
-git push private master develop private sandbox
+git push origin master
+git push private master private www1-stable
 echo "Done"
