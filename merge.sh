@@ -47,40 +47,6 @@ then
 	fi
 fi
 echo ""
-echo "Checkout develop branch:"
-echo "--------------------------"
-git checkout develop
-echo ""
-echo "$ git merge public/develop && git merge private/develop"
-git merge public/develop
-git merge private/develop
-echo ""
-echo "Merge master branch into develop branch:"
-echo "------------------------------------------"
-git merge master
-echo ""
-echo "Checkout sandbox branch:"
-echo "--------------------------"
-git checkout sandbox
-echo ""
-echo "$ git merge private/sandbox"
-git merge private/sandbox
-echo ""
-echo "Merge private branch into sandbox branch:"
-echo "--------------------------------------------"
-git merge private
-echo ""
-echo "Merge develop (inclusive of master branch changes) into sandbox branch:"
-echo "--------------------------------------------------------------------------"
-git merge develop
-echo ""
-echo "$ git merge private/private"
-git merge private/private
-echo ""
-echo "Merge master branch into sandbox branch:"
-echo "------------------------------------------"
-git merge master
-echo ""
 echo "Checkout private branch:"
 echo "--------------------------"
 git checkout private
@@ -96,11 +62,11 @@ echo "Checkout master branch:"
 echo "--------------------------"
 git checkout master
 echo ""
-echo "Push master & develop branches to public repository:"
+echo "Push master branch to public repository:"
 echo "------------------------------------------------------"
-git push public master develop
+git push public master
 echo ""
-echo "Push master, develop, sandbox & private branches to private repository:"
+echo "Push master & private branches to private repository:"
 echo "--------------------------------------------------------------------------"
-git push private master develop private sandbox
+git push private master private
 echo "DONE!!"
