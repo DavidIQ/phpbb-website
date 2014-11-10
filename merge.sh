@@ -3,6 +3,8 @@ set -e
 # If you aren't sure and want a change made to this file contact me (MichaelC)
 echo "This script will merge all the branches as is required. To use this script you need to have setup both the private and public parts of the phpBB website and this is designed for use by core committers to the phpBB website only."
 echo ""
+echo "Just set up the site as per https://www.phpbb.com/community/viewtopic.php?f=34&t=2160102 (specifically steps II and IV)"
+echo ""
 echo "This script should exit should any problems occur but please watch it and should you notice anything go wrong, please hit Ctrl + C to stop script execution"
 echo ""
 echo "Running this script is not enough to deploy onto .com. Bamboo will handle merging private into www1-stable which is the branch used to update .com and that will only occur if tests pass. If this is an urgent fix and cannot wait for bamboo run the deploy.sh script immediately after this script"
