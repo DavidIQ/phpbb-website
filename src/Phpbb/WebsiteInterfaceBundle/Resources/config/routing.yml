@@ -9,17 +9,23 @@ phpBBWebsite_getInvolved:
 
 phpBBWebsite_demo:
     path:  /demo/
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Global:demo }
+    defaults:
+        _controller: PhpbbWebsiteInterfaceBundle:StaticTemplate:staticTemplate
+        template: PhpbbWebsiteInterfaceBundle:Global:demo.html.twig
     methods:  [GET]
 
 phpBBWebsite_customise:
     path:  /customise/
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Global:customise }
+    defaults:
+        _controller: PhpbbWebsiteInterfaceBundle:StaticTemplate:staticTemplate
+        template: PhpbbWebsiteInterfaceBundle:Global:customise.html.twig
     methods:  [GET]
 
 phpBBWebsite_ideas:
     path:  /ideas/
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Global:ideas }
+    defaults:
+        _controller: PhpbbWebsiteInterfaceBundle:StaticTemplate:staticTemplate
+        template: PhpbbWebsiteInterfaceBundle:Global:ideas.html.twig
     methods:  [GET]
 
 phpBBWebsite_About_contact_redirect:

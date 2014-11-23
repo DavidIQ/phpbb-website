@@ -9,18 +9,18 @@ env:
   - DB=mysql
 
 install:
-  - sudo apt-get install parallel
+  - travis_retry sudo apt-get install parallel
 
 before_script:
   - phpenv rehash
   - mysql -e 'create database www_tests_symfony;'
   - mysql -e 'create database www_tests_phpbb;'
   - cp app/config/parameters_travis.yml app/config/parameters.yml
-  - php composer.phar install -v --dev
+  - travis_retry php composer.phar install -v --dev
 
 script:
   - bin/phpunit -c app/
-  - bin/security-checker security:check composer.lock
+  - travis_retry bin/security-checker security:check composer.lock
   - find . -path ./vendor -prune -o -type f -name "*.php" | parallel --gnu --keep-order 'php -l {} > /dev/null' || exit 1
   - php app/console twig:lint @PhpbbWebsiteInterfaceBundle
 

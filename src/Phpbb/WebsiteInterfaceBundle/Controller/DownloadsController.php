@@ -22,10 +22,6 @@ class DownloadsController extends Controller
 		$downloadManager = $this->get('phpbb.downloadManager');
 		$downloadManager->setBranch($branch);
 
-		$templateVariables = array(
-			'header_css_image'      => 'downloads',
-		);
-
 		// Find out if we are updating files and if we are, from what version
 		$mode = ($request->get('update', 0)) ? 'update' : 'stable';
 
@@ -40,7 +36,7 @@ class DownloadsController extends Controller
 		$packages = $packagesInfo['packages'];
 		$versions = $packagesInfo['updateFromVersions'];
 
-		$templateVariables += array(
+		$templateVariables = array(
 			'versions' => $versions,
 			'packages' => $packages,
 		);

@@ -1,9 +1,13 @@
 phpBBWebsite_Support_home:
     path:  /
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Support:home }
+    defaults:
+        _controller: PhpbbWebsiteInterfaceBundle:StaticTemplate:staticTemplate
+        template: PhpbbWebsiteInterfaceBundle:Support:home.html.twig
     methods:  [GET]
 
 phpBBWebsite_Support_irc:
     path:  /irc/
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Support:irc }
+    defaults:
+        _controller: PhpbbWebsiteInterfaceBundle:StaticTemplate:staticTemplate
+        template: PhpbbWebsiteInterfaceBundle:Support:irc.html.twig
     methods:  [GET]

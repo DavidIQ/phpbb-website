@@ -1,6 +1,8 @@
 phpBBWebsite_Development_home:
     path:  /
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Development:home }
+    defaults:
+        _controller: PhpbbWebsiteInterfaceBundle:StaticTemplate:staticTemplate
+        template: PhpbbWebsiteInterfaceBundle:Development:home.html.twig
     methods:  [GET]
 
 phpBBWebsite_Development_prosilver:

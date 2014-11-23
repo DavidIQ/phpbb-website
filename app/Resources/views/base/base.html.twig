@@ -40,7 +40,7 @@
 
 </head>
 
-{% block body_tag %}<body id="phpbb" class="nojs notouch {{ header_css_image }}">{% endblock %}
+{% block body_tag %}<body id="phpbb" class="nojs notouch {% block phpbb_body_class %}{% endblock %}">{% endblock %}
 
 <div id="wrap">
 	<a id="top" accesskey="t"></a>

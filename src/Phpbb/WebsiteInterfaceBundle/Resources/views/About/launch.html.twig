@@ -1,5 +1,7 @@
 {% extends ':base:base.html.twig' %}
 
+{% block phpbb_body_class %}about launch{% endblock %}
+
 {% block head_assets %}
 {{ parent() }}
 <link rel="stylesheet" href="{{ asset('assets/css/launch/launch.css') }}" />
