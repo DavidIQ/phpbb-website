@@ -1,50 +1,70 @@
 phpBBWebsite_Styles_home:
     path:  /
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Styles:home }
+    defaults:
+        _controller: PhpbbWebsiteInterfaceBundle:StaticTemplate:staticTemplate
+        template: PhpbbWebsiteInterfaceBundle:Styles:home.html.twig
     methods:  [GET]
 
 phpBBWebsite_Styles_support:
     path:  /support/
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Styles:support }
+    defaults:
+        _controller: PhpbbWebsiteInterfaceBundle:StaticTemplate:staticTemplate
+        template: PhpbbWebsiteInterfaceBundle:Styles:support.html.twig
     methods:  [GET]
 
 phpBBWebsite_Styles_installing:
     path:  /installing/
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Styles:installing }
+    defaults:
+        _controller: PhpbbWebsiteInterfaceBundle:StaticTemplate:staticTemplate
+        template: PhpbbWebsiteInterfaceBundle:Styles:installing.html.twig
     methods:  [GET]
 
 phpBBWebsite_Styles_create:
     path:  /create/
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Styles:create }
+    defaults:
+        _controller: PhpbbWebsiteInterfaceBundle:StaticTemplate:staticTemplate
+        template: PhpbbWebsiteInterfaceBundle:Styles:create.html.twig
     methods:  [GET]
 
 phpBBWebsite_Styles_ssp:
     path:  /ssp/
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Styles:ssp }
+    defaults:
+        _controller: PhpbbWebsiteInterfaceBundle:StaticTemplate:staticTemplate
+        template: PhpbbWebsiteInterfaceBundle:Styles:ssp.html.twig
     methods:  [GET]
 
 phpBBWebsite_Styles_ssp_30x:
     path:  /ssp/3.0/
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Styles:ssp30x }
+    defaults:
+        _controller: PhpbbWebsiteInterfaceBundle:StaticTemplate:staticTemplate
+        template: PhpbbWebsiteInterfaceBundle:Styles:ssp-30x.html.twig
     methods:  [GET]
 
 phpBBWebsite_Styles_team_overview:
     path:  /team-overview/
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Styles:teamOverview }
+    defaults:
+        _controller: PhpbbWebsiteInterfaceBundle:StaticTemplate:staticTemplate
+        template: PhpbbWebsiteInterfaceBundle:Styles:team-overview.html.twig
     methods:  [GET]
 
 phpBBWebsite_Styles_junior_validators:
     path:  /junior-validators/
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Styles:juniorValidators }
+    defaults:
+        _controller: PhpbbWebsiteInterfaceBundle:StaticTemplate:staticTemplate
+        template: PhpbbWebsiteInterfaceBundle:Styles:junior-validators.html.twig
     methods:  [GET]
 
 phpBBWebsite_Styles_demo:
     path:  /demo/
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Styles:demo }
+    defaults:
+        _controller: PhpbbWebsiteInterfaceBundle:StaticTemplate:staticTemplate
+        template: PhpbbWebsiteInterfaceBundle:Styles:demo.html.twig
     methods:  [GET]
 
 phpBBWebsite_Styles_demo_not_ready:
     path:  /demo/3.1/
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Styles:demoNotReady }
+    defaults:
+        _controller: PhpbbWebsiteInterfaceBundle:StaticTemplate:staticTemplate
+        template: PhpbbWebsiteInterfaceBundle:Styles:demoNotReady.html.twig
     methods:  [GET]
 

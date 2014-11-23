@@ -14,15 +14,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class DevelopmentController extends Controller
 {
-    public function homeAction()
-    {
-        $templateVariables = array(
-            'header_css_image'		=> 'development',
-        );
-
-        return $this->render('PhpbbWebsiteInterfaceBundle:Development:home.html.twig', $templateVariables);
-    }
-
     public function prosilverAction($page = 1)
     {
         $templateVariables = array();
@@ -45,8 +36,6 @@ class DevelopmentController extends Controller
         }
 
         $templateVariables += array(
-            'header_css_image'		=> 'development prosilver',
-
             'TOC'					=> $toc,
             'MENU_COUNT' 			=> count($toc),
 

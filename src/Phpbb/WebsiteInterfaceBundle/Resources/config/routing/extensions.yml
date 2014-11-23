@@ -1,6 +1,8 @@
 phpBBWebsite_Extensions_home:
     path:  /
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:home }
+    defaults:
+        _controller: PhpbbWebsiteInterfaceBundle:StaticTemplate:staticTemplate
+        template: PhpbbWebsiteInterfaceBundle:Extensions:home.html.twig
     methods:  [GET]
 
 phpBBWebsite_Extensions_rules_and_policies:
@@ -15,7 +17,9 @@ phpBBWebsite_Extensions_epv:
 
 phpBBWebsite_Extensions_recognised_developer:
     path:  /recognised-developer/
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:recognisedDeveloper }
+    defaults:
+        _controller: PhpbbWebsiteInterfaceBundle:StaticTemplate:staticTemplate
+        template: PhpbbWebsiteInterfaceBundle:Extensions:recognised-developer.html.twig
     methods:  [GET]
 
 phpBBWebsite_Extensions_official_extensions:
@@ -25,49 +29,70 @@ phpBBWebsite_Extensions_official_extensions:
 
 phpBBWebsite_Extensions_official_extensions_team:
     path:  /official-extensions/team/
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:officialExtensionsTeam }
+    defaults:
+        _controller: PhpbbWebsiteInterfaceBundle:StaticTemplate:staticTemplate
+        template: PhpbbWebsiteInterfaceBundle:Extensions:official-extensions-team.html.twig
     methods:  [GET]
 
 phpBBWebsite_Extensions_junior_validators:
     path:  /junior-validators/
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:juniorValidators }
+    defaults:
+        _controller: PhpbbWebsiteInterfaceBundle:StaticTemplate:staticTemplate
+        template: PhpbbWebsiteInterfaceBundle:Extensions:junior-validators.html.twig
     methods:  [GET]
 
 phpBBWebsite_Extensions_installing:
     path:  /installing/
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:installing }
+    defaults:
+        _controller: PhpbbWebsiteInterfaceBundle:StaticTemplate:staticTemplate
+        template: PhpbbWebsiteInterfaceBundle:Extensions:installing.html.twig
     methods:  [GET]
 
 phpBBWebsite_Extensions_writing:
     path:  /writing/
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:writing }
+    defaults:
+        _controller: PhpbbWebsiteInterfaceBundle:StaticTemplate:staticTemplate
+        template: PhpbbWebsiteInterfaceBundle:Extensions:writing.html.twig
     methods:  [GET]
 
 phpBBWebsite_Extensions_team_overview:
     path:  /team-overview/
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:teamOverview }
+    defaults:
+        _controller: PhpbbWebsiteInterfaceBundle:StaticTemplate:staticTemplate
+        template: PhpbbWebsiteInterfaceBundle:Extensions:team-overview.html.twig
+    methods:  [GET]
 
 phpBBWebsite_Extensions_rules_and_policies_validation_policy:
     path:  /rules-and-policies/validation-policy/
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:validationPolicy }
+    defaults:
+        _controller: PhpbbWebsiteInterfaceBundle:StaticTemplate:staticTemplate
+        template: PhpbbWebsiteInterfaceBundle:Extensions:validation-policy.html.twig
     methods:  [GET]
 
 phpBBWebsite_Extensions_rules_and_policies_repack:
     path:  /rules-and-policies/repack/
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:repackPolicy }
+    defaults:
+        _controller: PhpbbWebsiteInterfaceBundle:StaticTemplate:staticTemplate
+        template: PhpbbWebsiteInterfaceBundle:Extensions:repack-policy.html.twig
     methods:  [GET]
 
 phpBBWebsite_Extensions_rules_and_policies_insta_deny:
     path:  /rules-and-policies/insta-deny/
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:instadenyPolicy }
+    defaults:
+        _controller: PhpbbWebsiteInterfaceBundle:StaticTemplate:staticTemplate
+        template: PhpbbWebsiteInterfaceBundle:Extensions:instadeny-policy.html.twig
     methods:  [GET]
 
 phpBBWebsite_Extensions_dev_forum_rules:
     path: /rules-and-policies/development-rules/
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:devRules }
+    defaults:
+        _controller: PhpbbWebsiteInterfaceBundle:StaticTemplate:staticTemplate
+        template: PhpbbWebsiteInterfaceBundle:Extensions:ext-dev-rules.html.twig
     methods:  [GET]
 
 phpBBWebsite_Extensions_writers_forum_rules:
     path: /rules-and-policies/writers-rules/
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:writersRules }
+    defaults:
+        _controller: PhpbbWebsiteInterfaceBundle:StaticTemplate:staticTemplate
+        template: PhpbbWebsiteInterfaceBundle:Extensions:ext-writers-rules.html.twig
     methods:  [GET]

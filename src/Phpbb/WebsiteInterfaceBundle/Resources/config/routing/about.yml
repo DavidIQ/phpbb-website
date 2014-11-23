@@ -1,16 +1,22 @@
 phpBBWebsite_About_home:
     path:  /
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:About:home }
+    defaults:
+        _controller: PhpbbWebsiteInterfaceBundle:StaticTemplate:staticTemplate
+        template: PhpbbWebsiteInterfaceBundle:About:home.html.twig
     methods:  [GET]
 
 phpBBWebsite_About_history:
     path:  /history/
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:About:history }
+    defaults:
+        _controller: PhpbbWebsiteInterfaceBundle:StaticTemplate:staticTemplate
+        template: PhpbbWebsiteInterfaceBundle:About:history.html.twig
     methods:  [GET]
 
 phpBBWebsite_About_advertise:
     path:  /advertise/
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:About:advertise }
+    defaults:
+        _controller: PhpbbWebsiteInterfaceBundle:StaticTemplate:staticTemplate
+        template: PhpbbWebsiteInterfaceBundle:About:advertise.html.twig
     methods:  [GET]
 
 phpBBWebsite_About_contact:
@@ -20,12 +26,16 @@ phpBBWebsite_About_contact:
 
 phpBBWebsite_About_features:
     path:  /features/
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:About:feature }
+    defaults:
+        _controller: PhpbbWebsiteInterfaceBundle:StaticTemplate:staticTemplate
+        template: PhpbbWebsiteInterfaceBundle:About:features.html.twig
     methods:  [GET]
 
 phpBBWebsite_About_launch:
     path:  /launch/
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:About:launch }
+    defaults:
+        _controller: PhpbbWebsiteInterfaceBundle:StaticTemplate:staticTemplate
+        template: PhpbbWebsiteInterfaceBundle:About:launch.html.twig
     methods:  [GET]
 
 phpBBWebsite_About_getInvolved:

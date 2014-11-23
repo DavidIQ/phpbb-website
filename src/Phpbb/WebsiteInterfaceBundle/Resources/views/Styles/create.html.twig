@@ -2,6 +2,8 @@
 
 {% block title %}Creating &amp; Modifying Styles{% endblock title %}
 
+{% block phpbb_body_class %}styles{% endblock %}
+
 {% block body %}
 <div id="page-body">
 	<ul class="linklist navlinks">
@@ -372,7 +374,7 @@ parent = prosilver Special Edition</pre>
 		<p>phpBB 3.1.x was shipped with Twig version <strong>1.13.2</strong>. Any features of Twig implemented thereafter are currently unavailable until Twig is updated in the phpBB package to a more recent version.</p>
 
 		<h3>Language vars</h3>
-		<p>phpBB has supported multiple languages for ages, and these are traditionally output to the template using <code class="inline">{% verbatim %}{L_FOO}{% endverbatim %}</code>. If you wish to use native Twig syntax for this, you should use <code class="inline">{% verbatim %}{{ lang(FOO) }}{% endverbatim %}</code> instead.</p>
+		<p>phpBB has supported multiple languages for ages, and these are traditionally output to the template using <code class="inline">{% verbatim %}{L_FOO}{% endverbatim %}</code>. If you wish to use native Twig syntax for this, you should use <code class="inline">{% verbatim %}{{ lang('FOO') }}{% endverbatim %}</code> instead.</p>
 
 		<h3>Template events</h3>
 		<p>Like language vars, template events can also be used in native Twig syntax. The following event: <code class="inline">&lt;-- EVENT event_name --&gt;</code> equals <code class="inline">{% verbatim %}{% EVENT event_name %}{% endverbatim %}</code>.</p>
