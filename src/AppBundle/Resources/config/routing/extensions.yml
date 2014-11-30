@@ -1,0 +1,98 @@
+phpBBWebsite_Extensions_home:
+    path:  /
+    defaults:
+        _controller: AppBundle:StaticTemplate:staticTemplate
+        template: AppBundle:Extensions:home.html.twig
+    methods:  [GET]
+
+phpBBWebsite_Extensions_rules_and_policies:
+    path:  /rules-and-policies/
+    defaults: { _controller: AppBundle:Extensions:policies }
+    methods:  [GET]
+
+phpBBWebsite_Extensions_epv:
+    path:  /epv/
+    defaults: { _controller: AppBundle:Extensions:epv }
+    methods:  [GET, POST]
+
+phpBBWebsite_Extensions_recognised_developer:
+    path:  /recognised-developer/
+    defaults:
+        _controller: AppBundle:StaticTemplate:staticTemplate
+        template: AppBundle:Extensions:recognised-developer.html.twig
+    methods:  [GET]
+
+phpBBWebsite_Extensions_official_extensions:
+    path:  /official-extensions/
+    defaults: { _controller: AppBundle:Extensions:officialExtensions }
+    methods:  [GET]
+
+phpBBWebsite_Extensions_official_extensions_team:
+    path:  /official-extensions/team/
+    defaults:
+        _controller: AppBundle:StaticTemplate:staticTemplate
+        template: AppBundle:Extensions:official-extensions-team.html.twig
+    methods:  [GET]
+
+phpBBWebsite_Extensions_junior_validators:
+    path:  /junior-validators/
+    defaults:
+        _controller: AppBundle:StaticTemplate:staticTemplate
+        template: AppBundle:Extensions:junior-validators.html.twig
+    methods:  [GET]
+
+phpBBWebsite_Extensions_installing:
+    path:  /installing/
+    defaults:
+        _controller: AppBundle:StaticTemplate:staticTemplate
+        template: AppBundle:Extensions:installing.html.twig
+    methods:  [GET]
+
+phpBBWebsite_Extensions_writing:
+    path:  /writing/
+    defaults:
+        _controller: AppBundle:StaticTemplate:staticTemplate
+        template: AppBundle:Extensions:writing.html.twig
+    methods:  [GET]
+
+phpBBWebsite_Extensions_team_overview:
+    path:  /team-overview/
+    defaults:
+        _controller: AppBundle:StaticTemplate:staticTemplate
+        template: AppBundle:Extensions:team-overview.html.twig
+    methods:  [GET]
+
+phpBBWebsite_Extensions_rules_and_policies_validation_policy:
+    path:  /rules-and-policies/validation-policy/
+    defaults:
+        _controller: AppBundle:StaticTemplate:staticTemplate
+        template: AppBundle:Extensions:validation-policy.html.twig
+    methods:  [GET]
+
+phpBBWebsite_Extensions_rules_and_policies_repack:
+    path:  /rules-and-policies/repack/
+    defaults:
+        _controller: AppBundle:StaticTemplate:staticTemplate
+        template: AppBundle:Extensions:repack-policy.html.twig
+    methods:  [GET]
+
+phpBBWebsite_Extensions_rules_and_policies_insta_deny:
+    path:  /rules-and-policies/insta-deny/
+    defaults:
+        _controller: AppBundle:StaticTemplate:staticTemplate
+        template: AppBundle:Extensions:instadeny-policy.html.twig
+    methods:  [GET]
+
+phpBBWebsite_Extensions_dev_forum_rules:
+    path: /rules-and-policies/development-rules/
+    defaults:
+        _controller: AppBundle:StaticTemplate:staticTemplate
+        template: AppBundle:Extensions:ext-dev-rules.html.twig
+    methods:  [GET]
+
+phpBBWebsite_Extensions_writers_forum_rules:
+    path: /rules-and-policies/writers-rules/
+    defaults:
+        _controller: AppBundle:StaticTemplate:staticTemplate
+        template: AppBundle:Extensions:ext-writers-rules.html.twig
+    methods:  [GET]

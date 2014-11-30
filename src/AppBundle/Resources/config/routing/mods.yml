@@ -1,0 +1,6 @@
+phpBBWebsite_Mods_home:
+    path:  /
+    defaults:
+        _controller: AppBundle:StaticTemplate:staticTemplate
+        template: AppBundle:Mods:home.html.twig
+    methods:  [GET]

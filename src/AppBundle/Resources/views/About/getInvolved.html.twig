@@ -1,0 +1,119 @@
+{% extends ':base:base.html.twig' %}
+
+{% block title %}Get Involved with phpBB{% endblock title %}
+
+{% block phpbb_body_class %}get-involved{% endblock %}
+
+{% block body %}
+<div id="page-body">
+
+<ul class="linklist navlinks">
+	<li><a href="{{ home_path }}">Home</a>
+		<strong>&#8249;</strong> <a href="{{ get_involved_path }}">Get Involved</a>
+	</li>
+</ul>
+
+<div id="main">
+	<h2 class="imgrep get-involved">Get Involved</h2>
+
+	<h3 class="teamtitle" style="color: #009900;">Development Team</h3>
+
+	<h4>Suggest changes and features</h4>
+	<p class="get-involved">You can suggest changes and/or new features to phpBB3 to help improve the experience for all users.</p>
+	<ul>
+		<li><strong>Requirements:</strong> Creativity and the ability to write well enough to fully describe your suggestion.</li>
+		<li><strong>How:</strong> Create an Idea on our <a href="{{ ideas_path }}">Ideas Center</a></li>
+	</ul>
+
+	<h4>Report bugs and issues</h4>
+	<p class="get-involved">You can report bugs or other problems with phpBB so they are noticed and can be fixed.</p>
+	<ul>
+		<li><strong>Requirements:</strong> The ability to write well enough to describe the bug or problem.</li>
+		<li><strong>How:</strong> Add a ticket at the <a href="http://tracker.phpbb.com/PHPBB3">phpBB Bug Tracker</a> describing the bug or issue; log in with your www.phpbb.com account and click the "Create Issue" link in the top right corner.</li>
+	</ul>
+
+	<h4>Contribute code</h4>
+
+	<p class="get-involved">Contribute code in the form of <a href="https://github.com/phpbb/phpbb3/pulls">pull requests</a> to assist the developers in the development process.</p>
+
+	<ul>
+		<li>
+			<strong>Requirements:</strong>
+			<ul>
+				<li>Be a reasonably-experienced developer or designer willing to license code under the GPL.</li>
+				<li>Basic knowledge about git and github (required to get the latest development version).</li>
+			</ul>
+		</li>
+		<li>
+			<strong>How:</strong>
+			<ul>
+				<li>Fork the <a href="https://github.com/phpbb/phpbb3">phpBB3 Repository</a> on Github into your Github Account.</li>
+				<li>Create a new branch based on the latest <em>develop</em> / <em>develop-olympus</em> branch (depending on the Issue's Fix-Version), named <em>ticket/ID</em>. For more information on the Github Repository see: <a href="https://wiki.phpbb.com/Git#phpBB3">https://wiki.phpbb.com/Git#phpBB3</a>.</li>
+				<li>In order to use phpBB 3.1 in development, you need to run Composer (included in the repository) from within the phpBB directory. This will install some external PHP library dependencies. See the <a href="https://github.com/phpbb/phpbb3/blob/develop/README.md#installing-dependencies">README "installing dependencies"</a> section for more instructions.</li>
+				<li>Make your changes, push your branch to your github account and send us a Pull Request via Github.</li>
+			</ul>
+		</li>
+	</ul>
+
+	<br />
+
+	<p class="get-involved">
+		To join the development team the qualifier is previous submission of high-quality patches for bugs and features.
+		Patch submission displays aptitude regarding security and security conscious programming in PHP, problem solving skills, and the ability to resolve issues with minimal changes to the codebase.
+		Other requirements are to be able to work with a multi-cultural team, high availability, and self-motivation; community activity is a plus.
+	</p>
+
+	<h3 class="teamtitle" style="color: rgb(204, 102, 0);">Support Team</h3>
+	<p class="get-involved">The Support Team's primary objective is to provide support for phpBB via the Support Forums and IRC. Additionally, the Support Team is responsible for maintaining several parts of the phpBB.com website, including the Knowledge Base, Documentation, Support Toolkit, and the Support Request Template Generator.</p>
+
+	<p class="get-involved">Support Team Member candidates must show an excellent understanding of the phpBB software and a desire to help. Potential Team members are selected by the Support Team based on their exceptional knowledge of phpBB, history of providing clear, concise, and accurate advice, and general activity level on phpBB.com, particularly in the Support Forum. Users who are invited to the Support Team may also be responsible for additional projects as previously described.</p>
+
+	<p class="get-involved">Users who are interested in assisting with any of the Support Team's sub-projects are welcome to contact us to get involved. Relevant contact information is below:</p>
+
+	<ul>
+		<li>General: <a href="{{ SUPPORT_TL_CONTACT }}">{{ SUPPORT_TL_NAME }}</a></li>
+		<li>Documentation: <a href="{{ SUPPORT_DOCS_CONTACT }}">{{ SUPPORT_DOCS_NAME }}</a></li>
+	</ul>
+
+	<h3 class="teamtitle" style="color: rgb(102, 0, 153);">Extensions Team</h3>
+	<p class="get-involved">The primary task of the Extensions Team is to validate extensions submitted through the Customisation Database and manage the extension related tools provided for extension authors and users. The Extensions Team is also responsible for the extensions forums and for the upkeep of extension documentation.</p>
+
+	<p class="get-involved">Those invited to the Extensions Team are required to have a good working knowledge of PHP, SQL, and HTML, be able to read and understand code written by others, and be able to find potential security vulnerabilities in any code submitted for review and validation.</p>
+
+	<p class="get-involved">The Extensions Team watches for talented individuals who are active in the extensions forums and who have submitted an extension which has successfully passed validation for all invitations. The Jr. Validation Team and Extension Development Team are the main entry points for new members on the Extensions Team. Those on the <a href="{{ extensions_junior_validators }}">Jr. Validation Team</a> are tasked with assisting validators on the Extensions Team to help smooth and speed up the validation process. Those on the <a href="{{ extensions_offical_exts_team }}">Extension Development Team</a> work under the mentorship of the Extensions Team to create and maintain phpBB's official extensions. The Jr. Validation and Extension Development Teams accept applications to join, if you are interested in joining you may apply by visiting their respective pages.</p>
+
+	<h3 class="teamtitle" style="color: rgb(204, 51, 204);">Styles Team</h3>
+	<p class="get-involved">The Styles Team is responsible for validating user submitted Styles within the Customisation Database as well as assisting users in the forums with any style related questions.</p>
+
+	<p class="get-involved">The team is constantly on the look out for new members to assist in the usual day to day tasks (validation &amp; support) as well as other internal projects. Potential Styles Team members that will be tasked with validation and support are expected to have an active involvement in the Styles Support forum and to show a clear understanding of the phpBB templating system and xHTML/CSS. Extensive knowledge of the default styles shipped with phpBB, particularly prosilver, is also an essential requirement to join the team.</p>
+
+	<p class="get-involved">The Jr. Style Validators is a team of community members who assist the Styles Team in validating user submitted styles. The duties of the Jr. Style Validators are to be the first to respond to newly submitted styles and to test them so to ensure that the submitted style is working correctly as well as reporting any issues found during the testing process. The Jr. Style Validator team is also a main entry point for potential new Style Team members. If you are interested in becoming a Jr. Style Validator, you are encouraged to <a href="{{ styles_junior_validators }}">apply here</a>.</p>
+
+	<p class="get-involved">Over the past year, the teams have experienced an increasing demand for talented designers to assist with designing media for use in conferences and on phpBB.com. As a result, the Styles Team is currently exploring the possibility of expanding its official role to include graphic design. If you are interested and feel that you have the skills to take on such a task, please contact <a href="{{ styles_tl_contact }}">{{ styles_tl_name }}</a> with a short explanation of why you want to become involved with the project as well as a copy of your portfolio.</p>
+
+	<h3 class="teamtitle" style="color: rgb(0, 0, 204);">Moderator Team</h3>
+	<p class="get-involved">The Moderator Team members at phpBB are part Ambassador, part Peace Officer. They keep the forums running smoothly by directing questions to appropriate locations, approving posts, and answering basic support questions. Moderators perform all basic moderation tasks within all forums, but leave the other teams to enforce rules specific to their respective forums. They also ensure members are adhering to site wide rules, and they will be the ones to contact you should you need a reminder about the rules. Moderator team members will accept Private Messages regarding rules or how to use this site itself, but regret that they cannot answer support questions privately. Our Moderators cover the forums at www.phpbb.com/community as well as the Area51 forums and our IRC channel.</p>
+
+	<p class="get-involved">You can help the Moderator Team by using the Report function in posts to alert them of posts or other members that may need attention. Potential Moderator candidates, when needed, are selected by the Moderator Team from community members demonstrating exceptional knowledge of site rules, a positive attitude toward other members, and history of continued community development through participation in www.phpbb.com forums.</p>
+
+	<h3 class="teamtitle" style="color: rgb(0, 153, 204);">Website Team</h3>
+	<p class="get-involved">The Website Team is actively looking for willing participants to help the continual development and maintenance of the phpBB website. We are always looking for people who are skilled in web design and graphics. Applicants should have a good knowledge of git and a strong and verifiable background in HTML and CSS. While knowledge of JavaScript and PHP is a plus, it is not always required of applicants. If you're interested, please send samples of your work to <a href="{{ WEBSITE_TL_CONTACT }}">{{ WEBSITE_TL_NAME }}</a>.</p>
+
+	<h3 class="teamtitle">Translations</h3>
+
+	<p class="get-involved">phpBB has more than 30 language packs which makes it possible for users all around the world to use phpBB. We're still missing many, among which might be your local language. In case you think your written skills in both English and your language are at a good level and you have a bit of free time to translate the necessary files, be sure to consider becoming a phpBB translator.</p>
+
+	<p class="get-involved">If you think you could help us spread phpBB around the world, take a look at the <a href="{{ LANGUAGES_30X }}">Languages Packs page</a> and see if your language is listed. If not, fill out our <a href="{{ TRANSLATIONS_APPLY }}">Translator application form</a> and we'll get back to you soon.</p>
+
+	<h3 class="teamtitle">phpBB Events</h3>
+	<p class="get-involved">You can contribute to phpBB by joining already planned events and meet-ups for phpBB or by hosting your own phpBB event or meet-up.  You can organize or find a meet-up in the <a href="{{ FORUM_PHPBBDISC }}">phpBB Discussion Forum</a>, just prefix your event meetup topic subject with <code>[EVENT]</code>. You can also see a full list of community meetups <a href="{{ FORUM_EVENTS  }}">here</a>.</p>
+
+	<h3 class="teamtitle">Additional</h3>
+	<p class="get-involved">Think you can help us with something not listed here or specific to the individual teams?  Please contact the <a href="{{ MANAGEMENT_TEAM }}">Management Team</a>.</p>
+</div>
+
+<div id="extras">
+	{{ include('AppBundle:About:menu.html.twig') }}
+</div>
+</div>
+{% endblock %}

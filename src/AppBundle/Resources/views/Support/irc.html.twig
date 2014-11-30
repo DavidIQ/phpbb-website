@@ -1,0 +1,43 @@
+{% extends ':base:base.html.twig' %}
+
+{% block title %}IRC Support{% endblock title %}
+
+{% block phpbb_body_class %}support irc{% endblock %}
+
+{% block body %}
+<div id="page-body">
+
+<ul class="linklist navlinks">
+	<li><a href="{{ home_path }}">Home</a>
+	<strong>&#8249;</strong> <a href="{{ support_path }}">Support</a>
+	<strong>&#8249;</strong> <a href="{{ SUPPORT_IRC }}">IRC Support</a>
+	</li>
+</ul>
+
+<div id="main">
+	<h2 class="imgrep irc">IRC support</h2>
+	<p>The main phpBB IRC channel is <code style="color:green;">#phpBB</code> on the <strong>chat.freenode.net</strong> server, and it is for general phpBB support. For coding discussion related to phpBB in general, to MODs, to Styles, or to otherwise, visit <code style="color:green;">#phpBB-Coding</code>.<br />
+An IRC client is required to access the Freenode IRC network.</p>
+
+	<p>Once you have the client up and running, type <code style="color:green;">/server chat.freenode.net</code> to connect to the freenode IRC network, and then <code style="color:green;">/join #phpbb</code> to join the phpBB IRC channel. Alternatively, try clicking the following links to start up your client and connect automatically.<br />
+	<a href="irc://chat.freenode.net/phpbb">#phpBB channel</a><br />
+	<a href="irc://chat.freenode.net/phpbb-coding">#phpBB-Coding channel</a></p>
+	<h3>General rules</h3>
+	<ul>
+		<li>The same basic <a href="{{ RULES }}">Forum Rules</a> apply on IRC as well; use your common sense as to what is appropriate behavior. Please note that the phpBB IRC channels are for support and relevant phpBB discussion, not for general chatting.</li>
+		<li>When entering the channel, make sure to read the channel topic; it may contain important information.</li>
+		<li>Don't speak entirely in all-capitals, or 1337-speak, or foul language - and please speak English. (If you require support in another language because you are not fluent in English, please ask for help in English and we may be able to help or direct you to someone who can). If you're able to speak fluent English, use your abilities - computers provide you with a full keyboard, and there is no need 2 spk lik ur txtng sum1.</li>
+		<li>On the same lines as the above point, please do not use scripts that output strange things such as [LauGhiNg~OuT~loUd], as it is likely to annoy all sane people on the channel. The same applies for away scripts/messages, especially ones that repeatedly announce your away status. Basically, no scripts that automatically output anything at all without user intervention, and no annoying ascii-art-speak.</li>
+		<li>Do not repeat yourself, or flood the channel (this includes pasting large amounts of text, for example an error message more than 5 lines) - excess repeating will earn a warning, and deliberate flooding will get you a ban from the channel. If you have a large (over five lines) amount of text you need to paste, use <a href="http://trashb.info/">a pastebin</a>. If you asked your question some time ago and it is now off the screen, you may ask again.</li>
+		<li>If you have a problem with a user, talk to a channel operator (the names of channel operators will be preceded by an @). Do not flame (attack) the user, publicly or privately.</li>
+		<li>Please do not report bugs or security vulnerabilities on the channel.</li>
+	</ul>
+
+</div>
+<div id="extras">
+	{{ include('AppBundle:Support:menu.html.twig') }}
+	{{ include('AppBundle:lists:carbon_ads.html.twig') }}
+</div>
+
+</div>
+{% endblock %}

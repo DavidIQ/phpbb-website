@@ -1,6 +1,6 @@
 [router] Current routes
  Name                                         Method Scheme Host Path
- PhpbbWebsiteInterfaceBundle_homepage         ANY    ANY    ANY  /
+ AppBundle_homepage         ANY    ANY    ANY  /
  phpBBWebsite_getInvolved                     GET    ANY    ANY  /get-involved/
  phpBBWebsite_demo                            GET    ANY    ANY  /demo/
  phpBBWebsite_customise                       GET    ANY    ANY  /customise/

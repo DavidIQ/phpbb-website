@@ -1,0 +1,444 @@
+{% extends ':base:base.html.twig' %}
+
+{% block title %}Creating &amp; Modifying Styles{% endblock title %}
+
+{% block phpbb_body_class %}styles{% endblock %}
+
+{% block body %}
+<div id="page-body">
+	<ul class="linklist navlinks">
+		<li><a href="{{ home_path }}">Home</a>
+			<strong>&#8249;</strong> <a href="{{ customise_path }}">Customise phpBB</a>
+			<strong>&#8249;</strong> <a href="{{ styles_path }}">Styles</a>
+			<strong>&#8249;</strong> <a href="{{ styles_create }}">Creating &amp; Modifying Styles</a>
+		</li>
+	</ul>
+
+	<div id="main">
+		<h2 class="imgrep styles">Creating &amp; Modifying Styles</h2>
+		<p>On this page, you will find some basic as well as more advanced instructions which can help you in creating your own style for phpBB 3.1.x, or modifying an existing one to suit your needs.</p>
+		<p>The focus will be on creating a new style, based on an existing style. Besides the fact that this is the most likely scenario for most style authors, it also creates a better understanding of the template-engine and style-system as a whole in more diverse situations.</p>
+
+		<div class="note-box yellow"><strong>Note:</strong> This guide only applies to phpBB 3.1.x. For guides for older versions of phpBB (3.0.x), please visit the <a href="{{ styles_kb_30x_create }}">knowledge base</a> or the <a href="{{ styles_wiki }}">Development Wiki</a>.</div>
+
+		<div class="note-box blue"><strong>Note:</strong> This guide is a continuation of the <a href="{{ styles_installing }}#a-editing">Editing Styles</a> section of the <a href="{{ styles_installing }}">Installing &amp; Using Styles</a> page. Please read it <span class="underline">before</span> using this guide, as we will not repeat it here.</div>
+
+		<div class="note-box blue"><strong>Note:</strong> A good understanding of HTML, CSS (and JS) is required. There are tons of information about web-design available on the internet, so we will only focus on things that are unique to phpBB 3.1.x.</div>
+
+		<div class="note-box green"><strong>Pro-Tip:</strong> The best way to learn how to create (or modify) styles is by learning from examples. Have a look at some of the popular styles in the <a href="{{ styles_db_path }}">Styles Database</a> and the <a href="{{ forum_styles_31x_dev }}">[3.1.x] Styles in Development</a> forum and see how they work.</div>
+
+		<hr />
+
+		<h2 class="title" id="a-faq">Quick FAQ</h2>
+		<div class="content">
+			<dl class="faq">
+				<dt>Can I submit a style to the phpBB.com Styles Database?</dt>
+				<dd>Yes, you may submit a style that <span class="underline">you</span> created and you'd like to share with the community. The phpBB Styles Team will review your submission and if it is error-free it will be added to our database.</dd>
+			</dl>
+			<dl class="faq">
+				<dt>Are there rules I need to read before submitting a style to the Styles Database?</dt>
+				<dd>Yes. All submitters should read the <a href="{{ styles_ssp }}">Styles Submission Policy</a> to see the rules for submitting styles to our database and to learn how to actually submit the files.</dd>
+			</dl>
+			<dl class="faq">
+				<dt>Where can I see the template changes for each version of phpBB?</dt>
+				<dd>You can find the style changes for all prosilver and subsilver2 versions on the <a href="{{ styles_changes }}">Style Changes</a> page.</dd>
+			</dl>
+			<dl class="faq" id="a-imageset">
+				<dt>Why do some styles (such as prosilver) still have an <code class="inline">imageset.css?</code> file, when phpBB 3.1 no longer uses imagesets?</dt>
+				<dd>This is for backwards-compatibility and legacy reasons. In most normal circumstances, this file will hardly be used. If you want to change image icons for prosilver 3.1, you should edit <code class="inline">colours.css</code> instead.</dd>
+			</dl>
+			<dl class="faq" id="a-purgecache">
+				<dt>Why don't my changes to templates or CSS files appear on my website?</dt>
+				<dd>This is most likely due to caching. phpBB's template-engine has to process (compile) the style's templates before it can display them. This is resource-intensive process, so it "caches" the finished pages for quicker access. If you make changes to template files, you will need to "purge" (clear) the board's cache (or else your changes will not appear). You can do this by navigating to the board's ACP and clicking the button at "Purge the cache".<br /></dd>
+				<dd>Additionally, your browser might also be loading an old cached version of the assets. Be sure to "hard-refresh" your browser, by using a command like CTRL+F5.</dd>
+			</dl>
+			<dl class="faq">
+				<dt>If a style has not been updated by the original author, can I update it myself and submit it to the database?</dt>
+				<dd>We generally allow updates only by the original author of the style. If the original author no longer wishes to update it themselves, they must give express permission to someone to take over their work.<br />
+				<dd>If the original author is unreachable, however, then you may update the style and submit it (specifying that this is the case in the submission, in the "Message to Styles Team" field). If the original author returns after this, though, then they can then reclaim the style if they wish. The original author would have the option to keep any updates done by you or to use/integrate them as they wish.</dd>
+			</dl>
+		</div>
+
+		<hr />
+
+		<h2 class="title" id="a-structure">File Structure</h2>
+		<p>As mentioned in the <a href="{{ styles_installing }}">Installing &amp; Using Styles</a> guide, styles have a specific directory structure, which should be adhered to. We strongly advise you to follow the same structure, as this will minimize the chances of "file not found" problems.</p>
+		<pre class="codesnippet">styles/
+    my_style_name/
+        template/
+            overall_header.html
+            my_scripts.js
+        theme/
+            images/
+                background.jpg
+            stylesheet.css
+            extra.css
+        style.cfg</pre>
+
+		<hr />
+
+		<h2 class="title" id="a-preparation">Preparation</h2>
+		<div class="note-box yellow"><strong>Note:</strong> Always(!) make a backup of your board's files <span class="underline">and</span> database before making changes to the code. It's generally very difficult to provide support for users that mess things up by editing code themselves.</div>
+
+		<h3>Choosing a "Base" Style</h3>
+		<p>Since creating a completely new style is a massive undertaking (and requires a lot of skill, in which case you won't need this guide anyway), we need to choose an existing style to use as a "base".</p>
+		<p>As you will probably spend many hours creating your new style, choosing the right "base" style is essential. You want a solid foundation for your style. The easiest choice is obviously to use the default phpBB 3.1.x style (prosilver) as a base, since it includes all the new features and has been thorougly tested.</p>
+		<p>Choosing a style (like prosilver) which has all the current <em>template events</em> in place will also ensure that extensions will function properly. Read more on this subject in the <a href="#a-events">template events</a> section.</p>
+
+		<h3>Create a "skeleton"</h3>
+		<p>The first thing that needs to be done is creating the file structure for your new style. See the <a href="#a-structure">file structure</a> section to see what a basic skeleton looks like.</p>
+		<p>When you have created all the required directories (template, theme, images) and the  <samp><a href="#a-config">style.cfg</a></samp> and <samp>stylesheet.css</samp> files, you are ready start copying templates and theme assets that you want to use.</p>
+		<div class="note-box blue"><strong>Note:</strong> We advise you to read the rest of this guide before proceeding.</div>
+
+		<div class="note-box green"><strong>Pro-Tip:</strong> Don't edit existing styles. Instead, create a copy of the style you want to change, and edit the new <samp>style.cfg</samp> so that it will <em>inherit</em> from the original style. Read the <a href="#a-inheritance">template inheritance</a> and <a href="#a-asset-inheritance">asset inheritance</a> sections for more information.</div>
+
+		<hr />
+
+		<h2 class="title" id="a-config">Style.cfg</h2>
+		<p>The most important file of any style (as far as installation goes) is the <samp>style.cfg</samp> file. It provides information to your phpBB board about how to install and process the style. It generally looks like this:</p>
+		<pre class="codesnippet">#
+# phpBB Style Configuration File
+#
+# This file is part of the phpBB Forum Software package.
+#
+# @copyright (c) phpBB Limited &lt;https://www.phpbb.com&gt;
+# @license GNU General Public License, version 2 (GPL-2.0)
+#
+# For full copyright and license information, please see
+# the docs/CREDITS.txt file.
+#
+# At the left is the name, please do not change this
+# At the right the value is entered
+#
+# Values get trimmed, if you want to add a space in front or at the end of
+# the value, then enclose the value with single or double quotes.
+# Single and double quotes do not need to be escaped.
+#
+#
+
+# General Information about this style
+name = prosilver
+copyright = © phpBB Limited, 2007
+style_version = 3.1.0
+phpbb_version = 3.1.0
+
+# Defining a different template bitfield
+# template_bitfield = lNg=
+
+# Parent style
+# Set value to empty or to this style's name
+# if this style does not have a parent style
+parent = prosilver
+		</pre>
+
+		<p>Most of this is pretty self explanatory. The most important values for our purposes are the <code class="inline">name</code> and <code class="inline">parent</code> fields, which indicate <a href="#a-inheritance">template inheritance</a>.</p>
+		<p>Let's say that we want to create a style based on prosilver. Our <samp>style.cfg</samp> would contain the following lines (the other lines have been omitted for clarity):</p>
+		<pre class="codesnippet">name = My Awesome Style
+parent = prosilver</pre>
+
+		<p>Instead of using prosilver as a "base" (parent), we could also use another popular style (which in turn inherits from prosilver). Our <samp>style.cfg</samp> would read as:</p>
+		<pre class="codesnippet">name = My Awesome Style
+parent = prosilver Special Edition</pre>
+
+		<p>After installing your new style, the style tree in your ACP would look like this:</p>
+		<pre class="codesnippet">prosilver
+    prosilver Special Edition
+        My Awesome Style</pre>
+
+		<hr />
+
+		<h2 class="title" id="a-mandatory">Mandatory Elements</h2>
+		<p>The code of any website needs certain elements for it to work properly. These are defined in the HTML and CSS specifications (for more information on writing valid code, see the <a href="#a-validation">Code Validation</a> section).</p>
+		<p>Besides these elements, phpBB 3.1.x requires styles to include certain specific pieces of code for the style to function properly.</p>
+		<p>If you are using a valid 3.1.x style as a base for your new style, these elements will be included already, but since they are very important, we will dedicate this section to a more detailed explenation.</p>
+
+		<div class="note-box blue"><strong>Note:</strong> For more information on how these code snippets are used by styles and extensions, visit the <a href="{{ extensions_writing }}">Writing Extensions</a> page or the Development Wiki page on <a href="https://wiki.phpbb.com/New_Template_Commands_in_3.1">New Template Commands in 3.1</a>.</div>
+
+		<h3>{$STYLESHEETS}</h3>
+		<p>The phpBB 3.1.x extension system lets extensions add custom (external) CSS files to your page output. They do this by using the <code class="inline">&lt;!-- INCLUDECSS my_styling.css --&gt;</code> template commands.</p>
+		<p>What this command does is add the specified files to the queue of files that will be loaded in the <code class="inline">{$STYLESHEETS}</code> template location. So if you don't include this variable in your template, many extensions will break (since their front-end styling relies on these files).</p>
+		<div class="note-box yellow"><strong>Note:</strong> <code class="inline">{$STYLESHEETS}</code> should be present near the end of the <code class="inline">&lt;head&gt;</code> element in the <samp>overall_header.html</samp> template. Ideally right before the <code class="inline">&lt;/head&gt;</code> tag.</div>
+
+		<h3>{$SCRIPTS}</h3>
+		<p>The <code class="inline">{$SCRIPTS}</code> template variable works in much the same way as <code class="inline">{$STYLESHEETS}</code>, but is meant for JavaScript files to be included. Extension authors use this by using the <code class="inline">&lt;!-- INCLUDEJS my_scripts.js --&gt;</code> template command. As with the stylesheets, the <code class="inline">{$SCRIPTS}</code> variable is necessary for your style (and extensions) to function properly.</p>
+		<div class="note-box yellow"><strong>Note:</strong> <code class="inline">{$SCRIPTS}</code> should be present near the end of the <samp>overall_footer.html</samp> template. Ideally right before the <code class="inline">&lt;/body&gt;</code> tag.</div>
+
+		<h3>jQuery</h3>
+		<p>As of phpBB 3.1.x, jQuery is included by default in the download package. Besides the fact that jQuery can be very handy for style authors, many extensions will utilize it too and <span class="underline">depend</span> on it being active.</p>
+		<p>Therefore you should always include the instructions that load jQuery into your template. You can do this by making sure that the following code is present in your <samp>overall_footer.html</samp> template.</p>
+		<pre class="codesnippet">&lt;script src="{T_JQUERY_LINK}"&gt;&lt;/script&gt;
+&lt;!-- IF S_ALLOW_CDN --&gt;&lt;script&gt;window.jQuery || document.write(unescape('%3Cscript src="{T_ASSETS_PATH}/javascript/jquery.min.js?assets_version={T_ASSETS_VERSION}" type="text/javascript"%3E%3C/script%3E'));&lt;/script&gt;&lt;!-- ENDIF --&gt;</pre>
+		<div class="note-box yellow"><strong>Note:</strong> This jQuery code snippet should ideally be the first script that is loaded in the footer. In any case, it <span class="underline">must</span> be included <span class="underline">before</span> <code class="inline">{$SCRIPTS}</code>.</div>
+
+		<hr />
+
+		<h2 class="title" id="a-syntax">Template Syntax &amp; Variables</h2>
+		<p>phpBB 3.1.x has a powerful template-engine, which lets you add/modify various pieces of code for page-output.</p>
+		<p>For more information on how to use the various template tags and conditionals, we advise you to take a look at our Development Wiki. At this time, there are no dedicated entries yet specifically for 3.1.x Styles, but a few important pages are still applicable:</p>
+		<ul class="list-margin">
+			<li><a href="https://wiki.phpbb.com/Tutorial.Template_syntax">Template Syntax Tutorial</a></li>
+			<li><a href="https://wiki.phpbb.com/Category:Template_Variables">Catalogue of available Template Variables</a></li>
+			<li><a href="https://wiki.phpbb.com/Template_errors">Common Template Errors</a></li>
+		</ul><br />
+		<div class="note-box green"><strong>Pro-Tip:</strong> Since version 3.1, phpBB uses <a href="http://twig.sensiolabs.org/">Twig</a> as the base of it's template engine. You can use Twig syntax for your style, which can have numerous advantages. For more information, read the <a href="#a-twig">Using Twig in phpBB</a> section.</div>
+
+		<hr />
+
+		<h2 class="title" id="a-events">Template Events</h2>
+		<p>With the introduction of the extension system in phpBB 3.1.x, extensions are able to insert code without editing template files. This greatly simplifies the installation, updating, and removal processes of functionality for styles.</p>
+		<p>Many extensions will use these <em>template events</em> in order to add functionality to phpBB. They do this by using <code class="inline">&lt;!-- EVENT template_event_name --&gt;</code> template commands. If you want your style to become popular, you should definitely try to include as much of the "default" template events as possible.</p>
+
+		<p>Since prosilver is still the default style for phpBB 3.1.x, most extensions will be primarily developed for prosilver (and therefore use prosilver's template events). Including these events (in roughly the same location as prosilver) will ensure that future extensions will work with your style.</p>
+
+		<div class="note-box blue"><strong>Note:</strong> A comprehensive list of all template events currently available in prosilver 3.1.x (and subsilver2) can be found on the Development Wiki <a href="https://wiki.phpbb.com/Event_List#Template_Events">Event List</a> page.</div>
+		<div class="note-box green"><strong>Pro-Tip:</strong> Instead of trying to insert all these template events into the correct places in the templates of your style, you can use <a href="#a-inheritance">template inheritance</a>.</div>
+
+		<hr />
+
+		<h2 class="title" id="a-inheritance">Template Inheritance</h2>
+		<p>Template inheritance is arguably the most useful thing about phpBB's template-engine for style authors.</p>
+		<p>If you base a new style on an existing one, but you only want to change a few templates, you don't have to copy them all. This would create a lot of identical copies of files on your server, and things would get cluttered pretty soon. It would also become very tedious to merge all the changes to the templates, if the "parent" style were to receive an update.</p>
+		<p>Enter <em>template inheritance</em>, requiring nothing more than a single line in your <samp><a href="#a-config">style.cfg</a></samp>.</p>
+		<p>By specifying a "parent" in your <samp>style.cfg</samp>, the template-engine knows how to fall back to files of a different template-set if there is anything missing in the current one. The nice thing about this is that the process is completely transparent after template compilation and comes at practically no extra costs during runtime.</p>
+
+		<p>Basically this means that phpBB will try to find a file in your new style's <code class="inline">template/</code> directory, but if it cannot find it, it will look for the file in each of the <span class="underline">parents'</span> <code class="inline">template/</code> directories. This process can go multiple levels deep. So you can base your own child style on a child of a child of a child of a parent, like the branches of a tree (hence the "<a href="{{ styles_installing }}#a-managing">styles tree</a>").</p>
+
+		<div class="note-box blue"><strong>Note:</strong> With the introduction of <a href="#a-events">template events</a>, template inheritance has become much more powerful. We advise you to use it whenever possible.</div>
+
+		<h3>Example</h3>
+		<p>Many styles start off by modifying existing styles (such as prosilver), because creating a completely new style from scratch is an extremely time consuming undertaking. The following example will show how easy (and useful it is).</p>
+
+		<p>Case: <em>"I want to modify the header and index page of style X, how do I do it?"</em></p>
+
+		<p>Well the first thing to remember is that you only want to change these 2 parts <em>now</em>. You will likely want to change more and more parts as time progresses. So the best course of action would be to create a "child" style of style X (we'll called it style Y).</p>
+		<ol class="list-margin">
+			<li>Create the <a href="#a-structure">file structure</a> (skeleton) for style Y.</li>
+			<li>Create a <samp><a href="#a-config">style.cfg</a></samp> for style Y which specifies X as it's "parent".</li>
+			<li>Copy <samp>overall_header.html</samp> and <samp>index_body.html</samp> from <samp>styles/x/template/</samp> to <samp>styles/y/template/</samp>.</li>
+			<li>Edit the files to suit your needs.</li>
+			<li>Upload and install style Y in your ACP.</li>
+		</ol><br />
+		<p>Is that all? Not quite. You will notice that no theme assets (CSS and images) have been loaded. We will address this issue in the <a href="#a-asset-inheritance">asset inheritance</a> section.</p>
+
+		<hr />
+
+		<h2 class="title" id="a-asset-inheritance">Asset "Inheritance"</h2>
+		<p>The biggest obstacle for most style authors is the fact that the inheritance tree only works for templates, not CSS. So how do we use template inheritance, but <span class="underline">also</span> "inherit" the theme assets of the "parent"?</p>
+		<p>There are multiple ways of doing this, and it will depend on whether or not you plan to make really significant changes to the CSS files. We'll try to explain the different ways of "inheriting" theme assets from other styles, and their pros and cons.</p>
+
+		<div class="note-box blue"><strong>Note:</strong> Theme assets cannot be "inherited" the same sense as templates can. There is no automated system at work here. Asset inheritance should be read as meaning: "loading theme assets from a different style, via manual instructions".</div>
+
+		<h3><a id="a-method1" class="anchor"></a>Method 1. Copy-paste all theme assets</h3>
+		<p>The easiest (and probably most (ab)used method) has been to simply copy-paste all the assets (the entire <code class="inline">theme/</code> directory) of the "parent" style to the "child" style's <code class="inline">theme/</code> directory, and edit the various CSS files to suit your needs.</p>
+		<p>While this is the easiest method, it is strongly discouraged to use it, especially if you plan on releasing your style publicly, for the following reasons:</p>
+		<div class="column1 compare">
+			<h4 class="pros">Pros</h4>
+			<ul class="list-margin">
+				<li>Easy editing</li>
+				<li>Doesn't require any template modifications</li>
+			</ul>
+		</div>
+		<div class="column2 compare">
+			<h4 class="cons">Cons</h4>
+			<ul class="list-margin">
+				<li>Poor maintainability</li>
+				<li>Potential merge problems when updating parent styles</li>
+				<li>Duplication of assets</li>
+			</ul>
+		</div>
+		<span class="clear"></span>
+
+		<h3><a id="a-method2" class="anchor"></a>Method 2. Relative-path <samp>@import</samp> with selective replacement</h3>
+		<p>If you only want to make changes to a few of the parent's CSS files, you might not want to duplicate all the assets, since that would just clutter your new style. It is possible to only copy a few assets and make changes to them, without having identical copies scattered around the server. In your new style's <samp>stylesheet.css</samp>, you could include the following code:</p>
+		<pre class="codesnippet">@import url("../../prosilver/theme/common.css");
+@import url("../../prosilver/theme/links.css");
+@import url("../../prosilver/theme/content.css");
+@import url("../../prosilver/theme/buttons.css");
+@import url("../../prosilver/theme/cp.css");
+@import url("../../prosilver/theme/forms.css");
+@import url("colours.css");
+@import url("imageset.css");</pre>
+		<p>This would basically load all the parent's (prosilver) CSS assets, except for <samp>colours.css</samp> and <samp>imageset.css</samp>, which you want to load from your new style's theme assets (which you have copied from prosilver, and subsequently edited to suit your needs).</p>
+		<div class="column1 compare">
+			<h4 class="pros">Pros</h4>
+			<ul class="list-margin">
+				<li>Deduplication of assets</li>
+				<li>Doesn't require any template modifications</li>
+			</ul>
+		</div>
+		<div class="column2 compare">
+			<h4 class="cons">Cons</h4>
+			<ul class="list-margin">
+				<li>Relative path <samp>@import</samp> rules are a potential <a href="http://www.thespanner.co.uk/2014/03/21/rpo/">security risk</a>! (avoid if possible)</li>
+				<li>Still requires a copy of all assets that aren't included in <samp>stylesheet.css</samp> (<samp>responsive.css</samp>, <samp>/en/stylesheet.css</samp>, etc.)</li>
+			</ul>
+		</div>
+		<span class="clear"></span>
+
+		<h3><a id="a-method3" class="anchor"></a>Method 3. Multiple overriding stylesheets.css in <samp>&lt;head&gt;</samp></h3>
+		<p>Instead of copying assets and editing them, you could also write new rules in the <samp>overall_header.html</samp> template of your new style that override the parent style's CSS rules.</p>
+		<pre class="codesnippet">&lt;link href="{ROOT_PATH}styles/prosilver/theme/stylesheet.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" /&gt;
+
+&lt;link href="{T_STYLESHEET_LINK}" rel="stylesheet" /&gt;</pre>
+
+		<div class="note-box blue"><strong>Note:</strong> We use <code class="inline">{T_ASSETS_VERSION}</code> as rudimentary form of browser cache control.</div>
+		<div class="note-box yellow"><strong>Note:</strong> Although <code class="inline">{T_SUPER_TEMPLATE_NAME}</code> is still supported, it only traverses the styles tree 1 level. So it isn't suitable for use in complex inheritance situations.</div>
+
+		<p>What this does is load prosilver's <samp>stylesheet.css</samp> first (and load all the subsequent components via the <samp>@import</samp> method as specified in that file). After that, it will load the <samp>stylesheet.css</samp> of your custom style. You can use <samp>@import</samp> rules in your own stylesheet.css file as well of course (if you want to split up your code into multiple files), or you could simply put all your CSS rules in the <samp>stylesheet.css</samp> file itself.</p>
+
+		<div class="note-box yellow"><strong>Note:</strong> Using both <samp>@import</samp> rules <span class="underline">and</span> regular CSS rules in the same file is not advised.</div>
+
+		<p>This same method can be applied to load other CSS assets directly from the parent (without having to duplicate them), such as <samp>responsive.css</samp>, <samp>print.css</samp>, <samp>bidi.css</samp>, etc. If you wish to use the parent style's language assets, you could use the following snippet:</p>
+		<pre class="codesnippet">&lt;link href="{ROOT_PATH}styles/prosilver/theme/{T_THEME_LANG_NAME}/stylesheet.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" /&gt;</pre>
+		<div class="column1 compare">
+			<h4 class="pros">Pros</h4>
+			<ul class="list-margin">
+				<li>No relative-path <samp>@import</samp> rules</li>
+				<li>Possible to deduplicate everything</li>
+			</ul>
+		</div>
+		<div class="column2 compare">
+			<h4 class="cons">Cons</h4>
+			<ul class="list-margin">
+				<li>No detailed control over which parts of the parent's <samp>stylesheet.css</samp> to include/exclude.</li>
+			</ul>
+		</div>
+		<span class="clear"></span>
+
+		<h3><a id="a-method4" class="anchor"></a>Method 4. Detailed overriding link components in <samp>&lt;head&gt;</samp></h3>
+		<p>This method works the same way as <a href="#a-method3">Method 3</a>, but instead of including the parent's (prosilver) <samp>stylesheet.css</samp>, we load the various CSS assets directly (without relying on <samp>@import</samp>) from the <samp>overall_header.html</samp> template of your new style. This allows for greater control of which files to include/exclude.</p>
+		<p>From a technical perspective, this is the best method to use.</p>
+		<pre class="codesnippet">&lt;link href="{ROOT_PATH}styles/prosilver/theme/common.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" /&gt;
+&lt;link href="{ROOT_PATH}styles/prosilver/theme/links.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" /&gt;
+&lt;link href="{ROOT_PATH}styles/prosilver/theme/content.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" /&gt;
+&lt;link href="{ROOT_PATH}styles/prosilver/theme/buttons.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" /&gt;
+&lt;link href="{ROOT_PATH}styles/prosilver/theme/cp.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" /&gt;
+&lt;link href="{ROOT_PATH}styles/prosilver/theme/forms.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" /&gt;
+
+&lt;link href="{T_STYLESHEET_LINK}" rel="stylesheet" /&gt;
+
+&lt;link href="{ROOT_PATH}styles/prosilver/theme/{T_THEME_LANG_NAME}/stylesheet.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" /&gt;</pre>
+		<p>Notice that we didn't include <samp>colours.css</samp> and <a href="#a-imageset"><samp>imageset.css</samp></a>, since we want to use our own custom rules (which we will specify inside our own <samp>stylesheet.css</samp>) instead of prosilver's.</p>
+		<div class="column1 compare">
+			<h4 class="pros">Pros</h4>
+			<ul class="list-margin">
+				<li>Complete control over which assets to load (and in which order)</li>
+				<li>No use of CSS <samp>@import</samp> at all (this is <a href="http://stackoverflow.com/a/10037064/1894483">preferable</a>)</li>
+				<li>Possible to deduplicate everything</li>
+			</ul>
+		</div>
+		<div class="column2 compare">
+			<h4 class="cons">Cons</h4>
+			<ul class="list-margin">
+				<li>    More complex header template</li>
+			</ul>
+		</div>
+		<span class="clear"></span>
+
+		<h3>Which method should I use?</h3>
+		<p>It depends on how big the changes are that you are planning to make. From a technical and maintainability standpoint, we would suggest <a href="#a-method3">Method 3</a> in case of relatively minor asset changes, and <a href="#a-method4">Method 4</a> for more extensive modifications.</p>
+		<div class="note-box green"><strong>Pro-Tip:</strong> If you wish to reduce the load of CSS data-transfer, you could compress and minify the various CSS files that your style uses into a single file, and serve that instead. But this is not easy to do <em>well</em>, and requires a more complex work-flow (which is beyond the scope of this guide).</div>
+
+		<hr />
+
+		<h2 class="title" id="a-extensions">Styling Extensions</h2>
+		<p>This is completely optional, but if you feel that the users of your style will likely want to use particular (popular) extensions, you might want to add support for these extensions to your style.</p>
+		<p>This is particularly useful if your style has an unconventional layout, or has significantly modified CSS/image assets, which can cause extensions that use their own styling to look ugly or out of place.</p>
+		<p>Many extensions with front-end functionality will include their own stylesheet using <code class="inline">&lt;!-- INCLUDECSS my_extension.css --&gt;</code> which will add the referenced file to <code class="inline">{$STYLESHEETS}</code> in your <samp>&lt;head&gt;</samp> (as described <a href="#a-mandatory">here</a>).</p>
+		<p>Since in many proper styles <code class="inline">{$STYLESHEETS}</code> is included <span class="underline">after</span> <code class="inline">&lt;link href="{T_STYLESHEET_LINK}" /&gt;</code>, this means that the extension's CSS rules will overrule your style's rules (as intended).</p>
+		<p>You will notice that this gives us a problem. We can't include any specific rules for these extensions in our new style's stylesheet.css, since they will be overruled. We could overcome this by using stronger CSS selectors or adding <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity#The_!important_exception">!important</a> to properties, but this is not a very elegant solution.</p>
+
+		<p>Instead, we could simply reverse the load order for our style's extension-specific rules. The easiest way to do this is to move all your style's rules that are specifically for extensions into a new .css file (<samp>/theme/extensions.css</samp> for instance).</p>
+
+		<p>Now we need to include it in the <samp>&lt;head&gt;</samp> of our template, but <span class="underline">after</span> <code class="inline">{$STYLESHEETS}</code>.</p>
+		<pre class="codesnippet">{$STYLESHEETS}
+
+&lt;link href="{T_THEME_PATH}/extensions.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" /&gt;</pre>
+		<p>Using this method will ensure that your custom rules are loaded after the extension's own rules, thereby overriding them.</p>
+		<div class="note-box green"><strong>Pro-Tip:</strong> If (and only if) you have a very popular style, but a certain extension uses template files that simply don't work well with your style, you could contact the extension's author. If he/she agrees, you could contribute a special template to the code of the extension (via a GitHub pull request or other method).</div>
+
+		<hr />
+
+		<h2 class="title" id="a-update">Updating a 3.0.x Style to 3.1.x</h2>
+		<p>Since most of the template-engine of phpBB 3.1.x is backwards compatible with 3.0.x, it shouldn't be too hard to update outdated styles to version 3.1.x.</p>
+		<p>To make the most of the features that are available, we suggest you take a look at the Development Wiki page on <a href="https://wiki.phpbb.com/Template_Engine_Changes_in_3.1">Template Engine Changes in 3.1</a>. Combining the information found there with the various sections of this guide, updating a style should be possible (although it might take some effort).</p>
+
+		<hr />
+
+		<h2 class="title" id="a-twig">Using Twig in phpBB</h2>
+		<p>Since version 3.1, phpBB uses <a href="http://twig.sensiolabs.org/">Twig</a> as the base of it's template engine. You can use Twig syntax for your style, which can have numerous advantages.</p>
+		<p>In order to guarantee backwards-compatibility, the old phpBB syntax is still supported (and widely used), but these are translated into the Twig syntax by the backend. So <code class="inline">&lt;-- IF FOO --&gt;{BAR}&lt;-- ENDIF --&gt;</code> becomes <code class="inline">{% verbatim %}{% if FOO %}{{ BAR }}{% endif %}{% endverbatim %}</code> by being translated into the native Twig syntax.</p>
+		<p>Sensiolabs provides comprehensive <a href="http://twig.sensiolabs.org/documentation">documentation</a> for the Twig template engine on their website. Especially the <a href="http://twig.sensiolabs.org/doc/templates.html">Twig for Template Designers</a> section will be a useful resource for style authors, so we won't be covering the contents here. Instead, we will address some of specifics of the current Twig implementation in phpBB 3.1.</p>
+
+		<h3>Available features</h3>
+		<p>phpBB 3.1.x was shipped with Twig version <strong>1.13.2</strong>. Any features of Twig implemented thereafter are currently unavailable until Twig is updated in the phpBB package to a more recent version.</p>
+
+		<h3>Language vars</h3>
+		<p>phpBB has supported multiple languages for ages, and these are traditionally output to the template using <code class="inline">{% verbatim %}{L_FOO}{% endverbatim %}</code>. If you wish to use native Twig syntax for this, you should use <code class="inline">{% verbatim %}{{ lang('FOO') }}{% endverbatim %}</code> instead.</p>
+
+		<h3>Template events</h3>
+		<p>Like language vars, template events can also be used in native Twig syntax. The following event: <code class="inline">&lt;-- EVENT event_name --&gt;</code> equals <code class="inline">{% verbatim %}{% EVENT event_name %}{% endverbatim %}</code>.</p>
+
+		<h3>Including dynamic templates</h3>
+		<p>Many templates in phpBB include other templates in order to keep the code organized. This usually isn't a problem, unless the template to be included is assigned dynamically (based on a phpBB configuration or user setting).</p>
+		<p>These templates are often included using the following syntax: <code class="inline">{% verbatim %}&lt;-- INCLUDE {FOO_TEMPLATE_FILE} --&gt;{% endverbatim %}</code>. Twig uses virtually the same construct (although you can choose to use the include <a href="http://twig.sensiolabs.org/doc/functions/include.html">function</a> or <a href="http://twig.sensiolabs.org/doc/tags/include.html">tag</a>). Using the tag syntax, the resulting code would be <code class="inline">{% verbatim %}{% include FOO_TEMPLATE_FILE %}{% endverbatim %}</code>.</p>
+		<p>If you wish to edit the path of the included file (perhaps using a .twig extension or a different file path), you can alter the include rule without having to rewrite the template variable output by the back-end. This can be done by constructing an array and imploding (joining) it immediately.<br />
+			Example: <code class="inline">{% verbatim %}{% include ['includes/', FOO_TEMPLATE_FILE, '.twig']|join %}{% endverbatim %}</code></p>
+
+		<h3>Loops</h3>
+		<p>Due to backwards-compatibility considerations, phpBB 3.1 implements template loops in a somewhat unconventional way. Because of the way block-vars are assigned to the template by the <samp>assign_block_vars()</samp> function (they are stored under the "loops" context), they are not available in the "root" context. Take this simple example of a template loop:</p>
+		<pre class="codesnippet">{% verbatim %}&lt;-- BEGIN my_items --&gt;
+	{my_items.VALUE}
+&lt;-- END my_items --&gt;{% endverbatim %}</pre>
+		<p>Using Twig, the following code should work.</p>
+		<pre class="codesnippet">{% verbatim %}{% for item in <strong>loops.</strong>my_items %}
+	{{ item.VALUE }}
+{% endfor %}{% endverbatim %}</pre>
+		<div class="note-box yellow"><strong>Note:</strong> The current loops implementation is temporary, undocumented, and subject to change. But you can use it if you feel comfortable with Twig.</div>
+
+		<hr />
+
+		<h2 class="title" id="a-tipstricks">Tips &amp; Tricks</h2>
+
+		<h3>Mimic prosilver CSS classes</h3>
+		<p>Since most extensions will be developed primarily for prosilver, they will naturally utilize prosilver's style assets whenever possible. This helps extension authors to significantly reduce the amount of CSS rules that they need to write.</p>
+		<p>If an extension author wants to add a block of rows with content, they <em>could</em> write all the CSS rules themselves, <em>or</em> they could simply rely on the rules already in place. The likely result is that they will recycle prosilver's style rules, with selectors like <code class="inline">ul.topiclist</code>.</p>
+		<p>If you want extensions to work on your custom style with the least amount of effort. Using the same CSS class-names on roughly the same elements can help a lot.</p>
+
+		<h3>Use automatic template recompiling (during development)</h3>
+		<p>While making changes to template files, it's often handy to be able to see the changes directly, without having to purge your forum cache every time. A neat little trick is to recompile templates automatically after every file change.</p>
+		<p>Browse to: ACP > General > Server configuration > Load settings and set:<br />
+		"<samp>Recompile stale style components</samp>": Yes</p>
+
+		<h3>Use file comparison tools</h3>
+		<p>Users often forget the changes that they have made to certain styles. Or they have a hard time seeing the differences between different versions of files.</p>
+		<p>This is where file comparison tools come in handy. Some of the more advanced text-editors have built-in features that help when comparing files (or entire folders). Alternatively, you could use stand-alone applications for this. A few popular free ones are <a href="http://winmerge.org/">WinMerge</a> and <a href="http://meldmerge.org/">Meld</a>.</p>
+
+		<h3><a id="a-validation" class="anchor"></a>Code Validation</h3>
+		<p>Writing valid HTML and CSS code will greatly increase your chances of having your style working correctly in different browsers on different operating systems and devices.</p>
+		<p>Valid HTML and CSS code is also required if you hope to submit your style to the <a href="{{ styles_db_path }}">Styles Database</a>, as mentioned in the <a href="{{ styles_ssp }}">Style Submission Policy</a>.</p>
+		<p>Luckily, there are automated tools available that will help you in identifying problems. We suggest using <a href="http://validator.w3.org/unicorn/">Unicorn - W3C's Unified Validator</a>.</p>
+
+		<hr />
+
+		<h2 class="title" id="a-links">Additional Resources</h2>
+		<p>We hope you found this guide informative and helpful. There are still many more resources to help you develop great styles that will expand the possibilities of what phpBB can do for your community and the many more communities that may adopt and benefit from your styles.</p>
+		<p>
+			<a href="{{ styles_db_path }}">Styles Database</a><br />
+			<a href="{{ styles_support }}">Styles Support</a><br />
+			<a href="{{ forum_styles_31x_dev }}">[3.1.x] Styles in Development Forum</a><br />
+			{# <a href="{{ styles_changes }}">Style Changes</a><br /> #}
+			<a href="https://wiki.phpbb.com/Template_Engine_Changes_in_3.1">Wiki: Template Engine Changes in 3.1</a>
+		</p>
+
+		<small>If you have any suggestions or remarks relating to this guide, feel free to contact the <a href="{{ styles_team_overview }}">Styles Team</a>.</small>
+		<br />
+		<br />
+	</div>
+
+	<div id="extras">
+		{{ include('AppBundle:Styles:menu.html.twig') }}
+		<div class="mini-panel js-sections js-scroll" style="display: none"></div>
+	</div>
+</div>
+{% endblock %}

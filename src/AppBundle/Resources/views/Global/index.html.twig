@@ -1,0 +1,84 @@
+{% extends ':base:base.html.twig' %}
+
+{% block title %}phpBB &bull; Free and Open Source Forum Software{% endblock title %}
+
+{% block phpbb_body_class %}home{% endblock %}
+
+{% block header_button %}
+<div id="home-dl-link"><a href="{{ downloads_path }}">Download<span class="version">{{ package_version }}</span><span>{{ package_release_date }}</span></a></div>
+<div id="home-try-link"><a href="{{ demo_path }}">Try our<span class="version">Demo</span></a></div>
+{% endblock header_button %}
+
+{% block body %}
+<div id="page-body">
+<div id="home-buttons">
+	<h2><a href="{{ about_path }}" class="what-is responsive-top">What is phpBB?</a></h2>
+	<h2><a href="{{ downloads_path }}" class="get-started responsive-top">Get started with phpBB</a></h2>
+	<br class="responsive-clear" style="display: none;" />
+	<h2><a href="{{ cdb_path }}" class="enhance responsive-bottom">Create and Share</a></h2>
+	<h2><a href="{{ get_involved_path }}" class="contribute responsive-bottom last">Contribute to phpBB</a></h2>
+	<br class="clear" />
+</div>
+
+<div id="main">
+	<h2 class="free_oss">THE #1 FREE, OPEN SOURCE BULLETIN BOARD SOFTWARE</h2>
+
+	<p>phpBB is a free flat-forum bulletin board software solution that can be used to stay in touch with a group of people or can power your entire website.  With an <a href="{{ mods_db_path }}">extensive database of user-created modifications</a> and <a href="{{ styles_db_path }}">styles database</a> containing hundreds of style and image packages to customise your board, you can create a very unique forum in minutes.</p>
+
+	<p>No other bulletin board software offers a greater complement of features, while maintaining efficiency and ease of use.  Best of all, phpBB is completely free.  We welcome you to <a href="{{ demo_path }}">test it</a> for yourself today.  If you have any questions please visit our <a href="{{ community_path }}">Community Forum</a> where our staff and members of the community will be happy to assist you with anything from configuring the software to modifying the code for individual needs.  <a href="{{ about_path }}">Learn more about phpBB.</a></p>
+
+	<hr />
+
+	<h3>Latest phpBB Announcements and Blog Posts</h3><br />
+	<ul class="announcements">
+	{% for announcement in announcements %}
+		<li>
+			<div class="date">
+				<span class="day">{{ announcement.DAY }}</span><br />
+				<span class="month">{{ announcement.MONTH }}</span><br />
+				<span class="year">{{ announcement.YEAR }}</span>
+			</div>
+			<div class="announce_img">{% if announcement.FROM_BLOG %}<img src="{{ asset('/assets/images/images/icon_blog.png') }}" title="Blog Post" alt="Blog Post" />{% else %}<img src="{{ asset('/assets/images/images/icon_announcement.png') }}" title="Announcement" alt="Announcement" />{% endif %}</div>
+			<div class="title"><a href="{{ announcement.U_LINK|raw }}">{% if announcement.FROM_BLOG %}Blog{% else %}Announcement{% endif %} &bull; {{ announcement.TITLE|e }}</a></div>
+			<p class="preview">
+				{% if announcement.FROM_BLOG %}
+				{{ announcement.PREVIEW|e }}
+				{% else %}
+				{{ announcement.PREVIEW|raw }}
+				{% endif %}
+				&hellip; <a href="{{ announcement.U_LINK|raw }}">read more</a></p>
+		</li>
+	{% endfor %}
+	</ul>
+	<div id="announce-footer">
+		<a href="{{ announcements_forum }}">All Announcements</a> <a href="{{ feeds_rss_path }}"><img src="{{ asset('/assets/images/images/feed-icon-14x14.png') }}" alt="feed" /></a> | <a href="{{ blog_link }}">phpBB Blog</a> <a href="https://blog.phpbb.com/feed/" class="feed_link" title="Blog feed"><img src="{{ asset('/assets/images/images/feed-icon-14x14.png') }}" alt="feed" /></a>
+	</div>
+</div>
+
+<div id="extras" class="homepage">
+	<br />
+	{{ include('AppBundle::ascraeus.html.twig') }}
+	<div class="forumatic-panel">
+		<a href="https://www.forumatic.com/"><img src="{{ asset('assets/images/images/bg_forumatic_front_page.png') }}" alt="Forumatic" /></a>
+	</div>
+	<div class="mini-panel">
+		<div class="inner">
+		<h3>Sponsors</h3>
+		<ul class="text-links">
+			<li><strong><a href="/hosting/r/bluehost-frontpage/" class="text-links-favicon" style="background-image: url({{ asset('/assets/images/images/favicons/bluehost.png') }});"{% if bot is defined %} rel="nofollow"{% endif %}>&nbsp;BlueHost.com</a></strong> - voted best web host with superior support <strong>2004-2010!</strong> Offering a <strong>free domain</strong>, <strong class="posthilit">unlimited</strong> space, <strong class="posthilit">unlimited</strong> transfer - easy 1-click install of phpBB all for <a href="/hosting/r/bluehost-frontpage/"{% if bot is defined %} rel="nofollow"{% endif %}><strong>only $6.95/month</strong>&hellip; <strong><em>Sign up now!</em></strong></a></li>
+			<li><a href="http://www.cpaptalk.com/"{% if bot is defined %} rel="nofollow"{% endif %}>CPAP</a></li>
+			<li><a href="http://www.eukhost.com/dedicated-server-hosting.php"{% if bot is defined %} rel="nofollow"{% endif %}><b>Dedicated Server Hosting</b></a></li>
+			<li><a href="http://www.cpap.com/"{% if bot is defined %} rel="nofollow"{% endif %}>CPAP Supplies</a></li>
+			<li><a href="http://www.upperhost.com/"{% if bot is defined %} rel="nofollow"{% endif %}>10 Best Web Hosting Reviews</a></li>
+			<li><strong><a href="http://www.dhgate.com/" title="Heguang International Limited"{% if bot is defined %} rel="nofollow"{% endif %}>China Wholesale</a></strong></li>
+			<li class="last"><em><a href="{{ advertise_path }}">Advertise on phpBB.com</a></em></li>
+		</ul>
+		</div>
+	</div>
+	<dl class="extra-box shop light-blue">
+		<dt><a href="{{ shop_path }}">phpBB Mascot</a></dt>
+		<dd><a href="{{ shop_path }}">Show your support for the phpBB project by getting a <span style="text-decoration: underline;">Bertie 3.0</span>!</a></dd>
+	</dl>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,70 @@
+phpBBWebsite_Styles_home:
+    path:  /
+    defaults:
+        _controller: AppBundle:StaticTemplate:staticTemplate
+        template: AppBundle:Styles:home.html.twig
+    methods:  [GET]
+
+phpBBWebsite_Styles_support:
+    path:  /support/
+    defaults:
+        _controller: AppBundle:StaticTemplate:staticTemplate
+        template: AppBundle:Styles:support.html.twig
+    methods:  [GET]
+
+phpBBWebsite_Styles_installing:
+    path:  /installing/
+    defaults:
+        _controller: AppBundle:StaticTemplate:staticTemplate
+        template: AppBundle:Styles:installing.html.twig
+    methods:  [GET]
+
+phpBBWebsite_Styles_create:
+    path:  /create/
+    defaults:
+        _controller: AppBundle:StaticTemplate:staticTemplate
+        template: AppBundle:Styles:create.html.twig
+    methods:  [GET]
+
+phpBBWebsite_Styles_ssp:
+    path:  /ssp/
+    defaults:
+        _controller: AppBundle:StaticTemplate:staticTemplate
+        template: AppBundle:Styles:ssp.html.twig
+    methods:  [GET]
+
+phpBBWebsite_Styles_ssp_30x:
+    path:  /ssp/3.0/
+    defaults:
+        _controller: AppBundle:StaticTemplate:staticTemplate
+        template: AppBundle:Styles:ssp-30x.html.twig
+    methods:  [GET]
+
+phpBBWebsite_Styles_team_overview:
+    path:  /team-overview/
+    defaults:
+        _controller: AppBundle:StaticTemplate:staticTemplate
+        template: AppBundle:Styles:team-overview.html.twig
+    methods:  [GET]
+
+phpBBWebsite_Styles_junior_validators:
+    path:  /junior-validators/
+    defaults:
+        _controller: AppBundle:StaticTemplate:staticTemplate
+        template: AppBundle:Styles:junior-validators.html.twig
+    methods:  [GET]
+
+phpBBWebsite_Styles_demo:
+    path:  /demo/
+    defaults:
+        _controller: AppBundle:StaticTemplate:staticTemplate
+        template: AppBundle:Styles:demo.html.twig
+    methods:  [GET]
+
+phpBBWebsite_Styles_demo_not_ready:
+    path:  /demo/3.1/
+    defaults:
+        _controller: AppBundle:StaticTemplate:staticTemplate
+        template: AppBundle:Styles:demoNotReady.html.twig
+    methods:  [GET]
+

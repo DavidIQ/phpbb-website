@@ -1,0 +1,110 @@
+{% extends ':base:base.html.twig' %}
+
+{% block title %}Modifications{% endblock title %}
+
+{% block phpbb_body_class %}mods{% endblock %}
+
+{% block body %}
+<div id="page-body">
+
+<ul class="linklist navlinks">
+	<li><a href="{{ home_path }}">Home</a>
+	<strong>&#8249;</strong> <a href="{{ customise_path }}">Customise phpBB</a>
+	<strong>&#8249;</strong> <a href="{{ mods_path }}">Modifications</a>
+	</li>
+</ul>
+
+<div id="main">
+	<h2 class="imgrep mods">Modifications</h2>
+	<p>This page contains links to tools and information of interest to MOD authors and users that wish to install modifications.</p>
+
+	<h2 class="title">Primary MOD Team Activities</h2>
+		<h3><a href="{{ MODS_TEAM_OVERVIEW }}">MOD Team Overview</a></h3>
+		<p>Important information pertaining to the activities of the MOD Team, and how you can become involved.</p>
+
+		<h3><a href="{{ mods_db_path }}">MOD Database</a></h3>
+		<p>Here you can download and submit completed MODs.</p>
+
+		<h3><a href="{{ MODS_MODX }}">MODX</a></h3>
+		<p>Information about the MODX format used for modifications.</p>
+
+		<h3><a href="{{ MODS_AUTOMOD }}">AutoMOD</a></h3>
+		<p>AutoMOD is a tool designed to automatically install MODs for phpBB3. AutoMOD for phpBB3 is the successor to EasyMOD.</p>
+
+		<h3><a href="{{ MODS_UMIL }}">UMIL</a></h3>
+		<p>Create easy to use automated MOD installation scripts.</p>
+
+		<h3><a href="{{ MODS_TRACKER }}">Bug tracker</a></h3>
+		<p>Report bugs in our MOD Team tools.</p>
+
+	<span class="clear"></span>
+
+	<div class="column1">
+	<h2 class="title">MOD Authors</h2>
+		<h3><a href="{{ MODS_AUTHOR_INTRO }}">Introduction to MOD Writing</a></h3>
+		<p>This document contains the basic information a MOD author needs to know before writing a MOD.</p>
+
+		<h3><a href="{{ MODS_MPV }}">MPV</a></h3>
+		<p>The MOD Pre-Validator is a tool you can use to check MODs for basic errors prior to submitting it to the MOD DB.</p>
+
+		<h3><a href="{{ MODS_MODX_TOOLS }}">MODX Tools</a></h3>
+		<p>Information and links for the MODX creator and generator.</p>
+
+		<h3><a href="{{ MODS_UMIL_CREATOR }}">UMIL Creator Tool</a></h3>
+		<p>Use the UMIL creation tool to aid in using UMIL in your MOD(s).</p>
+
+		<h3><a href="{{ MODS_QUICKINSTALL }}">QuickInstall</a></h3>
+		<p>A MOD development tool that allows users to set up multiple phpBB3 installations with one mouse click.</p>
+
+		<h3><a href="{{ MODS_RULES_AND_POLICIES }}">Rules and Policies</a></h3>
+		<p>Explanations of the rules and policies affecting phpBB modifications and the MOD Team.</p>
+
+		<h3><a href="{{ MODS_GUIDELINES }}">phpBB3 Coding Guidelines</a></h3>
+		<p>The guidelines MOD authors should follow when writing a MOD for phpBB3.</p>
+
+		<h3><a href="{{ DEV_WIKI }}">Development Wiki</a></h3>
+		<p>The phpBB Development Wiki contains a lot of useful information about the code in phpBB3.</p>
+	</div>
+
+	<div class="column2">
+		<h2 class="title">Users</h2>
+
+		<h3><a href="{{ MODS_FINDING }}">Finding MODs</a></h3>
+		<p>How to search for a MOD, comparing MOD's to see which best meets your requirements, how to download it.</p>
+
+		<h3><a href="{{ MODS_OPENING }}">Opening MODs</a></h3>
+		<p>How to unzip, a description of what each file does, instructions on how to open the file in your browser.</p>
+
+		<h3><a href="{{ MODS_INSTALLING }}">Installing MODs</a></h3>
+		<p>What each action means, the technique to install a MOD, what to do with FTP and backing up files.</p>
+
+		<h3><a href="{{ MODS_SUPPORT }}">Support for MODs</a></h3>
+		<p>Where to go if you are experiencing problems with a MOD you have installed.</p>
+	</div>
+
+	<div class="column2">
+		<h2 class="title">Bridges</h2>
+
+		<h3><a href="{{ BRIDGES_POLICIES }}">Bridge Policies</a></h3>
+		<p>The policy for accepting bridges to phpBB Bridges database. Bridge authors should read this.</p>
+
+		<h3><a href="{{ BRIDGES_DB }}">Bridges Database</a></h3>
+		<p>Here you can find validated bridges.</p>
+
+	</div>
+
+	<span class="clear"></span>
+
+	<h2 class="title">Other Information</h2>
+		<h3><a href="{{ MODS_FAQ }}">Frequently Asked Questions</a></h3>
+		<p>Answers to the most commonly asked MOD related questions.</p>
+
+		<h3><a href="{{ MODS_TEAM_OVERVIEW_JR }}">Junior Validators</a></h3>
+		<p>Junior Validators assist the MOD Team by testing and giving feedback on MODs submitted to the MOD DB.</p>
+</div>
+
+<div id="extras">
+	{{ include('AppBundle:Mods:menu.html.twig') }}
+</div>
+</div>
+{% endblock %}

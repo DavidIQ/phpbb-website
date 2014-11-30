@@ -1,0 +1,30 @@
+phpBBWebsite_Downloads_home:
+    path:  /
+    defaults: { _controller: AppBundle:Downloads:home, branch: 3.1 }
+    methods:  [GET]
+
+phpBBWebsite_Downloads_branch:
+    path:  /{branch}/
+    defaults: { _controller: AppBundle:Downloads:home }
+    methods:  [GET]
+    requirements:
+        branch: 3.0|3.1
+
+# phpBBWebsite_Downloads_download:
+#     path:  /download/
+#     defaults: { _controller: AppBundle:Downloads:downloadRedirectHandler, branch: latest }
+#     methods:  [GET]
+
+# phpBBWebsite_Downloads_download_branch:
+#     path:  /download/{branch}/
+#     defaults: { _controller: AppBundle:Downloads:downloadRedirectHandler }
+#     methods:  [GET]
+#     requirements:
+#         branch: latest|3.0|3.1
+
+# phpBBWebsite_Downloads_download_package:
+#     path:  /download/{package}
+#     defaults: { _controller: AppBundle:Downloads:downloadHandler }
+#     methods:  [GET]
+#     requirements:
+#         package: .+

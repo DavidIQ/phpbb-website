@@ -1,0 +1,47 @@
+{% extends ':base:base.html.twig' %}
+
+{% block title %}Official Extensions{% endblock title %}
+
+{% block phpbb_body_class %}mods{% endblock %}
+
+{% block body %}
+<div id="page-body">
+	<ul class="linklist navlinks">
+		<li><a href="{{ home_path }}">Home</a>
+			<strong>&#8249;</strong> <a href="{{ customise_path }}">Customise phpBB</a>
+			<strong>&#8249;</strong> <a href="{{ extensions_path }}">Extensions</a>
+			<strong>&#8249;</strong> <a href="{{ extensions_offical_exts }}">Official Extensions</a>
+		</li>
+	</ul>
+
+	<div id="main">
+		<h2 class="imgrep mods">phpBB Official Extensions</h2>
+		<p>phpBB is proud to present a collection of official extensions. These are extensions created and maintained by the <a href="{{ extensions_offical_exts_team }}">Official Extensions Development Team</a>. These extensions were chosen based on various criteria including community interest and their ability to serve as teaching examples for extension developers/authors. Their code has been extensively commented to provide as much information as possible to help extension authors learn from them.</p>
+
+		<hr />
+
+		{% for extension in extensions %}
+			<h2 class="title"><img src="{{ extension.getIcon() }}" width="32" height="32" alt="{{ extension.getName() }}" class="official-extension-icon" />{{ extension.getName() }}</h2>
+			<p>{{ extension.getDescription() }}</p>
+			<h3>For Extension Authors</h3>
+			<p>{{ extension.getDescriptionForDevelopers() }}</p>
+			<p style="float:right;"><span class="mini-tag dirty-green">&nbsp;<a href="{{ extension.getContribution() }}">Contribution</a>&nbsp;</span> <span class="mini-tag blue">&nbsp;<a href="{{ extension.getGithub() }}">GitHub repository</a>&nbsp;</span></p>
+			<hr />
+		{% endfor %}
+
+		<h2 class="title">Additional Links for Extensions</h2>
+		<p>
+			<a href="{{ extensions_cdb }}">Extensions Database</a><br />
+			<a href="{{ forum_extensions_31x_dev }}">Extensions in Development Forum</a><br />
+			<a href="{{ forum_extensions_31x_writers }}">Extension Writers Forum</a>
+		</p>
+
+		<br />
+
+	</div>
+
+	<div id="extras">
+		{{ include('AppBundle:Extensions:menu.html.twig') }}
+	</div>
+</div>
+{% endblock %}
