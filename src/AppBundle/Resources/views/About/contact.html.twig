@@ -1,0 +1,84 @@
+{% extends ':base:base.html.twig' %}
+
+{% block title %}Contact phpBB&reg;{% endblock title %}
+
+{% block phpbb_body_class %}contact{% endblock %}
+
+{% block body %}
+<div id="page-body">
+
+<ul class="linklist navlinks">
+	<li><a href="{{ home_path }}">Home</a>
+		<strong>&#8249;</strong> <a href="{{ about_path }}">About</a>
+	</li>
+</ul>
+
+<div id="main">
+	<h2 class="imgrep contact">Contact phpBB<sup>&reg;</sup></h2>
+
+	<h3 id="who-to-contact">Who to contact concerning non-phpbb.com boards <a href="#who-to-contact">#</a></h3>
+
+	<p>You may be here to search for a contact regarding a site displaying the <em>Powered by phpBB</em> line. The <em>Powered by phpBB</em> line is displayed on every site using our software. Although sites display the powered by line, this does not mean we host it or provide the service. We are not a forum hoster and also do not host any boards beyond our own (phpbb.com)</p>
+
+	<p>Please remember that we (phpBB.com) have absolutely nothing to do with any board or site beyond those hosted at phpbb.com and it's subdomains (area51.phpbb.com for example). We do not provide forum hosting services, we do not host sites and we have no jurisdication over other sites.</p>
+
+	<p>The phpBB Group writes, maintains and supports the phpBB software. We do not maintain nor do we have any control over 3rd party use of our software.
+	The GPL, the licence under which phpBB is released explicitly prevents us from limiting what the end-user may do with our software.
+	Only when the software is re-distributed and/or modified we can take action under the licence terms.</p>
+
+	<p>Therefore please <strong>do not</strong> contact us in any way concerning what may be happening at boards beyond phpbb.com.
+	This includes emailing personal addresses of phpBB Team members.</p>
+
+	<hr />
+
+	<h3 id="who-to-contact-third-party">Who do I contact about abusive and/or legal matters related to the third-party board? <a href="#who-to-contact-third-party">#</a></h3>
+
+	<p>Any of the administrators listed on the &ldquo;The team&rdquo; page of the third-party board should be an appropriate point of contact for your complaints.
+	If this still gets no response then you should contact the owner of the domain (do a whois lookup) or,
+	if this is running on a free service (e.g. Yahoo!, free.fr, f2s.com, etc.), the management or abuse department of that service.</p>
+
+	<p>Please note that the phpBB Group has absolutely no jurisdiction and cannot in any way be held liable over how, where or by whom this software (phpBB) is used.
+	<strong>Do not</strong> contact the phpBB Group in relation to any legal (cease and desist, liable, defamatory comment, etc.)
+	matter not directly related to the phpBB.com website or the discrete software of phpBB itself.</p>
+
+	<p>We reserve the right to publish any legal threats, including but not limited to DMCA notices, or otherwise aggressive messages sent to any @phpbb.com email address or phpBB Team Member.</p>
+
+	<hr />
+
+	<h3 id="spam-illegal">Who to contact concerning Spam or Illegal Content on phpBB.com forums <a href="#spam-illegal">#</a></h3>
+
+	<p>If you encounter spam, illegal content or links to sites containing illegal content on the phpBB.com or area51.phpbb.com forums,
+	please use the <strong>Report Post</strong> <img width="20px" height="20px" style="background: transparent url({{ ICON_POST_REPORT }});" src="{{ asset('assets/images/images/spacer.gif') }}" alt="report icon" />
+	button on the post containing the spam content or link.</p>
+
+	<hr />
+
+	<h3 id="advertising">Advertising on phpBB.com <a href="#advertising">#</a></h3>
+
+	<p>Please consult our <a href="{{ advertise_path }}">Advertise on phpBB.com</a> page for more information.</p>
+
+	<hr />
+
+	<h3 id="else">Everything else <a href="#else">#</a></h3>
+
+	<p>For all other administrative concerns, please send a message to operations[AT]phpbb[DOT]com.</p>
+
+	<hr />
+
+	<!-- p>Alternatively, you may contact a member of the <a href="http://www.phpbb.com/community/memberlist.php?mode=group&g=993" style="color: #0000CC;" class="username-coloured">Moderator Team</a> to address the issue.</p -->
+
+	<!-- hr />
+
+	<h3 id="partnerships">Partnerships Placeholder</h3>
+
+	<hr />
+
+	<h3 id="server-issues">Server Issues Placeholder</h3 -->
+
+</div>
+<div id="extras">
+	{{ include('AppBundle:About:menu.html.twig') }}
+</div>
+
+</div>
+{% endblock %}

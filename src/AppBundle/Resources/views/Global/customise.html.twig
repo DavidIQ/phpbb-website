@@ -1,0 +1,37 @@
+{% extends ':base:base.html.twig' %}
+
+{% block title %}Customise phpBB{% endblock title %}
+
+{% block phpbb_body_class %}customise{% endblock %}
+
+{% block body %}
+<div id="page-body">
+	<ul class="linklist navlinks">
+		<li><a href="{{ home_path }}">Home</a>
+			<strong>&#8249;</strong> <a href="{{ customise_path }}">Customise phpBB</a>
+		</li>
+	</ul>
+
+	<div id="main">
+		<h2 class="imgrep customise">Customise phpBB</h2>
+		<div class="column1">
+			<h3><span class="mini-tag blue">3.1.x</span><a href="{{ extensions_path }}">Extensions</a></h3>
+			<p>Here you will find guides to installing, using and creating extensions for phpBB 3.1 forums. You will also find the Extensions Database and other areas where you can download extensions for phpBB.</p>
+			<h3><span class="mini-tag dirty-green">3.0.x</span><a href="{{ mods_path }}">Modifications</a></h3>
+			<p>Here you will find guides to installing, using and creating modifications for phpBB 3.0 forums. You will also find the MODs Database and other areas where you can download MODs for phpBB.</p>
+		</div>
+
+		<div class="column2">
+			<h3><a href="{{ styles_path }}">Styles</a></h3>
+			<p>Here you will find information on how to install and create styles for phpBB3. You will also find the Styles Database and other areas where you can download styles for phpBB.</p>
+			<h3><a href="{{ languages_path }}">Language Packs</a></h3>
+			<p>phpBB has been localised to over 50 different languages and language variations. Here you can search for translations in your native language.</p>
+		</div>
+	</div>
+	<div id="extras">
+		{{ include('AppBundle:Extensions:menu.html.twig') }}
+		{{ include('AppBundle:Styles:mini-menu.html.twig') }}
+	</div>
+
+</div>
+{% endblock %}

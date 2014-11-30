@@ -1,0 +1,39 @@
+{% extends ':base:base.html.twig' %}
+
+{% block title %}Junior Validators{% endblock title %}
+
+{% block phpbb_body_class %}styles{% endblock %}
+
+{% block body %}
+<div id="page-body">
+	<ul class="linklist navlinks">
+		<li><a href="{{ home_path }}">Home</a>
+			<strong>&#8249;</strong> <a href="{{ customise_path }}">Customise phpBB</a>
+			<strong>&#8249;</strong> <a href="{{ styles_path }}">Styles</a>
+			<strong>&#8249;</strong> <a href="{{ styles_team_overview }}">Styles Team Overview</a>
+			<strong>&#8249;</strong> <a href="{{ styles_junior_validators }}">Junior Validators</a>
+		</li>
+	</ul>
+
+	<div id="main">
+		<h2 class="imgrep styles">Junior Validators</h2>
+		<p>The Junior Style Validators Team is composed of community members who assist the Styles Team in validating user-submitted styles in the Styles Database.</p>
+		<p>Their role includes testing styles to ensure that everything displays and functions correctly and that they adhere with the rules set in place by the Styles Submission Policy. They are also the first responders when a submission enters the Styles Database, which consists of quickly checking submissions and pointing out those that contain major issues.</p>
+
+		<h3>What are the requirements?</h3>
+		<p>The Styles Team will select new members from the Junior Style Validators Team. Users interested in joining the JSV Team should meet the following requirements:</p>
+		<ul class="list-margin">
+			<li>Must have comprehensive knowledge of HTML, CSS, phpBB's default styles, and the templating system.</li>
+			<li>Be able to communicate effectively in English.</li>
+			<li>Be familiar with the <a href="{{ styles_ssp }}">Styles Submission Policy</a>.</li>
+		</ul>
+		<br />
+		<p>If you meet these requirements and want to contribute to the phpBB project under the Styles Team, you can apply to become a Junior Style Validator by contacting <a href="{{ styles_tl_contact }}">{{ styles_tl_name }}</a>.</p>
+		<br />
+	</div>
+
+	<div id="extras">
+		{{ include('AppBundle:Styles:menu.html.twig') }}
+	</div>
+</div>
+{% endblock %}

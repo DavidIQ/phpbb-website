@@ -1,5 +1,5 @@
-PhpbbWebsiteInterfaceBundle:
-    resource: "@PhpbbWebsiteInterfaceBundle/Resources/config/routing.yml"
+AppBundle:
+    resource: "@AppBundle/Resources/config/routing.yml"
     prefix:   /
 
 PhpbbPrivateWebsiteBundle:

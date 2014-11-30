@@ -1,0 +1,58 @@
+{% extends ':base:base.html.twig' %}
+
+{% block title %}Extension Writers Rules and Guidelines{% endblock title %}
+
+{% block phpbb_body_class %}mods{% endblock %}
+
+{% block body %}
+<div id="page-body">
+	<ul class="linklist navlinks">
+		<li><a href="{{ home_path }}">Home</a>
+			<strong>&#8249;</strong> <a href="{{ customise_path }}">Customise phpBB</a>
+			<strong>&#8249;</strong> <a href="{{ extensions_path }}">Extensions</a>
+			<strong>&#8249;</strong> <a href="{{ extensions_rules }}">Rules and Policies</a>
+		</li>
+	</ul>
+
+	<div id="main">
+		<h2 class="imgrep mods">Extension Writers Discussion Forum Rules</h2>
+		<p>The Extension Writers Discussion forum is setup as a place for extension authors to discuss issues concerning development on their extensions.</p>
+
+		<ol id="rules">
+			<li id="discussion-allowed">
+				<h3>Issues that may be discussed</h3>
+				<ol type="a">
+					<li id="authoring"><a name="rule1a"></a>Difficulties in starting with phpBB extension authoring. <a class="permalink" href="#authoring">#</a></li>
+					<li id="coding"><a name="rule1b"></a>This forum is for discussion related to coding for phpBB. It is not for general PHP questions or coding questions concerning scripts other than phpBB. <a class="permalink" href="#coding">#</a></li>
+					<li id="concepts"><a name="rule1c"></a>Programming concepts related to phpBB <a class="permalink" href="#concepts">#</a></li>
+					<li id="techniques"><a name="rule1d"></a>Programming techniques related to phpBB <a class="permalink" href="#techniques">#</a></li>
+					<li id="community"><a name="rule1e"></a>The extensions community at phpBB.com <a class="permalink" href="#community">#</a></li>
+				</ol>
+			</li>
+			<li id="discussion-disallowed">
+				<h3>Issues which may not be discussed</h3>
+				<ol type="a">
+					<li id="support"><a name="rule2a"></a>Not for extension Support. The Extension Writers Discussion forum is not a place for creating topics to facilitate support for extensions. The phpBB Extensions Team does not have a dedicated extensions support team as such, so to help facilitate receiving of support, we require you to posts all requests in the topic dedicated to that extension. That means if the extension you require support from is in the Extension Database, please post your support request in the extension's release topic in the <a href="{{ extensions_cdb }}">Extension Database</a>. For extensions still in development, post your support request as a reply to the development topic of the extension in the <a href="{{ forum_extensions_31x_dev }}">Extensions in Development forum</a>. This will allow the author of the extension to quickly find your support request or problems with their extension and to help you out or to fix the problem with the extension.<br /><br >If you found the extension at a site other than phpbb.com, please note that we don't have a place here where you can receive support for that extension. You will have to contact the author, either at their site or personally, for further support or information. The extension (when downloaded) should contain the author's contact information. <a class="permalink" href="#support">#</a></li>
+					<li id="requests"><a name="rule2b"></a>The Extension Writers Discussion forum is not for extension or feature requests. Extension requests should instead be posted in the <a href="{{ forum_extensions_req }}">Extension Requests Forum</a>. If you have no intention of creating the extension yourself, it is an extension request. <a class="permalink" href="#requests">#</a></li>
+					<li id="releases"><a name="rule2c"></a>Extension releases or extension development releases do not belong in the Extension Writers Discussion Forum. They should be posted to the <a href="{{ extensions_cdb }}">Extension Database</a> and <a href="{{ forum_extensions_31x_dev }}">Extensions in Development Forum</a> respectively. <a class="permalink" href="#releases">#</a></li>
+					<li id="ext-security"><a name="rule2d"></a>Any security vulnerabilities discovered in extensions listed on phpBB.com must be reported to the extension author as well as the <a href="{{ extensions_security_tracker }}">Extension Security Tracker</a>. The Extensions Team will then take the appropriate steps to remove the extension and notify the author. phpBB.com does not take responsibility for vulnerabilities contained within extensions and is not responsible for any extensions listed outside of phpBB.com. <a class="permalink" href="#ext-security">#</a></li>
+					<li id="phpbb-security"><a name="rule2e"></a>Security Issues with phpBB should not be posted in the Extension Writers Discussion Forum. Instead please create a new ticket in the <a href="{{ U_SECURITY_SUB }}">phpBB Security Tracker</a>. <a class="permalink" href="#phpbb-security">#</a></li>
+					<li id="board-wide-rules"><a name="rule2f"></a>In addition to these rules, the <a href="{{ RULES }}">phpBB Board-Wide Rules and Regulations</a> apply to all Extension Forums on phpBB.com <a class="permalink" href="#board-wide-rules">#</a></li>
+				</ol>
+			</li>
+		</ol>
+	</div>
+
+	<div id="extras">
+		{{ include('AppBundle:Extensions:menu.html.twig') }}
+		<div class="mini-panel js-sections js-scroll" style="display: none"></div>
+	</div>
+</div>
+{% endblock %}
+
+{% block javascriptFooter %}
+	{{ parent() }}
+
+	<!-- JS for Rule Highlighting -->
+	<script type="text/javascript" src="{{ asset('assets/js/rules.js') }}"></script>
+{% endblock %}

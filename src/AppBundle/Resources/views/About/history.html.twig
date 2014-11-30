@@ -1,0 +1,54 @@
+{% extends ':base:base.html.twig' %}
+
+{% block title %}History{% endblock title %}
+
+{% block phpbb_body_class %}about history{% endblock %}
+
+{% block body %}
+<div id="page-body">
+
+<ul class="linklist navlinks">
+	<li><a href="{{ home_path }}">Home</a>
+		<strong>&#8249;</strong> <a href="{{ about_path }}">About</a>
+		<strong>&#8249;</strong> <a href="{{ ABOUT_HISTORY }}">History</a>
+	</li>
+</ul>
+
+<div id="main">
+	<h2 class="imgrep history">phpBB<sup>&reg;</sup>: A Brief History</h2>
+<h3>The Beginning</h3>
+
+<p>phpBB was born as an open-source "UBB look-alike" bulletin board created by James Atkinson (theFinn) for his wife in June 2000. The software gained attention after an initial post on the DevShed forum requesting people test it and soon after the project was added to Sourceforge where it quickly grew popular. During this time, James Atkinson was joined by Nathan Codding and John Abela.</p>
+<p>After a month of development, phpBB 1.0 Beta was made publicly available; this release, and a subsequently created PHPNuke module, served to attract further attention to the project.</p>
+
+<h3>phpBB Make One</h3>
+<p>On December 9, 2000, phpBB 1.0.0 was released. Work continued on phpBB 1.2, 1.3 and 1.4 during which time several other developers joined the team; most notably Paul Owen (psoTFX), who would go on to establish phpBB&rsquo;s official testing ground &ldquo;area51&rdquo; and become the lead developer of phpBB2.</p>
+<p>phpBB 1.4.4 was released on November 6, 2001 and marked the end of development for phpBB1.</p>
+
+<h3>phpBB2: Creating Communities</h3>
+<p>In February 2001, shortly after phpBB1 was released, work began on phpBB2. phpBB 2.0.0 was released on April 4, 2002 after 14 months of work and kick-started an exciting era characterised by the high amount of community involvement. A modern MOD Database was launched in January 2003 shortly followed by a Styles Database which served to encourage contributions from phpBB users.</p>
+<p>Bertie Bear is an icon now synonymous with phpBB. The first Bertie teddy bear was made available in August 2004 and to celebrate the impending release of phpBB3, new editions of Bertie were released in March 2006 and December 2007.</p>
+<p>The final version of phpBB2 was released in February 2008.</p>
+
+<h3>phpBB3: Conquering Olympus</h3>
+<p>In February 2003 development started phpBB 2.2, the planned successor to phpBB2. In January 2005 lead developer Paul Owen announced that due to the lack of backward compatibility with phpBB 2.0.x the new version would be named phpBB3. </p>
+<p>In September 2005, Meik Sievertsen (Acyd Burn) became the Development Team Leader. Meanwhile, development on both phpBB3 and phpBB2 continued and the first of five beta releases for phpBB3 debuted on June 17, 2006. The phpBB.com website was upgraded to phpBB3 in March 2007 at which time the revolutionary new style, prosilver, was first revealed to the public.</p>
+<p>Following seven months in the release candidate stage, phpBB 3.0.0 was officially released on December 13, 2007. During this time phpBB held its first MOD Authors Convention, won a SourceForge Community Choice Award and underwent a comprehensive security audit by SektionEins.</p>
+
+<h3>International Encounters</h3>
+<p>In July 2008, seven months after phpBB 3.0.0's release, phpBB held its first international event - Londonvasion. The London event marked the first significant gathering of phpBB team members and community members. Londonvasion included a number of high quality presentations given by members of the team and the community.</p>
+<p>A year later in July 2009, members of the Development Team and the Management Team met in Cologne, Germany to discuss future innovations for phpBB.</p>
+<p>Building on the success of the Londonvasion, phpBB&rsquo;s second official public gathering - Libertyvasion - was held in New York City during August 2010.</p>
+<p>In addition to the official phpBB events, there have been numerous informal local meetings arranged by members of the community which is testimony to the high level of public interest in the project.</p>
+
+<h3>The Future</h3>
+<p>Nils Adermann (naderman) assumed the role of Development Team Leader in January 2010 and the future is bright for phpBB with an open, community-focused method of development. In addition to the continued development of phpBB 3.0 &ldquo;Olympus&rdquo; and phpBB 3.1 &ldquo;Ascraeus&rdquo;, planning has also begun for future releases 3.2 &ldquo;Arsia&rdquo; and 4.0 &ldquo;Rhea&rdquo;.</p>
+
+</div>
+
+<div id="extras">
+	{{ include('AppBundle:About:menu.html.twig') }}
+</div>
+
+</div>
+{% endblock %}

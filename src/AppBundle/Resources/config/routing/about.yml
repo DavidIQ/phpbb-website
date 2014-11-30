@@ -1,0 +1,60 @@
+phpBBWebsite_About_home:
+    path:  /
+    defaults:
+        _controller: AppBundle:StaticTemplate:staticTemplate
+        template: AppBundle:About:home.html.twig
+    methods:  [GET]
+
+phpBBWebsite_About_history:
+    path:  /history/
+    defaults:
+        _controller: AppBundle:StaticTemplate:staticTemplate
+        template: AppBundle:About:history.html.twig
+    methods:  [GET]
+
+phpBBWebsite_About_advertise:
+    path:  /advertise/
+    defaults:
+        _controller: AppBundle:StaticTemplate:staticTemplate
+        template: AppBundle:About:advertise.html.twig
+    methods:  [GET]
+
+phpBBWebsite_About_contact:
+    path:  /contact/
+    defaults: { _controller: AppBundle:About:contact }
+    methods:  [GET]
+
+phpBBWebsite_About_features:
+    path:  /features/
+    defaults:
+        _controller: AppBundle:StaticTemplate:staticTemplate
+        template: AppBundle:About:features.html.twig
+    methods:  [GET]
+
+phpBBWebsite_About_launch:
+    path:  /launch/
+    defaults:
+        _controller: AppBundle:StaticTemplate:staticTemplate
+        template: AppBundle:About:launch.html.twig
+    methods:  [GET]
+
+phpBBWebsite_About_getInvolved:
+    path:  /get-involved/
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        path: /get-involved/
+        permanent: true
+
+phpBBWebsite_About_features_compare:
+    path:  /features/compare.php
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        path: /about/features/
+        permanent: true
+
+phpBBWebsite_About_contact_redirect:
+    path:  /contact_us.php
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        path: /about/contact/
+        permanent: true

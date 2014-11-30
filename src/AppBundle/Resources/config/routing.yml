@@ -1,0 +1,60 @@
+AppBundle_homepage:
+    path:  /
+    defaults: { _controller: AppBundle:Global:home }
+
+phpBBWebsite_getInvolved:
+    path:  /get-involved/
+    defaults: { _controller: AppBundle:About:getInvolved }
+    methods:  [GET]
+
+phpBBWebsite_demo:
+    path:  /demo/
+    defaults:
+        _controller: AppBundle:StaticTemplate:staticTemplate
+        template: AppBundle:Global:demo.html.twig
+    methods:  [GET]
+
+phpBBWebsite_customise:
+    path:  /customise/
+    defaults:
+        _controller: AppBundle:StaticTemplate:staticTemplate
+        template: AppBundle:Global:customise.html.twig
+    methods:  [GET]
+
+phpBBWebsite_ideas:
+    path:  /ideas/
+    defaults:
+        _controller: AppBundle:StaticTemplate:staticTemplate
+        template: AppBundle:Global:ideas.html.twig
+    methods:  [GET]
+
+phpBBWebsite_About_contact_redirect:
+    path:  /contact/
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        path: /about/contact/
+        permanent: true
+
+phpBBWebsite_About:
+    resource: "@AppBundle/Resources/config/routing/about.yml"
+    prefix:   /about
+
+phpBBWebsite_Mods:
+    resource: "@AppBundle/Resources/config/routing/mods.yml"
+    prefix:   /mods
+
+phpBBWebsite_Development:
+    resource: "@AppBundle/Resources/config/routing/development.yml"
+    prefix:   /development
+
+phpBBWebsite_Support:
+    resource: "@AppBundle/Resources/config/routing/support.yml"
+    prefix:   /support
+
+phpBBWebsite_Extensions:
+    resource: "@AppBundle/Resources/config/routing/extensions.yml"
+    prefix:   /extensions
+
+phpBBWebsite_Styles:
+    resource: "@AppBundle/Resources/config/routing/styles.yml"
+    prefix:   /styles

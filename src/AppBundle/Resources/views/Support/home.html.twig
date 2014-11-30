@@ -1,0 +1,49 @@
+{% extends ':base:base.html.twig' %}
+
+{% block title %}Support{% endblock title %}
+
+{% block phpbb_body_class %}support{% endblock %}
+
+{% block body %}
+<div id="page-body">
+
+<ul class="linklist navlinks">
+	<li><a href="{{ home_path }}">Home</a>
+	<strong>&#8249;</strong> <a href="{{ support_path }}">Support</a>
+	</li>
+</ul>
+
+<div id="main">
+	<h2 class="imgrep support">Support</h2>
+	<p>Having installation problems? Is the database giving you trouble? Can't seem to login? Have a question about how to use the product? You will find various resources where you can find help below. If you are looking for help with MODs or Styles, information can be found in their sections accessed via the links at the top of the page.</p>
+	<div class="column1">
+		<h3><a href="{{ SUPPORT_DOCS }}">Documentation</a></h3>
+		<p>The installation guide and full documentation to the forum (board) system. This should be your first stop in finding solutions.</p>
+		<h3><a href="{{ SUPPORT_TUTORIALS_3_0 }}">Flash Tutorials</a></h3>
+		<p>A picture is worth a thousand words. We've taken that idea and created flash tutorials showing common tasks you will be performing while using phpBB.</p>
+ 		<h3><a href="{{ SUPPORT_IRC }}">IRC Support</a></h3>
+		<p>A support channel is registered on the freenode.net IRC network. Note that this channel is for phpBB discussion or support only.</p>
+		<h3><a href="{{ SUPPORT_SRT }}">Support Request Template</a></h3>
+		<p>We've created a tool to help you provide us with the information we need to help you in the Support Forum. Please run this tool whenever you create a new support topic.</p>
+	</div>
+	<div class="column2">
+		<h3><a href="{{ SUPPORT_DOCS_KB }}">Knowledge Base</a></h3>
+		<p>The knowledge base contains team and user submitted articles, covering a number of support areas. We encourage you to add your own content.</p>
+		<h3><a href="{{ SUPPORT_FORUMS }}">Support Forums</a></h3>
+		<p>If you cannot find an answer in the resources, please post in an appropriate forum. Before posting a question, please make use of the search facility.</p>
+		<h3><a href="{{ SUPPORT_INTL }}">International Support</a></h3>
+		<p>Because phpBB is multilingual, a number of 3rd party sites have appeared to support those whose first language is not English.</p>
+		<h3><a href="{{ SUPPORT_STK }}">Support Toolkit</a></h3>
+		<p>A toolkit developed and maintained by the Support Team, that can be used recover various parts of a corrupted phpBB 3.0.x installation or to solve commonly encountered problems with the software.</p>
+	</div>
+</div>
+<div id="extras">
+	{{ include('AppBundle:lists:subscribe.html.twig') }}
+
+	{{ include('AppBundle:Support:menu.html.twig') }}
+
+	{{ include('AppBundle:lists:trackers.html.twig') }}
+</div>
+
+</div>
+{% endblock %}

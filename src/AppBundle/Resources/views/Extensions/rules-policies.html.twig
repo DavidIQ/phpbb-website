@@ -1,0 +1,54 @@
+{% extends ':base:base.html.twig' %}
+
+{% block title %}Extensions Rules and Policies{% endblock title %}
+
+{% block phpbb_body_class %}mods{% endblock %}
+
+{% block body %}
+<div id="page-body">
+	<ul class="linklist navlinks">
+		<li><a href="{{ home_path }}">Home</a>
+			<strong>&#8249;</strong> <a href="{{ customise_path }}">Customise phpBB</a>
+			<strong>&#8249;</strong> <a href="{{ extensions_path }}">Extensions</a>
+			<strong>&#8249;</strong> <a href="{{ extensions_rules }}">Rules and Policies</a>
+		</li>
+	</ul>
+
+	<div id="main">
+		<h2 class="imgrep mod_rules">phpBB Extension Rules and Policies</h2>
+		<p>phpBB.com Extensions Rules, Policies and Guidelines</p>
+
+		<h3 class="title"><a href="{{ extensions_rules_dev }}">Extension Development Forum Guidelines</a></h3>
+		<p>Rules for the [3.1.x] Extension Development forum.</p>
+
+		<h3><a href="{{ extensions_rules_writer }}">Extensions Writers Discussion Forum Guidelines</a></h3>
+		<p>The phpBB.com Extensions Writers Discussion Forum rules and guidelines.</p>
+
+		<h3>Extension Database Policies</h3>
+		<div class="forabg">
+			<div class="inner">
+				<table class="table1" cellspacing="0">
+					<thead>
+					<tr>
+						<th colspan="2">Policy</th>
+					</tr>
+					</thead>
+
+					<tbody>
+					{% for policy in policies  %}
+					<tr class="{{ cycle(['bg2', 'bg1'], policy.i) }}">
+						<td><strong><a href="{{ policy.link }}">{{ policy.name }}</a></strong></td>
+						<td>{{ policy.description }}</td>
+					</tr>
+					{%  endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<div id="extras">
+		{{ include('AppBundle:Extensions:menu.html.twig') }}
+	</div>
+</div>
+{% endblock %}
