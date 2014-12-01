@@ -14,7 +14,7 @@ framework:
     csrf_protection: ~
     validation:      { enable_annotations: true }
     templating:
-        assets_version:         2014110900
+        assets_version:         2014120100
         #Assets Version format: YYYYMMDDCC (CC for count of number of updates in that day)
         assets_version_format:  %%s?v%%s
         engines:
