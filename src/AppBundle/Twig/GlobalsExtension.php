@@ -359,11 +359,6 @@ class GlobalsExtension extends \Twig_Extension
 			'styles_docs_31x'				 => '/support/docs/en/3.1/ug/adminguide/customise_styles/',
 			'styles_docs_30x'				 => '/support/docs/en/3.0/ug/adminguide/styles/',
 
-			// Related community topics
-			'styles_ssp_31x_feedback'		 => '/community/viewforum.php?f=481&t=66666', // TODO: create topic
-			'styles_ssp_30x_feedback'		 => '/community/viewtopic.php?f=74&p=12931323', // TODO: move topic to 3.0 styles?
-
-			// Team members
 			'styles_team_members'			 => '/community/memberlist.php?mode=group&g=7332',
 			'styles_jv_team_members'		  => '/community/memberlist.php?mode=group&g=228778',
 
@@ -414,8 +409,6 @@ class GlobalsExtension extends \Twig_Extension
 			'extensions_quickinstall'				=> '/mods/quickinstall/', //replace later
 			'extensions_phpbb_cgs'					=> '//area51.phpbb.com/docs/31x/coding-guidelines.html',
 
-			'extensions_writers_discussion'		 => '/community/viewforum.php?f=461',
-
 			'extensions_rules'						=> '/extensions/rules-and-policies/',
 			'extensions_recognised_devs'			=> '/extensions/recognised-developer/',
 			'extensions_offical_exts'				=> '/extensions/official-extensions/',
@@ -464,6 +457,10 @@ class GlobalsExtension extends \Twig_Extension
 			'FORUM_PHPBBDISC'		=> '/community/viewforum.php?f=64',
 			'FORUM_SEARCH_EVENTS'	=> '/community/search.php?keywords=%5BEVENT%5D&amp;terms=all&amp;fid%5B%5D=64&amp;sc=1&amp;sf=titleonly&amp;sr=topics&amp;sk=t&amp;sd=d&amp;st=0&amp;ch=300&amp;t=0&amp;submit=Search',
 
+			// Related community topics
+			'styles_ssp_31x_feedback'		 => '/community/viewforum.php?f=481&t=66666', // TODO: create topic
+			'styles_ssp_30x_feedback'		 => '/community/viewtopic.php?f=74&p=12931323', // TODO: move topic to 3.0 styles?
+
 			// Styles Forum
 			'FORUM_STYLES'				=> '/community/viewforum.php?f=77',
 			'FORUM_STYLES_SUPPORT_30X'	=> '/community/viewforum.php?f=74',
@@ -494,6 +491,7 @@ class GlobalsExtension extends \Twig_Extension
 			'forum_extensions_req'			=> '/community/viewforum.php?f=496',
 			'forum_extensions_31x_dev'		=> '/community/viewforum.php?f=456',
 			'forum_extensions_31x_writers'	=> '/community/viewforum.php?f=461',
+			'extensions_writers_discussion'		 => '/community/viewforum.php?f=461',
 
 			'FORUM_SUPPORT'				=> '/community/viewforum.php?f=46',
 			'FORUM_STYLES_CAT'			=> '/community/viewforum.php?f=80',
@@ -501,6 +499,15 @@ class GlobalsExtension extends \Twig_Extension
 
 			'FORUM_EVENTS'				=> '/community/viewforum.php?f=105',
 			'FORUM_GENDISC'				=> '/community/viewforum.php?f=6',
+
+			'U_FORUM_SUPPORT_SUB'				=> '/community/viewforum.php?f=466',
+			'U_FORUM_STYLES_SUB'				=> '/community/viewforum.php?f=471',
+			'U_FORUM_MODS_SUB'					=> '/community/viewforum.php?f=81',
+			'U_FORUM_EXT_SUB'					=> '/community/viewforum.php?f=451',
+			'U_FORUM_PHPBBDISC_SUB'				=> '/community/viewforum.php?f=64',
+			'U_FORUM_EVENTS_SUB'				=> '/community/viewforum.php?f=105',
+			'U_FORUM_GENDISC_SUB'				=> '/community/viewforum.php?f=6',
+			'U_FORUM_PRIVATE_SUB'				=> '/community/viewforum.php?f=53',
 		);
 
 		return $forumVars;
@@ -654,15 +661,6 @@ class GlobalsExtension extends \Twig_Extension
 			'U_BUGS_PHPBB_SUB'					=> 'http://tracker.phpbb.com/',
 			'U_SECURITY_SUB'					=> '/security/',
 			'U_DEV_HOME_SUB'					=> '//area51.phpbb.com/',
-
-			'U_FORUM_SUPPORT_SUB'				=> '/community/viewforum.php?f=46',
-			'U_FORUM_STYLES_SUB'				=> '/community/viewforum.php?f=80',
-			'U_FORUM_MODS_SUB'					=> '/community/viewforum.php?f=81',
-			'U_FORUM_EXT_SUB'					=> '/community/viewforum.php?f=451',
-			'U_FORUM_PHPBBDISC_SUB'				=> '/community/viewforum.php?f=64',
-			'U_FORUM_EVENTS_SUB'				=> '/community/viewforum.php?f=105',
-			'U_FORUM_GENDISC_SUB'				=> '/community/viewforum.php?f=6',
-			'U_FORUM_PRIVATE_SUB'				=> '/community/viewforum.php?f=53',
 
 			'U_IDEAS'							=> '/ideas',
 
