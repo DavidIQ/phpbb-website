@@ -14,6 +14,8 @@ RewriteCond /var/www/phpbb.com/htdocs/old%{REQUEST_URI} -f [OR]
 RewriteCond /var/www/phpbb.com/htdocs/old%{REQUEST_URI} -d
 RewriteRule ^(.*)$ /var/www/phpbb.com/htdocs/old$1 [L]
 
+RewriteRule ^(.*)$ /var/www/phpbb.com/htdocs/old/maintenance-old.html [L]
+
 RewriteCond %{REQUEST_URI} ^/customise/db/{0,1}.* [OR]
 RewriteCond %{REQUEST_URI} ^/showcase/{0,1}.* [OR]
 RewriteCond %{REQUEST_URI} ^/support/tutorials/{0,1}.* [OR]
