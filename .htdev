@@ -7,12 +7,12 @@
 # Including as mentioned above should work in almost every case.
 
 # Include old .htdev
-Include /var/www/phpbb.com/htdocs/old/.htdev
+Include /var/www/www.phpbb.com/htdocs/old/.htdev
 
 # Exists in /old as directory or file and if so serve it
-RewriteCond /var/www/phpbb.com/htdocs/old%{REQUEST_URI} -f [OR]
-RewriteCond /var/www/phpbb.com/htdocs/old%{REQUEST_URI} -d
-RewriteRule ^(.*)$ /var/www/phpbb.com/htdocs/old$1 [L]
+RewriteCond /var/www/www.phpbb.com/htdocs/old%{REQUEST_URI} -f [OR]
+RewriteCond /var/www/www.phpbb.com/htdocs/old%{REQUEST_URI} -d
+RewriteRule ^(.*)$ /var/www/www.phpbb.com/htdocs/old$1 [L]
 
 RewriteRule ^(.*)$ /var/www/phpbb.com/htdocs/old/maintenance-old.html [L]
 
@@ -49,12 +49,12 @@ RewriteCond %{REQUEST_URI} ^/blog/{0,1}.* [OR]
 RewriteCond %{REQUEST_URI} ^/styles/demo/3.0/{0,1}.* [OR]
 RewriteCond %{REQUEST_URI} ^/support/code-changes/{0,1}.* [OR]
 RewriteCond %{REQUEST_URI} ^/go/authors/{0,1}.*
-RewriteRule ^(.*)$ /var/www/phpbb.com/htdocs/old$1 [L]
+RewriteRule ^(.*)$ /var/www/www.phpbb.com/htdocs/old$1 [L]
 
 # Exists in /symfony/web as directory or file and if so serve it
-RewriteCond /var/www/phpbb.com/htdocs/symfony/web%{REQUEST_URI} -f [OR]
-RewriteCond /var/www/phpbb.com/htdocs/symfony/web%{REQUEST_URI} -d
-RewriteRule ^(.*)$ /var/www/phpbb.com/htdocs/symfony/web$1 [L]
+RewriteCond /var/www/www.phpbb.com/htdocs/symfony/web%{REQUEST_URI} -f [OR]
+RewriteCond /var/www/www.phpbb.com/htdocs/symfony/web%{REQUEST_URI} -d
+RewriteRule ^(.*)$ /var/www/www.phpbb.com/htdocs/symfony/web$1 [L]
 
 # nope? Go through app.php which will handle errors such as 404
 RewriteCond %{REQUEST_URI} !^/community/{0,1}.*
@@ -129,12 +129,12 @@ RewriteCond %{REQUEST_URI} !^/member-login.php
 RewriteCond %{REQUEST_URI} !^/date.php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} !^/var/www/phpbb.com/htdocs/symfony/web
-RewriteRule ^(.*)$ /var/www/phpbb.com/htdocs/symfony/web/app.php$1 [L]
+RewriteCond %{REQUEST_URI} !^/var/www/www.phpbb.com/htdocs/symfony/web
+RewriteRule ^(.*)$ /var/www/www.phpbb.com/htdocs/symfony/web/app.php$1 [L]
 
 # Hello ErrorDocuments! I guess they could do with prettification by way of title image and header?
-ErrorDocument 401 /var/www/phpbb.com/htdocs/old/errordocs/401.php
-ErrorDocument 403 /var/www/phpbb.com/htdocs/old/errordocs/403.php
-ErrorDocument 404 /var/www/phpbb.com/htdocs/old/errordocs/404.php
-ErrorDocument 412 /var/www/phpbb.com/htdocs/old/errordocs/412.php
-ErrorDocument 500 /var/www/phpbb.com/htdocs/old/errordocs/500.php
+ErrorDocument 401 /var/www/www.phpbb.com/htdocs/old/errordocs/401.php
+ErrorDocument 403 /var/www/www.phpbb.com/htdocs/old/errordocs/403.php
+ErrorDocument 404 /var/www/www.phpbb.com/htdocs/old/errordocs/404.php
+ErrorDocument 412 /var/www/www.phpbb.com/htdocs/old/errordocs/412.php
+ErrorDocument 500 /var/www/www.phpbb.com/htdocs/old/errordocs/500.php
