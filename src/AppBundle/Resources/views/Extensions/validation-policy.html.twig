@@ -63,6 +63,7 @@
 					<li>PHP files are saved as UTF-8 Encoded with UNIX line endings (LF).</li>
 					<li>PHP files do not contain a (Byte Order Mark) BOM.</li>
 					<li>Files uploaded via the extension (e.g., downloads in a download extension) should not be placed in the ext/vendor/name directory, but in (for example) phpBB's store/vendor_ext/ directory.</li>
+					<li>Extensions are intended for use on live production sites. Extensions built for developers or development environments will not be validated or added to the Extensions Database. Please notify an Extension Team member if you have a development extension you would like to see added to the Extension Writer Tools sticky in the Extension Writers forum.</li>
 				</ol>
 			</li>
 		</ol>
@@ -168,6 +169,57 @@
 			<li>Semantic version numbers should be used. Only stable versions are allowed in the Extension Database. For every update the version number should be increased.</li>
 			<li>Language files are within the language directory and correct lang_name (ISO) translations are used. Template and theme files are contained in their respective directories.</li>
 		</ol>
+
+		<hr />
+
+		<h2 class="title" id="insta-deny">Insta-Deny Policy</h2>
+		<p>Insta-Deny is meant to rapidly respond to basic problems in an extension submitted for validation. Extensions are checked by the <a href="{[ extensions_epv }}">Extension Pre Validator</a> (EPV) for coding guideline violations.
+
+		<p>In case a violation is detected, the validator (or junior validator) will look at the code violation reported by EPV within 72 hours after submission. The validator will decide if the reported violation is an allowable usage of code. All problems are looked at on a case-by-case basis as there can be valid uses of certain things EPV detects.</p>
+
+		<p>If a validator decides that the violation is in fact a problem, the extension will be Insta-Denied. The validator has the final decision. In cases where the validator is not sure, the final decision is made by the validation team leader. If an extension is not Insta-Denied within the first 72 hours after submission, it either means the extension passed the Insta-Deny requirements or the validators were too late in denying it.</p>
+
+		<h3>Common causes for an Insta-Deny</h3>
+		<p>There are certain conditions that are always reason for an Insta-Deny due to the problems they can cause later in the validation process.</p>
+		<ul>
+			<li>PHP syntax errors. On submission, EPV will make sure there are no PHP syntax errors in the extension.</li>
+			<li>Incorrectly named vendor and package names (must be alphanumeric only and must begin with a letter).</li>
+			<li>Extension vendor name cannot be <strong>phpbb</strong> or <strong>core</strong>.</li>
+			<li>Invalid composer.json file syntax.</li>
+			<li>Missing a British English (en) language translation.</li>
+			<li>Missing a Prosilver template for any extension style files (except when using the “all” template folder).</li>
+			<li>Not using the DBAL. It’s always required to use the DBAL class in your extension.</li>
+			<li>Not using migration files to perform database changes.</li>
+			<li>Extensions designed for use in development only environments. Extensions in the Customisation Database are intended for live production environments.</li>
+			<li>For all other problems EPV finds, it’s a case by case decision if it’s allowed or not.</li>
+		</ul>
+
+		<h3>Preventing an Insta-Deny</h3>
+		<p>An Insta-Deny can be prevented by using <a href="{{ extensions_epv }}">EPV</a> before you submit your extension. If there are any problems you will receive them in a report from EPV. In case you have any questions regarding this report please feel free to ask in the <a href="{{ forum_extensions_31x_writers }}">Extension Writers Forum</a>. On extension submission, the EPV results will be shown and you should act, if appropriate, upon them.</p>
+
+		<hr />
+
+		<h2 class="title" id="repack">Repack Policy</h2>
+		<p>All extensions submitted to the Extensions Database can be repacked if the extension author gives approval for the Extensions Team to repack their extension upon submission. A repack will be done when an Extensions Team validator detects a basic problem within the extension that would prevent its approval. This will only be done when the issue is small. Whether an extension is repacked is determined case-by-case when this issue arises. The Extensions Team validation leader has the final word over this decision.</p>
+
+		<h3>When we do repack</h3>
+		<p>The Extensions Team will only repack an extension if its author has given the Extensions Team permission to do so. If the author has not given permission, the extension will be denied. The general rule of thumb used to decide whether to repack is: if it will take the Extensions Team less time to repack the extension as opposed to re-validating it for only this issue, then it will be repacked.</p>
+
+		<p>The following are some example problems where a repack was allowed in the past:</p>
+		<ul>
+			<li>An HTML error.</li>
+			<li>Packaging errors.</li>
+			<li>Using backticks in SQL queries.</li>
+		</ul>
+
+		<h3>When we do not repack</h3>
+		<p>An extension will not be repacked in the following cases, even if it requires simple changes. The reason for this is mostly because the extension hasn't been thoroughly tested prior to submission.</p>
+		<ul>
+			<li>The extension cannot be installed. If the installation failed the extension will be denied.</li>
+			<li>The extension contains a parse error or PHP notice.</li>
+			<li>The extension does not work as expected.</li>
+		</ul>
+
 		<br />
 	</div>
 

@@ -7,7 +7,9 @@ phpBBWebsite_Extensions_home:
 
 phpBBWebsite_Extensions_rules_and_policies:
     path:  /rules-and-policies/
-    defaults: { _controller: AppBundle:Extensions:policies }
+    defaults:
+        _controller: AppBundle:StaticTemplate:staticTemplate
+        template: AppBundle:Extensions:rules-policies.html.twig
     methods:  [GET]
 
 phpBBWebsite_Extensions_epv:
@@ -67,20 +69,6 @@ phpBBWebsite_Extensions_rules_and_policies_validation_policy:
     defaults:
         _controller: AppBundle:StaticTemplate:staticTemplate
         template: AppBundle:Extensions:validation-policy.html.twig
-    methods:  [GET]
-
-phpBBWebsite_Extensions_rules_and_policies_repack:
-    path:  /rules-and-policies/repack/
-    defaults:
-        _controller: AppBundle:StaticTemplate:staticTemplate
-        template: AppBundle:Extensions:repack-policy.html.twig
-    methods:  [GET]
-
-phpBBWebsite_Extensions_rules_and_policies_insta_deny:
-    path:  /rules-and-policies/insta-deny/
-    defaults:
-        _controller: AppBundle:StaticTemplate:staticTemplate
-        template: AppBundle:Extensions:instadeny-policy.html.twig
     methods:  [GET]
 
 phpBBWebsite_Extensions_dev_forum_rules:

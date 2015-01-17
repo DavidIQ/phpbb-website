@@ -18,33 +18,14 @@
 		<h2 class="imgrep mod_rules">phpBB Extension Rules and Policies</h2>
 		<p>phpBB.com Extensions Rules, Policies and Guidelines</p>
 
-		<h3 class="title"><a href="{{ extensions_rules_dev }}">Extension Development Forum Guidelines</a></h3>
-		<p>Rules for the [3.1.x] Extension Development forum.</p>
+		<h3 ><a href="{{ extensions_validation_policy }}">Extension Database Submission &amp; Validation Policies</a></h3>
+		<p>Do you have an extension to submit to our extensions database? Please review these important policies on how we handle extension validation, repacking and Insta-Denies to ensure your extension can be validated in a timely manner.</p>
+
+		<h3 ><a href="{{ extensions_rules_dev }}">Extension Development Forum Guidelines</a></h3>
+		<p>Rules for the [3.1.x] Extensions in Development forum. This forum is a place to post and receive feedback on extensions in development. Please review these important rules prior to starting topics for your extensions in this forum.</p>
 
 		<h3><a href="{{ extensions_rules_writer }}">Extensions Writers Discussion Forum Guidelines</a></h3>
-		<p>The phpBB.com Extensions Writers Discussion Forum rules and guidelines.</p>
-
-		<h3>Extension Database Policies</h3>
-		<div class="forabg">
-			<div class="inner">
-				<table class="table1" cellspacing="0">
-					<thead>
-					<tr>
-						<th colspan="2">Policy</th>
-					</tr>
-					</thead>
-
-					<tbody>
-					{% for policy in policies  %}
-					<tr class="{{ cycle(['bg2', 'bg1'], policy.i) }}">
-						<td><strong><a href="{{ policy.link }}">{{ policy.name }}</a></strong></td>
-						<td>{{ policy.description }}</td>
-					</tr>
-					{%  endfor %}
-					</tbody>
-				</table>
-			</div>
-		</div>
+		<p>Rules for the [3.1.x] Extensions Writers Discussion forum. This forum is where extension writers can discuss extension development.</p>
 	</div>
 
 	<div id="extras">
