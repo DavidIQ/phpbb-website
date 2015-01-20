@@ -25,7 +25,7 @@ class SupportControllerTest extends BootstrapTestSuite
 		// Content Check
 		$this->assertTrue($crawler->filter('html:contains("Having installation problems? Is the database giving you trouble?")')->count() > 0, 'Support Home Content Check');
 		$this->assertTrue($crawler->filter('a:contains("Code Changes")')->count() > 0, 'Support Home Sidebar Check');
-		$this->assertTrue($crawler->filter('html:contains("To receive information on new releases of phpBB as they become available you are")')->count() > 0, 'Support Home Sidebar Check 2');
+		//$this->assertTrue($crawler->filter('html:contains("To receive information on new releases of phpBB as they become available you are")')->count() > 0, 'Support Home Sidebar Check 2');
 		$this->assertTrue($crawler->filter('a:contains("Bug Tracker")')->count() > 0, 'About Home Sidebar Check 3');
 
 		// Standard All Page Checks
