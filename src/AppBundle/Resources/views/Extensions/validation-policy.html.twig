@@ -23,21 +23,21 @@
 
 		<h2 class="title" id="general">General</h2>
 		<ol class="list-margin" style="line-height:1.5em;">
-			<li>
+			<li id="general-coding">
 				<h3>Coding Guidelines</h3>
-				The phpBB 3.1 <a href="{{ extensions_phpbb_cgs }}">Coding Guidelines</a> should be followed as much as possible. This means that all files should follow these guidelines, including PHP, JavaScript, and HTML files. This is to ensure maximum readability by the phpBB Extensions Team. Third-party libraries are the only exceptions and do not have to follow the coding guidelines. It is also required to use the English language for all table names, variable names and comments. The primary language for phpBB and extensions is English.
+				The phpBB 3.1 <a href="{{ extensions_phpbb_cgs }}">Coding Guidelines</a> should be followed as much as possible. This means that all files should follow these guidelines, including PHP, JavaScript, and HTML files. This is to ensure maximum readability by the phpBB Extensions Team. Third-party libraries are the only exceptions and do not have to follow the coding guidelines. It is also required to use the English language for all table names, variable names and comments. The primary language for phpBB and extensions is English. <a class="permalink" href="#general-coding">#</a>
 			</li>
-			<li>
+			<li id="general-modifying-phpbb">
 				<h3>Modifying phpBB Files</h3>
-				No files that belong to the core phpBB package shall be modified in any way. Although the basis for all modifications in 3.0 was built on modifying phpBB's core files, extensions in 3.1 are intended to be self-contained and void of actual code changes to phpBB's core files. As such, no extension may require code changes to phpBB's core files.
+				No files that belong to the core phpBB package shall be modified in any way. Although the basis for all modifications in 3.0 was built on modifying phpBB's core files, extensions in 3.1 are intended to be self-contained and void of actual code changes to phpBB's core files. As such, no extension may require code changes to phpBB's core files. <a class="permalink" href="#general-modifying-phpbb">#</a>
 			</li>
-			<li>
+			<li id="general-composer">
 				<h3>Composer:</h3>
-				A <code class="inline">composer.json</code> file is required. Detailed information about this file can be found in the <a href="https://wiki.phpbb.com/Extension_meta_data">wiki</a>.
+				A <code class="inline">composer.json</code> file is required. Detailed information about this file can be found in the <a href="https://wiki.phpbb.com/Extension_meta_data">wiki</a>. <a class="permalink" href="#general-composer">#</a>
 			</li>
-			<li>
+			<li id="general-vendor-prefixing">
 				<h3>Vendor Prefixing</h3>
-				All events, services and routes in an extension should be prefixed with the extension's vendor name and package name, and contain only lowercase letters, numbers, dots, and underscores; e.g.:
+				All events, services and routes in an extension should be prefixed with the extension's vendor name and package name, and contain only lowercase letters, numbers, dots, and underscores. <a class="permalink" href="#general-vendor-prefixing">#</a>
 				<ol type="a">
 					<li>PHP Events: <code class="inline">vendor.extension.custom_event</code></li>
 					<li>Services: <code class="inline">vendor.extension.custom.service</code></li>
@@ -46,25 +46,25 @@
 				</ol>
 				<div class="note-box yellow"><strong>Note:</strong> It is forbidden to use <strong>phpbb</strong> or <strong>core</strong> to prefix events, services and routes.</div>
 			</li>
-			<li>
+			<li id="general-lang-styles">
 				<h3>Language and Styles</h3>
-				Extensions including language files and/or style files should always provide files for the English language and Prosilver style, respectively.
+				Extensions including language files and/or style files should always provide files for the English language and Prosilver style, respectively. <a class="permalink" href="#general-lang-styles">#</a>
 			</li>
-			<li>
+			<li id="general-privacy">
 				<h3>Privacy</h3>
-				For privacy reasons it is not allowed to send private information (including but not limited to posts, user information, etc.) to any remote website or remote server. Any extension that does send information to a remote website or remote server will be denied for this reason. Exceptions to this rule, although rare, will be handled on a case-by-case basis.
+				For privacy reasons it is not allowed to send private information (including but not limited to posts, user information, etc.) to any remote website or remote server. Any extension that does send information to a remote website or remote server will be denied for this reason. Exceptions to this rule, although rare, will be handled on a case-by-case basis. <a class="permalink" href="#general-privacy">#</a>
 			</li>
-			<li>
-				<h3>General</h3>
-				<ol type="a">
-					<li>Avoid using deprecated functions from phpBB 3.0. View updated functions in the <a href="https://wiki.phpbb.com/PhpBB3.1#Changes_to_Functions">wiki</a>.</li>
-					<li>Tabs are used instead of spaces for indenting. A tab is defined as having a width of four spaces in this instance.</li>
-					<li>Included third-party libraries should be up-to-date. They should be kept un-modified as much as possible. It is also preferred to use Composer to manage third-party libraries if possible.</li>
-					<li>PHP files are saved as UTF-8 Encoded with UNIX line endings (LF).</li>
-					<li>PHP files do not contain a (Byte Order Mark) BOM.</li>
-					<li>Files uploaded via the extension (e.g., downloads in a download extension) should not be placed in the ext/vendor/name directory, but in (for example) phpBB's store/vendor_ext/ directory.</li>
-					<li>Extensions are intended for use on live production sites. Extensions built for developers or development environments will not be validated or added to the Extensions Database. Please notify an Extension Team member if you have a development extension you would like to see added to the Extension Writer Tools sticky in the Extension Writers forum.</li>
-				</ol>
+			<li id="general-other">
+				<h3>Other</h3>
+				<ul>
+					<li id="other-deprecated">Avoid using deprecated functions from phpBB 3.0. View updated functions in the <a href="https://wiki.phpbb.com/PhpBB3.1#Changes_to_Functions">wiki</a>. <a class="permalink" href="#other-deprecated">#</a></li>
+					<li id="other-tabs">Tabs are used instead of spaces for indenting. A tab is defined as having a width of four spaces in this instance. <a class="permalink" href="#other-tabs">#</a></li>
+					<li id="other-libraries">Included third-party libraries should be up-to-date. They should be kept un-modified as much as possible. It is also preferred to use Composer to manage third-party libraries if possible. <a class="permalink" href="#other-libraries">#</a></li>
+					<li id="other-file-format">PHP files are saved as UTF-8 Encoded with UNIX line endings (LF). <a class="permalink" href="#other-file-format">#</a></li>
+					<li id="other-bom">PHP files do not contain a (Byte Order Mark) BOM. <a class="permalink" href="#other-bom">#</a></li>
+					<li id="other-uploaded-files">Files uploaded via the extension (e.g., downloads in a download extension) should not be placed in the ext/vendor/name directory, but in (for example) phpBB's store/vendor_ext/ directory. <a class="permalink" href="#other-uploaded-files">#</a></li>
+					<li id="other-development-only">Extensions are intended for use on live production sites. Extensions built for developers or development environments will not be validated or added to the Extensions Database. Please notify an Extension Team member if you have a development extension you would like to see added to the Extension Writer Tools sticky in the Extension Writers forum. <a class="permalink" href="#other-development-only">#</a></li>
+				</ul>
 			</li>
 		</ol>
 
@@ -72,61 +72,61 @@
 
 		<h2 class="title" id="php">PHP Files</h2>
 		<ol class="list-margin" style="line-height:1.5em;">
-			<li>Only functions that exist before and in PHP 5.3.3 may be used by default. If you want to use functions that were added in a later version of PHP you need to mention this requirement within the description.</li>
-			<li>No un-initialised variables or indices.</li>
-			<li>Proper file headers and php DocBlocks should be used.‬‬</li>
-			<li>Braces <code class="inline">{</code> and <code class="inline">}</code> should be on newlines.</li>
-			<li>Contain no ‪magic numbers‬‬. [<a href="https://wiki.phpbb.com/Magic_numbers">wiki</a>]</li>
-			<li><code class="inline">IN_PHPBB</code> checks must be used in all included files, unless they contain only classes or interfaces. For example, function files and language files. [<a href="https://wiki.phpbb.com/IN_PHPBB">wiki</a>]</li>
-			<li>The <code class="inline">$request->variable()</code> function is used instead of <code class="inline">$_POST</code>, <code class="inline">$_GET</code>, or <code class="inline">$_REQUEST</code> to get user input. [<a href="{{ extensions_phpbb_cgs }}#general">wiki</a>]</li>
-			<li>Integer variables from <code class="inline">$request->variable()</code> are cast as integers using the form: <code class="inline">$request->variable('var', 0)</code> and not <code class="inline">$request->variable ('var', '0')</code>.</li>
-			<li><code class="inline">$_SERVER</code> variables are properly sanitised (many <code class="inline">$_SERVER</code> indexes can be user manipulated). It is preferred to use <code class="inline">$request->server()</code> instead of <code class="inline">$_SERVER</code>, e.g.: <code class="inline">$request->server('REMOTE_ADDR')</code>, as these will be properly sanitised by the $request method.</li>
-			<li>The $user object also contains several sanitised variables about the user, for example: <code class="inline">$user->ip</code> (user's REMOTE_ADDR) and <code class="inline">$user->page</code> (name of page currently viewed by user).</li>
-			<li><a href="{{ extensions_phpbb_cgs }}#sql‬‬">phpBB3 DBAL</a> is used instead of database specific SQL functions.
-				<ol type="a">
-					<li>User-input string variables are properly sanitised using <code class="inline">$db->sql_escape()</code> when using variables in SQL queries. [<a href="https://wiki.phpbb.com/Dbal.sql_escape">wiki</a>]</li>
-					<li>int and float variables are enforced by type-casting as (int) and (float) when inserting into SQL queries.</li>
-					<li><code class="inline">$db->sql_build_query()</code> is used on large SQL queries (e.g.: if the query contains joins). [<a href="https://wiki.phpbb.com/Dbal.sql_build_query">wiki</a>]</li>
-					<li><code class="inline">$db->sql_build_array()</code> is used on SQL INSERT and SQL UPDATE queries. [<a href="https://wiki.phpbb.com/Dbal.sql_build_array">wiki</a>]</li>
-					<li><code class="inline">$db->sql_multi_insert()</code> is used when performing multiple SQL INSERT statements. [<a href="https://wiki.phpbb.com/Dbal.sql_multi_insert‬‬">wiki</a>]</li>
-					<li><code class="inline">$db->sql_in_set()</code> is used for SQL IN() WHERE statements.‪ [<a href="https://wiki.phpbb.com/Dbal.sql_in_set">wiki</a>]</li>
-					<li><code class="inline">$db->sql_query_limit()</code> is used instead of LIMIT in SQL queries. [<a href="https://wiki.phpbb.com/Dbal.sql_query_limit">wiki</a>]</li>
-					<li>Static SQL queries should be cached.‪</li>
-					<li>SQL queries within loops should be avoided.</li>
-				</ol>
+			<li id="php-functions">Only functions that exist before and in PHP 5.3.3 may be used by default. If you want to use functions that were added in a later version of PHP you need to mention this requirement within the description. <a class="permalink" href="#php-functions">#</a></li>
+			<li id="php-variables">No un-initialised variables or indices. <a class="permalink" href="#php-variables">#</a></li>
+			<li id="php-files">Proper file headers and php DocBlocks should be used.‬‬ <a class="permalink" href="#php-files">#</a></li>
+			<li id="php-braces">Braces <code class="inline">{</code> and <code class="inline">}</code> should be on newlines. <a class="permalink" href="#php-braces">#</a></li>
+			<li id="php-magic-numbers">Contain no ‪magic numbers‬‬. [<a href="https://wiki.phpbb.com/Magic_numbers">wiki</a>] <a class="permalink" href="#php-magic-numbers">#</a></li>
+			<li id="php-inphpbb"><code class="inline">IN_PHPBB</code> checks must be used in all included files, unless they contain only classes or interfaces. For example, function files and language files. [<a href="https://wiki.phpbb.com/IN_PHPBB">wiki</a>] <a class="permalink" href="#rphp-inphpbb">#</a></li>
+			<li id="php-request-var">The <code class="inline">$request->variable()</code> function is used instead of <code class="inline">$_POST</code>, <code class="inline">$_GET</code>, or <code class="inline">$_REQUEST</code> to get user input. [<a href="{{ extensions_phpbb_cgs }}#general">wiki</a>] <a class="permalink" href="#php-request-var">#</a></li>
+			<li id="php-integers">Integer variables from <code class="inline">$request->variable()</code> are cast as integers using the form: <code class="inline">$request->variable('var', 0)</code> and not <code class="inline">$request->variable ('var', '0')</code>. <a class="permalink" href="#php-integers">#</a></li>
+			<li id="php-server-var"><code class="inline">$_SERVER</code> variables are properly sanitised (many <code class="inline">$_SERVER</code> indexes can be user manipulated). It is preferred to use <code class="inline">$request->server()</code> instead of <code class="inline">$_SERVER</code>, e.g.: <code class="inline">$request->server('REMOTE_ADDR')</code>, as these will be properly sanitised by the $request method. <a class="permalink" href="#php-server-var">#</a></li>
+			<li id="php-user-var">The $user object also contains several sanitised variables about the user, for example: <code class="inline">$user->ip</code> (user's REMOTE_ADDR) and <code class="inline">$user->page</code> (name of page currently viewed by user). <a class="permalink" href="#php-user-var">#</a></li>
+			<li id="php-dbal"><a href="{{ extensions_phpbb_cgs }}#sql">phpBB3 DBAL</a> is used instead of database specific SQL functions. <a class="permalink" href="#php-dbal">#</a>
+				<ul>
+					<li id="dbal-sql-escape">User-input string variables are properly sanitised using <code class="inline">$db->sql_escape()</code> when using variables in SQL queries. [<a href="https://wiki.phpbb.com/Dbal.sql_escape">wiki</a>] <a class="permalink" href="#dbal-sql-escape">#</a></li>
+					<li id="dbal-type-cast">int and float variables are enforced by type-casting as (int) and (float) when inserting into SQL queries. <a class="permalink" href="#dbal-type-cast">#</a></li>
+					<li id="dbal-sql-build-query"><code class="inline">$db->sql_build_query()</code> is used on large SQL queries (e.g.: if the query contains joins). [<a href="https://wiki.phpbb.com/Dbal.sql_build_query">wiki</a>] <a class="permalink" href="#dbal-sql-build-query">#</a></li>
+					<li id="dbal-sql-build-array"><code class="inline">$db->sql_build_array()</code> is used on SQL INSERT and SQL UPDATE queries. [<a href="https://wiki.phpbb.com/Dbal.sql_build_array">wiki</a>] <a class="permalink" href="#dbal-sql-build-array">#</a></li>
+					<li id="dbal-sql-multi-insert"><code class="inline">$db->sql_multi_insert()</code> is used when performing multiple SQL INSERT statements. [<a href="https://wiki.phpbb.com/Dbal.sql_multi_insert">wiki</a>] <a class="permalink" href="#dbal-sql-multi-insert">#</a></li>
+					<li id="dbal-sql-in-set"><code class="inline">$db->sql_in_set()</code> is used for SQL IN() WHERE statements.‪ [<a href="https://wiki.phpbb.com/Dbal.sql_in_set">wiki</a>] <a class="permalink" href="#dbal-sql-in-set">#</a></li>
+					<li id="dbal-sql-query-limit"><code class="inline">$db->sql_query_limit()</code> is used instead of LIMIT in SQL queries. [<a href="https://wiki.phpbb.com/Dbal.sql_query_limit">wiki</a>] <a class="permalink" href="#dbal-sql-query-limit">#</a></li>
+					<li id="dbal-cache">Static SQL queries should be cached.‪ <a class="permalink" href="#dbal-cache">#</a></li>
+					<li id="dbal-loops">SQL queries within loops should be avoided. <a class="permalink" href="#dbal-loops">#</a></li>
+				</ul>
 			</li>
-			<li><code class="inline">helper->error()</code> and/or <code class="inline">trigger_error()</code> are used for error handling and user messages instead of <code class="inline">die()</code> or similar. [<a href="https://wiki.phpbb.com/Trigger_error">wiki</a>]</li>
-			<li><code class="inline">login_forum_box()</code> or <code class="inline">login_box()</code> is used for login. [<a href="http://wiki.phpbb.com/Login_box">wiki</a>]</li>
-			<li><code class="inline">confirm_box()</code> is used for the user to confirm sensitive actions (such as deleting items). [<a href="http://wiki.phpbb.com/Confirm_box">wiki</a>]</li>
-			<li>URLs pointing to phpBB files call <code class="inline">append_sid()</code> to correctly append the session id. [<a href="http://wiki.phpbb.com/Append_sid">wiki</a>]</li>
-			<li><code class="inline">ext_vendor/name</code> is a required auth parameter for extensions that must be defined in ACP, MCP, UCP _info files. [<a href="https://wiki.phpbb.com/Migrations/Tools/Module">wiki</a>] [<a href="https://github.com/nickvergessen/phpbb-ext-acme-demo/blob/master/acp/main_info.php#L21">example</a>]</li>
+			<li id="php-helper-error"><code class="inline">helper->error()</code> and/or <code class="inline">trigger_error()</code> are used for error handling and user messages instead of <code class="inline">die()</code> or similar. [<a href="https://wiki.phpbb.com/Trigger_error">wiki</a>] <a class="permalink" href="#php-helper-error">#</a></li>
+			<li id="php-login-forum-box"><code class="inline">login_forum_box()</code> or <code class="inline">login_box()</code> is used for login. [<a href="http://wiki.phpbb.com/Login_box">wiki</a>] <a class="permalink" href="#php-login-forum-box">#</a></li>
+			<li id="php-confirm-box"><code class="inline">confirm_box()</code> is used for the user to confirm sensitive actions (such as deleting items). [<a href="http://wiki.phpbb.com/Confirm_box">wiki</a>] <a class="permalink" href="#php-confirm-box">#</a></li>
+			<li id="php-append-sid">URLs pointing to phpBB files call <code class="inline">append_sid()</code> to correctly append the session id. [<a href="http://wiki.phpbb.com/Append_sid">wiki</a>] <a class="permalink" href="#php-append-sid">#</a></li>
+			<li id="php-ext-auth"><code class="inline">ext_vendor/name</code> is a required auth parameter for extensions that must be defined in ACP, MCP, UCP _info files. [<a href="https://wiki.phpbb.com/Migrations/Tools/Module">wiki</a>] [<a href="https://github.com/nickvergessen/phpbb-ext-acme-demo/blob/master/acp/main_info.php#L21">example</a>] <a class="permalink" href="#php-ext-auth">#</a></li>
 		</ol>
 
 		<hr />
 
 		<h2 class="title" id="templates">Template Files</h2>
 		<ol class="list-margin" style="line-height:1.5em;">
-			<li>No hard-coded PHP in template files.</li>
-			<li>All Prosilver HTML is valid HTML5 syntax.</li>
-			<li>English language images are supplied as necessary.</li>
+			<li id="templates-php">No hard-coded PHP in template files. <a class="permalink" href="#templates-php">#</a></li>
+			<li id="templates-html">All Prosilver HTML is valid HTML5 syntax. <a class="permalink" href="#templates-html">#</a></li>
+			<li id="templates-images">English language images are supplied as necessary. <a class="permalink" href="#templates-images">#</a></li>
 		</ol>
 
 		<hr />
 
 		<h2 class="title" id="migrations">Migrations</h2>
 		<ol class="list-margin" style="line-height:1.5em;">
-			<li>Database and permission changes should be handled with migrations. All subsequent database changes should be made in new migration files.</li>
-			<li>Old migration files should never be altered or deleted.</li>
-			<li>Extensions should never delete phpBB core tables or columns.</li>
+			<li id="migrations-changes">Database and permission changes should be handled with migrations. All subsequent database changes should be made in new migration files. <a class="permalink" href="#migrations-changes">#</a></li>
+			<li id="migrations-files">Old migration files should never be altered or deleted. <a class="permalink" href="#migrations-files">#</a></li>
+			<li id="migrations-restrictions">Extensions should never delete phpBB core tables or columns. <a class="permalink" href="#migrations-restrictions">#</a></li>
 		</ol>
 
 		<hr />
 
 		<h2 class="title" id="scripts">JavaScript and CSS</h2>
 		<ol class="list-margin" style="line-height:1.5em;">
-			<li>Include JavaScript files with the template function: <code class="inline">&lt;!-- INCLUDEJS --&gt;</code>. [<a href="https://wiki.phpbb.com/New_Template_Commands_in_3.1">wiki</a>]</li>
-			<li>Include CSS files with the template function: <code class="inline">&lt;!-- INCLUDECSS --&gt;</code>. [<a href="https://wiki.phpbb.com/New_Template_Commands_in_3.1">wiki</a>]</li>
-			<li>Included third-party JavaScript/CSS libraries and frameworks should utilise a special template <code class="inline">&lt;!-- DEFINE --&gt;</code> tag to prevent duplicate inclusion. For example:<br />
+			<li id="scripts-includejs">Include JavaScript files with the template function: <code class="inline">&lt;!-- INCLUDEJS --&gt;</code>. [<a href="https://wiki.phpbb.com/New_Template_Commands_in_3.1">wiki</a>] <a class="permalink" href="#scripts-includejs">#</a></li>
+			<li id="scripts-includecss">Include CSS files with the template function: <code class="inline">&lt;!-- INCLUDECSS --&gt;</code>. [<a href="https://wiki.phpbb.com/New_Template_Commands_in_3.1">wiki</a>] <a class="permalink" href="#scripts-includecss">#</a></li>
+			<li id="scripts-libraries">Included third-party JavaScript/CSS libraries and frameworks should utilise a special template <code class="inline">&lt;!-- DEFINE --&gt;</code> tag to prevent duplicate inclusion. For example: <a class="permalink" href="#scripts-libraries">#</a><br />
 				<br />
 					<pre class="codesnippet">
 &lt;!-- IF not $INCLUDED_HIGHSLIDEJS --&gt;
@@ -150,15 +150,15 @@
 
 		<h2 class="title" id="licenses">Licenses</h2>
 		<ol class="list-margin" style="line-height:1.5em;">
-			<li>Extensions should be released under GPL v2. Included frameworks should use GPL v2 or a compatible license. See <a href="http://www.gnu.org/licenses/gpl-faq.html#AllCompatibility">http://www.gnu.org/licenses/gpl-faq.html#AllCompatibility</a></li>
-			<li>A <code class="inline">license.txt</code> file should be included in the root directory of the extension.</li>
+			<li id="license-gplv2">Extensions should be released under GPL v2. Included frameworks should use GPL v2 or a compatible license. See <a href="http://www.gnu.org/licenses/gpl-faq.html#AllCompatibility">http://www.gnu.org/licenses/gpl-faq.html#AllCompatibility</a>. <a class="permalink" href="#license-gplv2">#</a></li>
+			<li id="license-license">A <code class="inline">license.txt</code> file should be included in the root directory of the extension. <a class="permalink" href="#license-license">#</a></li>
 		</ol>
 
 		<hr />
 
 		<h2 class="title" id="packaging">Packaging and Version</h2>
 		<ol class="list-margin" style="line-height:1.5em;">
-			<li>Extensions are packaged as follows:
+			<li id="packaging-extensions">Extensions are packaged as follows:  <a class="permalink" href="#packaging-extensions">#</a>
 				<pre class="codesnippet">/vendorname/extensionname/</pre>
 				The names should be alphanumeric. (No dashes or underscores. Capitals are allowed.) For example, the following common extension files, <code class="inline">composer.json</code>, <code class="inline">ext.php</code> and <code class="inline">license.txt</code> would be located at:
 				<pre class="codesnippet">/vendorname/extensionname/composer.json
@@ -166,14 +166,14 @@
 /vendorname/extensionname/license.txt</pre>
 				<div class="note-box blue"><img src="{{ THEME_PATH }}/images/icon-dl-zip.gif" width="20" height="21" style="vertical-align: middle;" alt="Download Extension QuickStart (zip)"> <a href="{{ extension_quickstart_zip }}">Extension QuickStart</a> is an available package with starter <samp>composer.json</samp> and <samp>ext.php</samp> files and the required <samp>license.txt</samp>.</div>
 			</li>
-			<li>Semantic version numbers should be used. Only stable versions are allowed in the Extension Database. For every update the version number should be increased.</li>
-			<li>Language files are within the language directory and correct lang_name (ISO) translations are used. Template and theme files are contained in their respective directories.</li>
+			<li id="packaging-versions">Semantic version numbers should be used. Only stable versions are allowed in the Extension Database. For every update the version number should be increased. <a class="permalink" href="#packaging-versions">#</a></li>
+			<li id="packaging-other">Language files are within the language directory and correct lang_name (ISO) translations are used. Template and theme files are contained in their respective directories. <a class="permalink" href="#packaging-other">#</a></li>
 		</ol>
 
 		<hr />
 
 		<h2 class="title" id="insta-deny">Insta-Deny Policy</h2>
-		<p>Insta-Deny is meant to rapidly respond to basic problems in an extension submitted for validation. Extensions are checked by the <a href="{[ extensions_epv }}">Extension Pre Validator</a> (EPV) for coding guideline violations.
+		<p>Insta-Deny is meant to rapidly respond to basic problems in an extension submitted for validation. Extensions are checked by the <a href="{{ extensions_epv }}">Extension Pre Validator</a> (EPV) for coding guideline violations.
 
 		<p>In case a violation is detected, the validator (or junior validator) will look at the code violation reported by EPV within 72 hours after submission. The validator will decide if the reported violation is an allowable usage of code. All problems are looked at on a case-by-case basis as there can be valid uses of certain things EPV detects.</p>
 
@@ -228,4 +228,24 @@
 		<div class="mini-panel js-sections js-scroll" style="display: none"></div>
 	</div>
 </div>
+
+<script>
+	(function($) {
+		$(function() {
+			var highlight = function (id) {
+				$('#' + decodeURIComponent(id)).addClass('fragment');
+			};
+
+			// Apply highlight to clicked anchor
+			$('.permalink').on('click', function () {
+				$('li').removeClass('fragment');
+				highlight($(this).closest('li').attr('id'));
+			});
+
+			// Apply highlight on page load to a category
+			highlight(window.location.hash.substring(1));
+		});
+	})(jQuery);
+</script>
+
 {% endblock %}
