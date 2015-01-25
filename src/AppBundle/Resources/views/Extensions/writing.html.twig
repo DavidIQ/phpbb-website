@@ -243,8 +243,8 @@ $this->user->add_lang_ext(‘acme/demo’, ‘common’);</pre>
 		<pre class="codesnippet">// Add language files common.php and controller.php
 $this->user->add_lang_ext(‘acme/demo’, array(‘common’, ‘controller’));</pre>
 		<p>The above would load the two corresponding language files:<br /><code class="inline">acme/demo/language/en/common.php</code><br /><code class="inline">acme/demo/language/en/controller.php</code></p>
-		<p>While this ability to load language files at any point in your extension’s code when they may be needed is convenient, there are special core events for loading language files too. The <code class="inline">core.user_setup</code> event can be used to load language files that need to be available at all times. And a special <code class="inline">core.permissions</code> event should be used to load a special language file that contains translations for phpBB’s permissions system. For example:</p>
-		<div class="note-box green"><strong>Pro-Tip:</strong> Language files can be given any name. However, language files prefixed with <code class="inline">permissions_</code> or <code class="inline">info_acp_</code> will be auto loaded for permission and ACP module name variables, respectively.</div>
+		<p>It is preferred to use the above method to load language files at any point in your extension’s code execution where the language keys are needed. However, if it is neccessary to load an extension's language keys globally, so they are available at all times, the <code class="inline">core.user_setup</code> event should be used.</p>
+		<div class="note-box green"><strong>Pro-Tip:</strong> Language files can be given any name. However, language files that start with <code class="inline">permissions_</code> or <code class="inline">info_acp_</code> will be automatically loaded within the ACP for permission and ACP module name variables, respectively, and do not need to be loaded using the previously discussed functions or events.</div>
 
 		<hr />
 
@@ -370,6 +370,28 @@ $this->user->add_lang_ext(‘acme/demo’, array(‘common’, ‘controller’)
 			<a href="{{ extensions_wiki_migrations }}/Getting_Started">Getting started with Migrations</a><br />
 			<a href="{{ extensions_wiki_migrations }}/Tools">Migration Tools Wiki</a><br />
 			<a href="{{ extensions_validation_policy }}/#migrations">Migrations Validation Policy</a><br />
+		</div>
+
+		<hr />
+
+		<h2 class="title" id="a-permissions">Permissions</h2>
+		<p>Adding new permissions for an extension is an easy three-step process. There are four permission types: Administrator, Moderator, User and Forum (<code class="inline">a_</code>, <code class="inline">m_</code>, <code class="inline">u_</code> and <code class="inline">f_</code>). You can create new permissions for each of these types and assign them to user groups or permission roles. You can also define new roles to assign your permissions to if desired.</p>
+		<p>First, create the permissions in a migration using the <a href="#a-permission-tool">Permissions tool</a>. It helps adding, removing, setting, and unsetting permissions and adding or removing permission roles. For example, to add a new user permission and set it to the registered user group and also add it to the standard user role:</p>
+		<pre class="codesnippet">return array(
+	array('permission.add', array('u_foo_bar')),
+	array('permission.permission_set', array('REGISTERED', 'u_foo_bar', 'group')),
+	array('permission.permission_set', array('ROLE_USER_STANDARD', 'u_foo_bar')),
+);</pre>
+		<p>Next, use the <code class="inline">core.permissions</code> event to hook your new permissions into phpBB's permissions system. All that is required in this event is to add your permission to the event's permission data array. The array uses the permission name as its key with an array assigned to it defining the language key and the category the permission should be displayed in, for example:</p>
+		<pre class="codesnippet">$permissions = $event['permissions'];
+$permissions['u_foo_bar'] = array('lang' => 'ACL_U_FOOBAR', 'cat' => 'misc');
+$event['permissions'] = $permissions;</pre>
+		<p>Finally, you need to define the permission's language key(s). Simply put them in a language file that starts with <code class="inline">permissions_</code>, and they will be automatically loaded within the ACP. For example, the file <code class="inline">permission_foobar.php</code> would contain the following language key definition:</p>
+		<pre class="codesnippet">$lang = array_merge($lang, array(
+	'ACL_U_FOOBAR' => 'Can view foobar',
+));</pre>
+		<div class="note-box blue"><strong>Resources:</strong><br />
+			<a href="{{ extensions_wiki_migrations }}/Tools/Permission">Migrations Permissions Tool Wiki</a><br />
 		</div>
 
 		<hr />
