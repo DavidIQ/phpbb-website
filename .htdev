@@ -44,7 +44,7 @@ RewriteCond %{REQUEST_URI} ^/mods/modx/{0,1}.* [OR]
 RewriteCond %{REQUEST_URI} ^/mods/policies/{0,1}.* [OR]
 RewriteCond %{REQUEST_URI} ^/development/get-involved/{0,1}.* [OR]
 RewriteCond %{REQUEST_URI} ^/blog/{0,1}.* [OR]
-RewriteCond %{REQUEST_URI} ^/styles/demo/3.0/{0,1}.* [OR]
+RewriteCond %{REQUEST_URI} ^/styles/demo/{0,1}.* [OR]
 RewriteCond %{REQUEST_URI} ^/support/code-changes/{0,1}.* [OR]
 RewriteCond %{REQUEST_URI} ^/go/authors/{0,1}.*
 RewriteRule ^(.*)$ /var/www/www.phpbb.com/htdocs/old$1 [L]
@@ -80,6 +80,7 @@ RewriteCond %{REQUEST_URI} !^/showcase/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/stats/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/styles/demo/2.0/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/styles/demo/3.0/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/styles/demo/3.1/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/styles/statistics.php
 RewriteCond %{REQUEST_URI} !^/theme/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/updatecheck/{0,1}.*
