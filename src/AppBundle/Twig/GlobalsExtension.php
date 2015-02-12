@@ -547,7 +547,7 @@ class GlobalsExtension extends \Twig_Extension
 
 			'ROOT_PATH'			=> '/',
 			'THEME_PATH'			=> '/theme',
-			'FAVICON_PATH'		=> '/theme/images/favicons',
+			'FAVICON_PATH'		=> '/assets/images/images/favicons',
 			'YEAR'				=> date('Y'),
 			'ON_TEAM'				=> false,
 
