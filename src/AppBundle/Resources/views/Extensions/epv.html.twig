@@ -57,15 +57,14 @@
             <div class="note-box red">{{ errors }}</div>
         {% endif %}
 		{% if results is defined %}
-			Results:
-			<br />
-			<div style="width:100%; " id="epv-results">
+			<h4>Results:</h4>
+			<div style="width:100%;" id="epv-results">
 				{{ results|raw }}
 			</div>
 		{% endif %}
         <form action="{{ extensions_epv }}#epv-result" method="post">
-            <p>Github short name: <input type="text" name="github" id="github" /> <input type="submit" value="Run" /></p>
-            <div class="note-box blue"><strong>Note: </strong>Due to a limitation, it is currently only possible to validate the master branch on Github from this page. When your extension is in a different branch, you should use EPV from the command line or from Travis.
+            <p>Github short name: <input type="text" name="github" id="github" size="40" placeholder="phpbb-extensions/boardrules" /> <input type="submit" value="Run" /></p>
+            <div class="note-box blue"><strong>Note: </strong>Due to a limitation, it is currently only possible to validate the default branch of a Github repository from this page. If your extension is on another branch, you should use EPV from the command line or from Travis.
             </div>
         </form>
 
