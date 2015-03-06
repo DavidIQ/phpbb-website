@@ -66,10 +66,16 @@ class GlobalsExtension extends \Twig_Extension
 			'advertise_path'	=> '/about/advertise/',
 			'ABOUT_ADVERTISE'	=> '/about/advertise/',
 
+			'release_path'		=> '/about/release/',
+
 			'demo_path'			=> '/demo/',
 			'DEMO'				=> '/demo/',
 
 			'downloads_path'	=> '/downloads/',
+			'downloads_path_32x' => 'https://bamboo.phpbb.com/browse/PHPBB3-RHEA/latestSuccessful/artifact/JOBPACKAGE/Release-Files',
+			'downloads_path_31x' => '/downloads/3.1/',
+			'downloads_path_30x' => '/downloads/3.0/',
+
 			//'DOWNLOADS_SUB'		=> '/downloads/',
 			'DOWNLOADS'			=> '/downloads/',
 			'DOWNLOADS_HEADER'	=> '/downloads/?from=header',
@@ -215,6 +221,10 @@ class GlobalsExtension extends \Twig_Extension
 			'DEV_QA_TOOL'			=> '/development/qa/release/new',
 			'DEV_QA_30X_BUGLIST'	=> '/bugs/phpbb3/qa.php',
 			'DEV_WIKI'			=> 'https://wiki.phpbb.com/',
+
+			'dev_github_phpbb_32x' => 'https://github.com/phpbb/phpbb/tree/develop',
+			'dev_github_phpbb_31x' => 'https://github.com/phpbb/phpbb/tree/develop-ascraeus',
+			'dev_github_phpbb_30x' => 'https://github.com/phpbb/phpbb/tree/develop-olympus',
 		);
 
 		return $developmentVars;

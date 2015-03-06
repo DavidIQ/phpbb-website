@@ -38,6 +38,13 @@ phpBBWebsite_About_launch:
         template: AppBundle:About:launch.html.twig
     methods:  [GET]
 
+phpBBWebsite_About_release:
+    path:  /release/
+    defaults:
+        _controller: AppBundle:StaticTemplate:staticTemplate
+        template: AppBundle:About:release.html.twig
+    methods:  [GET]
+
 phpBBWebsite_About_getInvolved:
     path:  /get-involved/
     defaults:
