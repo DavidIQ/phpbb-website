@@ -222,9 +222,9 @@ class GlobalsExtension extends \Twig_Extension
 			'DEV_QA_30X_BUGLIST'	=> '/bugs/phpbb3/qa.php',
 			'DEV_WIKI'			=> 'https://wiki.phpbb.com/',
 
-			'dev_github_phpbb_32x' => 'https://github.com/phpbb/phpbb/tree/develop',
-			'dev_github_phpbb_31x' => 'https://github.com/phpbb/phpbb/tree/develop-ascraeus',
-			'dev_github_phpbb_30x' => 'https://github.com/phpbb/phpbb/tree/develop-olympus',
+			'dev_github_phpbb_32x' => 'https://github.com/phpbb/phpbb/tree/master',
+			'dev_github_phpbb_31x' => 'https://github.com/phpbb/phpbb/tree/3.1.x',
+			'dev_github_phpbb_30x' => 'https://github.com/phpbb/phpbb/tree/3.0.x',
 		);
 
 		return $developmentVars;
