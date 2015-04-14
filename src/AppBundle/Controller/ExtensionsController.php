@@ -27,6 +27,15 @@ class ExtensionsController extends Controller
 		$officialExtensions = array();
 
 		$officialExtensions[] = new OfficialExtension(
+			'Auto Groups',
+			'The Auto Groups extension can automate the process of adding and removing users from groups upon reaching specified quantitative milestones related to their post count, age, membership, and warnings count. This allows board administrators to set up special groups that users will automatically be added to (or removed from) based on their activity.',
+			'The Auto Groups extension comes with a handful of user data conditions that can be used to qualify users for automatic group placement. However, this extension was written with extensibility in mind to allow other extension developers to easily add new user data conditions or integrate Auto Groups into their own extensions. For example, an extension that adds new user data, such as "reputation points," could integrate with Auto Groups to allow a user\'s reputation points to be used as a condition for auto group placement. For more information, see the Wiki page at the Auto Groups GitHub repository to find detailed documentation about extending Auto Groups.',
+			'https://www.phpbb.com/community/viewtopic.php?f=456&t=2278771',
+			'https://github.com/phpbb-extensions/autogroups',
+			'/assets/images/images/extensions/autogroups.png'
+		);
+
+		$officialExtensions[] = new OfficialExtension(
 			'Board Rules',
 			'The Board Rules Extension adds a dedicated Rules page to a board. It offers an ACP module from which an unlimited number of rules and rule categories can be created in each language installed on a board. It also supports sending out notifications to all board members notifying them that the rules have been changed, and can require newly registering users read the board rules as part of the terms of agreement for registering on a board.',
 			'The Board Rules Extension is a fairly advanced design compared to previous phpBB modifications. Abstract classes implemented through interfaces are used to specify the methods that handle most of the code logic. There is an Entity class for manipulating a single rule and an Operator class for manipulating sets of rules. Controller classes are used to process the front-end of the ACP module and the Rules page itself. It also makes use of phpBB\'s new notification system, nestedsets/trees, and AJAX functionality in the ACP user-interface. There is also extensive PHP unit test coverage of the code to ensure its stability and reliability and prevent regressions. We think testing code is so important, we\'ve made it possible for any extension (on Github) to use phpBB\'s PHPUnit testing framework with Travis Continuous Integration hosted servers; just look through our tests and travis files/folders to see how we did it.',
