@@ -6,5 +6,3 @@ echo "Running phpunit tests:"
 bin/phpunit -c app/
 echo "Run Twig syntax linting on all twig files:"
 php app/console twig:lint @AppBundle
-echo "Running the Sensio Labs Security Checker to ensure no dependencies have outstanding security advisories:"
-bin/security-checker security:check composer.lock --timeout 600
