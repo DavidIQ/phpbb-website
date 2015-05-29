@@ -19,7 +19,6 @@ before_script:
 
 script:
   - bin/phpunit -c app/
-  - travis_retry bin/security-checker security:check composer.lock
   - find . -path ./vendor -prune -o -type f -name "*.php" | parallel --gnu --keep-order 'php -l {} > /dev/null' || exit 1
   - php app/console twig:lint @AppBundle
 

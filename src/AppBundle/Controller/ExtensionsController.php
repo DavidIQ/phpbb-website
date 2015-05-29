@@ -30,7 +30,7 @@ class ExtensionsController extends Controller
 			'Auto Groups',
 			'The Auto Groups extension can automate the process of adding and removing users from groups upon reaching specified quantitative milestones related to their post count, age, membership, and warnings count. This allows board administrators to set up special groups that users will automatically be added to (or removed from) based on their activity.',
 			'The Auto Groups extension comes with a handful of user data conditions that can be used to qualify users for automatic group placement. However, this extension was written with extensibility in mind to allow other extension developers to easily add new user data conditions or integrate Auto Groups into their own extensions. For example, an extension that adds new user data, such as "reputation points," could integrate with Auto Groups to allow a user\'s reputation points to be used as a condition for auto group placement. For more information, see the Wiki page at the Auto Groups GitHub repository to find detailed documentation about extending Auto Groups.',
-			'https://www.phpbb.com/community/viewtopic.php?f=456&t=2278771',
+			'https://www.phpbb.com/customise/db/extension/auto_groups/',
 			'https://github.com/phpbb-extensions/autogroups',
 			'/assets/images/images/extensions/autogroups.png'
 		);
