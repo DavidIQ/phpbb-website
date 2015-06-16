@@ -547,9 +547,9 @@ class GlobalsExtension extends \Twig_Extension
 	{
 		$miscVars = array(
 			'package_version'		=> '3.1.5',
-			'package_release_date'	=> '2015-06-14',
+			'package_release_date'	=> '2015-06-16',
 			'PACKAGE_VERSION'		=> '3.1.5',
-			'PACKAGE_ANNOUNCE_URL'	=> '/community/viewtopic.php?f=14&t=2321266',
+			'PACKAGE_ANNOUNCE_URL'	=> '/community/viewtopic.php?f=14&t=2321676',
 			'PACKAGE_RELEASE_DATE'	=> '2015-06-14',
 
 			'bot'					=> false, // @TODO Set this to true for bots // Usage = 1
