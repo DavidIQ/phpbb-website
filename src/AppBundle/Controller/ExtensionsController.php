@@ -54,6 +54,15 @@ class ExtensionsController extends Controller
 		);
 
 		$officialExtensions[] = new OfficialExtension(
+			'Collapsible Forum Categories',
+			'Collapsible Forum Categories is a nice addition to any forum that will allow users to collapse, or hide, any forum or forum category with a simple click. This provides a convenient way for users to minimise the forums they do not particpate in and focus their attention on the forums they do care about. Collapsed forums will remain hidden for logged-in users across different browsers and devices (guests settings are handled via cookies).',
+			'Collpasible Forum Categories can be used in third party extensions. Some extensions that add forum category-like sections to a phpBB board (such as a chatbox, portal or additional topic lists) may want to include collapsibility. The GitHub repository for Collapsible Forum Categories has a Wiki article for adding Collapsible Forum Category support to another extension.',
+			'https://www.phpbb.com/customise/db/extension/collapsible_forum_categories/',
+			'https://github.com/phpbb-extensions/collapsible-categories',
+			'/assets/images/images/extensions/collapsiblecategories.png'
+		);
+
+		$officialExtensions[] = new OfficialExtension(
 			'Google Analytics',
 			'The Google Analytics Extension simply adds a Google Analytics tracking code with your Property ID to your phpBB forum.',
 			'This extension is the simplest of extensions in form and function. It adds a single new field to the ACP for a Google Analytics Property ID, validates it, and inserts the Universal Analytics a-synchronous javascript code into the head of your board\'s HTML pages, just before the closing </head> tag, as recommended by Google. In addition to allowing boards to easily add Google\'s powerful analytics, this extension is an ideal starting example for new extension authors, demonstrating how to effectively add an ACP config option implement that config setting using template events.',
