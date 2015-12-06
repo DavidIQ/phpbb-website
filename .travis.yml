@@ -8,6 +8,7 @@ env:
   - DB=mysql
 
 install:
+  - sudo apt-get update
   - travis_retry sudo apt-get install parallel
 
 before_script:
