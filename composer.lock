@@ -975,7 +975,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/migrations/zipball/b386d2a17634192fc406acc4090d58eb6e903ca5",
+                "url": "https://api.github.com/repos/doctrine/migrations/zipball/870791a258080ed1bdaa3094c40166afe28d3444",
                 "reference": "b386d2a17634192fc406acc4090d58eb6e903ca5",
                 "shasum": ""
             },
@@ -1558,12 +1558,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpbb/website-assets.git",
-                "reference": "d253fe4cc02d861e2ea1302b84249fb2bd800ebd"
+                "reference": "7c6aa84c2efd646a87eb909a47c8eea99141141c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpbb/website-assets/zipball/d253fe4cc02d861e2ea1302b84249fb2bd800ebd",
-                "reference": "d253fe4cc02d861e2ea1302b84249fb2bd800ebd",
+                "url": "https://api.github.com/repos/phpbb/website-assets/zipball/7c6aa84c2efd646a87eb909a47c8eea99141141c",
+                "reference": "7c6aa84c2efd646a87eb909a47c8eea99141141c",
                 "shasum": ""
             },
             "require": {
@@ -1573,7 +1573,7 @@
             "support": {
                 "source": "https://github.com/phpbb/website-assets/tree/master"
             },
-            "time": "2015-09-23 08:10:48"
+            "time": "2015-12-24 14:56:56"
         },
         {
             "name": "psr/log",
@@ -2842,7 +2842,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/liuggio/fastest/zipball/f251d5c1a73e5f0a6d8d974c47e7f7003bf16cbc",
+                "url": "https://api.github.com/repos/liuggio/fastest/zipball/3dfef567aea12c1143961bfae7bf2027947ef4a9",
                 "reference": "f251d5c1a73e5f0a6d8d974c47e7f7003bf16cbc",
                 "shasum": ""
             },
