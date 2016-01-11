@@ -975,7 +975,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/migrations/zipball/870791a258080ed1bdaa3094c40166afe28d3444",
+                "url": "https://api.github.com/repos/doctrine/migrations/zipball/fc24f14efea39580577a8a662697ae780227f8e0",
                 "reference": "b386d2a17634192fc406acc4090d58eb6e903ca5",
                 "shasum": ""
             },
@@ -1558,12 +1558,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpbb/website-assets.git",
-                "reference": "407318c93f143fcad520676a6d0a362a5e0d1c35"
+                "reference": "91d30a19a420d3c152c21ca543697189293080c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpbb/website-assets/zipball/407318c93f143fcad520676a6d0a362a5e0d1c35",
-                "reference": "407318c93f143fcad520676a6d0a362a5e0d1c35",
+                "url": "https://api.github.com/repos/phpbb/website-assets/zipball/91d30a19a420d3c152c21ca543697189293080c9",
+                "reference": "91d30a19a420d3c152c21ca543697189293080c9",
                 "shasum": ""
             },
             "require": {
@@ -1573,7 +1573,7 @@
             "support": {
                 "source": "https://github.com/phpbb/website-assets/tree/master"
             },
-            "time": "2015-12-24 15:08:34"
+            "time": "2016-01-11 00:25:14"
         },
         {
             "name": "psr/log",
