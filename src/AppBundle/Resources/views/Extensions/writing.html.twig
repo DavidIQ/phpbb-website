@@ -67,6 +67,7 @@
 }</pre>
 		<p>The information in this file will be used by the Extensions Manager. The Extensions Manager is an ACP feature that will allow extensions to be enabled, disabled or purged (meaning any database changes introduced by an extension will be reverted).</p>
 		<div class="note-box blue"><strong>Resources:</strong><br />
+			<a href="{{ extensions_docs_composer }}">Composer Tutorial</a><br />
 			<a href="{{ extensions_wiki_composer }}">Composer &amp; Extension Meta Data Wiki</a><br />
 			<a href="https://getcomposer.org/doc/04-schema.md">Composer Schema</a><br />
 		</div>
@@ -118,11 +119,11 @@ class ext extends \phpbb\extension\base
     acme.demo.controller:
         class: acme\demo\controller\main
         arguments:
-            - @config
-            - @controller.helper
-            - @template
-            - @user</pre>
-		<p>Note that <code class="inline">acme.demo.controller</code> is the unique service name for the <samp>main.php</samp> class. This name can be whatever you want, but phpBB extensions should preface them with the vendor and extension name (in this case, acme.demo) to prevent potential conflicts with other extensions or core services. The class is simply the name-spaced path to the <samp>main.php</samp> file. The arguments are the service dependencies required by the class. It is important that the order of the services listed here exactly match the order of these services as arguments in the <samp>main.php</samp> constructor.</p>
+            - '@config'
+            - '@controller.helper'
+            - '@template'
+            - '@user'</pre>
+		<p>Note that <code class="inline">acme.demo.controller</code> is the unique service name for the <samp>main.php</samp> class. This name can be whatever you want, but phpBB extensions should preface them with the vendor and extension name (in this case, acme.demo) to prevent potential conflicts with other extensions or core services. The class is simply the name-spaced path to the <samp>main.php</samp> file. The arguments are the service dependencies required by the class. It is important that the order of the services listed here exactly match the order of these services as arguments in the <samp>main.php</samp> constructor. It is also recommended that any argument beginning with <code class="inline">@</code> or <code class="inline">%</code> symbols be wrapped in single quotes.</p>
 		<p>Most PHP files in an extension should use the dependency injection model with service definitions, particularly controllers and event listeners. The exceptions to this are any ACP files, language files and migration files (which do not currently use the service container).</p>
 		<div class="note-box blue"><strong>Resources:</strong><br />
 			<a href="{{ extensions_wiki_dependency_injection }}">Dependency Injection Container Wiki</a><br />
@@ -153,6 +154,7 @@ class ext extends \phpbb\extension\base
 		<p>By assigning the above line to a template var in the event listener, the link becomes available for injection into phpBB's nav bar using a template event.</p>
 		<div class="note-box yellow"><strong>Reminder:</strong> All extension service names and route names should be prefixed with your vendor name and extension name.</div>
 		<div class="note-box blue"><strong>Resources:</strong><br />
+			<a href="{{ extensions_docs_controller }}">Controller Tutorial</a><br />
 			<a href="{{ extensions_wiki_controller }}">Controller Wiki</a><br />
 			<a href="http://symfony.com/doc/current/book/routing.html">Symfony: Routing</a><br />
 			<a href="http://symfony.com/doc/2.3/components/routing/introduction.html">Symfony: The Routing Component</a><br />
@@ -299,6 +301,8 @@ $this->user->add_lang_ext(‘acme/demo’, array(‘common’, ‘controller’)
 			</p>
 		<div class="note-box yellow"><strong>Note:</strong> The INCLUDECSS tag will only work inside the overall_header_head_append event. However, the INCLUDEJS tag can be used in any template event or custom template file.</div>
 		<div class="note-box blue"><strong>Resources:</strong><br />
+			<a href="{{ extensions_docs_php_events }}">PHP Events Tutorial</a><br />
+			<a href="{{ extensions_docs_html_events }}">HTML Events Tutorial</a><br />
 			<a href="{{ extensions_wiki_template_listeners }}">Template Events Wiki</a><br />
 			<a href="{{ extensions_validation_policy }}/#templates">Template Validation Policy</a><br />
 			<a href="{{ extensions_validation_policy }}/#scripts">JavaScript and CSS Validation Policy</a>
@@ -366,9 +370,9 @@ $this->user->add_lang_ext(‘acme/demo’, array(‘common’, ‘controller’)
    return isset($this->config['acme_demo_goodbye']);
 }</pre>
 		<div class="note-box blue"><strong>Resources:</strong><br />
-			<a href="{{ extensions_wiki_migrations }}">Migrations Wiki</a><br />
-			<a href="{{ extensions_wiki_migrations }}/Getting_Started">Getting started with Migrations</a><br />
-			<a href="{{ extensions_wiki_migrations }}/Tools">Migration Tools Wiki</a><br />
+			<a href="{{ extensions_docs_migrations }}">Migrations Documentation</a><br />
+			<a href="{{ extensions_docs_migrations }}getting_started.html">Getting started with Migrations</a><br />
+			<a href="{{ extensions_docs_migrations }}tools/">Migration Tools</a><br />
 			<a href="{{ extensions_validation_policy }}/#migrations">Migrations Validation Policy</a><br />
 		</div>
 
@@ -391,7 +395,7 @@ $event['permissions'] = $permissions;</pre>
 	'ACL_U_FOOBAR' => 'Can view foobar',
 ));</pre>
 		<div class="note-box blue"><strong>Resources:</strong><br />
-			<a href="{{ extensions_wiki_migrations }}/Tools/Permission">Migrations Permissions Tool Wiki</a><br />
+			<a href="{{ extensions_docs_migrations }}tools/permission.html">Migrations Permissions Tool</a><br />
 		</div>
 
 		<hr />
@@ -399,6 +403,7 @@ $event['permissions'] = $permissions;</pre>
 		<h2 class="title" id="a-resources">Additional Resources</h2>
 		<p>We hope you found this extension writing tutorial informative and helpful. There are still many more resources to help you develop great extensions that will expand the possibilities of what phpBB can do for your community and the many more communities that may adopt and benefit from your extensions.</p>
 		<p>
+			<a href="{{ extensions_docs }}">Extensions Tutorials</a><br />
 			<a href="{{ extensions_wiki }}">Extensions Wiki</a><br />
 			<a href="{{ forum_extensions_31x_dev }}">Extensions in Development Forum</a><br />
 			<a href="{{ forum_extensions_31x_writers }}">Extension Writers Forum</a><br />
