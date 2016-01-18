@@ -414,8 +414,6 @@ class GlobalsExtension extends \Twig_Extension
 	{
 		$extensionVars = array(
 			'extensions_cdb'						=> '/customise/db/extensions-36',
-			'extensions_wiki'						=> 'https://wiki.phpbb.com/Category:Extensions',
-
 			'extensions_quickinstall'				=> '/mods/quickinstall/', //replace later
 			'extensions_phpbb_cgs'					=> '//area51.phpbb.com/docs/31x/coding-guidelines.html',
 
@@ -438,6 +436,15 @@ class GlobalsExtension extends \Twig_Extension
 			'extensions_rules_dev'					=> '/extensions/rules-and-policies/development-rules',
 			'extensions_rules_writer'				=> '/extensions/rules-and-policies/writers-rules',
 
+			'extensions_docs'						=> 'https://area51.phpbb.com/docs/dev/31x/extensions/',
+			'extensions_docs_composer'				=> 'https://area51.phpbb.com/docs/dev/31x/extensions/tutorial_basics.html#composer-json',
+			'extensions_docs_controller'			=> 'https://area51.phpbb.com/docs/dev/31x/extensions/tutorial_controllers.html',
+			'extensions_docs_html_events'			=> 'https://area51.phpbb.com/docs/dev/31x/extensions/tutorial_basics.html#html-events',
+			'extensions_docs_php_events'			=> 'https://area51.phpbb.com/docs/dev/31x/extensions/tutorial_basics.html#php-events',
+			'extensions_docs_modules_migrations'	=> 'https://area51.phpbb.com/docs/dev/31x/extensions/tutorial_migrations.html',
+			'extensions_docs_migrations'			=> 'https://area51.phpbb.com/docs/dev/31x/migrations/',
+
+			'extensions_wiki'						=> 'https://wiki.phpbb.com/Category:Extensions',
 			'extensions_wiki_developing_extensions'	=> 'https://wiki.phpbb.com/Developing_Extensions',
 			'extensions_wiki_helper_class'			=> 'https://wiki.phpbb.com/Controller#The_Helper_Class',
 			'extensions_wiki_template_listeners'	=> 'https://wiki.phpbb.com/Add_Template_Listeners',
