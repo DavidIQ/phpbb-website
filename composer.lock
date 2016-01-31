@@ -975,7 +975,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/migrations/zipball/fc24f14efea39580577a8a662697ae780227f8e0",
+                "url": "https://api.github.com/repos/doctrine/migrations/zipball/360ad927e2593deca126379a330704605ad0eeac",
                 "reference": "b386d2a17634192fc406acc4090d58eb6e903ca5",
                 "shasum": ""
             },
@@ -1505,16 +1505,16 @@
         },
         {
             "name": "phpbb/epv",
-            "version": "0.0.5",
+            "version": "0.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpbb/epv.git",
-                "reference": "c092d70a3ee6da3604464f3f8b4e5dbb34fd4f9d"
+                "reference": "20988361847a65198f2ac15a225e3f4d9ca3030c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpbb/epv/zipball/c092d70a3ee6da3604464f3f8b4e5dbb34fd4f9d",
-                "reference": "c092d70a3ee6da3604464f3f8b4e5dbb34fd4f9d",
+                "url": "https://api.github.com/repos/phpbb/epv/zipball/20988361847a65198f2ac15a225e3f4d9ca3030c",
+                "reference": "20988361847a65198f2ac15a225e3f4d9ca3030c",
                 "shasum": ""
             },
             "require": {
@@ -1522,9 +1522,10 @@
                 "nikic/php-parser": "0.9.*@dev",
                 "php": ">=5.3.3",
                 "sensiolabs/ansi-to-html": "~1.1",
-                "symfony/console": ">=2.3.0",
-                "symfony/finder": ">=2.3.0",
-                "symfony/yaml": ">=2.3.0|>=2.4.0|>=2.5.0"
+                "symfony/console": "~2.3",
+                "symfony/finder": "~2.3",
+                "symfony/process": "~2.3",
+                "symfony/yaml": "~2.3"
             },
             "require-dev": {
                 "phpunit/phpunit": "4.4.*",
@@ -1550,7 +1551,7 @@
                 }
             ],
             "description": "A extension validator for phpBB extensions. Extensions are required to pass the validator when submitted to the extension database.",
-            "time": "2015-02-05 18:25:28"
+            "time": "2016-01-31 18:06:43"
         },
         {
             "name": "phpbb/website-assets",
@@ -1581,12 +1582,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "1.0.0"
+                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b"
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/php-fig/log/zipball/fe0936ee26643249e916849d48e3a51d5f5e278b",
-                "reference": "1.0.0",
+                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b",
                 "shasum": ""
             },
             "type": "library",
@@ -2842,7 +2843,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/liuggio/fastest/zipball/3dfef567aea12c1143961bfae7bf2027947ef4a9",
+                "url": "https://api.github.com/repos/liuggio/fastest/zipball/ea51fe10dcdf3ccd763a0539945868d386c9c21b",
                 "reference": "f251d5c1a73e5f0a6d8d974c47e7f7003bf16cbc",
                 "shasum": ""
             },
