@@ -11,7 +11,8 @@ git push public master
 git push private master
 php composer.phar install
 sf2 doctrine:database:create --env=dev
-sf2 doctrine:database:create --env=test
+sf2 doctrine:database:create --env=test --connection=default
+sf2 doctrine:database:create --env=test --connection=phpbb
 sf2 doctrine:migrations:migrate
 
 # Merge.sh variation

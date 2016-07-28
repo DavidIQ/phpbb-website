@@ -35,7 +35,7 @@ git merge private/master
 echo ""
 echo "Install composer deps:"
 echo "------------------------"
-php composer.phar install
+php composer.phar install --ignore-platform-reqs
 if [ "$1" != "--skip-tests" ]
 then
 	echo ""

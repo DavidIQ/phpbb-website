@@ -30,7 +30,7 @@
         "doctrine/doctrine-bundle": "~1.2",
         "doctrine/doctrine-migrations-bundle": "dev-master@dev",
         "doctrine/migrations": "dev-master@dev",
-        "php": ">=5.3.3",
+        "php": "5.6.*",
         "phpbb/epv": "~0.0.1",
         "sensio/distribution-bundle": "~3.0",
         "sensio/framework-extra-bundle": "~3.0",
