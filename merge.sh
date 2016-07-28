@@ -30,8 +30,8 @@ echo "$ git checkout master"
 git checkout master
 echo ""
 echo "$ git merge public/master && git merge private/master"
-git merge public/master
-git merge private/master
+git merge public/master --no-edit --ff-only
+git merge private/master --no-edit --ff-only
 echo ""
 echo "Install composer deps:"
 echo "------------------------"
@@ -58,7 +58,7 @@ git merge private/private
 echo ""
 echo "Merge master branch into private branch:"
 echo "-------------------------------------------"
-git merge master
+git merge master --no-edit
 echo ""
 echo "Checkout master branch:"
 echo "--------------------------"
