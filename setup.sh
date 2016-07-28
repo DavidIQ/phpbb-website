@@ -3,13 +3,17 @@ key before running this script. If you have hit enter."
 read x
 set -x
 
+alias sf2='php app/console'
+
 git remote add public git@github.com:phpbb/phpbb-website.git
 git remote add private git@github.com:phpbb/phpbb-website-private.git
 git push public master
 git push private master
 php composer.phar install
-php app/console doctrine:database:create
-php app/console doctrine:migrations:migrate
+sf2 doctrine:database:create --env=dev
+sf2 doctrine:database:create --env=test --connection=default
+sf2 doctrine:database:create --env=test --connection=phpbb
+sf2 doctrine:migrations:migrate
 
 # Merge.sh variation
 git status -sb
