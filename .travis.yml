@@ -15,7 +15,7 @@ before_script:
   - mysql -e 'create database www_tests_symfony;'
   - mysql -e 'create database www_tests_phpbb;'
   - cp app/config/parameters_travis.yml app/config/parameters.yml
-  - sh -c "if [ '$TRAVIS_PHP_VERSION' = '7.0' ]; then travis_retry php composer.phar install -v --dev --ignore-platform-reqs; else travis_retry php composer.phar install -v --dev; fi"
+  - sh -c "if [ '$TRAVIS_PHP_VERSION' = '7.0' ]; then php composer.phar install -v --dev --ignore-platform-reqs; else php composer.phar install -v --dev; fi"
 
 script:
   - bin/phpunit -c app/
