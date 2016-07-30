@@ -517,7 +517,7 @@ class GlobalsExtension extends \Twig_Extension
 			'FORUM_EVENTS'				=> '/community/viewforum.php?f=105',
 			'FORUM_GENDISC'				=> '/community/viewforum.php?f=6',
 
-			'U_FORUM_SUPPORT_SUB'				=> '/community/viewforum.php?f=466',
+			'U_FORUM_SUPPORT_SUB'				=> '/community/viewforum.php?f=551',
 			'U_FORUM_STYLES_SUB'				=> '/community/viewforum.php?f=471',
 			'U_FORUM_MODS_SUB'					=> '/community/viewforum.php?f=81',
 			'U_FORUM_EXT_SUB'					=> '/community/viewforum.php?f=451',
@@ -668,7 +668,7 @@ class GlobalsExtension extends \Twig_Extension
 			'U_SUPPORT_KB_SUB'					=> '/support/docs/en/3.1/kb/',
 			'U_SUPPORT_IRC_SUB'					=> '/support/irc/',
 			'U_SUPPORT_TUTORIALS_SUB'			=> '/support/tutorials/3.0/',
-			'U_SUPPORT_FORUMS_SUB'				=> '/support/forums/',
+			'U_SUPPORT_FORUMS_SUB'				=> '/community/viewforum.php?f=551',
 			'U_SUPPORT_INTL_SUB'				=> '/support/intl/',
 
 			'U_DEVELOPMENT'						=> '/development/',
