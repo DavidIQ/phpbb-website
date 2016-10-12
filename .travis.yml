@@ -1,7 +1,11 @@
 language: php
-php:
-  - 5.6
-  - 7.0
+matrix:
+  include:
+    - php: 5.6
+    - php: 7.0
+    - php: nightly
+  allow_failures:
+    - php: nightly
 
 env:
   - DB=mysql
@@ -15,7 +19,7 @@ before_script:
   - mysql -e 'create database www_tests_symfony;'
   - mysql -e 'create database www_tests_phpbb;'
   - cp app/config/parameters_travis.yml app/config/parameters.yml
-  - sh -c "if [ '$TRAVIS_PHP_VERSION' = '7.0' ]; then php composer.phar install -v --dev --ignore-platform-reqs; else php composer.phar install -v --dev; fi"
+  - sh -c "if [ '$TRAVIS_PHP_VERSION' = '5.6' ]; then php composer.phar install -v --dev; else php composer.phar install -v --dev --ignore-platform-reqs; fi"
 
 script:
   - bin/phpunit -c app/
