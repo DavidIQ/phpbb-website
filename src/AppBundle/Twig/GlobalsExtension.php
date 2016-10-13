@@ -456,7 +456,7 @@ class GlobalsExtension extends \Twig_Extension
 			'extensions_security_tracker'			=> 'https://tracker.phpbb.com/browse/EXTSEC',
 
 			'extension_quickstart_zip'				=> '/store/quickstart_extension_1.0.0.zip',
-			'extension_skeleton'					=> 'https://github.com/nickv-phpbb/phpbb-ext-skeleton',
+			'extension_skeleton'					=> 'https://www.phpbb.com/customise/db/official_tool/ext_skeleton/',
 
 			// Team members
 			'extension_team_members'				=> '/community/memberlist.php?mode=group&g=7331',
