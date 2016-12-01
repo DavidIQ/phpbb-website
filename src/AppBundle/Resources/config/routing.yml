@@ -58,3 +58,7 @@ phpBBWebsite_Extensions:
 phpBBWebsite_Styles:
     resource: "@AppBundle/Resources/config/routing/styles.yml"
     prefix:   /styles
+
+phpBBWebsite_viglink:
+    path:  /viglink/convert
+    defaults: { _controller: AppBundle:VigLink:key }

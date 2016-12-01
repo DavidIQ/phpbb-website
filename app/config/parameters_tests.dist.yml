@@ -66,5 +66,7 @@ parameters:
     # Location should be local, sandbox or live
     location:           local
 
+    viglink_secret_key: abc12345
+
     # Location of java on this computer/server
     java_location:      /usr/bin/java
