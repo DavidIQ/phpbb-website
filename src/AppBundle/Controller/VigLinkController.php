@@ -16,7 +16,7 @@ class VigLinkController extends Controller
 
 		if (!isset($siteId, $uuid, $apiKey, $siteDomain))
 		{
-			throw new Symfony\Component\HttpKernel\Exception\NotFoundHttpException();
+			throw new \Symfony\Component\HttpKernel\Exception\NotFoundHttpException();
 		}
 
 		$subId = md5($siteId . $uuid);
@@ -24,7 +24,7 @@ class VigLinkController extends Controller
 		$key = $this->container->hasParameter('viglink_api_key') ? $this->getParameter('viglink_api_key') : $apiKey;
 
 		if (!$this->container->hasParameter('viglink_secret_key')) {
-			throw new Exception('Viglink is not enabled');
+			throw new \Exception('Viglink is not enabled');
 		}
 
 		$secretKey = $this->getParameter('viglink_secret_key');
