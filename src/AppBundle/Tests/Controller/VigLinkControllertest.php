@@ -20,4 +20,12 @@ class VigLinkControllerTest extends BootstrapTestSuite
 
 		$this->assertTrue($this->client->getResponse()->isSuccessful(), 'Response is a sucessful one');
 	}
+
+	public function testViglinkEnabled()
+	{
+		$objs = $this->setupTest('/viglink/enabled');
+		$crawler = $objs['crawler'];
+
+		$this->assertTrue($this->client->getResponse()->isSuccessful(), 'Response is a sucessful one');
+	}
 }

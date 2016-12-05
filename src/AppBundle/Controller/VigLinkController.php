@@ -45,4 +45,12 @@ class VigLinkController extends Controller
 
 		return $response;
 	}
+
+	public function enabledAction(Request $request)
+	{
+		$response = new Response('1');
+		// Set to '0' to disable viglink
+
+		return $response;
+	}
 }
