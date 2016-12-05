@@ -62,3 +62,7 @@ phpBBWebsite_Styles:
 phpBBWebsite_viglink:
     path:  /viglink/convert
     defaults: { _controller: AppBundle:VigLink:key }
+
+phpBBWebsite_viglink_enabled:
+    path:  /viglink/enabled
+    defaults: { _controller: AppBundle:VigLink:enabled }
