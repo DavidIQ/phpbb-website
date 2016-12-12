@@ -435,23 +435,11 @@ class GlobalsExtension extends \Twig_Extension
 			'extensions_rules_dev'					=> '/extensions/rules-and-policies/development-rules',
 			'extensions_rules_writer'				=> '/extensions/rules-and-policies/writers-rules',
 
-			'extensions_docs'						=> 'https://area51.phpbb.com/docs/dev/31x/extensions/',
-			'extensions_docs_composer'				=> 'https://area51.phpbb.com/docs/dev/31x/extensions/tutorial_basics.html#composer-json',
-			'extensions_docs_controller'			=> 'https://area51.phpbb.com/docs/dev/31x/extensions/tutorial_controllers.html',
-			'extensions_docs_html_events'			=> 'https://area51.phpbb.com/docs/dev/31x/extensions/tutorial_basics.html#html-events',
-			'extensions_docs_php_events'			=> 'https://area51.phpbb.com/docs/dev/31x/extensions/tutorial_basics.html#php-events',
-			'extensions_docs_modules_migrations'	=> 'https://area51.phpbb.com/docs/dev/31x/extensions/tutorial_migrations.html',
-			'extensions_docs_migrations'			=> 'https://area51.phpbb.com/docs/dev/31x/migrations/',
-
-			'extensions_wiki'						=> 'https://wiki.phpbb.com/Category:Extensions',
-			'extensions_wiki_developing_extensions'	=> 'https://wiki.phpbb.com/Developing_Extensions',
-			'extensions_wiki_helper_class'			=> 'https://wiki.phpbb.com/Controller#The_Helper_Class',
-			'extensions_wiki_template_listeners'	=> 'https://wiki.phpbb.com/Add_Template_Listeners',
-			'extensions_wiki_controller'			=> 'https://wiki.phpbb.com/Controller',
-			'extensions_wiki_composer'				=> 'https://wiki.phpbb.com/Extension_meta_data',
-			'extensions_wiki_dependency_injection'	=> 'https://wiki.phpbb.com/Dependency_Injection_Container',
-			'extensions_wiki_migrations'			=> 'https://wiki.phpbb.com/Migrations',
-			'extension_wiki_events_list'			=> 'https://wiki.phpbb.com/Event_List',
+			'extensions_docs_31'					=> 'https://area51.phpbb.com/docs/dev/31x/extensions/',
+			'extensions_docs_32'					=> 'https://area51.phpbb.com/docs/dev/32x/extensions/',
+			'extensions_docs_basics'				=> 'https://area51.phpbb.com/docs/dev/31x/extensions/tutorial_basics.html',
+			'extensions_docs_key_concepts'			=> 'https://area51.phpbb.com/docs/dev/31x/extensions/tutorial_key_concepts.html',
+			'extensions_docs_modules'				=> 'https://area51.phpbb.com/docs/dev/31x/extensions/tutorial_modules.html',
 
 			'extensions_security_tracker'			=> 'https://tracker.phpbb.com/browse/EXTSEC',
 

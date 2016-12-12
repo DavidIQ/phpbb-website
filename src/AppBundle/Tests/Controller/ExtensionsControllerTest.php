@@ -125,22 +125,6 @@ class ExtensionsControllerTest extends BootstrapTestSuite
 		$this->globalTests();
 	}
 
-	public function testExtensionsWriting()
-	{
-		$objs = $this->setupTest('/extensions/writing/');
-		$crawler = $objs['crawler'];
-
-		// Title Check
-		$this->assertTrue(strpos(($crawler->filter('title')->first()->text()), 'Writing Extensions') !== false, 'Title contains Writing Extensions');
-
-		// Content Check
-		$this->assertTrue($crawler->filter('html:contains("Extensions are the natural successor to modifications")')->count() > 0, 'Writing Extensions Content Check');
-		$this->assertTrue($crawler->filter('html:contains("Extensions Team")')->count() > 0, 'Extensions Sidebar Check');
-
-		// Standard All Page Checks
-		$this->globalTests();
-	}
-
 	public function testExtensionsTeamOverViews()
 	{
 		$objs = $this->setupTest('/extensions/team-overview/');
