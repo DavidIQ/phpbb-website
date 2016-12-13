@@ -5,6 +5,14 @@
 {% block phpbb_body_class %}home{% endblock %}
 
 {% block header_button %}
+<style>
+@media only screen and (max-width: 500px), only screen and (max-device-width: 500px)
+{
+	#home-dl-link, #home-try-link {
+		display: none;
+	}
+}
+</style>
 <div id="home-dl-link"><a href="{{ downloads_path }}">Download<span class="version">{{ package_version }}</span><span>{{ package_release_date }}</span></a></div>
 <div id="home-try-link"><a href="{{ demo_path }}">Try our<span class="version">Demo</span></a></div>
 {% endblock header_button %}
