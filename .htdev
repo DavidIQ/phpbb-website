@@ -15,7 +15,7 @@ RewriteCond %{REMOTE_HOST} !^161\.23\.170\.218
 RewriteCond %{REMOTE_HOST} !^193\.159\.47\.151
 RewriteCond %{REMOTE_HOST} !^178\.62\.93\.163
 RewriteCond %{REMOTE_HOST} !^140\.211\.15\.224
-RewriteRule ^(.*)$ /var/www/www.phpbb.com/htdocs/old/maintenance-launch.html [L]
+RewriteRule ^(.*)$ /var/www/www.phpbb.com/htdocs/old/maintenance-launch.php [L]
 
 # Exists in /old as directory or file and if so serve it
 RewriteCond /var/www/www.phpbb.com/htdocs/old%{REQUEST_URI} -f [OR]
