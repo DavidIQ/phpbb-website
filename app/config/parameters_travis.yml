@@ -22,7 +22,7 @@ parameters:
     phpbb_database_name:        www_tests_phpbb
     phpbb_database_user:        root
     phpbb_database_password:    ~
-    phpbb_database_prefix:      community_
+    phpbb_database_prefix:      c_
 
     # Databases for testing
     test_database_driver:            pdo_mysql

@@ -132,9 +132,9 @@ class BootstrapTestSuite extends WebTestCase
 	private function getPhpbbFixtures($table)
 	{
 		switch ($table) {
-			case 'community_posts':
+			case 'c_posts':
 			$sql = "
-CREATE TABLE IF NOT EXISTS `community_posts` (
+CREATE TABLE IF NOT EXISTS `c_posts` (
   `post_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `topic_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `forum_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -175,10 +175,10 @@ CREATE TABLE IF NOT EXISTS `community_posts` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=6 ;
 
 --
--- Dumping data for table `community_posts`
+-- Dumping data for table `c_posts`
 --
 
-INSERT INTO `community_posts` (`post_id`, `topic_id`, `forum_id`, `poster_id`, `icon_id`, `poster_ip`, `post_time`, `post_reported`, `enable_bbcode`, `enable_smilies`, `enable_magic_url`, `enable_sig`, `post_username`, `post_subject`, `post_text`, `post_checksum`, `post_attachment`, `bbcode_bitfield`, `bbcode_uid`, `post_postcount`, `post_edit_time`, `post_edit_reason`, `post_edit_user`, `post_edit_count`, `post_edit_locked`, `post_visibility`, `post_delete_time`, `post_delete_reason`, `post_delete_user`) VALUES
+INSERT INTO `c_posts` (`post_id`, `topic_id`, `forum_id`, `poster_id`, `icon_id`, `poster_ip`, `post_time`, `post_reported`, `enable_bbcode`, `enable_smilies`, `enable_magic_url`, `enable_sig`, `post_username`, `post_subject`, `post_text`, `post_checksum`, `post_attachment`, `bbcode_bitfield`, `bbcode_uid`, `post_postcount`, `post_edit_time`, `post_edit_reason`, `post_edit_user`, `post_edit_count`, `post_edit_locked`, `post_visibility`, `post_delete_time`, `post_delete_reason`, `post_delete_user`) VALUES
 (1, 1, 2, 2, 0, '127.0.0.1', 1343840387, 0, 1, 1, 1, 1, '', 'Welcome to phpBB3', 'This is an example post in your phpBB3 installation. Everything seems to be working. You may delete this post if you like and continue to set up your board. During the installation process your first category and your first forum are assigned an appropriate set of permissions for the predefined usergroups administrators, bots, global moderators, guests, registered users and registered COPPA users. If you also choose to delete your first category and your first forum, do not forget to assign permissions for all these usergroups for all new categories and forums you create. It is recommended to rename your first category and your first forum and copy permissions from these while creating new categories and forums. Have fun!', '5dd683b17f641daf84c040bfefc58ce9', 0, '', '', 1, 0, '', 0, 0, 0, 1, 0, '', 0),
 (2, 2, 14, 2, 0, '127.0.0.1', 1376676604, 0, 1, 1, 1, 1, '', 'this should not show if it does die', 'No Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\nquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\nconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\ncillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\nproident, sunt in culpa qui officia deserunt mollit anim id est laborum.', '08a963224e1894a0f6ded63172f818d2', 0, '', '1fzugufv', 1, 0, '', 0, 0, 0, 1, 0, '', 0),
 (3, 3, 14, 2, 0, '127.0.0.1', 1376676710, 0, 1, 1, 1, 1, '', 'another', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\nquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\nconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\ncillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\nproident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'bdf55c952333a4f0992f429e152f03f7', 0, '', '1yurb15i', 1, 0, '', 0, 0, 0, 1, 0, '', 0),
@@ -187,9 +187,9 @@ INSERT INTO `community_posts` (`post_id`, `topic_id`, `forum_id`, `poster_id`, `
 ";
 break;
 
-case 'community_topics':
+case 'c_topics':
 $sql = "
-CREATE TABLE IF NOT EXISTS `community_topics` (
+CREATE TABLE IF NOT EXISTS `c_topics` (
   `topic_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `forum_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `icon_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -238,10 +238,10 @@ CREATE TABLE IF NOT EXISTS `community_topics` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=6 ;
 
 --
--- Dumping data for table `community_topics`
+-- Dumping data for table `c_topics`
 --
 
-INSERT INTO `community_topics` (`topic_id`, `forum_id`, `icon_id`, `topic_attachment`, `topic_reported`, `topic_title`, `topic_poster`, `topic_time`, `topic_time_limit`, `topic_views`, `topic_status`, `topic_type`, `topic_first_post_id`, `topic_first_poster_name`, `topic_first_poster_colour`, `topic_last_post_id`, `topic_last_poster_id`, `topic_last_poster_name`, `topic_last_poster_colour`, `topic_last_post_subject`, `topic_last_post_time`, `topic_last_view_time`, `topic_moved_id`, `topic_bumped`, `topic_bumper`, `poll_title`, `poll_start`, `poll_length`, `poll_max_options`, `poll_last_vote`, `poll_vote_change`, `topic_visibility`, `topic_delete_time`, `topic_delete_reason`, `topic_delete_user`, `topic_posts_approved`, `topic_posts_unapproved`, `topic_posts_softdeleted`) VALUES
+INSERT INTO `c_topics` (`topic_id`, `forum_id`, `icon_id`, `topic_attachment`, `topic_reported`, `topic_title`, `topic_poster`, `topic_time`, `topic_time_limit`, `topic_views`, `topic_status`, `topic_type`, `topic_first_post_id`, `topic_first_poster_name`, `topic_first_poster_colour`, `topic_last_post_id`, `topic_last_poster_id`, `topic_last_poster_name`, `topic_last_poster_colour`, `topic_last_post_subject`, `topic_last_post_time`, `topic_last_view_time`, `topic_moved_id`, `topic_bumped`, `topic_bumper`, `poll_title`, `poll_start`, `poll_length`, `poll_max_options`, `poll_last_vote`, `poll_vote_change`, `topic_visibility`, `topic_delete_time`, `topic_delete_reason`, `topic_delete_user`, `topic_posts_approved`, `topic_posts_unapproved`, `topic_posts_softdeleted`) VALUES
 (1, 2, 0, 0, 0, 'Welcome to phpBB3', 2, 1343840387, 0, 2, 0, 0, 1, 'UKB', '000000', 1, 2, 'UKB', '000000', 'Welcome to phpBB3', 1343840387, 1405344757, 0, 0, 0, '', 0, 0, 1, 0, 0, 1, 0, '', 0, 1, 0, 0),
 (2, 14, 0, 0, 0, 'this should not show if it does die', 2, 1376676604, 0, 2, 0, 0, 2, 'UKB', '000000', 2, 2, 'UKB', '000000', 'this should not show if it does die', 1376676604, 1376677290, 0, 0, 0, '', 0, 0, 0, 0, 0, 1, 0, '', 0, 1, 0, 0),
 (3, 14, 0, 0, 0, 'another', 2, 1376676710, 0, 1, 0, 0, 3, 'UKB', '000000', 3, 2, 'UKB', '000000', 'another', 1376676710, 1376677005, 0, 0, 0, '', 0, 0, 0, 0, 0, 1, 0, '', 0, 1, 0, 0),
