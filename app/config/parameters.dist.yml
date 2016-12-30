@@ -17,7 +17,7 @@ parameters:
     phpbb_database_name:        phpbb_local
     phpbb_database_user:        root
     phpbb_database_password:    ~
-    phpbb_database_prefix:      community_
+    phpbb_database_prefix:      c_
 
     # Databases for testing. These databases should exist
     # The users should have full access to the databases and access to create/destroy databases.

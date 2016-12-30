@@ -9,7 +9,7 @@
 
 namespace AppBundle\Twig;
 
-class GlobalsExtension extends \Twig_Extension
+class GlobalsExtension extends \Twig_Extension implements \Twig_Extension_GlobalsInterface
 {
 	public function getGlobals()
 	{
