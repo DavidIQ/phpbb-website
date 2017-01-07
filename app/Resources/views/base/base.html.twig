@@ -375,11 +375,11 @@
 				number = event.strftime('%S');
 				unit = 'seconds';
 			}
-			$timerBig.html(number);
-			$timerSmall.html(unit);
+			$timerBig.html('3.2');
+			$timerSmall.html('is coming today!');
 		}).on('finish.countdown', function() {
 			$timerBig.html('3.2');
-			$timerSmall.html('go get it!');
+			$timerSmall.html('is coming today!');
 			$timerBox.attr('href', '{{ U_DOWNLOADS }}');
 		});
 
