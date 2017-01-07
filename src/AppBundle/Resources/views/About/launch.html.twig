@@ -29,277 +29,81 @@
 			<strong>&#8249;</strong> <a href="{{ about_launch }}">Launch</a>
 		</li>
 	</ul>
-</div>
 
 <div class="features-container">
 	<div class="features-header">
 		<div class="lead lead-masthead">
-			<h2 class="lead-title text-center">phpBB 3.1 <span class="lead-clear-outline">Ascraeus</span></h2>
-			<p class="lead-sub-title text-center">Over 1k bug fixes, 1.5k improvements & 11k commits. </p>
-			<p class="lead-sub-buttons lead-sub-title text-center"><a class="lead-clear-outline download-btn" href="https://www.phpbb.com/downloads/" style="">Download 3.1</a> <span>or</span> <a class="lead-clear-outline test-btn" href="http://www.try-phpbb.com/31x/" style="">Try It</a></p>
+			<h2 class="lead-title text-center">phpBB 3.2 <span class="lead-clear-outline">Rhea</span></h2>
+			<p class="lead-sub-title text-center">Solid. Stable. Secure. </p>
+			<p class="lead-sub-buttons lead-sub-title text-center"><a class="lead-clear-outline download-btn" href="https://www.phpbb.com/downloads/" style="">Download 3.2</a> <span><!--or</span> <a class="lead-clear-outline test-btn" href="http://www.try-phpbb.com/32x/" style="">Try It</a>--></p>
 		</div>
 	</div>
-	<div class="features-nav">
-		<div class="nav nav-pills text-center">
-			<a class="active nav-link admin" href="#admin"></a>
-			<a class="nav-link user" href="#user"></a>
-			<a class="nav-link dev" href="#dev"></a>
-			<a class="nav-link design" href="#design"></a>
-			<a class="nav-link top" href="#top"></a>
-		</div>
-	</div>
-	<div id="admin" class="feature feature-admin">
-		<div class="lead">
-			<h2 class="lead-title text-center">Administrators</h2>
-			<p class="lead-sub-title text-center">Features, changes and improvements</p>
-		</div>
 		<div class="feature-row">
-			<div id="extensions" class="media-lg">
+		<div id="global-announcemnets" class="media-md">
 				<h2 class="media-title text-center">
-					<img class="media-image" src="{{ asset('assets/images/images/about/launch/extension@2x.png') }}" alt="phpBB Extensions">
-					Extensions
+					<img class="media-image" src="{{ asset('assets/images/images/about/launch/emoji.png') }}" alt="Emoji">
+					Emoji!
 				</h2>
-				<p class="media-copy text-center">Manually editing code is a thing of the past. Quickly installed in the ACP, extensions are to phpBB 3.1 what MODs were to phpBB 2.0 & 3.0. Our huge customisation community is hard at work building new extensions to help you get the most out of your forum.</p>
+				<p class="media-copy text-center">Thanks to our brand-new BBCode parser your users can now make use of the entire Emoji keyboard when posting on your board. From a lovely grin to a pink unicorn, Emoji can liven up all posts on your board! </p>
 			</div>
-		</div>
-
-		<div class="feature-row">
-			<div id="security" class="media-lg">
-				<h2 class="media-title text-center">
-					<img class="security-image" src="{{ asset('assets/images/images/about/launch/security@2x.png') }}" alt="PHPBB Security">Unmatched Security
-				</h2>
-				<p class="media-copy text-center">
-					Nothing is more important than keeping your data safe, and our record speaks for itself. In the past four years, there have been no reported vulnerabilities in the phpBB software. Meanwhile SMF, vBulletin, IPB, and MyBB have had an average of 10, and as many as 16. That's an average of 10 more reasons to choose phpBB. And just to make sure, we hired a professional security company to audit the entire phpBB 3.1 codebase.
-				</p>
-			</div>
-		</div>
-		<div class="feature-row">
-			<div id="updating" class="media-lg">
-				<h2 class="media-title text-center">
-					<img class="media-image" src="{{ asset('assets/images/images/about/launch/version@2x.png') }}" alt="Version Check">
-					Simplified Updating
-				</h2>
-				<p class="media-copy text-center"> If you're tired of complicated updating procedures, you'll love phpBB 3.1. Whether it's extensions or phpBB itself, updating is as simple as uploading the new package and clicking a few buttons. You can even check to make sure you're running the latest versions, right in the ACP.</p>
-			</div>
-		</div>
-
-		<div class="feature-row">
 			<div id="soft-delete" class="media-md">
 				<h2 class="media-title text-center">
-					<img class="media-image" src="{{ asset('assets/images/images/about/launch/soft-delete@2x.png') }}" alt="Soft Delete">
-					Soft Delete
+					<img class="media-image" src="http://phpbb.com/assets/images/images/about/launch/ajax@2x.png?v2015122401" alt="PHP7 Support">
+					PHP7 Support
 				</h2>
-				<p class="media-copy text-center">Posts and topics can now be removed from public view without being permanently deleted. You can determine this behaviour per user or group.</p>
+				<p class="media-copy text-center">PHP7 works twice as fast as previous PHP versions. We have modified phpBB to now completely support this new release of PHP (both 7.0 and 7.1) so you can enjoy all these performance advantages.</p>
+			</div>
+		</div>
+			<div id="teams-page" class="media-md">
+				<h2 class="media-title text-center">
+					<img class="media-image" src="http://phpbb.com/assets/images/images/about/launch/team@2x.png?v2015122401" alt="Clever quotes">
+					Clever Quotes
+				</h2>
+				<p class="media-copy text-center">
+					We've improved the quoting system to show a link to the quoted post and post author. The full time and date of the quoted post is now also available to get all the information in one glance.
+				</p>
+			</div>
+			<div id="soft-delete" class="media-md">
+				<h2 class="media-title text-center">
+					<img class="media-image" src="http://phpbb.com/assets/images/images/about/launch/version@2x.png?v2015122401" alt="Easy updating">
+					Easy Updating
+				</h2>
+				<p class="media-copy text-center">With our brand new installer updating will be easier than ever in phpBB 3.2! Upload a single folder to your board and all your files will automatically be replaced.</p>
 			</div>
 			<div id="global-announcemnets" class="media-md">
 				<h2 class="media-title text-center">
-					<img class="media-image" src="{{ asset('assets/images/images/about/launch/global-announcements@2x.png') }}" alt="Improved Global Announcments">
-					Improved Global Announcements
+					<img class="media-image" src="http://phpbb.com/assets/images/images/about/launch/functional@2x.png?v2015122401" alt="reCAPTCHA 2.0">
+					reCAPTCHA 2.0
 				</h2>
-				<p class="media-copy text-center">Global announcements are now tied to a specific forum, greatly simplifying permissions.</p>
+				<p class="media-copy text-center">With phpBB 3.2 now including the industry standard by using Google's newest and strongest API, you will have an even better protection against spambots than before. </p>
 			</div>
-		</div>
-		<div class="feature-row">
-			<div id="teams-page" class="media-md">
+			<div id="contact-page" class="media-md">
 				<h2 class="media-title text-center">
-					<img class="media-image" src="{{ asset('assets/images/images/about/launch/team@2x.png') }}" alt="Improved Teams Page">
-					Improved Teams Page
+					<img class="media-image" src="http://phpbb.com/assets/images/images/about/launch/notifications@2x.png?v2015122401" alt="Notifications">
+					Improved Notifications
 				</h2>
 				<p class="media-copy text-center">
-					The new teams page is highly customisable and sorted by groups.
+					With us completely refactoring the notifications system in phpBB 3.2, notifications now work faster and more efficient. This change also reduces the posting time to be almost instantenous.
+				</p>
+			</div>
+			<div id="global-announcements" class="media-md">
+				<h2 class="media-title text-center">
+					<img class="media-image" src="http://phpbb.com/assets/images/images/about/launch/extension@2x.png?v2015122401" alt="FontAwesome">
+					FontAwesome Icons
+				</h2>
+				<p class="media-copy text-center">
+				Using CSS driven icons from FontAwesome, we now have more intuitive icons with retina quality all across phpBB as well as considerably improving the speed of page loads.
 				</p>
 			</div>
 			<div id="contact-page" class="media-md">
 				<h2 class="media-title text-center">
-					<img class="media-image" src="{{ asset('assets/images/images/about/launch/contact@2x.png') }}" alt="Contact Page">
-					Contact Page
+					<img class="media-image" src="http://phpbb.com/assets/images/images/about/launch/symfony@2x.png?v2015122401" alt="Symfony">
+					Symfony 2.8
 				</h2>
 				<p class="media-copy text-center">
-					Visitors, including guests, can now get in touch with the board administrator by using the built-in contact page.
+					Having introduced Symfony components in our last release, phpBB 3.2 has now upgraded to be build on Symfony 2.8 allowing us to use their latest cutting-edge developments.
 				</p>
-			</div>
-		</div>
+			</div></div>
 	</div>
-	<div id="user" class="feature feature-user">
-		<div class="lead">
-			<h2 class="lead-title text-center">End Users</h2>
-			<p class="lead-sub-title text-center">Features, changes and improvements</p>
-		</div>
-		<div class="feature-row">
-			<div id="responsive" class="media-lg">
-				<h2 class="media-title text-center">
-					<img class="media-image" src="{{ asset('assets/images/images/about/launch/responsive@2x.png') }}" alt="Responsive Theme">
-					Responsive Theme
-				</h2>
-				<p class="media-copy text-center">
-					Our default style, prosilver, has been completely overhauled to ensure a modern experience on all of your devices. Give it a try on a tablet or smart-phone.
-				</p>
-			</div>
-		</div>
-		<div class="feature-row">
-			<div id="notifications" class="media-lg">
-				<h2 class="media-title text-center">
-					<img class="media-image" src="{{ asset('assets/images/images/about/launch/notifications@2x.png') }}" alt="Notification System">
-					Notification System
-				</h2>
-				<p class="media-copy text-center">
-					Easily configure how you prefer to be notified about various events, such as when you are quoted in a post. The new extensible notifications feature lives in the header of every page and provides a centralized place to receive alerts and other information.
-				</p>
-			</div>
-		</div>
-		<div class="feature-row">
-			<div id="gravatar" class="media-md">
-				<h2 class="media-title text-center">
-					<img class="media-image" src="{{ asset('assets/images/images/about/launch/gravatar@2x.png') }}" alt="Gravatar Support">
-					Gravatar Support
-				</h2>
-				<p class="media-copy text-center">
-					Avatars may now be fetched from the <a href="http://www.gravatar.com">Gravatar</a> service, in addition to the previously available options.
-				</p>
-			</div>
-			<div id="oauth" class="media-md">
-				<h2 class="media-title text-center">
-					<img class="media-image" src="{{ asset('assets/images/images/about/launch/oauth@2x.png') }}" alt="OAuth Login">
-					OAuth Login
-				</h2>
-				<p class="media-copy text-center">
-					Register and login using your Google, Bit.ly, or Facebook accounts. Extensions can easily add other authentication services.
-				</p>
-			</div>
-		</div>
-	</div>
-	<div id="dev" class="feature feature-dev">
-		<div class="lead">
-			<h2 class="lead-title text-center">Developers</h2>
-			<p class="lead-sub-title text-center">Features, changes and improvements</p>
-		</div>
-		<div class="feature-row">
-			<div id="symfony" class="media-lg">
-				<h2 class="media-title text-center">
-					<img class="media-image" src="{{ asset('assets/images/images/about/launch/symfony@2x.png') }}" alt="Symfony Components">
-					Symfony Components
-				</h2>
-				<p class="media-copy text-center">
-					<a href="http://symfony.com/">Symfony</a> provides a set of battle-hardened components for developing websites with PHP. These components are widely used as the foundation of web applications in the PHP world including several popular projects like Drupal or Laravel. phpBB is now also built using Symfony.
-				</p>
-			</div>
-		</div>
-		<div class="feature-row">
-			<div id="routing-controllers" class="media-md">
-				<h2 class="media-title text-center">
-					<img class="media-image" src="{{ asset('assets/images/images/about/launch/routing-controller@2x.png') }}" alt="Routing & Controllers">
-					Routing & Controllers
-				</h2>
-				<p class="media-copy text-center">
-					phpBB is now designed following the more modern web MVC construct using Routes and Controllers in order to provide better API calls.
-				</p>
-			</div>
-			<div id="migrations" class="media-md">
-				<h2 class="media-title text-center">
-					<img class="media-image" src="{{ asset('assets/images/images/about/launch/migrations@2x.png') }}" alt="Migrations">
-					Migrations
-				</h2>
-				<p class="media-copy text-center">
-					Migrations have been added to simplify maintaining database states based on the installation and removal of features and extensions.
-				</p>
-			</div>
-		</div>
-		<div class="feature-row">
-			<div id="dependency-injection" class="media-sm">
-				<h2 class="media-title text-center">
-					<img class="media-image" src="{{ asset('assets/images/images/about/launch/dependency-injection@2x.png') }}" alt="Dependency Injection">
-					Dependency Injection
-				</h2>
-				<p class="media-copy text-center">
-					New and refactored code now consistently follows the Dependency Injection design pattern.
-				</p>
-			</div>
-			<div id="composer" class="media-sm">
-				<h2 class="media-title text-center">
-					<img class="media-image" src="{{ asset('assets/images/images/about/launch/composer@2x.png') }}" alt="Composer">
-					Composer
-				</h2>
-				<p class="media-copy text-center">
-					We now rely on Composer for dependency management. You can find phpBB's Composer package on <a href="https://packagist.org/packages/phpbb/phpbb">Packagist</a>.
-				</p>
-			</div>
-			<div id="functional-testing" class="media-sm">
-				<h2 class="media-title text-center">
-					<img class="media-image" src="{{ asset('assets/images/images/about/launch/functional@2x.png') }}" alt="Functional Testing">
-					Functional Testing
-				</h2>
-				<p class="media-copy text-center">
-					In addition to unit testing with PHPUnit, phpBB now ensures its correct behaviour with functional testing.
-				</p>
-			</div>
-		</div>
-	</div>
-	<div id="design" class="feature feature-design">
-		<div class="lead">
-			<h2 class="lead-title text-center">Designers</h2>
-			<p class="lead-sub-title text-center">Features, changes and improvements</p>
-		</div>
-		<div class="feature-row">
-			<div id="ajax" class="media-md">
-				<h2 class="media-title text-center">
-					<img class="media-image" src="{{ asset('assets/images/images/about/launch/ajax@2x.png') }}" alt="Ajax">
-					AJAX
-				</h2>
-				<p class="media-copy text-center">
-					Traditionally with phpBB, even simple operations like deleting a post or reordering forums have involved multiple requests and full page loads, which was slow and heavy on bandwidth. We've added AJAX functionality to a lot of these simple operations, making them faster and easier to do.
-				</p>
-			</div>
-			<div id="style-inheritance" class="media-md">
-				<h2 class="media-title text-center">
-					<img class="media-image" src="{{ asset('assets/images/images/about/launch/style-inhertance@2x.png') }}" alt="Improved Style Inheritance">
-					Improved Style Inheritance
-				</h2>
-				<p class="media-copy text-center">
-					The templating system has been completely overhauled. The folder structure has been cleaned up, providing an increased ability to inherit from the other styles. No more unnecessary and confusing configuration files!
-				</p>
-			</div>
-		</div>
-		<div class="feature-row">
-			<div id="improved-navigation" class="media-md">
-				<h2 class="media-title text-center">
-					<img class="media-image" src="{{ asset('assets/images/images/about/launch/navigation@2x.png') }}" alt="Improved Navigation">
-					Improved Navigation
-				</h2>
-				<p class="media-copy text-center">
-					Redesigned and laid out to provide better UX/UI. The addition of menus to group similar functionality. Improved consistency across the design. Completely reworked buttons leveraging CSS rather than images.
-				</p>
-			</div>
-			<div id="html5-css3" class="media-md">
-				<h2 class="media-title text-center">
-					<img class="media-image" src="{{ asset('assets/images/images/about/launch/html-css@2x.png') }}" alt="HTML5 & CSS3 Enhancements">
-					HTML5 & CSS3 Enhancements
-				</h2>
-				<p class="media-copy text-center">
-					We're now using the HTML5 doctype and CSS3 to modernize the codebase, reduce the number of requests made to the server, and speed up page load times.
-				</p>
-			</div>
-		</div>
-		<div class="feature-row">
-			<div id="twig" class="media-md">
-				<h2 class="media-title text-center">
-					<img class="media-image" src="{{ asset('assets/images/images/about/launch/twig@2x.png') }}" alt="Twig Templating Engine">
-					Twig Templating Engine
-				</h2>
-				<p class="media-copy text-center">
-					You can now leverage the power of Twig Templating with your styles.
-				</p>
-			</div>
-			<div id="jquery" class="media-md">
-				<h2 class="media-title text-center">
-					<img class="media-image" src="{{ asset('assets/images/images/about/launch/jquery@2x.png') }}" alt="jQuery">
-					jQuery
-				</h2>
-				<p class="media-copy text-center">
-					Leverage <a href="http://www.jquery.com">jQuery</a> for your extensions and styles. We use it ourselves (mostly for the new AJAX functionality).
-				</p>
-			</div>
-		</div>
-	</div>
-</div>
 {% endblock %}
 
