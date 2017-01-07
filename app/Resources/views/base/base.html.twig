@@ -376,11 +376,10 @@
 				unit = 'seconds';
 			}
 			$timerBig.html('3.2');
-			$timerSmall.html('is coming today!');
+			$timerSmall.html('is coming!');
 		}).on('finish.countdown', function() {
 			$timerBig.html('3.2');
-			$timerSmall.html('is coming today!');
-			$timerBox.attr('href', '{{ U_DOWNLOADS }}');
+			$timerSmall.html('is coming!');
 		});
 
 		$timerBox.show();
