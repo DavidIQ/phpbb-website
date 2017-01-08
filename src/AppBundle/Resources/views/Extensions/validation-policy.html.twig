@@ -48,10 +48,12 @@
 			</li>
 			<li id="general-lang-styles">
 				<h3>Language and Styles</h3>
-				Extensions including language files and/or style files should always provide files for the English language and Prosilver style, respectively. <a class="permalink" href="#general-lang-styles">#</a>
+				Language files and/or style files should always provide files for the English language and prosilver style, respectively. <a class="permalink" href="#general-lang-styles">#</a>
 				<ul>
-					<li>English language files should be stored in <code class="inline">language/en</code></li>.
-					<li>Prosilver specific style files should be stored in <code class="inline">styles/prosilver</code>. However, generic style files that can be universally used with all styles should be stored in <code class="inline">styles/all</code>.</li>
+					<li>English language files should be stored in <code class="inline">language/en</code>.</li>
+					<li>Additional language files should be stored in the language directory with the correct language name (ISO), e.g., <code class="inline">language/de</code>.</li>
+					<li>prosilver specific style files should be stored in <code class="inline">styles/prosilver</code>. However, generic style files that can be universally used with all styles should be stored in <code class="inline">styles/all</code>.</li>
+					<li>Additional style files should be contained in their respective directories, e.g., <code class="inline">styles/subsilver2</code>.</li>
 				</ul>
 			</li>
 			<li id="general-privacy">
@@ -61,12 +63,10 @@
 			<li id="general-other">
 				<h3>Other</h3>
 				<ul>
-					<li id="other-deprecated">Avoid using deprecated functions from phpBB 3.0. View updated functions in the <a href="https://wiki.phpbb.com/PhpBB3.1#Changes_to_Functions">wiki</a>. <a class="permalink" href="#other-deprecated">#</a></li>
-					<li id="other-tabs">Tabs are used instead of spaces for indenting. A tab is defined as having a width of four spaces in this instance. <a class="permalink" href="#other-tabs">#</a></li>
+					<li id="other-deprecated">Avoid using deprecated functions from phpBB 3.0. View changed functions in the <a href="https://wiki.phpbb.com/PhpBB3.1#Changes_to_Functions">wiki</a>. <a class="permalink" href="#other-deprecated">#</a></li>
+					<li id="other-tabs">Tabs are used instead of spaces for indenting. A tab is defined as having a width of four spaces in this instance. This applies to PHP, JavaScript, JSON and CSS files. The only exception to this rule is Yaml files, which require 4-spaces for indentation. <a class="permalink" href="#other-tabs">#</a></li>
 					<li id="other-libraries">Included third-party libraries should be up-to-date. They should be kept un-modified as much as possible. It is also preferred to use Composer to manage third-party libraries if possible. <a class="permalink" href="#other-libraries">#</a></li>
-					<li id="other-file-format">PHP files are saved as UTF-8 Encoded with UNIX line endings (LF). <a class="permalink" href="#other-file-format">#</a></li>
-					<li id="other-bom">PHP files do not contain a (Byte Order Mark) BOM. <a class="permalink" href="#other-bom">#</a></li>
-					<li id="other-uploaded-files">Files uploaded via the extension (e.g., downloads in a download extension) should not be placed in the ext/vendor/name directory, but in (for example) phpBB's store/vendor_ext/ directory. <a class="permalink" href="#other-uploaded-files">#</a></li>
+					<li id="other-uploaded-files">Files uploaded via the extension (e.g., downloads in a download extension) should not be placed in the <code class="inline">ext/vendor/name</code> directory, but in (for example) phpBB's <code class="inline">store/vendor_ext/</code> directory. <a class="permalink" href="#other-uploaded-files">#</a></li>
 					<li id="other-development-only">Extensions are intended for use on live production sites. Extensions built for developers or development environments will not be validated or added to the Extensions Database. Please notify an Extension Team member if you have a development extension you would like to see added to the Extension Writer Tools sticky in the Extension Writers forum. <a class="permalink" href="#other-development-only">#</a></li>
 				</ul>
 			</li>
@@ -77,6 +77,8 @@
 		<h2 class="title" id="php">PHP Files</h2>
 		<ol class="list-margin" style="line-height:1.5em;">
 			<li id="php-functions">Only functions that exist before and in PHP 5.3.3 may be used by default. If you want to use functions that were added in a later version of PHP you need to mention this requirement within the description. <a class="permalink" href="#php-functions">#</a></li>
+			<li id="other-file-format">PHP files are saved as UTF-8 Encoded with UNIX line endings (LF). <a class="permalink" href="#other-file-format">#</a></li>
+			<li id="other-bom">PHP files do not contain a (Byte Order Mark) BOM. <a class="permalink" href="#other-bom">#</a></li>
 			<li id="php-variables">No un-initialised variables or indices. <a class="permalink" href="#php-variables">#</a></li>
 			<li id="php-files">Proper file headers and php DocBlocks should be used.‬‬ <a class="permalink" href="#php-files">#</a></li>
 			<li id="php-braces">Braces <code class="inline">{</code> and <code class="inline">}</code> should be on newlines. <a class="permalink" href="#php-braces">#</a></li>
@@ -111,7 +113,7 @@
 		<h2 class="title" id="templates">Template Files</h2>
 		<ol class="list-margin" style="line-height:1.5em;">
 			<li id="templates-php">No hard-coded PHP in template files. <a class="permalink" href="#templates-php">#</a></li>
-			<li id="templates-html">All Prosilver HTML is valid HTML5 syntax. <a class="permalink" href="#templates-html">#</a></li>
+			<li id="templates-html">All prosilver HTML is valid HTML5 syntax. <a class="permalink" href="#templates-html">#</a></li>
 			<li id="templates-images">English language images are supplied as necessary. <a class="permalink" href="#templates-images">#</a></li>
 		</ol>
 
@@ -171,7 +173,7 @@
 				<div class="note-box blue"><img src="{{ asset('/assets/images/images/icon-dl-zip.gif') }}" width="20" height="21" style="vertical-align: middle;" alt="Download Extension QuickStart (zip)"> <a href="{{ extension_quickstart_zip }}">Extension QuickStart</a> is an available package with starter <samp>composer.json</samp> and <samp>ext.php</samp> files and the required <samp>license.txt</samp>.</div>
 			</li>
 			<li id="packaging-versions">Semantic version numbers should be used. Only stable versions are allowed in the Extension Database. For every update the version number should be increased. <a class="permalink" href="#packaging-versions">#</a></li>
-			<li id="packaging-other">Language files are within the language directory and correct lang_name (ISO) translations are used. Template and theme files are contained in their respective directories. <a class="permalink" href="#packaging-other">#</a></li>
+			<li id="packaging-php-version-info">Extensions will be assumed to have the same PHP support as the current stable release of phpBB. For example, phpBB 3.1.10 supports PHP 5.3.3 and above, but not PHP 7. If an extension has different PHP support requirements then these reqirements must be stated in the Contribution Description in the Extension Database, and mentioned to the validators when submitting the extension. These requirements must also be properly defined in the <code class="inline">composer.json</code> file. [<a href="{{ extensions_docs_basics }}#composer-json">docs</a>]  <a class="permalink" href="#packaging-php-version-info">#</a></li>
 		</ol>
 
 		<hr />
@@ -191,7 +193,7 @@
 			<li>Extension vendor name cannot be <strong>phpbb</strong> or <strong>core</strong>.</li>
 			<li>Invalid composer.json file syntax.</li>
 			<li>Missing a British English (en) language translation.</li>
-			<li>Missing a Prosilver template for any extension style files (except when using the “all” template folder).</li>
+			<li>Missing a prosilver template for any extension style files (except when using the “all” template folder).</li>
 			<li>Not using the DBAL. It’s always required to use the DBAL class in your extension.</li>
 			<li>Not using migration files to perform database changes.</li>
 			<li>Extensions designed for use in development only environments. Extensions in the Customisation Database are intended for live production environments.</li>
