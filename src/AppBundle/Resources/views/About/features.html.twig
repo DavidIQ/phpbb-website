@@ -24,9 +24,7 @@
 
 <div class="wide">
 	<h2 class="imgrep features">Features of phpBB<sup>&reg;</sup></h2>
-	<p class="feature-page-desc">phpBB<sup>&reg;</sup> is now in its third major version. Version 3.1 incorporates a professional-quality modular
-		design, high security, multiple-language interface, support for a multitude of database servers
-		and complete layout customisation, all with a low execution overhead.</p>
+	<p class="feature-page-desc">phpBB<sup>&reg;</sup> is now in its third major version. Version 3.2 incorporates a professional-quality modular design, high security, multiple-language interface, support for a multitude of database servers and complete layout customisation, all with a low execution overhead and lightning speed.</p>
 </div>
 <div class="clear"></div>
 <div class="expandall wide">
@@ -48,7 +46,7 @@
 					</div>
 					<div class="feature-item">
 						<h4><a name="php" href="#php">Written in PHP</a></h4>
-						<p>True to its name, phpBB was written in the <a href="http://php.net" rel="external">PHP</a> programming language. phpBB 3.1 has the added benefit of being built upon the Symfony framework.</p>
+						<p>True to its name, phpBB was written in the <a href="http://php.net" rel="external">PHP</a> programming language. We have also had the added benefit of being built upon the Symfony framework, using Symfony 2.8 as a framework for phpBB 3.2. </p>
 					</div>
 					<div class="feature-item">
 						<h4><a name="version" href="#version"><strong>Latest Version:</strong> {{ package_version }}</a></h4>
@@ -71,16 +69,16 @@
 					<p>phpBB is fully compatible with <abbr title="UTF-8 stands for Universal Character Set Transformation Format 8-bit." class="definition define-utf8">UTF-8</abbr> and uses it as the default character encoding. This ensures complete compatibility with nearly every language on the planet.</p>
 				</div>
 				<div class="feature-item">
-					<h4><span class="mini-tag blue">3.1.x</span> <a name="extensions" href="#extensions">Extensions</a></h4>
+					<h4><a name="extensions" href="#extensions">Extensions</a></h4>
 					<p>phpBB's features and functionality can be extended using self-contained extensions. These community built extensions are easily installed via the ACP with just a few clicks.</p>
 				</div>
 				<div class="feature-item">
-					<h4><a name ="html5" href="#html5"><span class="mini-tag blue">3.1.x</span> HTML5, CSS3, Responsive Design</a></h4>
-					<p>prosilver, phpBB's default style, utilises the latest specifications for HTML5 and CSS3 for a modern and responsive design. This ensures optimal performance and cross-browser support for all modern browsers on desktop and mobile platforms.</p>
+					<h4><span class="mini-tag blue">3.2.x</span><a name="php7" href="#php7"> PHP7 Support</a></h4>
+					<p>With phpBB 3.2 the most recent major version of PHP7 is now completely supported. This will make phpBB considerably faster and moving along to modern times.</p>
 				</div>
 				<div class="feature-item">
-					<h4><a name ="xhtml" href="#xhtml"><span class="mini-tag dirty-green">3.0.x</span> XHTML 1.0 Strict Compliant</a></h4>
-					<p>prosilver, phpBB's default style, complies 100% with the W3C specifications for XHTML 1.0 Strict, ensuring optimal performance and cross-browser support.</p>
+					<h4><a name ="html5" href="#html5">HTML5, CSS3, Responsive Design</a></h4>
+					<p>prosilver, phpBB's default style, utilises the latest specifications for HTML5 and CSS3 for a modern and responsive design. This ensures optimal performance and cross-browser support for all modern browsers on desktop and mobile platforms.</p>
 				</div>
 				<div class="feature-item">
 					<h4><a name="ucp" href="#ucp">User Preferences</a></h4>
@@ -175,15 +173,23 @@
 					<p>Help demonstrate emotion in your posts with smilies! <img src="{{ asset('/community/images/smilies/icon_e_biggrin.gif') }}" alt=":D" /> You also have the option of adding custom smilies.</p>
 				</div>
 				<div class="feature-item">
+					<h4><span class="mini-tag blue">3.2.x</span><a name="emoji" href="#emoji">Emoji</a></h4>
+					<p>Showing even more advanced emotions than smilies is possible with the use of Emoji! With Emoji, it's easy to add extra emotion to your post from your tablet or mobile devices. </p>
+				</div>
+				<div class="feature-item">
 					<h4><a name="quoting" href="#quoting">Quoting</a></h4>
 					<p>In order to help the flow of discussion, phpBB allows users to quote another user's post within their own. phpBB supports nested quoting, as well.</p>
+				</div>
+				<div class="feature-item">
+					<h4><span class="mini-tag blue">3.2.x</span><a name="clever-quotes" href="#clever-quotes">Clever quotes</a></h4>
+					<p>Quoting has been extended in phpBB 3.2 to include links to the user's profile and post itself. The date and time of a post is also shown to make the distinction between posts extra clear.</p>
 				</div>
 				<div class="feature-item">
 					<h4><a name="censor" href="#censor">Word Censors</a></h4>
 					<p>Keep your board tame by implementing word censors and language filters to automatically eliminate or replace choice words or phrases.</p>
 				</div>
 				<div class="feature-item">
-					<h4><a name="syntax" href="#syntax">Syntax Highlighting</a></h4>
+					<h4><span class="mini-tag dirty-green">3.1.x</span> <a name="syntax" href="#syntax">Syntax Highlighting</a></h4>
 					<p>When placing code within a post, using BBCode, phpBB can automatically highlight the syntax to make it easier to read.</p>
 				</div>
 				<div class="feature-item">
@@ -323,7 +329,7 @@
 					<p>Avatars are a personal image displayed above the user's username on a post and in their profile. If avatars are enabled, each user can customise their own.</p>
 				</div>
 				<div class="feature-item">
-					<h4><span class="mini-tag blue">3.1.x</span> <a name="gravatar" href="#gravatar">Gravatar</a></h4>
+					<h4> <a name="gravatar" href="#gravatar">Gravatar</a></h4>
 					<p>Avatars may be fetched from the Gravatar service, in addition to the previously available options.</p>
 				</div>
 				<div class="feature-item">
@@ -423,7 +429,7 @@
 					<p>Moderators can permanently delete a topic and all of its replies from the board.</p>
 				</div>
 				<div class="feature-item">
-					<h4><a name="topicdelete" href="#topicdelete"><span class="mini-tag blue">3.1.x</span> Soft Delete</a></h4>
+					<h4><a name="topicdelete" href="#topicdelete">Soft Delete</a></h4>
 					<p>Posts and topics can be removed from public view without being permanently deleted. This behaviour can be configured per user or group.</p>
 				</div>
 				<div class="feature-item">
@@ -541,7 +547,7 @@
 			<div class="features-item-content" style="clear:both;">
 				<div class="feature-item">
 					<h4><a name="audit" href="#audit"><strong>Unmatched Code Security</strong></a></h4>
-					<p>Before its initial release, phpBB3 underwent a rigorous security audit by the well-known organisation <a href="http://www.sektioneins.de/de/index/">SektionEins</a>, and most notably Stefan Esser, a highly respected PHP security consultant. phpBB 3.1 underwent a second security audit and to date, there have been no reported major vulnerabilities in the phpBB software.</p>
+					<p>Before its initial release, phpBB3 underwent a rigorous security audit by the well-known organisation <a href="http://www.sektioneins.de/de/index/">SektionEins</a>, and most notably Stefan Esser, a highly respected PHP security consultant. During its lifetime, phpBB3 has even undergone a second security audit, and there have been no reported major vulnerabilities in the software.</p>
 				</div>
 				<div class="feature-item">
 					<h4><a name="passhash" href="#passhash"><strong>Password Hashing</strong></a></h4>
@@ -566,6 +572,10 @@
 				<div class="feature-item">
 					<h4><a name="captcha" href="#captcha">CAPTCHA Confirmation</a></h4>
 					<p>phpBB offers multiple <abbr title="CAPTCHA stands for 'Completely Automated Public Turing test to tell Computers and Humans Apart.'" class="definition define-captcha">CAPTCHAs</abbr> to use during registration, including the industry-standard <a href="http://www.google.com/recaptcha" rel="external">reCAPTCHA</a> by Google, a custom 3D CAPTCHA, and a customisable Q&amp;A CAPTCHA.</p>
+				</div>
+				<div class="feature-item">
+					<h4><span class="mini-tag blue">3.2.x</span><a name="recaptcha2" href="#recaptcha2">reCAPTCHA 2.0</a></h4>
+					<p>Google has released an even stronger version of their API, called reCAPTCHA 2.0. phpBB now incorporates this stronger API to provide an even stronger protection against spambots. </p>
 				</div>
 				<div class="feature-item">
 					<h4><a name="flood" href="#flood">Flood Control</a></h4>
@@ -619,16 +629,8 @@
 					<p>Using an Oracle database in a business or enterprise environment? No problem. phpBB fully supports this database.</p>
 				</div>
 				<div class="feature-item">
-					<h4><span class="mini-tag dirty-green">3.0.x</span> <a name="firebird" href="#firebird">Firebird</a></h4>
-					<p>Firebird is an open-source database system which is available on multiple platforms.</p>
-				</div>
-				<div class="feature-item">
 					<h4><a name="sqllite" href="#sqllite">SQLite</a></h4>
-					<p>SQLite is a small, lightweight, and fast database server.</p>
-				</div>
-				<div class="feature-item">
-					<h4><span class="mini-tag blue">3.1.x</span> <a name="sqllite3" href="#sqllite3">SQLite 3</a></h4>
-					<p>phpBB 3.1 extends SQLite compatibility with support for SQLite 3.</p>
+					<p>SQLite is a small, lightweight, and fast database server, which we have even further extended with compatibility for SQLite 3.</p>
 				</div>
 				<div class="feature-item">
 					<h4><a name="dbbackup" href="#dbbackup">Backup &amp; Restore</a></h4>
@@ -650,7 +652,7 @@
 					<p>phpBB will cache the results of commonly executed queries in order to decrease page load times.</p>
 				</div>
 				<div class="feature-item">
-					<h4><span class="mini-tag blue">3.1.x</span> <a name="redis" href="#redis">Redis Caching</a></h4>
+					<h4><a name="redis" href="#redis">Redis Caching</a></h4>
 					<p>phpBB also supports the advanced open-source Redis caching system.</p>
 				</div>
 				<div class="feature-item">
@@ -682,12 +684,12 @@
 					<p>phpBB's style is fully customisable. Either tweak an existing style or create one from scratch.</p>
 				</div>
 				<div class="feature-item">
-					<h4><span class="mini-tag blue">3.1.x</span> <a name="responsive" href="#responsive">Responsive Style Design</a></h4>
+					<h4><a name="responsive" href="#responsive">Responsive Style Design</a></h4>
 					<p>phpBB's default style, prosilver, is a responsive design that provides a modern and unified experience across all your devices, including desktops, tablets and smart-phones.</p>
 				</div>
 				<div class="feature-item">
-					<h4><span class="mini-tag dirty-green">3.0.x</span> <a name="editstyle" href="#editstyle">Customise Style Components</a></h4>
-					<p>Individual style components, such as CSS themes, template files, and images, can be customised right from within the ACP without having to touch the files on the server. Note: this seldom used functionality has been removed from phpBB 3.1.x.</p>
+					<h4><span class="mini-tag blue">3.2.x</span><a name="font-awesome" href="#font-awesome">FontAwesome icons</a></h4>
+					<p>Leveraging FontAwesome icons reduces raster images in turn speeding up page rendering, while providing higher resolution retina quality icons. </p>
 				</div>
 				<div style="clear: both;"></div>
 				<span class="feature-collapse"><img src="{{ asset('/assets/images/images/features/sm-arrow-up.gif') }}" alt="Collapse" class="floatleft collapse" /> Collapse</span>
@@ -766,7 +768,7 @@
 					<p>Send out a bulk email to all of your board's users simultaneously.</p>
 				</div>
 				<div class="feature-item">
-					<h4><span class="mini-tag blue">3.1.x</span> <a name="contactpage" href="#contactpage">Contact Page</a></h4>
+					<h4><a name="contactpage" href="#contactpage">Contact Page</a></h4>
 					<p>Visitors, including guests, can get in touch with the board administrator using the built-in contact page.</p>
 				</div>
 				<div class="feature-item">
@@ -782,7 +784,7 @@
 					<p>View a list of banned users, unban users, or initialise a new ban by username, email address, or IP address.</p>
 				</div>
 				<div class="feature-item">
-					<h4><span class="mini-tag blue">3.1.x</span> <a name="teamspage" href="#teamspage">Teams Page</a></h4>
+					<h4><a name="teamspage" href="#teamspage">Teams Page</a></h4>
 					<p>The teams page displays all administrators and moderators of a forum in one central place, and is highly customisable and sorted by groups.</p>
 				</div>
 				<div style="clear: both;"></div>
@@ -814,11 +816,11 @@
 					<p>phpBB includes a fully functional MySQL fulltext plugin which allows for improved search capabilities in MySQL databases.</p>
 				</div>
 				<div class="feature-item">
-					<h4><span class="mini-tag blue">3.1.x</span> <a name="postgresqlfulltext" href="#postgresqlfulltext">PostgreSQL Fulltext</a></h4>
+					<h4><a name="postgresqlfulltext" href="#postgresqlfulltext">PostgreSQL Fulltext</a></h4>
 					<p>phpBB includes a fully functional PostgreSQL fulltext plugin which allows for improved search capabilities in PostgreSQL databases.</p>
 				</div>
 				<div class="feature-item">
-					<h4><span class="mini-tag blue">3.1.x</span> <a name="sphinxfulltext" href="#sphinxfulltext">Sphinx Fulltext</a></h4>
+					<h4><a name="sphinxfulltext" href="#sphinxfulltext">Sphinx Fulltext</a></h4>
 					<p>phpBB includes a fully functional Sphinx fulltext plugin which allows for improved search capabilities.</p>
 				</div>
 				<div class="feature-item">
@@ -859,7 +861,7 @@
 			<div class="features-item-content" style="clear:both;">
 				<div class="feature-item">
 					<h4><a name="authplugin" href="#authplugin">Authentication Plugins</a></h4>
-					<p>phpBB can, by default, authenticate with a database, Apache, LDAP, and new in 3.1.x OAuth. Additional plugins are available.</p>
+					<p>phpBB can by default authenticate using the database, Facebook, Google, Twitter, other OAuth sources, LDAP, and Apache. Other custom authentication methods can also added with extensions.</p>
 				</div>
 				<div class="feature-item">
 					<h4><a name="searchplugin" href="#searchplugin">Search Plugins</a></h4>
@@ -867,7 +869,7 @@
 				</div>
 				<div class="feature-item">
 					<h4><a name="cacheplugin" href="#cacheplugin">Cache Plugins</a></h4>
-					<p>phpBB includes plugins for file-based cache, memcache, X-Cache, APC, eAccelerator, and new in 3.1.x, Redis.</p>
+					<p>phpBB includes plugins for file-based cache, memcache, X-Cache, APC, eAccelerator and Redis.</p>
 				</div>
 				<div class="feature-item">
 					<h4><a name="captchaplugin" href="#captchaplugin">CAPTCHA Plugins</a></h4>
@@ -890,7 +892,7 @@
 			</div>
 			<div class="features-item-content" style="clear:both;">
 				<div class="feature-item">
-					<h4><span class="mini-tag blue">3.1.x</span> <a name="notificationmenu" href="#notificationmenu">Live Notifications Menu</a></h4>
+					<h4><a name="notificationmenu" href="#notificationmenu">Live Notifications Menu</a></h4>
 					<p>phpBB's header contains a notifications menu which provides a centralised place to receive alerts and other information.</p>
 				</div>
 				<div class="feature-item">

@@ -126,7 +126,7 @@ class AboutControllerTest extends BootstrapTestSuite
 		$this->assertTrue(strpos(($crawler->filter('title')->first()->text()), 'Features') !== false, 'Title contains Features');
 
 		// Content Check
-		$this->assertTrue($crawler->filter('html:contains("is now in its third major version. Version 3.1 incorporates a professional-quality modular")')->count() > 0, 'Feature Page Content Check');
+		$this->assertTrue($crawler->filter('html:contains("is now in its third major version. Version 3")')->count() > 0, 'Feature Page Content Check');
 
 		// Standard All Page Checks
 		$this->globalTests();
