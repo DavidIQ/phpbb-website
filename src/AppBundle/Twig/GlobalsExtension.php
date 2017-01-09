@@ -71,7 +71,7 @@ class GlobalsExtension extends \Twig_Extension implements \Twig_Extension_Global
 			'DEMO'				=> '/demo/',
 
 			'downloads_path'	=> '/downloads/',
-			'downloads_path_32x' => 'https://bamboo.phpbb.com/browse/PHPBB3-RHEA/latestSuccessful/artifact/JOBPACKAGE/Release-Files',
+			'downloads_path_32x' => '/downloads/3.2/',
 			'downloads_path_31x' => '/downloads/3.1/',
 			'downloads_path_30x' => '/downloads/3.0/',
 
@@ -221,7 +221,8 @@ class GlobalsExtension extends \Twig_Extension implements \Twig_Extension_Global
 			'DEV_QA_30X_BUGLIST'	=> '/bugs/phpbb3/qa.php',
 			'DEV_WIKI'			=> 'https://wiki.phpbb.com/',
 
-			'dev_github_phpbb_32x' => 'https://github.com/phpbb/phpbb/tree/master',
+			'dev_github_phpbb_master' => 'https://github.com/phpbb/phpbb/tree/master',
+			'dev_github_phpbb_32x' => 'https://github.com/phpbb/phpbb/tree/3.2.x',
 			'dev_github_phpbb_31x' => 'https://github.com/phpbb/phpbb/tree/3.1.x',
 			'dev_github_phpbb_30x' => 'https://github.com/phpbb/phpbb/tree/3.0.x',
 		);
