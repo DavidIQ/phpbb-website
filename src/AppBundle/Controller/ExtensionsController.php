@@ -46,7 +46,7 @@ class ExtensionsController extends Controller
 		$officialExtensions[] = new OfficialExtension(
 			'Board Announcements',
 			'The Board Announcements Extension allows board admins to create a special board-wide announcement. Unlike phpBB\'s native global announcements which only appear inside forums, Board Announcements appear near the top of any page being viewed. Users have the option to dismiss the announcement after they have read it.',
-			'Board Announcements is an entry-level extension by design. We built this extension using techniques that will be more familiar to MOD developers. Code changes are injected directly from the event listener, and all ACP module logic is contained in its ACP module class. Overall, this extension is a good example that shows how to inject new code, add an ACP module, utilize a controller file to run some functional code in combination with AJAX, and how to use new config_text table in phpBB 3.1.x to store textual data.',
+			'Board Announcements is an entry-level extension by design. We built this extension using techniques that will be more familiar to MOD developers. Code changes are injected directly from the event listener, and all ACP module logic is contained in its ACP module class. Overall, this extension is a good example that shows how to inject new code, add an ACP module, utilize a controller file to run some functional code in combination with AJAX, and how to use new config_text table added in phpBB 3.1.x to store textual data.',
 			'https://www.phpbb.com/customise/db/extension/boardannouncements/',
 			'https://github.com/phpbb-extensions/boardannouncements',
 			'/assets/images/images/extensions/boardannouncements.png'
