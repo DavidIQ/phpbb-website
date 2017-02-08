@@ -1,0 +1,303 @@
+{% extends ':base:base.html.twig' %}
+
+{% block title %}Google Summer of Code 2017 Ideas &bull; phpBB{% endblock title %}
+
+{% block phpbb_body_class %}development{% endblock %}
+
+{% block body %}
+	<div id="page-body">
+		<ul class="linklist navlinks">
+			<li><a href="{{ home_path }}">Home</a>
+				<strong>&#8249;</strong> <a href="{{ development_path }}">Development</a>
+				<strong>&#8249;</strong> <a href="{{ gsoc_path }}">GSoC 2017</a>
+			</li>
+		</ul>
+
+		<div id="main">
+			<h2 class="imgrep gsoc">GSoC 2017 Project Ideas</h2>
+			<img style="float:right;margin:10px;" width="96" src="{{ asset('assets/images/images/development/gsoc_17_icon.svg') }}" alt="GSoC 2017 Logo" />
+			<h3 class="gsoc-page">Welcome to the GSoC 2017 Ideas Page</h3>
+			<p>
+				phpBB is applying to participate as a mentor organisation in Google Summer of Code 2017. On this page you can find ideas for projects
+				which might inspire your application. If you wish to submit a proposal based on these ideas, you may want to <a href="{{ GSOC }}#contact">contact</a> the available
+				mentors for more detailed information.
+
+				Feel free to discuss any project ideas you might have in addition to the ones listed here.
+
+				Make sure to also read the <a href="{{ GSOC }}">GSoC Instructions</a>.
+			</p>
+
+			<h2 class="gsoc-page"><a id="content" href="#content">Content</a></h2>
+			<h3 class="gsoc-page"><a href="#core">Core Ideas</a></h3>
+			<ul>
+				<li><a href="#social-sharing">Social Sharing</a></li>
+				<li><a href="#mentions">User mentions</a></li>
+				<li><a href="#api">REST API</a></li>
+				<li><a href="#push-notifications">Push notifications</a></li>
+				<li><a href="#admin-ui">Admin Control Panel UI/UX</a></li>
+				<li><a href="#converter">Converter Framework</a></li>
+				<li><a href="#styleguide">Advanced Styleguide driven development(SDD) system</a></li>
+				<li><a href="#moderator-tools">Improved moderator tools</a></li>
+			</ul>
+			<h3 class="gsoc-page"><a href="#extensions">Extensions Ideas</a></h3>
+			<ul>
+				<li><a href="#ad-management">Advertisement Management</a></li>
+				<li><a href="#human-urls">Human Readable URLs</a></li>
+			</ul>
+			<h3 class="gsoc-page"><a href="#own-idea">Idea proposals</a></h3>
+			<ul>
+				<li><a href="#own-idea">Propose your own idea</a></li>
+			</ul>
+			<br>
+
+			<h2 class="gsoc-page"><a id="core" href="#core">Core Ideas</a></h2>
+
+			<h3 class="gsoc-page"><a id="social-sharing" href="#social-sharing">Social Sharing</a></h3>
+			<h4 class="gsoc-page">Summary</h4>
+			<p>Create an extensible system supporting via an object oriented plugin system any number of 3rd party services to share content to. There may be different options, sharing a link to a topic or a particular post or maybe even a forum, or sharing complete posts or extracts of posts.</p>
+			<h4 class="gsoc-page">Expected results</h4>
+			<p>User interface changes for sharing buttons/dialogs/etc. as well as an administration control panel page with options on configuring the various services which might require API keys to work. A extensible interface that allows extensions to supply further sharing backends.</p>
+			<h4 class="gsoc-page">Knowledge Prerequisites</h4>
+			<ul>
+				<li>Object-oriented PHP</li>
+				<li>Javascript required, jQuery or similar recommended</li>
+				<li>Familiarity with social sharing APIs (Facebook/Twitter) useful but not mandatory</li>
+			</ul>
+			<h4 class="gsoc-page">Available mentors</h4>
+			<p>Marc Alexander</p>
+			<hr>
+
+			<h3 class="gsoc-page"><a id="mentions" href="#mentions">User mentions</a></h3>
+			<h4 class="gsoc-page">Summary</h4>
+			<p>Adding a feature which allows users to mention other users in their posts (for example, by placing "@username" in their message). Mentioned users are then notified according to their notification settings.</p>
+			<h4 class="gsoc-page">Expected results</h4>
+			<ul>
+				<li>Create a simple user interface for this functionality in the editor (e.g. dropdown menu with suggestions)</li>
+				<li>Allow users to specify how they would like to be notified, when they are mentioned by someone else (email, notification etc)</li>
+				<li>Allow the board administrator to enable/disable the feature, and also to allow them to restrict some of the user settings</li>
+			</ul>
+			<h4 class="gsoc-page">Knowledge Prerequisites</h4>
+			<ul>
+				<li>Required: Object-oriented design principles, basic Javascript, CSS and HTML knowledge</li>
+				<li>Useful: Familiarity with PHP and AJAX</li>
+			</ul>
+			<h4 class="gsoc-page">Available mentors</h4>
+			<p>Máté Bartus, Marc Alexander, Tristan Darricau</p>
+			<hr>
+
+			<h3 class="gsoc-page"><a id="api" href="#api">REST API</a></h3>
+			<h4 class="gsoc-page">Summary</h4>
+			<p>Implement a RESTful API that can be used to interact with phpBB from an outside source. Previous work on a RESTful authentication API can and should be used as a base for this (see the <a href="https://github.com/phpbb/phpbb/pull/3100">PR</a>).</p>
+			<h4 class="gsoc-page">Expected results</h4>
+			<ul>
+				<li>Update previously created code to be compatible with latest changes in phpBB</li>
+				<li>Add more API functionality like adding or viewing posts / topics</li>
+				<li>Allow the board administrator to enable/disable the API features</li>
+				<li>Extensively cover the API with tests</li>
+			</ul>
+			<h4 class="gsoc-page">Knowledge Prerequisites</h4>
+			<ul>
+				<li>Required: Object-oriented design principles, PHP</li>
+				<li>Useful: Previous experience with APIs</li>
+			</ul>
+			<h4 class="gsoc-page">Available mentors</h4>
+			<p>Marc Alexander, Tristan Darricau, Derk Ruitenbeek</p>
+			<hr>
+
+			<h3 class="gsoc-page"><a id="push-notifications" href="#push-notifications">Push notifications</a></h3>
+			<h4 class="gsoc-page">Summary</h4>
+			<p>Adding a feature which allows users to recieve desktop notifications from phpBB in realtime, as well as provide the neccessary backend features for other extension developers to easily extend phpBB with other types of push notifications (e.g. for mobile apps etc).</p>
+			<h4 class="gsoc-page">Expected results</h4>
+			<ul>
+				<li>Implementing the neccessary backend changes and adding events to the core</li>
+				<li>
+					Implementing the desktop notification extension with
+					<ul>
+						<li>Multi-browser support</li>
+						<li>Options for both users and administrators to enable/disable the feature</li>
+					</ul>
+				</li>
+			</ul>
+			<h4 class="gsoc-page">Knowledge Prerequisites</h4>
+			<ul>
+				<li>Required: Strong understanding of OOP fundamentals, as well as, familiarity with PHP and JavaScript</li>
+				<li>Useful: Familiarity with test tools, and JavaScript build tools such as gulp</li>
+			</ul>
+			<h4 class="gsoc-page">Available mentors</h4>
+			<p>Máté Bartus, Marc Alexander</p>
+			<hr>
+
+			<h3 class="gsoc-page"><a id="admin-ui" href="#admin-ui">Admin Control Panel UI/UX</a></h3>
+			<h4 class="gsoc-page">Summary</h4>
+			<p>The phpBB Admin Control Panel user interface has been in use since the release of phpBB 3.0 in 2007. Naturally, its design is no longer up-to-date with the ever evolving design language of current websites. In addition to that, concerns about it being over-complex and not intuitive to use have been voiced before.</p>
+			<h4 class="gsoc-page">Expected results</h4>
+			<ul>
+				<li>Create a concept for a new ACP user interface structure keeping usability in mind</li>
+				<li>Create a concept design based on the structure concept using modern practices</li>
+				<li>Start implementation of a new user interface based on the concepts</li>
+			</ul>
+			<h4 class="gsoc-page">Knowledge Prerequisites</h4>
+			<ul>
+				<li>Required: PHP, HTML5, CSS, Photoshop or similar tools</li>
+				<li>Useful: JS, jQuery, Gulp or similar JS build tool, previous UI design experience</li>
+			</ul>
+			<h4 class="gsoc-page">Available mentors</h4>
+			<p>Michael Miday, Marc Alexander</p>
+			<hr>
+
+			<h3 class="gsoc-page"><a id="converter" href="#converter">Converter Framework</a></h3>
+			<h4 class="gsoc-page">Summary</h4>
+			<p>
+				In addition to installation and updates from previous versions, phpBB also supports conversions from
+				other forum software. However, converters usually can only target a certain software at a specific version.
+				As a result, the possible conversion paths to phpBB are not as easy and straightforward as one might expect
+				and usually requires an extra file that takes care of the actual conversion process. The goal of this project
+				is to create a converter framework that can convert the database entries from any other BB software to phpBB's
+				format with a simple configuration file that defines the "steps" it needs to take during the conversion process.
+			</p>
+			<h4 class="gsoc-page">Expected results</h4>
+			<ul>
+				<li>Create a converter framework that can be easily adjusted to migrate database entries to phpBB</li>
+				<li>Support the definition of migrations using a configuration file</li>
+			</ul>
+			<h4 class="gsoc-page">Knowledge Prerequisites</h4>
+			<ul>
+				<li>Required: PHP, SQL</li>
+				<li>Useful: Symfony, YAML, MySQL or similar</li>
+			</ul>
+			<h4 class="gsoc-page">Available mentors</h4>
+			<p>Marc Alexander</p>
+			<hr>
+
+			<h3 class="gsoc-page"><a id="styleguide" href="#styleguide">Advanced Styleguide driven development(SDD) system</a></h3>
+			<h4 class="gsoc-page">Summary</h4>
+			<p>
+				Build a NodeJS based app to view, interact with, and dynamically build/manage components in StyleGuides(phpBB theme).
+			</p>
+			<h4 class="gsoc-page">Expected results</h4>
+			<ul>
+				<li>Creating a simple user interface (material design spec) for the app using suggested CSS/SCSS/Twig formats developed in conjunction with mentors for extracting data from files</li>
+				<li>Must allow user to view example(s) of components and framework layer/partials while allowing for scaling between established breakpoints (<a href="https://v4-alpha.getbootstrap.com/layout/grid/#grid-options">Bootstrap Grid System</a>) of responsive design.</li>
+				<li>Must allow viewing/editing of required files (SCSS, TWIG, JS), and allow for adding components.</li>
+				<li>Must integrate into phpBB template system (be able to read from and manipulate within phpBB styles dir).</li>
+				<li>Must be able to switch between styleguides.</li>
+				<li>Must build all styleguides to mentor defined folder structure or allow for customization of folder structure.</li>
+				<li>Must follow all coding standards set by mentors for SCSS, JS, TWIG. Project must use modern best practices and run on a NodeJS backend, relying on ExpressJS and or VueJS for routing & interface interactions.</li>
+			</ul>
+			<h4 class="gsoc-page">Knowledge Prerequisites</h4>
+			<ul>
+				<li>Required: Object-oriented design principles, Javascript, NodeJS, ExpressJS and/or VueJS 2.0, twig.js, GulpJS, JQuery, AJAX, SCSS, CSS, XHTML</li>
+				<li>Useful: PHP, phpBB / phpBB Themes</li>
+			</ul>
+			<h4 class="gsoc-page">Available mentors</h4>
+			<p>Michael Miday</p>
+			<hr>
+
+			<h3 class="gsoc-page"><a id="moderator-tools" href="#moderator-tools">Improved moderator tools</a></h3>
+			<h4 class="gsoc-page">Summary</h4>
+			<p>
+				Moderator actions within a topic like "Split topic" and "move posts" needs a detour through the MCP. Changing the mcp-tabs (Move posts, split topic etc.) won't change the select-input-field in mcp, too. This leads to a couner intuive behaviour.
+
+				The idea is to add a checkbox to each post, make each post selectable and open a "alert"-similar popup to present the moderator options directly to the user. So select to posts, select "move posts" opens an alert-popup where you can look for and enter a topic ID. Split topic analog to that behaviour.
+
+				In addition to that, possible improvements to moderation of topics and posts should be assessed and implemented in order of importance to give a moderators a more powerful and easy to use set of tools.
+			</p>
+			<h4 class="gsoc-page">Expected results</h4>
+			<ul>
+				<li>Add a checkbox or similar way of selecting posts to split off or move to the topic view. This should be as intuitive as possible.</li>
+				<li>Improve Moderator Control Panel usability, e.g. by reviewing interaction paths & usability</li>
+			</ul>
+			<h4 class="gsoc-page">Knowledge Prerequisites</h4>
+			<ul>
+				<li>Required: Git, PHP, JavaScript, AJAX, HTML</li>
+				<li>Useful: CSS, previous phpBB experience</li>
+			</ul>
+			<h4 class="gsoc-page">Available mentors</h4>
+			<p>Christian Schnegelberger, Marc Alexander</p>
+
+			<br>
+			<h2 class="gsoc-page"><a id="extensions" href="#extensions">Extensions Ideas</a></h2>
+
+			<h3 class="gsoc-page"><a id="ad-management" href="#ad-management">Advertisement Management</a></h3>
+			<h4 class="gsoc-page">Summary</h4>
+			<p>The ability to easily handle advertisements in phpBB is often requested. Create a basic advertisement management extension that allows admins to add HTML/JS advertisement code to a number of predefined locations in the template.</p>
+			<h4 class="gsoc-page">Expected results</h4>
+			<ul>
+				<li>A validated phpBB extension which adds advertisement management to phpBB</li>
+				<li>Allow admins to add HTML/JS advertisement code to predefined locations (ie: forum footer, header, after a topic's first post, etc.)</li>
+				<li>If time allows: additional features such as hiding advertisements for specific groups, allow image banner uploads from the ACP, ability to set end dates for specific advertisements.</li>
+			</ul>
+			<h4 class="gsoc-page">Knowledge Prerequisites</h4>
+			<ul>
+				<li>Required: Object-oriented PHP, SQL, JavaScript/jQuery, CSS, Git</li>
+				<li>Useful: phpBB Extensions system</li>
+			</ul>
+			<h4 class="gsoc-page">Available mentors</h4>
+			<p>Derk Ruitenbeek, Matt Friedman</p>
+			<hr>
+
+			<h3 class="gsoc-page"><a id="human-urls" href="#human-urls">Human Readable URLs</a></h3>
+			<h4 class="gsoc-page">Summary</h4>
+			<p>One of the most requested phpBB features is the ability to use human readable URLs. This extension should use the topic, forum and other page titles in the URL while still redirecting traditional URLs to these enhanced ones for backwards compatibility. (Also see the <a href="https://area51.phpbb.com/phpBB/viewtopic.php?f=108&t=40965">RFC</a> at Area51)</p>
+			<h4 class="gsoc-page">Expected results</h4>
+			<ul>
+				<li>Add sanitised versions of topic and forum titles into the URLs</li>
+				<li>Maintain backward compatibility so regular phpBB URLs created before the enabling of this extension will still be usable and redirect to the Human Readable URLs</li>
+			</ul>
+			<h4 class="gsoc-page">Knowledge Prerequisites</h4>
+			<ul>
+				<li>Required: Object-oriented PHP, SQL, JavaScript/jQuery, CSS, Git</li>
+				<li>Useful: phpBB Extensions system</li>
+			</ul>
+			<h4 class="gsoc-page">Available mentors</h4>
+			<p>Derk Ruitenbeek, Matt Friedman, Paul Sohier</p>
+
+			<br>
+			<h2 class="gsoc-page"><a id="own-idea" href="#own-idea">Proposing your own idea</a></h2>
+			<p>
+				For non-website ideas, RFCs on <a href="{{ DEV_BOARD }}">Area51</a> are a good source of ideas as they represent what our users already told us they want. Most mentors are available in phpBB's IRC development channel <a href="{{ DEV_IRC_CHAT }}">#phpbb-dev</a> and on <a href="{{ DEV_BOARD }}">Area51</a>.
+				For website ideas feel free to contact one of the website mentors (via IRC <a href="https://webchat.freenode.net/?channels=phpbb-www">[#phpbb-www]</a> or email `website [at] phpbb [dot] com`).
+			</p>
+			<p>If you propose an original idea it will have a higher chance of being accepted if it satisfies the following two criteria:</p>
+			<ol>
+				<li><strong>Checkpointable</strong> -  it should be possible to break down your project into pieces that are by themselves meaningful. In practical terms, this means you should be sending a pull request every 1-2 weeks reflecting your work during that period, and the pull request should be individually mergeable. Avoid proposing a project that cannot be split into 1-2 week chunks.</li>
+				<li><strong>Likely to be completed</strong> - this involves several factors, but at the end of the day the goal is for your work to be finished within the GSoC timeframe. You should start by detailing components of your project to sufficient extent that they can be estimated. Then, honestly estimate how long you think it will take you. Then double that estimate. If you exceed 3 months, your proposal is probably too ambitious and you should reduce its scope.</li>
+			</ol>
+			<p>As always, if you are unsure about anything or have questions please don't hesitate to contact us. Also, please discuss your idea first before proposing it in your application.</p>
+
+			<br class="clear" />
+			<br />
+		</div>
+
+		<div id="extras">
+			{{ include('AppBundle:lists:subscribe.html.twig') }}
+			{{ include('AppBundle:lists:carbon_ads.html.twig') }}
+
+			<div class="mini-panel">
+				<div class="inner">
+					<h3>GSoC 2017</h3>
+					<ul class="menu">
+						<li class="last"><a href="{{ GSOC }}">GSoC 2017 Instructions</a></li>
+						<li class="last"><a href="{{  DEV_GSOC_GUIDELINES }}">GSoC 2017 Student Proposal Guidelines</a></li>
+						<li class="last"><a href="{{ DEV_BOARD }}">Area51 Discussion Board</a></li>
+						<li class="last"><a href="{{ DEV_IRC_CHAT }}">IRC Development Channel</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="mini-panel">
+				<div class="inner">
+					<h3>Previous years</h3>
+					<ul class="menu">
+						<li class="last"><a href="{{ DEV_GSOC_2016 }}">GSoC 2016 Ideas</a></li>
+						<li class="last"><a href="{{ DEV_GSOC_2015 }}">GSoC 2015 Ideas</a></li>
+						<li class="last"><a href="{{ DEV_GSOC_2014 }}">GSoC 2014</a></li>
+						<li class="last"><a href="{{ DEV_GSOC_2013 }}">GSoC 2013</a></li>
+						<li class="last"><a href="{{ DEV_GSOC_2012 }}">GSoC 2012</a></li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+	</div>
+{% endblock %}

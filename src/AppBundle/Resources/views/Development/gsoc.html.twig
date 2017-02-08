@@ -1,0 +1,129 @@
+{% extends ':base:base.html.twig' %}
+
+{% block title %}Google Summer of Code 2017 &bull; phpBB{% endblock title %}
+
+{% block phpbb_body_class %}development{% endblock %}
+
+{% block body %}
+<div id="page-body">
+<ul class="linklist navlinks">
+	<li><a href="{{ home_path }}">Home</a>
+		<strong>&#8249;</strong> <a href="{{ development_path }}">Development</a>
+		<strong>&#8249;</strong> <a href="{{ gsoc_path }}">GSoC 2017</a>
+	</li>
+</ul>
+
+<div id="main">
+	<h2 class="imgrep gsoc">Google Summer of Code 2017</h2>
+	<img style="float:right;margin:10px;" width="96" src="{{ asset('assets/images/images/development/gsoc_17_icon.svg') }}" alt="GSoC 2017 Logo" />
+	<h3 class="gsoc-page">What is Google Summer of Code?</h3>
+	<p>Google Summer of Code is an annual program in which Google awards stipends to students participating in coding projects for free and open source software projects. Its goal is to get students involved in and familiar with the open source community. phpBB is fully committed to the spirit of open source and aims to provide students with the most immersive experience during the summer. Read more about the program at the <a href="https://summerofcode.withgoogle.com/about/">Google Summer of Code site</a>.</p>
+	<hr>
+	<h3 class="gsoc-page">Getting started</h3>
+	<p>The Google Summer of Code site is a great resource for all information on <a href="https://summerofcode.withgoogle.com/how-it-works/">how GSoC works</a>, the <a href="https://summerofcode.withgoogle.com/how-it-works/#timeline">timeline</a> of this years program, and other <a href="https://summerofcode.withgoogle.com/help/">helpful links</a> like student and mentor manuals as well as answers to frequently answered questions. Please make sure to check first whether you are eligible under the <a href="https://summerofcode.withgoogle.com/get-started/">Google Summer of Code terms</a> before applying.</p>
+	<hr>
+	<h3 class="gsoc-page">Information for students</h3>
+	<h4 class="gsoc-page">Recommended Steps</h4>
+	<p>
+		While not all students necessarily take the same steps while getting involved in projects they are interested in, we do recommend following these steps as a guideline on how to start your involvement with the phpBB team and its community for Google Summer of Code.
+	</p>
+	<ol>
+		<li>Read <a href="http://write.flossmanuals.net/gsocstudentguide">Google's student guide</a></li>
+		<li><a href="{{ GSOC }}#participate">Start participating</a> and continue to be involved</li>
+		<li>
+			Come up with a project you are interested in:
+			<ul>
+				<li><a href="{{ DEV_GSOC_IDEAS }}">List of ideas</a></li>
+				<li>Existing <a href="https://area51.phpbb.com/phpBB/viewforum.php?f=108">RFC topics</a> and <a href="https://area51.phpbb.com/phpBB/viewforum.php?f=126">discussion topics</a> on Area51</li>
+				<li><a href="">Propose an entirely new idea</a></li>
+			</ul>
+		</li>
+	</ol>
+	<h4 id="participate" class="gsoc-page">Start participating</h4>
+	<p>
+		If you decided to apply to phpBB, or are seriously considering it, you should try to fix a small issue to familiarize yourself with the development process.
+	</p>
+	<ol>
+		<li>Join the <a href="{{ DEV_BOARD }}">Area51 discussion forum</a></li>
+		<li>Join our IRC channel <a href="{{ DEV_IRC_CHAT }}">#phpbb-dev on Freenode</a>. This is where real time development discussions happen.</li>
+		<li>Find a small issue to fix. You can try <a href="https://tracker.phpbb.com/issues/?filter=11591">this list</a> of easy to fix issues, search the tracker yourself or ask on IRC what you can fix.</li>
+		<li>Create a <a href="https://github.com/">GitHub</a> account and fork the <a href="{{ GIT_REPOSITORY_LATEST }}">phpBB repository</a>. See <a href="https://area51.phpbb.com/docs/dev/master/development/git.html">Git</a> for further information about phpBB repositories or ask on IRC.</li>
+		<li>Make the changes necessary to fix the issue. Be sure to create a <a href="https://area51.phpbb.com/docs/dev/master/development/git.html#branch-names">bug branch</a> and follow our <a href="{{ CODING_GUIDELINES }}">coding guidelines</a> and commit message rules.</li>
+		<li>Create a pull request on github and fill out the pull request template. Pull requests with correctly filled out templates will be linked to from JIRA, <a href="{{ BUGS_PHPBB }}">our tracker</a>.</li>
+		<li>Request review of your changes on IRC.</li>
+	</ol>
+	<h4 class="gsoc-page">Continue involvement</h4>
+	<p>
+		After you fix a bug and submit a pull request, it is always a good idea to stick around and continue being involved with the project.
+		The recommended way of doing that is being on IRC in #phpbb-dev and periodically checking and perhaps posting on Area51 forums.
+		This gives phpBB team members an opportunity to talk to you about the changes you submitted in your pull request(s), as well as about
+		your GSoC application. You will gain a better understanding of how phpBB development happens and will be more prepared for a productive
+		and successful summer.
+
+		Historically speaking, applicants that were active on IRC and started getting involved with the project prior to their application tended to
+		submit better proposals and were therefore more likely to be selected.
+	</p>
+	<hr>
+	<h3 class="gsoc-page">Information for mentors</h3>
+	<p>
+		At phpBB we encourage current team members to volunteer as mentors. If you are not or no longer a team member and think you'd be a <a href="https://developers.google.com/open-source/gsoc/resources/media">good mentor</a>, feel free to send a message to gsoc[AT]phpbb[DOT]com.
+	</p>
+	<hr>
+
+	<h3 class="gsoc-page"><a id="contact" href="#contact">Contacts</a></h3>
+	<p>These are all the people affiliated with phpBB who are assisting with the program as (backup) mentors or (backup) org admins. Their IRC Nicks are listed and you can find them on freenode in <a href="{{ DEV_IRC_CHAT }}">#phpbb-dev</a>. They can help you with anything related to the ideas they are mentoring or general GSoC queries.</p>
+	<h4 class="gsoc-page">Org Admins:</h4>
+	<ul>
+		<li><strong>Marc Alexander</strong><br>IRC: Marc // Email: marc[AT]phpbb[DOT]com // Timezone: UTC +1</li>
+		<li><strong>Yuriy Rusko</strong><br>IRC: Marshalrusty OR YuriyRusko // Email: operations[AT]phpbb[DOT]com // Timezone: UTC -5</li>
+	</ul>
+	<h4 class="gsoc-page">Mentors:</h4>
+	<ul>
+		<li><strong>Marc Alexander</strong><br>IRC: Marc // Email: marc[AT]phpbb[DOT]com // Timezone: UTC +1 // Focus: Core Ideas</li>
+		<li><strong>Máté Bartus</strong><br>IRC: CHItA // Email: chita[AT]phpbb[DOT]com // Timezone: UTC +1 // Focus: Core Ideas</li>
+		<li><strong>Michael Cullum</strong><br>IRC: MichaelC // Email: michael[AT]phpbb[DOT]com // Timezone: UTC // Focus: Website Ideas</li>
+		<li><strong>Tristan Darricau</strong><br>IRC: nicofuma // Email: nicofuma[AT]phpbb[DOT]com // Timezone: UTC +1 // Focus: Core Ideas</li>
+		<li><strong>Matt Friedman</strong><br>IRC: VSE // Email: vse[AT]phpbb[DOT]com // Timezone: UTC -8 // Focus: phpBB Extensions</li>
+		<li><strong>Michael Miday</strong><br>IRC: hanakin // Email: hanakin[AT]phpbb[DOT]com // Timezone: UTC -5 // Focus: Core Ideas</li>
+		<li><strong>Derk Ruitenbeek</strong><br>IRC: Derky // Email: derky[AT]phpbb[DOT]com // Timezone: UTC +1 // Focus: phpBB Extensions</li>
+		<li><strong>Yuriy Rusko</strong><br>IRC: Marshalrusty OR YuriyRusko // Email: operations[AT]phpbb[DOT]com // Timezone: UTC -5 // Focus: Website Ideas</li>
+		<li><strong>Christian Schnegelberger</strong><br>IRC: Crizzo // Email: crizzo[AT]phpbb[DOT]com // Timezone: UTC +1 // Focus: Core Ideas</li>
+		<li><strong>Paul Sohier</strong><br>IRC: Paul999 // Email: paul[AT]phpbb[DOT]com // Timezone: UTC +1 // Focus: Website Ideas/phpBB Extensions</li>
+	</ul>
+
+	<br class="clear" />
+	<br />
+</div>
+
+<div id="extras">
+	{{ include('AppBundle:lists:subscribe.html.twig') }}
+	{{ include('AppBundle:lists:carbon_ads.html.twig') }}
+
+	<div class="mini-panel">
+		<div class="inner">
+		<h3>GSoC 2017</h3>
+		<ul class="menu">
+			<li class="last"><a href="{{ DEV_GSOC_IDEAS }}">GSoC 2017 Ideas</a></li>
+			<li class="last"><a href="{{  DEV_GSOC_GUIDELINES }}">GSoC 2017 Student Proposal Guidelines</a></li>
+			<li class="last"><a href="{{ DEV_BOARD }}">Area51 Discussion Board</a></li>
+			<li class="last"><a href="{{ DEV_IRC_CHAT }}">IRC Development Channel</a></li>
+		</ul>
+		</div>
+	</div>
+
+	<div class="mini-panel">
+		<div class="inner">
+		<h3>Previous years</h3>
+		<ul class="menu">
+			<li class="last"><a href="{{ DEV_GSOC_2016 }}">GSoC 2016 Ideas</a></li>
+			<li class="last"><a href="{{ DEV_GSOC_2015 }}">GSoC 2015 Ideas</a></li>
+			<li class="last"><a href="{{ DEV_GSOC_2014 }}">GSoC 2014</a></li>
+			<li class="last"><a href="{{ DEV_GSOC_2013 }}">GSoC 2013</a></li>
+			<li class="last"><a href="{{ DEV_GSOC_2012 }}">GSoC 2012</a></li>
+		</ul>
+		</div>
+	</div>
+
+</div>
+</div>
+{% endblock %}

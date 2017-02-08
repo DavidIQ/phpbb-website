@@ -1,0 +1,105 @@
+{% extends ':base:base.html.twig' %}
+
+{% block title %}Google Summer of Code 2017 Proposal Guidelines &bull; phpBB{% endblock title %}
+
+{% block phpbb_body_class %}development{% endblock %}
+
+{% block body %}
+<div id="page-body">
+<ul class="linklist navlinks">
+	<li><a href="{{ home_path }}">Home</a>
+		<strong>&#8249;</strong> <a href="{{ development_path }}">Development</a>
+		<strong>&#8249;</strong> <a href="{{ gsoc_path }}">GSoC 2017</a>
+	</li>
+</ul>
+
+<div id="main">
+	<h2 class="imgrep gsoc">GSoC 2017 Student Proposal Guidelines</h2>
+	<img style="float:right;margin:10px;" width="96" src="{{ asset('assets/images/images/development/gsoc_17_icon.svg') }}" alt="GSoC 2017 Logo" />
+	<p>A project proposal is what you will be judged upon. So, as a general recommendation, write a clear proposal on what you plan to do, what your project is and what it is not, etc. Several websites now contain hints and other useful information on writing up such proposals.</p>
+	<p>While phpBB does not require a specific format or information in proposals, proposals are evaluated roughly in two dimensions:</p>
+	<ul>
+		<li>What is the scope of the project?</li>
+		<li>Is the submitter likely to finish the project in the allotted time?</li>
+	</ul>
+
+	<h3 class="gsoc-page">Technical</h3>
+	<p>Your proposal should include enough technical details that the mentors can visualize the entire project and roughly estimate how long it would take you to complete. Here are some specific points that you should address in your application:</p>
+	<ul>
+		<li>Explain the problem that you want to solve.</li>
+		<li>Explain the benefits that solving this problem will bring to users or phpBB.</li>
+		<li>Break down your project into component parts. Make a list of the parts.</li>
+		<li>Which parts depend on other parts? Which can be worked on concurrently?</li>
+		<li>Which parts are essential to your proposal?</li>
+		<li>Which parts can be omitted if development takes longer than you expect?</li>
+		<li>Develop a rough timeline. It should account for design, development and testing of each component part. Be sure to build in time to adjust the code based on reviews, and to fix bugs found in testing.</li>
+	</ul>
+
+	<h3 class="gsoc-page">Personal</h3>
+	<p>The second part of evaluation looks at the likelihood of you completing the project you wish to attempt. Your proposal should match your experience level. Be honest; most software projects are late and over budget, and it is guaranteed that during GSoC you will encounter issues you did not think of while writing your application. If in doubt, be conservative: a smaller project that gets finished is better than a more ambitious project that is abandoned.</p>
+	<p>You can include the following information in your proposal:</p>
+	<ul>
+		<li>Who are you? What are you studying?</li>
+		<li>What experience relevant to your proposal do you have?</li>
+		<li>Why are you the right person to implement your proposal?</li>
+		<li>Have you used phpBB?</li>
+		<li>Have you modified phpBB?</li>
+		<li>Have you submitted any patches to phpBB, and have any of them been accepted?</li>
+		<li>How many hours are you going to work on this a week? 10? 20? 30? 40?</li>
+		<li>Do you have other commitments that we should know about?</li>
+		<li>What is your GitHub username, phpBB username, IRC username?</li>
+		<li>What time zone are you in?</li>
+		<li>Are you comfortable working with a mentor who is several time zones away? Have you worked in this style before?</li>
+		<li>How will you track your work?</li>
+		<li>What is your native language?</li>
+		<li>Where do you live, and can we assign a mentor who is local to you so you can meet in a coffee shop for lunch?</li>
+	</ul>
+
+	<h3 class="gsoc-page">Review</h3>
+	<p>After you have written your proposal, you should get it reviewed. Do not rely on the phpBB mentors to do it for you via the web interface: they will only send back a proposal if they find it lacking. Instead, ask a colleague or a developer to do it for you.</p>
+	<p>You can also request public review on area51 or in #phpbb-dev IRC channel (or #phpbb-www for website proposals), if you wish to make your proposal public.</p>
+	<p>It is highly recommended for website proposals that you discuss your proposal with one of the website mentors (Michael, Yuriy or Paul) via email, or preferably IRC (#phpbb-www), before submitting it via the web interface. Whilst this is not essential it is highly recommended and the past has shown that people who did this submitted better proposals and were more likely to be selected.</p>
+
+	<h3 class="gsoc-page">Final Checks</h3>
+	<ul>
+		<li>Is your proposal detailed?</li>
+		<li>Does your proposal include a timeline?</li>
+		<li>Have you submitted a patch to phpBB?</li>
+	</ul>
+
+	<br class="clear" />
+	<br />
+</div>
+
+<div id="extras">
+	{{ include('AppBundle:lists:subscribe.html.twig') }}
+	{{ include('AppBundle:lists:carbon_ads.html.twig') }}
+
+	<div class="mini-panel">
+		<div class="inner">
+		<h3>GSoC 2017</h3>
+		<ul class="menu">
+			<li class="last"><a href="{{ GSOC }}">GSoC 2017 Instructions</a></li>
+			<li class="last"><a href="{{ DEV_GSOC_IDEAS }}">GSoC 2017 Ideas</a></li>
+			<li class="last"><a href="{{ DEV_BOARD }}">Area51 Discussion Board</a></li>
+			<li class="last"><a href="{{ DEV_IRC_CHAT }}">IRC Development Channel</a></li>
+		</ul>
+		</div>
+	</div>
+
+	<div class="mini-panel">
+		<div class="inner">
+		<h3>Previous years</h3>
+		<ul class="menu">
+			<li class="last"><a href="{{ DEV_GSOC_2016 }}">GSoC 2016 Ideas</a></li>
+			<li class="last"><a href="{{ DEV_GSOC_2015 }}">GSoC 2015 Ideas</a></li>
+			<li class="last"><a href="{{ DEV_GSOC_2014 }}">GSoC 2014</a></li>
+			<li class="last"><a href="{{ DEV_GSOC_2013 }}">GSoC 2013</a></li>
+			<li class="last"><a href="{{ DEV_GSOC_2012 }}">GSoC 2012</a></li>
+		</ul>
+		</div>
+	</div>
+
+</div>
+</div>
+{% endblock %}
