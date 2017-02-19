@@ -22,18 +22,39 @@ class PhpbbHandling
 	 */
 	public static function bbcodeStripping($text, $uid = '[0-9a-z]{5,}')
 	{
-		$text = preg_replace("#\[\/?[a-z0-9\*\+\-]+(?:=(?:&quot;.*&quot;|[^\]]*))?(?::[a-z])?(\:$uid)\]#", ' ', $text);
-		$match = array(
-			'#<!\-\- e \-\-><a href="mailto:(.*?)">.*?</a><!\-\- e \-\->#',
-			'#<!\-\- l \-\-><a (?:class="[\w-]+" )?href="(.*?)(?:(&amp;|\?)sid=[0-9a-f]{32})?">.*?</a><!\-\- l \-\->#',
-			'#<!\-\- ([mw]) \-\-><a (?:class="[\w-]+" )?href="(.*?)">.*?</a><!\-\- \1 \-\->#',
-			'#<!\-\- s(.*?) \-\-><img src="\{SMILIES_PATH\}\/.*? \/><!\-\- s\1 \-\->#',
-			'#<!\-\- .*? \-\->#s',
-			'#<.*?>#s',
-		);
-		$replace = array('\1', '\1', '\2', '\1', '', '');
+		if (preg_match('#^<[rt][ >]#', $text))
+		{
+			$text_only_message = str_replace('[*:' . $uid . ']', '&sdot;&nbsp;', $text);
+			// Insert a space before <s> and <e> then remove formatting
+			$xml = preg_replace('#<[es]>#', ' $0', $text_only_message);
+			
+			$flags = (\LIBXML_VERSION >= 20700) ? \LIBXML_COMPACT | \LIBXML_PARSEHUGE : 0;
+			$dom = new \DOMDocument();
+			// Somehow need to also force UTF8 encoding here
+			$xml = mb_convert_encoding($xml, 'UTF-8');
+			$dom->loadXML($xml, $flags);
+			$xpath = new \DOMXPath($dom);
+			foreach ($xpath->query('//e | //s') as $node)
+			{
+				$node->parentNode->removeChild($node);
+			}
+			$text = $dom->documentElement->textContent;
+		}
+		else
+		{
+			$text = preg_replace("#\[\/?[a-z0-9\*\+\-]+(?:=(?:&quot;.*&quot;|[^\]]*))?(?::[a-z])?(\:$uid)\]#", ' ', $text);
+			$match = array(
+				'#<!\-\- e \-\-><a href="mailto:(.*?)">.*?</a><!\-\- e \-\->#',
+				'#<!\-\- l \-\-><a (?:class="[\w-]+" )?href="(.*?)(?:(&amp;|\?)sid=[0-9a-f]{32})?">.*?</a><!\-\- l \-\->#',
+				'#<!\-\- ([mw]) \-\-><a (?:class="[\w-]+" )?href="(.*?)">.*?</a><!\-\- \1 \-\->#',
+				'#<!\-\- s(.*?) \-\-><img src="\{SMILIES_PATH\}\/.*? \/><!\-\- s\1 \-\->#',
+				'#<!\-\- .*? \-\->#s',
+				'#<.*?>#s',
+			);
+			$replace = array('\1', '\1', '\2', '\1', '', '');
 
-		$text = preg_replace($match, $replace, $text);
+			$text = preg_replace($match, $replace, $text);
+		}
 
 		return $text;
 	}
