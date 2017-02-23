@@ -358,10 +358,12 @@ class GlobalsExtension extends \Twig_Extension implements \Twig_Extension_Global
 			// Rules
 			'styles_rules'						=> '/styles/rules-and-policies/',
 			'styles_rules_submit'				=> '/styles/rules-and-policies/#a-submission-policy',
+			'styles_rules_submit_32x'			=> '/styles/rules-and-policies/submission-policy/3.2/',
 			'styles_rules_submit_31x'			=> '/styles/rules-and-policies/submission-policy/3.1/',
 			'styles_rules_submit_30x'			=> '/styles/rules-and-policies/submission-policy/3.0/',
 			'styles_rules_dev'					=> '/styles/rules-and-policies/development-rules/',
-			'styles_rules_feedback_31x'			=> '/community/viewforum.php?f=74&p=12931323', // TODO: create topic
+			'styles_rules_feedback_32x'			=> '/community/viewtopic.php?f=74&p=12931323',
+			'styles_rules_feedback_31x'			=> '/community/viewtopic.php?f=74&p=12931323',
 			'styles_rules_feedback_30x'			=> '/community/viewtopic.php?f=74&p=12931323', // TODO: move topic to 3.0 styles?
 
 			// Other
@@ -371,7 +373,8 @@ class GlobalsExtension extends \Twig_Extension implements \Twig_Extension_Global
 			'styles_demo'						=> '/styles/demo/',
 
 			// Demo pages (handled by Titania)
-			'styles_demo_31x'					=> '/customise/db/style/prosilver/demo/3.1', // TODO: needs to be up and running
+			'styles_demo_32x'					=> '/customise/db/style/prosilver/demo/3.2',
+			'styles_demo_31x'					=> '/customise/db/style/prosilver/demo/3.1',
 			'styles_demo_30x'					=> '/customise/db/style/prosilver/demo/3.0',
 
 			// Styles CDB
@@ -493,6 +496,9 @@ class GlobalsExtension extends \Twig_Extension implements \Twig_Extension_Global
 			'FORUM_STYLES_DEV_30X'		=> '/community/viewforum.php?f=185',
 			'FORUM_STYLES_30X'			=> '/community/viewforum.php?f=80',
 
+			'forum_styles_32x'		 => '/community/viewforum.php?f=471',
+			'forum_styles_32x_support' => '/community/viewforum.php?f=591',
+			'forum_styles_32x_dev'	 => '/community/viewforum.php?f=596',
 			'forum_styles_31x'		 => '/community/viewforum.php?f=471',
 			'forum_styles_31x_support' => '/community/viewforum.php?f=481',
 			'forum_styles_31x_dev'	 => '/community/viewforum.php?f=476',
