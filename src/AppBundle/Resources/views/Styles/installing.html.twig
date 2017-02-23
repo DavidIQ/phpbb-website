@@ -18,13 +18,13 @@
 		<h2 class="imgrep styles">Installing &amp; Using Styles</h2>
 		<p>Styles are downloadable packages which can be installed on a phpBB board to change the look and feel of the board. In this guide, we will walk you through the process of installing and using styles on your phpBB board. For a quick introduction into styles, please visit our <a href="{{ styles_docs_31x }}">User Guide</a>.</p>
 
-		<div class="note-box yellow"><strong>Note:</strong> This guide only applies to phpBB 3.1.x. For older versions of phpBB (3.0.x) we suggest that you read the official <a href="{{ styles_docs_30x }}">3.0.x documentation</a> or this <a href="{{ styles_kb_30x_install }}">knowledge base article</a> instead.</div>
+		{# <div class="note-box yellow"><strong>Note:</strong> This guide only applies to phpBB 3.1.x. For older versions of phpBB (3.0.x) we suggest that you read the official <a href="{{ styles_docs_30x }}">3.0.x documentation</a> or this <a href="{{ styles_kb_30x_install }}">knowledge base article</a> instead.</div> #}
 
 		<hr />
 
 		<h2 class="title" id="a-anatomy">Anatomy of a Style</h2>
 		<p>Inside your phpBB board's directory is a <code class="inline">styles/</code> folder. This is the location where all styles are stored, and where we will be uploading any future styles as well. Every style follows the same folder structure.</p>
-		<p>phpBB 3.1.x styles have three main parts: templates, theme assets, and a config file.</p>
+		<p>phpBB 3.1.x and 3.2.x styles have three main parts: templates, theme assets, and a config file.</p>
 		<p><strong>Templates</strong><br />Templates are the HTML files responsible for the layout of the style. All template and JavaScript files (which can provide additional functionality) for a particular style are located in:</p>
 		<pre class="codesnippet">phpBB/styles/my_style_name/template/</pre>
 		<p><strong>Theme assets</strong><br />Theme assets are a combination of colour schemes and images that define the basic look of your forum. This generally includes CSS files (of which <samp>stylesheet.css</samp> is the most important) and any other audio-visual assets. These files are located in:</p>
@@ -35,13 +35,13 @@
 		<hr />
 
 		<h2 class="title" id="a-installing">Installing a Style</h2>
-		<div class="note-box blue"><strong>Note:</strong> This guide assumes that you have correctly set up phpBB 3.1.x and have it operational. Direct write-access to your server's files (via FTP or other) is also required.</div>
+		<div class="note-box blue"><strong>Note:</strong> This guide assumes that you have correctly set up phpBB 3.1.x or 3.2.x and have it operational. Direct write-access to your server's files (via FTP or other) is also required.</div>
 
 		<h3>1. Choosing a Style</h3>
-		<p>It is recommended to only download styles from phpBB's <a href="{{ styles_db_path }}">Customisation Database</a> as this is a trusted source where all styles have been validated by the Styles Team. All styles downloaded from the Customisation Database should be ready to be uploaded to your board's <code class="inline">styles/</code> folder.</p>
-		<p>Additionally, you could try your luck with styles that haven't been validated yet (and therefor not included in the database). There are numerous styles availble in the <a href="{{ forum_styles_31x_dev }}">[3.1.x] Styles in Development</a> section of the community forums.</p>
+		<p>It is recommended to only download styles from phpBB's <a href="{{ styles_db_path }}">Customisation Database</a> as this is a trusted source where all styles have been validated by the Style Customisations Team. All styles downloaded from the Customisation Database should be ready to be uploaded to your board's <code class="inline">styles/</code> folder.</p>
+		<p>Additionally, you could try your luck with styles that haven't been validated yet (and therefor not included in the database). There are numerous styles availble in the <a href="{{ forum_styles_31x_dev }}">[3.1.x]</a> and <a href="{{ forum_styles_32x_dev }}">[3.2.x]</a> Styles in Development section of the community forums.</p>
 
-		<div class="note-box yellow"><strong>Note:</strong> Make absolutely sure that the style you downloaded is for phpBB 3.1.x. Styles created for phpBB 3.0.x are <span class="underline">not</span> compatible!</div>
+		<div class="note-box yellow"><strong>Note:</strong> Styles created for phpBB 3.2.x are <span class="underline">not</span> compatible with 3.1.x. Make absolutely sure that the style you downloaded is for the phpBB version you have installed.!</div>
 
 		<h3>2. Download and unzip</h3>
 		<p>Once you have downloaded a style, you will need to unpackage it on your computer, as styles are typically available in the compressed "zip" file format.</p>
@@ -51,7 +51,7 @@
 
 		<h3>3. Upload to your board</h3>
 		<p>To upload files, open your favourite FTP client (such as FileZilla, CuteFTP, SmartFTP, etc - even some internet web browsers have this capability) and log in to your hosting account. Generally your publicly accessible files will be in an area named "<samp>public_html</samp>", "<samp>www</samp>" or similar.</p>
-		<p>Upload your style files (the entire folder) to the <code class="inline">styles/</code> directory inside your phpBB 3.1.x root directory. You can check if you have uploaded it correctly by looking at the location of the <samp>style.cfg</samp> file. It should be located at:</p>
+		<p>Upload your style files (the entire folder) to the <code class="inline">styles/</code> directory inside your phpBB root directory. You can check if you have uploaded it correctly by looking at the location of the <samp>style.cfg</samp> file. It should be located at:</p>
 		<pre class="codesnippet">phpBB/styles/my_style_name/style.cfg</pre>
 
 		<h3>4. Install</h3>
@@ -99,7 +99,7 @@ newstyle pro
 
 		<h3>Template Editing</h3>
 		<p>Templates hold the greatest power when it comes to styles. You can basically add anything you want (as long as you have the skills). Covering all the different aspects of the template system would be beyond the scope of this guide. So instead, we will provide pointers to the most commonly edited files.</p>
-		<p>The list provided below refers to the files as they are in prosilver (3.1.x), but many styles adhere to the same general structure.</p>
+		<p>The list provided below refers to the files as they are in prosilver, but many styles adhere to the same general structure.</p>
 		<ul class="list-margin">
 			<li><samp>template/overall_header.html:</samp> arguably the most important template. Controls the "top" of every page, as well as the <samp>&lt;head&gt;</samp> element.</li>
 			<li><samp>template/overall_footer.html:</samp> controls the "bottom" of every page.</li>
@@ -110,7 +110,7 @@ newstyle pro
 			<li><samp>template/viewtopic_body.html:</samp> controls the structure of the topic view..</li>
 		</ul>
 		<br />
-		<p>For more information on how to use the various template tags and conditionals, we advise you to take a look at our Development Wiki. At this time, there are no dedicated entries yet specifically for 3.1.x Styles, but a few important pages are still applicable:</p>
+		<p>For more information on how to use the various template tags and conditionals, we advise you to take a look at our Development Wiki. At this time, there are no dedicated entries yet specifically for 3.2.x/3.1.x Styles, but a few important pages are still applicable:</p>
 		<ul class="list-margin">
 			<li><a href="https://wiki.phpbb.com/Tutorial.Template_syntax">Template Syntax Tutorial</a></li>
 			<li><a href="https://wiki.phpbb.com/Category:Template_Variables">Catalogue of available Template Variables</a></li>
@@ -153,10 +153,10 @@ newstyle pro
 			<a href="{{ styles_support }}">Styles Support</a><br />
 			<a href="{{ styles_create }}">Creating &amp; Modifying Styles</a><br />
 			{# <a href="{{ styles_changes }}">Style Changes</a><br /> #}
-			<a href="{{ forum_styles_31x }}">[3.1.x] Styles Forum</a>
+			<a href="{{ forum_styles_31x }}">Styles Forum</a>
 		</p>
 
-		<small>If you have any suggestions or remarks relating to this guide, feel free to contact the <a href="{{ styles_team_overview }}">Styles Team</a>.</small>
+		<small>If you have any suggestions or remarks relating to this guide, feel free to contact the <a href="{{ styles_team_overview }}">Style Customisations Team</a>.</small>
 		<br />
 		<br />
 	</div>

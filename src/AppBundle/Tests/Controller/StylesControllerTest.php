@@ -22,8 +22,8 @@ class StylesControllerTest extends BootstrapTestSuite
 		$this->assertTrue(strpos(($crawler->filter('title')->first()->text()), 'Styles') !== false, 'Title contains Styles');
 
 		// Content Check
-		$this->assertTrue($crawler->filter('html:contains("The default style for phpBB 3.1.x is prosilver")')->count() > 0, 'Styles Home Content Check');
-		$this->assertTrue($crawler->filter('html:contains("3.1.x Styles Forums")')->count() > 0, 'Styles Sidebar Check');
+		$this->assertTrue($crawler->filter('html:contains("The default style for phpBB 3.1.x and 3.2.x is prosilver")')->count() > 0, 'Styles Home Content Check');
+		$this->assertTrue($crawler->filter('html:contains("Styles Forums")')->count() > 0, 'Styles Sidebar Check');
 
 		// Standard All Page Checks
 		$this->globalTests();
@@ -39,7 +39,7 @@ class StylesControllerTest extends BootstrapTestSuite
 
 		// Content Check
 		$this->assertTrue($crawler->filter('html:contains("Where can I find styles?")')->count() > 0, 'Styles Support Content Check');
-		$this->assertTrue($crawler->filter('html:contains("3.1.x Styles Forums")')->count() > 0, 'Styles Sidebar Check');
+		$this->assertTrue($crawler->filter('html:contains("Styles Forums")')->count() > 0, 'Styles Sidebar Check');
 
 		// Standard All Page Checks
 		$this->globalTests();
@@ -58,7 +58,7 @@ class StylesControllerTest extends BootstrapTestSuite
 
 		// Content Check
 		$this->assertTrue($crawler->filter('html:contains("the process of installing and using styles")')->count() > 0, 'Styles Installing Content Check');
-		$this->assertTrue($crawler->filter('html:contains("3.1.x Styles Forums")')->count() > 0, 'Styles Sidebar Check');
+		$this->assertTrue($crawler->filter('html:contains("Styles Forums")')->count() > 0, 'Styles Sidebar Check');
 
 		// Standard All Page Checks
 		$this->globalTests();
@@ -76,8 +76,8 @@ class StylesControllerTest extends BootstrapTestSuite
 		$this->assertTrue(strpos(($crawler->filter('title')->first()->text()), $expectedTitle[1]) !== false, 'Title contains Modifying Styles');
 
 		// Content Check
-		$this->assertTrue($crawler->filter('html:contains("creating your own style for phpBB 3.1.x")')->count() > 0, 'Styles Create Content Check');
-		$this->assertTrue($crawler->filter('html:contains("3.1.x Styles Forums")')->count() > 0, 'Styles Sidebar Check');
+		$this->assertTrue($crawler->filter('html:contains("creating your own style for phpBB 3.2.x/3.1.x")')->count() > 0, 'Styles Create Content Check');
+		$this->assertTrue($crawler->filter('html:contains("Styles Forums")')->count() > 0, 'Styles Sidebar Check');
 
 		// Standard All Page Checks
 		$this->globalTests();
@@ -89,11 +89,11 @@ class StylesControllerTest extends BootstrapTestSuite
 		$crawler = $objs['crawler'];
 
 		// Title Check
-		$this->assertTrue(strpos(($crawler->filter('title')->first()->text()), 'Styles Team Overview') !== false, 'Styles Team Overview');
+		$this->assertTrue(strpos(($crawler->filter('title')->first()->text()), 'Style Customisations Team Overview') !== false, 'Style Customisations Team Overview');
 
 		// Content Check
-		$this->assertTrue($crawler->filter('html:contains("The Styles Team oversees all activities on phpBB.com")')->count() > 0, 'Styles Team Overview Content Check');
-		$this->assertTrue($crawler->filter('html:contains("3.1.x Styles Forums")')->count() > 0, 'Styles Sidebar Check');
+		$this->assertTrue($crawler->filter('html:contains("The Style Customisations Team oversees all activities on phpBB.com")')->count() > 0, 'Style Customisations Team Overview Content Check');
+		$this->assertTrue($crawler->filter('html:contains("Styles Forums")')->count() > 0, 'Styles Sidebar Check');
 
 		// Standard All Page Checks
 		$this->globalTests();
@@ -109,7 +109,7 @@ class StylesControllerTest extends BootstrapTestSuite
 
 		// Content Check
 		$this->assertTrue($crawler->filter('html:contains("The Junior Style Validators Team is composed of community members")')->count() > 0, 'Junior Validators Content Check');
-		$this->assertTrue($crawler->filter('html:contains("3.1.x Styles Forums")')->count() > 0, 'Styles Sidebar Check');
+		$this->assertTrue($crawler->filter('html:contains("Styles Forums")')->count() > 0, 'Styles Sidebar Check');
 
 		// Standard All Page Checks
 		$this->globalTests();
@@ -128,7 +128,23 @@ class StylesControllerTest extends BootstrapTestSuite
 
 		// Content Check
 		$this->assertTrue($crawler->filter('html:contains("phpBB.com Styles Rules, Policies and Guidelines")')->count() > 0, 'Styles Rules and Policies Content Check');
-		$this->assertTrue($crawler->filter('html:contains("3.1.x Styles Forums")')->count() > 0, 'Styles Sidebar Check');
+		$this->assertTrue($crawler->filter('html:contains("Styles Forums")')->count() > 0, 'Styles Sidebar Check');
+
+		// Standard All Page Checks
+		$this->globalTests();
+	}
+
+	public function testStylesSubmissionPolicy32x()
+	{
+		$objs	= $this->setupTest('/styles/rules-and-policies/submission-policy/3.2/');
+		$crawler = $objs['crawler'];
+
+		// Title Check
+		$this->assertTrue(strpos(($crawler->filter('title')->first()->text()), 'Styles Submission Policy (3.2.x)') !== false, 'Title contains Styles Submission Policy (3.2.x)');
+
+		// Content Check
+		$this->assertTrue($crawler->filter('html:contains("this Styles Submission Policy page is dedicated to styles for phpBB 3.2.x")')->count() > 0, 'Submission Policy 3.2.x Content Check');
+		$this->assertTrue($crawler->filter('html:contains("Styles Forums")')->count() > 0, 'Styles Sidebar Check');
 
 		// Standard All Page Checks
 		$this->globalTests();
@@ -144,7 +160,7 @@ class StylesControllerTest extends BootstrapTestSuite
 
 		// Content Check
 		$this->assertTrue($crawler->filter('html:contains("this Styles Submission Policy page is dedicated to styles for phpBB 3.1.x")')->count() > 0, 'Submission Policy 3.1.x Content Check');
-		$this->assertTrue($crawler->filter('html:contains("3.1.x Styles Forums")')->count() > 0, 'Styles Sidebar Check');
+		$this->assertTrue($crawler->filter('html:contains("Styles Forums")')->count() > 0, 'Styles Sidebar Check');
 
 		// Standard All Page Checks
 		$this->globalTests();
@@ -160,7 +176,7 @@ class StylesControllerTest extends BootstrapTestSuite
 
 		// Content Check
 		$this->assertTrue($crawler->filter('html:contains("this Styles Submission Policy page is dedicated to styles for phpBB 3.0.x")')->count() > 0, 'Submission Policy 3.0.x Content Check');
-		$this->assertTrue($crawler->filter('html:contains("3.1.x Styles Forums")')->count() > 0, 'Styles Sidebar Check');
+		$this->assertTrue($crawler->filter('html:contains("Styles Forums")')->count() > 0, 'Styles Sidebar Check');
 
 		// Standard All Page Checks
 		$this->globalTests();
@@ -176,7 +192,7 @@ class StylesControllerTest extends BootstrapTestSuite
 
 		// Content Check
 		$this->assertTrue($crawler->filter('html:contains("Here are live demos for the phpBB board styles")')->count() > 0, 'Styles Demo Content Check');
-		$this->assertTrue($crawler->filter('html:contains("3.1.x Styles Forums")')->count() > 0, 'Styles Sidebar Check');
+		$this->assertTrue($crawler->filter('html:contains("Styles Forums")')->count() > 0, 'Styles Sidebar Check');
 
 		// Standard All Page Checks
 		$this->globalTests();
@@ -192,7 +208,7 @@ class StylesControllerTest extends BootstrapTestSuite
 
 		// Content Check
 		$this->assertTrue($crawler->filter('html:contains("accepting styles")')->count() > 0, 'Styles Demo Content Check');
-		$this->assertTrue($crawler->filter('html:contains("3.1.x Styles Forums")')->count() > 0, 'Styles Sidebar Check');
+		$this->assertTrue($crawler->filter('html:contains("Styles Forums")')->count() > 0, 'Styles Sidebar Check');
 
 		// Standard All Page Checks
 		$this->globalTests();
