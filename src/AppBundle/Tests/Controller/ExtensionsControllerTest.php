@@ -23,7 +23,7 @@ class ExtensionsControllerTest extends BootstrapTestSuite
 
 		// Content Check
 		$this->assertTrue($crawler->filter('html:contains("Extensions are the natural successor to modifications")')->count() > 0, 'Extensions Home Content Check');
-		$this->assertTrue($crawler->filter('html:contains("Extensions Team")')->count() > 0, 'Extensions Sidebar Check');
+		$this->assertTrue($crawler->filter('html:contains("Installing Extensions")')->count() > 0, 'Extensions Sidebar Check');
 
 		// Standard All Page Checks
 		$this->globalTests();
@@ -39,7 +39,7 @@ class ExtensionsControllerTest extends BootstrapTestSuite
 
 		// Content Check
 		$this->assertTrue($crawler->filter('html:contains("Extension Database Submission & Validation Policies")')->count() > 0, 'Extensions Rules and Policies Content Check');
-		$this->assertTrue($crawler->filter('html:contains("Extensions Team")')->count() > 0, 'Extensions Sidebar Check');
+		$this->assertTrue($crawler->filter('html:contains("Installing Extensions")')->count() > 0, 'Extensions Sidebar Check');
 
 		// Standard All Page Checks
 		$this->globalTests();
@@ -55,7 +55,7 @@ class ExtensionsControllerTest extends BootstrapTestSuite
 
 		// Content Check
 		$this->assertTrue($crawler->filter('html:contains("Do you write great code?")')->count() > 0, 'Extensions Recognised Developer Content Check');
-		$this->assertTrue($crawler->filter('html:contains("Extensions Team")')->count() > 0, 'Extensions Sidebar Check');
+		$this->assertTrue($crawler->filter('html:contains("Installing Extensions")')->count() > 0, 'Extensions Sidebar Check');
 
 		// Standard All Page Checks
 		$this->globalTests();
@@ -71,7 +71,7 @@ class ExtensionsControllerTest extends BootstrapTestSuite
 
 		// Content Check
 		$this->assertTrue($crawler->filter('html:contains("These are extensions created and maintained by the")')->count() > 0, 'Official Extensions Content Check');
-		$this->assertTrue($crawler->filter('html:contains("Extensions Team")')->count() > 0, 'Extensions Sidebar Check');
+		$this->assertTrue($crawler->filter('html:contains("Installing Extensions")')->count() > 0, 'Extensions Sidebar Check');
 
 		// Standard All Page Checks
 		$this->globalTests();
@@ -86,8 +86,8 @@ class ExtensionsControllerTest extends BootstrapTestSuite
 		$this->assertTrue(strpos(($crawler->filter('title')->first()->text()), 'Extensions Development Team') !== false, 'Title contains Extensions Development Team');
 
 		// Content Check
-		$this->assertTrue($crawler->filter('html:contains("The Extensions Development Team are extension authors that work under the mentorship of the Extensions Team to create")')->count() > 0, 'Extensions Development Team Content Check');
-		$this->assertTrue($crawler->filter('html:contains("Extensions Team")')->count() > 0, 'Extensions Sidebar Check');
+		$this->assertTrue($crawler->filter('html:contains("The Extensions Development Team are extension authors that work under the mentorship of the Extension Customisations Team to create")')->count() > 0, 'Extensions Development Team Content Check');
+		$this->assertTrue($crawler->filter('html:contains("Installing Extensions")')->count() > 0, 'Extensions Sidebar Check');
 
 		// Standard All Page Checks
 		$this->globalTests();
@@ -103,7 +103,7 @@ class ExtensionsControllerTest extends BootstrapTestSuite
 
 		// Content Check
 		$this->assertTrue($crawler->filter('html:contains("The task of a Junior Validator is test submitted extensions")')->count() > 0, 'Junior Validators Content Check');
-		$this->assertTrue($crawler->filter('html:contains("Extensions Team")')->count() > 0, 'Extensions Sidebar Check');
+		$this->assertTrue($crawler->filter('html:contains("Installing Extensions")')->count() > 0, 'Extensions Sidebar Check');
 
 		// Standard All Page Checks
 		$this->globalTests();
@@ -119,7 +119,7 @@ class ExtensionsControllerTest extends BootstrapTestSuite
 
 		// Content Check
 		$this->assertTrue($crawler->filter('html:contains("Installing an Extension")')->count() > 0, 'Installing Extensions Content Check');
-		$this->assertTrue($crawler->filter('html:contains("Extensions Team")')->count() > 0, 'Extensions Sidebar Check');
+		$this->assertTrue($crawler->filter('html:contains("Installing Extensions")')->count() > 0, 'Extensions Sidebar Check');
 
 		// Standard All Page Checks
 		$this->globalTests();
@@ -131,11 +131,11 @@ class ExtensionsControllerTest extends BootstrapTestSuite
 		$crawler = $objs['crawler'];
 
 		// Title Check
-		$this->assertTrue(strpos(($crawler->filter('title')->first()->text()), 'Extensions Team Overview') !== false, 'Title contains Extensions Team Overview');
+		$this->assertTrue(strpos(($crawler->filter('title')->first()->text()), 'Extension Customisations Team Overview') !== false, 'Title contains Extension Customisations Team Overview');
 
 		// Content Check
-		$this->assertTrue($crawler->filter('html:contains("The Extensions Team oversees all activities on phpBB.com with relation to extensions")')->count() > 0, 'Extensions Team Content Check');
-		$this->assertTrue($crawler->filter('html:contains("Extensions Team")')->count() > 0, 'Extensions Sidebar Check');
+		$this->assertTrue($crawler->filter('html:contains("The Extension Customisations Team oversees all activities on phpBB.com with relation to extensions")')->count() > 0, 'Extensions Team Content Check');
+		$this->assertTrue($crawler->filter('html:contains("Installing Extensions")')->count() > 0, 'Extensions Sidebar Check');
 
 		// Standard All Page Checks
 		$this->globalTests();
@@ -151,7 +151,7 @@ class ExtensionsControllerTest extends BootstrapTestSuite
 
 		// Content Check
 		$this->assertTrue($crawler->filter('html:contains("The following policies should be followed when developing extensions for phpBB")')->count() > 0, 'Validation Policy Content Check');
-		$this->assertTrue($crawler->filter('html:contains("Extensions Team")')->count() > 0, 'Extensions Sidebar Check');
+		$this->assertTrue($crawler->filter('html:contains("Installing Extensions")')->count() > 0, 'Extensions Sidebar Check');
 
 		// Standard All Page Checks
 		$this->globalTests();
@@ -167,7 +167,7 @@ class ExtensionsControllerTest extends BootstrapTestSuite
 
 		// Content Check
 		$this->assertTrue($crawler->filter('html:contains("Licensing your Extension")')->count() > 0, 'Extensions Development Rules Content Check');
-		$this->assertTrue($crawler->filter('html:contains("Extensions Team")')->count() > 0, 'Extensions Sidebar Check');
+		$this->assertTrue($crawler->filter('html:contains("Installing Extensions")')->count() > 0, 'Extensions Sidebar Check');
 
 		// Standard All Page Checks
 		$this->globalTests();
@@ -183,7 +183,7 @@ class ExtensionsControllerTest extends BootstrapTestSuite
 
 		// Content Check
 		$this->assertTrue($crawler->filter('html:contains("Issues that may be discussed")')->count() > 0, 'Extensions Writers Rules Content Check');
-		$this->assertTrue($crawler->filter('html:contains("Extensions Team")')->count() > 0, 'Extensions Sidebar Check');
+		$this->assertTrue($crawler->filter('html:contains("Installing Extensions")')->count() > 0, 'Extensions Sidebar Check');
 
 		// Standard All Page Checks
 		$this->globalTests();
@@ -199,7 +199,7 @@ class ExtensionsControllerTest extends BootstrapTestSuite
 
 		// Content Check
 		$this->assertTrue($crawler->filter('html:contains("It is suggested that extension authors use EPV")')->count() > 0, 'EPV Content Check');
-		$this->assertTrue($crawler->filter('html:contains("Extensions Team")')->count() > 0, 'Extensions Sidebar Check');
+		$this->assertTrue($crawler->filter('html:contains("Installing Extensions")')->count() > 0, 'Extensions Sidebar Check');
 
 		// Standard All Page Checks
 		$this->globalTests();
