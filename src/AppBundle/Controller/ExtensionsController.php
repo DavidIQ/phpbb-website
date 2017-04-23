@@ -71,6 +71,15 @@ class ExtensionsController extends Controller
 		);
 
 		$officialExtensions[] = new OfficialExtension(
+			'Media Embed Plug In',
+			'The Media Embed Plug In brings a modern feature to your board, allowing users to post links to media sites that appear directly in their posts as embedded videos and/or content. It supports over 50 popular sites including videos, music streams, tweets, products, articles and other embeddable content. Users can utilise the new [MEDIA] BBCode or simply post the URL in plain text. Older posts made before installation of this extension containing supported links will automatically display as embedded content too.',
+			'The Media Embed Plug In extension is a great example of how developers can harness some of the powerful features in the TextFormatter library that powers phpBB\'s BBCode engine. Media Embed is a plug in from this library that phpBB does not make use of by default. This extension enables this component of the TextFormatter library and takes it a step further giving Administrators some control over which of the supported sites will be allowed to embed content on their boards.',
+			'https://www.phpbb.com/customise/db/extension/mediaembed/',
+			'https://github.com/phpbb-extensions/mediaembed',
+			'/assets/images/images/extensions/mediaembed.png'
+		);
+
+		$officialExtensions[] = new OfficialExtension(
 			'Pages',
 			'The Pages Extension allows administrators to create custom static pages for their phpBB forum. With Pages you can add an unlimited number of new static pages to your board, such as an About Us page, News page, or even a simple forum Blog. The ACP\'s page editor allows you to create page content using BBCodes or HTML, making it possible to embed media from other sites and create truly unique pages.',
 			'This extension provides another opportunity for developers to analyse an object-oriented and abstracted approach to developing an extension for phpBB. Because the Pages extension can create an unlimited number of pages, it is set up to account for dynamic page routes and links. It allows users to choose a number of possible link locations for each page using mutliple template events, and leverages the power of phpBB\'s finder object to allow users to upload their own custom link icons and page template files. As with all our extensions, there is complete test coverage of all code to ensure maximum stability and reliability.',

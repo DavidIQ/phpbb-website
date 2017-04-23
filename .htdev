@@ -51,7 +51,7 @@ RewriteCond %{REQUEST_URI} ^/development/get-involved/{0,1}.* [OR]
 RewriteCond %{REQUEST_URI} ^/blog/{0,1}.* [OR]
 RewriteCond %{REQUEST_URI} ^/styles/demo/{0,1}.* [OR]
 RewriteCond %{REQUEST_URI} ^/support/code-changes/{0,1}.* [OR]
-RewriteCond %{REQUEST_URI} ^/go/authors/{0,1}.*
+RewriteCond %{REQUEST_URI} ^/go/{0,1}.*
 RewriteRule ^(.*)$ /var/www/www.phpbb.com/htdocs/old$1 [L]
 
 # Exists in /symfony/web as directory or file and if so serve it
