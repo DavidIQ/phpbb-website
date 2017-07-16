@@ -20,7 +20,7 @@
 		<p>All styles that have been approved can be found in our <a href="{{ styles_db_path }}">Styles Database</a>. Within the database, visitors can filter styles by phpBB version, by author, by color, and more.</p>
 		<p>If you create a style and want to submit it to our database, it will first be automatically sent to the <a href="{{ styles_team_overview }}">Style Customisations Team</a> for review. The Style Customisations Team is responsible for ensuring that your submission follows the guidelines below. If two members of the Style Customisations Team inspect your submission and find no obvious errors, it will be approved for release. Please note the Style Customisations Team has full discretion on what it approves or denies.</p>
 		<p>This process can sometimes take a considerable amount of time, so it's in your best interest to follow all of the guidelines from the start. If your style is denied and then resubmitted, it is placed at the end of the queue.</p>
-		<div class="note-box yellow"><strong>Note:</strong> this Styles Submission Policy page is dedicated to styles for phpBB <strong>3.1.x</strong>! This policy differs from that of other versions. Styles for phpBB 3.0.x should comply with the <a href="{{ styles_rules_submit_30x }}">Styles Submission Policy for phpBB 3.0.x</a></div>
+		<div class="note-box yellow"><strong>Note:</strong> this Styles Submission Policy page is dedicated to styles for phpBB <strong>3.1.x</strong>! This policy differs from that of other versions. Styles for phpBB 3.2.x should comply with the <a href="{{ styles_rules_submit_32x }}">Styles Submission Policy for phpBB 3.2.x</a></div>
 
 		<hr />
 
@@ -61,13 +61,13 @@
 
 		<h3>For Board Styles</h3>
 		<ul class="list-margin">
-			<li>All submissions need to be compatible with the latest version of phpBB 3.1. See the <a href="{{ styles_changes }}">Style Changes</a> page for more information.</li>
+			<li>All submissions need to be compatible with the latest version of phpBB 3.1.</li>
 			<li>Submissions must be compatible with <a href="http://www.microsoft.com/ie/">Internet Explorer 8</a> (and above) and <a href="http://www.mozilla.com/">Firefox</a>.
 				<ul>
 					<li>If there are minor display issues with your style in a specific browser (i.e. Internet Explorer 8), it may still be submitted as long as it does not interfere with any phpBB functionality. Please detail any known display issues with your style upon submission.</li>
 				</ul>
 			</li>
-			<li>Styles should be licensed with <a href="http://www.gnu.org/licenses/gpl-2.0.html">GPL v 2.0</a> so they are compatible with phpBB 3.1's license.</li>
+			<li>Styles should be licensed with <a href="http://www.gnu.org/licenses/gpl-2.0.html">GPL v 2.0</a> so they are compatible with phpBB's license.</li>
 			<li>In case you style only modifies a small number of templates (compared to the prosilver template files), we strongly recommend you to use <a href="{{ styles_create }}#a-inheritance">Template Inheritance</a>.</li>
 			<li>Files should not have any hard-coded (static) text in them. All text should come from the phpBB language files (to allow for localization).</li>
 			<li>The phpBB copyright in the footer of the board style must be kept completely intact and immediately visible on all pages.
@@ -137,61 +137,60 @@
 		<h3>To submit a NEW style</h3>
 		<p><em>(One that is not an update to a previously submitted style)</em></p>
 		<ol class="list-margin">
-			<li>Visit the phpBB <a href="{{ styles_db_path }}">Styles Database</a> and click "<samp>Submit a style</samp>" on the right-hand side.</li>
+			<li>Visit the phpBB <a href="{{ styles_db_path }}">Styles Database</a> and click "<samp>New Contribution</samp>".</li>
 			<li>Fill in the Required Information box as follows:
 				<ul>
-					<li><strong>Style name:</strong> Enter the name of your style. Note that it must be a unique name, and cannot already exist in our database.</li>
-					<li><strong>Style version:</strong> The version of <span class="underline">YOUR</span> style, not the phpBB version. If this is the first time you are submitting this style, then a good version number could be <samp>1.0.0</samp>, for example.</li>
-					<li><strong>Style description:</strong> A few brief words about your style. This will be shown to everyone once the style is released. It should be concise and informative. Note that this description can <span class="underline">not</span> be changed in future updates to your style.</li>
-					<li><strong>Style upload:</strong> Click the "<samp>Browse</samp>" button and locate the .ZIP file of your style on your computer.</li>
-					<li><strong>I have read the Style submission policy and agreed with this:</strong> You must check this box in order for your style to be submitted.</li>
-					<li><strong>phpBB Version for this style:</strong> Select the appropriate phpBB version from those listed.</li>
-					<li><strong>Allow the phpBB Style Customisations Team to fix small errors in your Style?</strong> If you uncheck this box, any errors we find will lead to denial of your submission. Otherwise, we will do our best to fix minor errors we notice during the validation process.</li>
-					<li><strong>Component:</strong> Select the appropriate classification for your submission.
+					<li><strong>Contribution Name:</strong> Enter the name of your style. Note that it must be a unique name and cannot already exist in our database.</li>
+					<li><strong>Contribution Type:</strong> Select the <em>Style</em> option.</li>
+					<li><strong>Contribution Description:</strong> A few brief words about your style. This will be shown to everyone once the style is released. It should be concise and informative.</li>
+					<li><strong>Contribution Category:</strong> Select the appropriate classification for your submission.
 						<ul>
 							<li><strong>Board Style </strong>-- For board styles (with their own templates and theme assets included in the package)</li>
 							<li><strong>Smilies </strong>-- For packages containing only smilies.</li>
-							<li><strong>Ranks </strong>-- For packages containing only rank images.</li>
 							<li><strong>Avatars </strong>-- For packages containing only avatars.</li>
-							<li><strong>Imageset </strong>-- For packages containing only imagesets. (not applicable for 3.1 Styles)</li>
-							<li><strong>Theme </strong>-- For packages containing only theme files.</li>
-							<li><strong>Template </strong>-- For packages containing only template files.</li>
-							<li><strong>Topic icons </strong>-- For packages containing only topic icons.</li>
+							<li><strong>Ranks </strong>-- For packages containing only rank images.</li>
+							<li><strong>Miscellaneous </strong>-- For packages containing topic icons, imagesets and other items.</li>
 						</ul>
 					</li>
+					<li>Click "<samp>Continue</samp>" and proceed to next steps.</li>
+					<li><strong>Filename:</strong> Click the "<samp>Select file</samp>" button and locate the .ZIP file of your style on your computer.</li>
+					<li><strong>Revision Version:</strong> The version of <span class="underline">YOUR</span> style, not the phpBB version.</li>
+					<li><strong>phpBB Branch:</strong> Select the appropriate phpBB version from those listed.</li>
+					<li><strong>License:</strong> Select the appropriate license from those listed.</li>
+					<li><strong>Allow Repacking:</strong> If you uncheck this box, any errors we find will lead to denial of your submission. Otherwise, we will do our best to fix minor errors we notice during the validation process.</li>
+					{# <li><strong>I have read the Style submission policy and agreed with this:</strong> You must check this box in order for your style to be submitted.</li> #}
 				</ul>
 			</li>
-			<li>You may fill in the boxes under Optional Information if you wish. Note that the Category and Color boxes will better allow people to find your style. Please select them as accurately as possible.</li>
 			<li>
-				Click "<samp>Submit</samp>"! Your style will be submitted to the Style Customisations Team's private queue and you will later be notified of approval or denial via private message.<br /><br />
-				You can see your submitted style in the <a href="{{ styles_db_path }}">Styles Database</a> by visiting the database, and clicking "My Contributions" in the drop-down menu of your user-name in the top-right corner.
-				{# TODO: You can see your submitted style in the <a href="{{ styles_db_my_styles }}">My styles</a> page of the Styles Database. #}
+				Click "<samp>Continue</samp>" and then "<samp>Continue</samp>" again! Your style will be submitted to the Style Customisations Team's private queue and you will later be notified of approval or denial via private message.<br /><br />
+				You can see your submitted style in the <a href="{{ styles_db_path }}">Styles Database</a> by visiting the database, and clicking "My Contributions" in the drop-down menu of your username in the top-right corner.
 			</li>
+			{# <li>You may fill in the boxes under Optional Information if you wish. Note that the Category and Color boxes will better allow people to find your style. Please select them as accurately as possible.</li> #}
 		</ol>
 
 		<h3>To submit an UPDATED style</h3>
 		<p><em>(One that has been submitted at least once in the past)</em></p>
 		<ol class="list-margin">
-			<li>Visit the phpBB <a href="{{ styles_db_path }}">Styles Database</a> and click "<samp>My styles</samp>" on the right-hand side.</li>
-			<li>You will be presented with a list of every style you have ever submitted to the phpBB Styles Database. Find the style you wish to update, and click the pink "<samp>Manage</samp>" icon on the right of it.</li>
-			<li>Then, click the "<samp>Update</samp>" tab and fill in the information boxes as follows:
+			<li>Visit the phpBB <a href="{{ styles_db_path }}">Styles Database</a> and click "<samp>My Contributions</samp>" in the drop-down menu of your username in the top-right corner.</li>
+			<li>You will be presented with a list of every contribution you have ever submitted to the phpBB Customisations Database. Find the style you wish to update, and click its name.</li>
+			<li>Then, click the "<samp>New Revision</samp>" tab and fill in the information boxes as follows:
 				<ul>
-					<li><strong>Style version:</strong> The version of <span class="underline">YOUR</span> style, not the phpBB version. You should increment the version number for every update you submit. Usual numbering convention is:
+					<li><strong>Filename:</strong> Click the "<samp>Select file</samp>" button and locate the .ZIP file of your style on your computer. You should increment the version number for every update you submit. Usual numbering convention is: 
 						<ul>
 							<li>For small updates (for example, code updates to match an updated phpBB release) increment the third number (<samp>1.0.0</samp> to <samp>1.0.1</samp>).</li>
 							<li>For more significant updates (for example, updated images, updated color schemes, layout modifications, etc.) increment the second number (<samp>1.0.0</samp> to <samp>1.1.0</samp>).</li>
 							<li>For substantial updates (for example, major layout changes, total revisions, new versions, etc.) increment the first number (<samp>1.0.0</samp> to <samp>2.0.0</samp>).</li>
 						</ul>
 					</li>
-					<li><strong>Style upload:</strong> Click the "<samp>Browse</samp>" button and locate the .ZIP file of your style on your computer.</li>
-					<li><strong>I have read the Style submission policy and agreed with this:</strong> I You must check this box in order for your updated style to be submitted.</li>
-					<li><strong>Allow the phpBB Style Customisations Team to fix small errors in your Style?</strong> If you uncheck this box, any errors we find will lead to denial of your submission. Otherwise, we will do our best to fix minor errors we notice during the validation process.</li>
+					<li><strong>Revision Version:</strong> The version of <span class="underline">YOUR</span> style, not the phpBB version.</li>
+					<li><strong>phpBB Branch:</strong> Select the appropriate phpBB version from those listed.</li>
+					<li><strong>License:</strong> Select the appropriate license from those listed.</li>
+					<li><strong>Allow Repacking:</strong> If you uncheck this box, any errors we find will lead to denial of your submission. Otherwise, we will do our best to fix minor errors we notice during the validation process.</li>
 				</ul>
 			</li>
 			<li>
-				Click "<samp>Submit</samp>"! Your style will be submitted to the Style Customisations Team's private queue and you will later be notified of approval or denial via private message.<br /><br />
-				You can see your submitted style in the <a href="{{ styles_db_path }}">Styles Database</a> by visiting the database, and clicking "My Contributions" in the drop-down menu of your user-name in the top-right corner.
-				{# TODO: You can see your submitted style in the <a href="{{ styles_db_my_styles }}">My styles</a> page of the Styles Database. #}
+				Click "<samp>Continue</samp>" and then "<samp>Continue</samp>" again! Your style will be submitted to the Style Customisations Team's private queue and you will later be notified of approval or denial via private message.<br /><br />
+				You can see your submitted style in the <a href="{{ styles_db_path }}">Styles Database</a> by visiting the database, and clicking "My Contributions" in the drop-down menu of your username in the top-right corner.
 			</li>
 		</ol><br />
 	</div>

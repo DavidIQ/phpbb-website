@@ -130,8 +130,8 @@ class GlobalsExtension extends \Twig_Extension implements \Twig_Extension_Global
 			'documentation_path'=> '/support/docs/',
 			'DOCUMENTATION'		=> '/support/docs/',
 
-			'ideas_path'		=> '/ideas/',
-			'IDEAS'				=> '/ideas/',
+			'ideas_path'		=> '/community/ideas/',
+			'IDEAS'				=> '/community/ideas/',
 
 			'extensions_path'	=> '/extensions/',
 
@@ -567,11 +567,11 @@ class GlobalsExtension extends \Twig_Extension implements \Twig_Extension_Global
 	private function getMiscVars()
 	{
 		$miscVars = array(
-			'package_version'		=> '3.2.0',
-			'package_release_date'	=> '2017-01-07',
-			'PACKAGE_VERSION'		=> '3.2.0',
-			'PACKAGE_ANNOUNCE_URL'	=> '/community/viewtopic.php?f=14&t=2399606',
-			'PACKAGE_RELEASE_DATE'	=> '2017-01-07',
+			'package_version'		=> '3.2.1',
+			'package_release_date'	=> '2017-07-16',
+			'PACKAGE_VERSION'		=> '3.2.1',
+			'PACKAGE_ANNOUNCE_URL'	=> '/community/viewtopic.php?f=14&t=2430926',
+			'PACKAGE_RELEASE_DATE'	=> '2017-07-16',
 
 			'bot'					=> false, // @TODO Set this to true for bots // Usage = 1
 			'is_on_team'			=> false, // @TODO Set this up to use sessions management and see if they are on the team
@@ -694,7 +694,7 @@ class GlobalsExtension extends \Twig_Extension implements \Twig_Extension_Global
 			'U_DEV_HOME_SUB'					=> '//area51.phpbb.com/',
 			'U_DEV_GSOC_SUB'					=> '/development/gsoc',
 
-			'U_IDEAS'							=> '/ideas',
+			'U_IDEAS'							=> '/community/ideas',
 
 			'U_FORUM_INDEX_SUB'					=> '/community/',
 			'U_ABOUT_INDEX_SUB'					=> '/about/',
