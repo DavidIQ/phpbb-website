@@ -21,7 +21,7 @@
 <meta name="msapplication-task" content="name=Customise; action-uri=/customise/; icon-uri=favicon.ico" />
 <meta name="msapplication-task" content="name=Area51; action-uri=http://area51.phpbb.com/; icon-uri=favicon.ico" />
 
-<title>{% block title %}phpBB &bull; Free and Open Source Forum Software{% endblock %}</title>
+<title>phpBB &bull; {% block title %}Free and Open Source Forum Software{% endblock %}</title>
 
 {% block head_assets %}
 {{ include(':base:community_css.html.twig') }}
@@ -212,7 +212,7 @@
 					</ul>
 					<ul>
 						<li>
-							<h4><a href="{{ U_SUPPORT_FORUMS_SUB }}">phpBB Support</a></h4>
+							<h4><a href="{{ U_SUPPORT_FORUMS_SUB }}">Support Forums</a></h4>
 							<p><a href="{{ U_SUPPORT_FORUMS_SUB }}">The Support related areas in our community forums.</a></p>
 						</li>
 						<li>
