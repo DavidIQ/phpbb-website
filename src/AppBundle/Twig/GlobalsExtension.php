@@ -120,8 +120,8 @@ class GlobalsExtension extends \Twig_Extension implements \Twig_Extension_Global
 			'feeds_rss_path'	=> '/feeds/rss/',
 			'FEEDS_RSS'			=> '/feeds/rss/',
 
-			'kb_path'			=> '/support/docs/en/3.1/kb/',
-			'KB'				=> '/support/docs/en/3.1/kb/',
+			'kb_path'			=> '/support/docs/en/3.2/kb/',
+			'KB'				=> '/support/docs/en/3.2/kb/',
 			//'KB'				=> '/knowledgebase/',
 
 			'showcase_path'		=> '/showcase/',
@@ -428,8 +428,8 @@ class GlobalsExtension extends \Twig_Extension implements \Twig_Extension_Global
 			'SUPPORT_CODE_CHANGES'	=> '//area51.phpbb.com/code-changes/',
 
 			'SUPPORT_DOCS'			=> '/support/docs/',
-			'SUPPORT_DOCS_UG'			=> '/support/docs/en/3.1/ug/',
-			'SUPPORT_DOCS_KB'			=> '/support/docs/en/3.1/kb/',
+			'SUPPORT_DOCS_UG'			=> '/support/docs/en/3.2/ug/',
+			'SUPPORT_DOCS_KB'			=> '/support/docs/en/3.2/kb/',
 			'SUPPORT_DOCS_FLASH'		=> '/support/docs/flash/',
 		);
 
@@ -643,7 +643,8 @@ class GlobalsExtension extends \Twig_Extension implements \Twig_Extension_Global
 			// phpBB Demo
 			'DEMO_30X'			=> 'http://try-phpbb.com/30x',
 			'demo_31x'			=> 'http://try-phpbb.com/31x',
-			'latest_demo'		=> 'http://try-phpbb.com/31x',
+			'demo_32x'			=> 'http://try-phpbb.com/32x',
+			'latest_demo'		=> 'http://try-phpbb.com/32x',
 
 			'MANAGEMENT_TEAM'	=> '/community/memberlist.php?mode=group&g=13330',
 		);
