@@ -21,7 +21,7 @@ git fetch public
 git fetch private
 git checkout -b master public/master
 git checkout -b private private/private
-git checkout -b private private/www1-stable
+git checkout -b www1-stable private/www1-stable
 git checkout master
 git push origin master
 git push private master private www1-stable
