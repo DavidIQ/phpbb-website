@@ -46,7 +46,6 @@
 	<a id="top" accesskey="t"></a>
 	<div id="page-header">
 		<div class="phpbb-header">
-			<a id="countdown-timer" class="countdown-block" style="display: none" href="https://www.phpbb.com/community/viewtopic.php?f=14&amp;t=2399606"></a>
 			{% block header_button %}{% endblock %}
 			<h1 id="logo-banner"><a href="/">phpBB &bull; Free and Open Source Forum Software</a></h1>
 			<div id="top-social" class="top-social-home">
@@ -354,43 +353,6 @@
 
 {% block javascriptFooter %}
 {% endblock %}
-<!-- launch countdown timer. Can be removed after launch -->
-<script type="text/javascript" src="/assets/js/jquery.countdown.min.js"></script>
-<script type="text/javascript">
-	$(function() {
-		var $timerBox = $('#countdown-timer');
-		$timerBox.html('<span class="timer-big">00</span><span class="timer-small">time left</span>');
-		var $timerBig = $timerBox.find('.timer-big');
-		var $timerSmall = $timerBox.find('.timer-small');
-		var number = '';
-		var unit = '';
-
-		var utc = new Date('Sat Jan 07 2017 17:00:00 GMT+0000 (UTC)').getTime();
-
-		$timerBox.countdown(utc).on('update.countdown', function(event) {
-			if (event.offset.totalDays > 0) {
-				number = event.strftime('%D');
-				unit = 'days left';
-			} else if (event.offset.hours > 0) {
-				number = event.strftime('%H');
-				unit = 'hours left';
-			} else if (event.offset.minutes > 0) {
-				number = event.strftime('%M');
-				unit = 'minutes';
-			} else if (event.offset.seconds > 0) {
-				number = event.strftime('%S');
-				unit = 'seconds';
-			}
-			$timerBig.html('3.2');
-			$timerSmall.html('is coming!');
-		}).on('finish.countdown', function() {
-			$timerBig.html('3.2');
-			$timerSmall.html('is here!');
-		});
-
-		$timerBox.show();
-	});
-</script>
 </body>
 </html>
 {# END FOOTER #}
