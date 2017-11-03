@@ -447,7 +447,7 @@
             "keywords": [
                 "database"
             ],
-            "time": "2016-09-20 10:07:57"
+            "time": "2016-09-20T10:07:57+00:00"
         },
         {
             "name": "doctrine/dbal",
@@ -744,7 +744,7 @@
                 "Fixture",
                 "persistence"
             ],
-            "time": "2016-10-13 13:56:07"
+            "time": "2016-10-13T13:56:07+00:00"
         },
         {
             "name": "doctrine/doctrine-migrations-bundle",
@@ -805,7 +805,7 @@
                 "migrations",
                 "schema"
             ],
-            "time": "2016-12-05 18:36:37"
+            "time": "2016-12-05T18:36:37+00:00"
         },
         {
             "name": "doctrine/inflector",
@@ -1054,7 +1054,7 @@
                 "database",
                 "migrations"
             ],
-            "time": "2016-12-25 22:54:00"
+            "time": "2016-12-25T22:54:00+00:00"
         },
         {
             "name": "doctrine/orm",
@@ -1645,12 +1645,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpbb/website-assets.git",
-                "reference": "7ff47e80ef0e9c23a1202d30a46cd24795c8bd81"
+                "reference": "6d838052b1324eb744a4257bcd2b734fba255206"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpbb/website-assets/zipball/7ff47e80ef0e9c23a1202d30a46cd24795c8bd81",
-                "reference": "7ff47e80ef0e9c23a1202d30a46cd24795c8bd81",
+                "url": "https://api.github.com/repos/phpbb/website-assets/zipball/6d838052b1324eb744a4257bcd2b734fba255206",
+                "reference": "6d838052b1324eb744a4257bcd2b734fba255206",
                 "shasum": ""
             },
             "require": {
@@ -1660,7 +1660,7 @@
             "support": {
                 "source": "https://github.com/phpbb/website-assets/tree/master"
             },
-            "time": "2017-09-07 13:43:23"
+            "time": "2017-11-02T10:53:30+00:00"
         },
         {
             "name": "psr/log",
@@ -3122,7 +3122,7 @@
                 }
             ],
             "description": "Simple parallel testing execution... with some goodies for functional tests.",
-            "time": "2016-11-13 18:47:13"
+            "time": "2016-11-13T18:47:13+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
