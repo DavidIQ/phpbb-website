@@ -43,10 +43,6 @@ RewriteCond %{REQUEST_URI} ^/support/docs/kb/{0,1}.* [OR]
 RewriteCond %{REQUEST_URI} ^/libertyvasion/{0,1}.* [OR]
 RewriteCond %{REQUEST_URI} ^/mods/db/{0,1}.* [OR]
 RewriteCond %{REQUEST_URI} ^/styles/db/{0,1}.* [OR]
-RewriteCond %{REQUEST_URI} ^/mods/jobs/{0,1}.* [OR]
-RewriteCond %{REQUEST_URI} ^/mods/modx/utilities/{0,1}.* [OR]
-RewriteCond %{REQUEST_URI} ^/mods/modx/{0,1}.* [OR]
-RewriteCond %{REQUEST_URI} ^/mods/policies/{0,1}.* [OR]
 RewriteCond %{REQUEST_URI} ^/development/get-involved/{0,1}.* [OR]
 RewriteCond %{REQUEST_URI} ^/blog/{0,1}.* [OR]
 RewriteCond %{REQUEST_URI} ^/styles/demo/{0,1}.* [OR]
@@ -78,7 +74,6 @@ RewriteCond %{REQUEST_URI} !^/libertyvasion/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/londonvasion/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/logs/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/marshalrusty/{0,1}.*
-RewriteCond %{REQUEST_URI} !^/rules/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/search/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/shop/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/showcase/{0,1}.*
@@ -90,35 +85,16 @@ RewriteCond %{REQUEST_URI} !^/styles/statistics.php
 RewriteCond %{REQUEST_URI} !^/theme/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/updatecheck/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/website/{0,1}.*
-RewriteCond %{REQUEST_URI} !^/mods/author-introduction/{0,1}.*
-RewriteCond %{REQUEST_URI} !^/mods/automod/{0,1}.*
-RewriteCond %{REQUEST_URI} !^/mods/bridges/{0,1}.*
-RewriteCond %{REQUEST_URI} !^/mods/db/{0,1}.*
-RewriteCond %{REQUEST_URI} !^/mods/faq/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/mods/finding/{0,1}.*
-RewriteCond %{REQUEST_URI} !^/mods/installing/{0,1}.*
-RewriteCond %{REQUEST_URI} !^/mods/junior-validators/{0,1}.*
-RewriteCond %{REQUEST_URI} !^/mods/mission/{0,1}.*
-RewriteCond %{REQUEST_URI} !^/mods/modx/{0,1}.*
-RewriteCond %{REQUEST_URI} !^/mods/modx-tools/{0,1}.*
-RewriteCond %{REQUEST_URI} !^/mods/mpv/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/mods/opening/{0,1}.*
-RewriteCond %{REQUEST_URI} !^/mods/packaging/{0,1}.*
-RewriteCond %{REQUEST_URI} !^/mods/quickinstall/{0,1}.*
-RewriteCond %{REQUEST_URI} !^/mods/rules-and-policies/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/mods/installing/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/mods/bridges/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/mods/faq/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/mods/support/{0,1}.*
-RewriteCond %{REQUEST_URI} !^/mods/team-overview/{0,1}.*
-RewriteCond %{REQUEST_URI} !^/mods/umil/{0,1}.*
-RewriteCond %{REQUEST_URI} !^/mods/utilities/{0,1}.*
-RewriteCond %{REQUEST_URI} !^/mods/volunteer/{0,1}.*
-RewriteCond %{REQUEST_URI} !^/mods/xml/{0,1}.*
-RewriteCond %{REQUEST_URI} !^/mods/statistics{0,1}.*
-RewriteCond %{REQUEST_URI} !^/mods/mod-development-cycle{0,1}.*
 RewriteCond %{REQUEST_URI} !^/support/docs/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/support/documentation/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/support/faq/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/support/forums/{0,1}.*
-RewriteCond %{REQUEST_URI} !^/support/intl/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/support/srt/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/support/stk/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/support/tutorials/{0,1}.*

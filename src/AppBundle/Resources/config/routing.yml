@@ -39,6 +39,10 @@ phpBBWebsite_About:
     resource: "@AppBundle/Resources/config/routing/about.yml"
     prefix:   /about
 
+phpBBWebsite_Rules:
+    resource: "@AppBundle/Resources/config/routing/rules.yml"
+    prefix:   /rules
+
 phpBBWebsite_Mods:
     resource: "@AppBundle/Resources/config/routing/mods.yml"
     prefix:   /mods

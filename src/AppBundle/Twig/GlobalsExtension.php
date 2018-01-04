@@ -11,6 +11,9 @@ namespace AppBundle\Twig;
 
 class GlobalsExtension extends \Twig_Extension implements \Twig_Extension_GlobalsInterface
 {
+
+    const INTL_CONTACT_ID = 964015;
+
 	public function getGlobals()
 	{
 		// @TODO Generate URLs for routes
@@ -84,6 +87,7 @@ class GlobalsExtension extends \Twig_Extension implements \Twig_Extension_Global
 
 			'support_path'		=> '/support/',
 			'SUPPORT'			=> '/support/',
+			'support_intl_path' => '/support/intl',
 
 			'development_path'	=> '/development/', // Usage = 3
 			// 'DEV_INDEX_SUB'		=> '/development/',
@@ -247,97 +251,10 @@ class GlobalsExtension extends \Twig_Extension implements \Twig_Extension_Global
 	private function getModsVars()
 	{
 		$modVars = array(
-			'MODS_AUTOMOD'		=> '/mods/automod/',
-			'MODS_GENERATOR'		=> '/mods/utilities/generator/',
-			'MODS_CHECKIST'		=> '/mods/validator/checklist.php',
-			'MODS_DB'				=> '/customise/db/modifications-1',
-			'MODS_FAQ'			=> '/mods/faq/',
-			'MODS_VOLUNTEER'		=> '/mods/volunteer/',
-			'MODS_DOCUMENTATION'	=> '/mods/documentation/',
-			'MODS_MODX'			=> '/mods/modx/',
-			'MODS_MODX_UPD'		=> '/mods/modx/update/',
-			'MODS_VALIDATOR'		=> '/mods/validator/',
-			'MODS_GLOSSARY'		=> '/mods/glossary/',
-			'MODS_MISSION'		=> '/mods/mission/',
-			'MODS_MPV'			=> '/mods/mpv/',
-			'MODS_JR'				=> '/mods/junior-validators/',
-
-			'MODS_DATABASE_RULES'		=> '/mods/rules-and-policies/',
-			'MODS_DEVELOPMENT_RULES'	=> '/mods/rules-and-policies/development/',
-			'MODS_WRITERS_RULES'		=> '/mods/rules-and-policies/writers/',
-			'MODS_AUTOMOD_SVN'		=> 'https://github.com/phpbb/automod',
-			'MODS_UMIL'				=> '/mods/umil/',
-			'MODS_TRACKER'			=> '/bugs/modteamtools/',
-			'MODS_TEAM_OVERVIEW'		=> '/mods/team-overview/',
-			'MODS_TEAM_OVERVIEW_JR'	=> '/mods/team-overview/?p=jr',
-
-			'MODS_TEAM_OVERVIEW_MODERATOR'	=> '/mods/team-overview/?p=moderator',
-			'MODS_TEAM_OVERVIEW_VALIDATOR'	=> '/mods/team-overview/?p=validator',
-
-			'MODS_AUTHOR_INTRO'					=> '/mods/author-introduction/',
-			'MODS_RULES_AND_POLICIES' 			=> '/mods/rules-and-policies/',
-			'MODS_RULES_MOD_DEVELOPMENT_FORUM'	=> '/mods/rules-and-policies/development/',
-			'MODS_RULES_MOD_WRITERS_FORUM'		=> '/mods/rules-and-policies/writers/',
-
-			// Tools pages
-			'MODS_UMIL_CREATOR'			=> '/mods/umil/create.php',
-
-			'MODS_MODX_TOOLS'				=> '/mods/modx-tools/',
-			'MODS_MODX_GENERATOR'			=> '/mods/modx-tools/generator/',
-			// 'MODS_MODX_CONVERTOR'		=> '/mods/modx-tools/convertor/',
-			'MODS_MODX_CREATOR'			=> '/mods/modx-tools/creator/',
-			'MODS_MODX_CREATOR_OFFLINE'	=> '/mods/modx-tools/creator/download/',
-			'MODS_QUICKINSTALL'			=> '/mods/quickinstall/',
-
-			// MODs finding
-			'MODS_REQ_MOD_TOPIC'		=> '/community/viewtopic.php?t=587938',
-			'MODS_DB_SEARCH'			=> '/customise/db/search/',
-
-			// MODs faq
-			'MODS_KB'					=> '/support/docs/en/3.0/kb/modifications/',
-			'MODS_KB_20X'				=> '/support/docs/en/3.0/kb/modifications/',
-			//'MODS_DB_MYLIST'			=> '/customise/db/author/' . $user->data['username_clean'] . '/contributions/',
-			//'MODS_DB_CREATE'			=> '/customise/db/author/' . $user->data['username_clean'] . '/create/',
-
-			'MODS_POLICY'			=> '/mods/rules-and-policies/',
-			'MODS_3_POLICY'		=> '/mods/rules-and-policies/db/general/',
-			'MODS_POLICY_DENY'	=> '/mods/rules-and-policies/db/insta-deny/',
-			'MODS_POLICY_REPACK'	=> '/mods/rules-and-policies/db/repack/',
-
-			'MODS_CONVENTION'				=> '/mods/convention/',
-			'MODS_CONVENTION_JULY_2006'	=> '/mods/convention/2006-07/',
-			'MODS_CONVENTION_JULY_2007'	=> '/mods/convention/2007-07/',
-			'MODS_CONVENTION_AUGUST_2008'	=> '/mods/convention/2008-08/',
-
-			'MODX_FEATURES'			=> '/mods/modx/features/',
-			'MODX_FAQ'				=> '/mods/modx/faq/',
-			'MODX_UTILITIES'			=> '/mods/modx/utilities/',
-			'MODX_CONVERTOR'			=> '/mods/utilities/convertor/',
-			'MODX_CREATOR'			=> '/mods/modx-tools/creator/',
-			'MODX_CREATOR_DOWNLOAD'	=> '/mods/modx-tools/creator/download/',
-			'MODX_GENERATOR'			=> '/mods/modx-tools/generator/',
-			'MODX_SPEC'				=> '/mods/modx/spec/',
-
-			//'MODX_VERSION'			=> MODX_VERSION,
-
 			// Bridges
 			'BRIDGES_DB'				=> '/customise/db/bridges-24',
 			'BRIDGES_POLICIES'	=> '/mods/bridges/',
 
-			// installing mods
-			'MODS_FINDING'		=> '/mods/finding/',
-			'MODS_OPENING'		=> '/mods/opening/',
-			'MODS_INSTALLING'		=> '/mods/installing/',
-			'MODS_SUPPORT'		=> '/mods/support/',
-
-			// writing mods
-			'MODS_INTRODUCTION'	=> '/mods/introduction/index.php',
-			'MODS_GUIDELINES'		=> '//area51.phpbb.com/docs/30x/coding-guidelines.html', // Links to phpBB SVN, but the MOD team may use their own guidelines later.
-			'MODS_TECHNIQUES'		=> '/mods/documentation/',
-			'MODS_APPLICATIONS'	=> '/mods/utilities/',
-			'MODS_CREATING'		=> '/mods/modx/',
-			'MODS_PACKAGING'		=> '/mods/packaging/',
-			'MODS_CHECKLIST'		=> '/mods/validator/checklist.php',
 		);
 
 		return $modVars;
@@ -418,7 +335,7 @@ class GlobalsExtension extends \Twig_Extension implements \Twig_Extension_Global
 			'SUPPORT_TUTORIALS_2_0'	=> '/support/tutorials/2.0/',
 			'SUPPORT_TUTORIALS_3_0'	=> '/support/tutorials/3.0/',
 			'SUPPORT_INTL'			=> '/support/intl/',
-			//'SUPPORT_INTL_CONTACT'	=> '/community/ucp.php?i=pm&amp;mode=compose&amp;u=' . INTL_CONTACT_ID,
+			'SUPPORT_INTL_CONTACT'	=> '/community/ucp.php?i=pm&mode=compose&u=' . self::INTL_CONTACT_ID,
 			'SUPPORT_SRT'				=> '/support/srt/',
 			'SUPPORT_SRT_FEEDBACK'	=> '/community/viewtopic.php?f=64&amp;t=1455965',
 			'SUPPORT_SRT_TOPIC'		=> '/community/viewtopic.php?f=46&amp;t=543515',
@@ -559,6 +476,7 @@ class GlobalsExtension extends \Twig_Extension implements \Twig_Extension_Global
 			'ext_dev_tl_contact'	=> '/community/memberlist.php?mode=viewprofile&u=868795',
 			'ext_tl_name'			=> 'DavidIQ',
 			'ext_tl_contact'		=> '/community/memberlist.php?mode=viewprofile&u=159755',
+			'moderator_team'        => '/community/memberlist.php?mode=group&g=993',
 		);
 
 		return $peopleVars;

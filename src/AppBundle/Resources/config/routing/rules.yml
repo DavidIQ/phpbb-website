@@ -1,0 +1,6 @@
+phpBBWebsite_Rules_home:
+    path:  /
+    defaults:
+        _controller: AppBundle:StaticTemplate:staticTemplate
+        template: AppBundle:Rules:home.html.twig
+    methods:  [GET]

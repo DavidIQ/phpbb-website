@@ -11,3 +11,10 @@ phpBBWebsite_Support_irc:
         _controller: AppBundle:StaticTemplate:staticTemplate
         template: AppBundle:Support:irc.html.twig
     methods:  [GET]
+
+phpBBWebsite_Support_intl:
+    path:  /intl/
+    defaults:
+        _controller: AppBundle:StaticTemplate:staticTemplate
+        template: AppBundle:Support:intl.html.twig
+    methods:  [GET]
