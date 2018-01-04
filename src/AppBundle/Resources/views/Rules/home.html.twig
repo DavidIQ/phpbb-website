@@ -1,0 +1,102 @@
+{% extends ':base:base.html.twig' %}
+
+{% block title %}Rules{% endblock title %}
+
+{% block phpbb_body_class %}community{% endblock %}
+
+{% block body %}
+
+
+    <ul class="linklist navlinks">
+        <li><a href="{{ home_path }}">Home</a>
+            <strong>&#8249;</strong> <a href="{{ community_path }}">Community</a>
+            <strong>&#8249;</strong> <a href="{{ RULES }}">Rules</a>
+        </li>
+    </ul>
+
+    <div id="main">
+        <h2 class="imgrep community">Community rules</h2>
+        <p>These basic rules are intended to clarify the various responsibilities of all community members here on phpbb.com. They have been compiled by the phpBB Team and should be adhered to by everyone. Please address any questions on these rules or how to use phpbb.com to the <a href="{U_MODERATOR_TEAM}" style="color: #0000CC;">Community Team</a>.</p>
+
+        <h3 id="forum-rules">Forum rules</h3>
+        <ul class="ruleitems">
+            <li id="respectful-posting">Post with respect toward others. This site is aimed at a general audience, please be considerate of this. <a href="#respect">#</a></li>
+
+            <li id="warez">Please do not link to warez, cracks, or any other material that does not respect copyright. <a href="#warez">#</a></li>
+
+            <li id="impersonation">Please do not attempt to create the impression that you are a phpBB team member or imply that you are providing official phpBB support. <a href="#impersonation">#</a></li>
+
+            <li id="spam">Please don't post on this site recruiting for personal projects or offer services. We consider this to be spam. If you would like to recruit people, we recommend you look at the signatures from team and community members. Many contain a line saying you can contact them for private (paid) work. <a href="#spam">#</a></li>
+
+            <li id="bsm">Report any posts you feel contradict our policies by using the "post report" feature and the <a href="{{ moderator_team }}" style="color: #0000CC;">Community Team</a> will handle them as needed. Please do not reply to these posts yourself. <a href="#bsm">#</a></li>
+        </ul>
+
+
+
+        <h3 id="phpbb-product-support">phpBB Product Support</h3>
+        <ul class="ruleitems">
+            <li id="official-packages">We provide support here for official packages released by the phpBB Team. Limited support will be provided for packages downloaded from other sources. Please see the relevant announcement topic in each forum for additional notes. <a href="#official-packages">#</a></li>
+
+            <li id="non-phpbbcom-domains">We don't have control over any forum beyond those hosted at phpbb.com or area51.phpbb.com. We write, maintain and support the phpBB software but have no control over anybody's use of our software. For any questions about non-phpbb.com domains, please contact the relevant site's administrators. <a href="#non-phpbbcom-domains">#</a></li>
+
+            <li id="unsolicited-pms">Community support is offered on the board and IRC. Please do not contact Team Members or other community members for support unless asked to do so. <a href="#unsolicited-pms">#</a></li>
+
+            <li id="bumping">Please note that "bumping" your topic by replying directly after your own post is only allowed after six hours have elapsed since your last post. Please edit to add additional information instead. <a href="#bumping">#</a></li>
+
+            <li id="volunteers">As phpBB is Open Source Software, all staff and community members are volunteering their time to support you. Please consider this before posting. <a href="#volunteers">#</a></li>
+        </ul>
+
+        <h3 id="linking-offsite">Linking offsite</h3>
+        <ul class="ruleitems">
+            <li id="linking-own-site">Linking to your own site or another in a support context is acceptable, including linking to support sites for Extension and Styles authors. It is also fine to link to your own site in your signature or website profile. <a href="#linking-own-site">#</a></li>
+
+            <li id="no-spam">General linking within posts to other sites is not necessary. Promotion of non-phpBB sites, including alternate fora systems, hosting providers, and other material unrelated to a phpBB support context is not permitted. <a href="#no-spam">#</a></li>
+
+            <li id="advertising">Promoting your own site without a support related context is not permitted. Users wishing to advertise on phpbb.com should see our <a href="{S_ROOT_PATH}about/advertise/">advertisement information</a>. <a href="#advertising">#</a></li>
+        </ul>
+
+        <h3 id="sig-ava-rules">Signature and Avatar rules</h3>
+        <ul class="ruleitems">
+            <li id="avatar">Avatars should be no larger than 120x120 pixels and cannot contain animation. <a href="#avatar">#</a></li>
+
+            <li id="signature-restrictions-overall">Signatures may contain up to five lines of normal sized text OR a single image that is no more than 60px high, 468px wide in size and two lines of small sized text. The font size of signatures should be normal or small only. <a href="#signature-restrictions-overall">#</a></li>
+
+            <li id="signature-links">Links in signatures are limited to a maximum of 5* links. *phpBB Team members and users affiliated with the development and maintenance of phpBB are allowed further additional links to aid support of the product. <a href="#signature-links">#</a></li>
+        </ul>
+
+
+        <h3 id="moderating-policies">Moderating policies</h3>
+        <ul class="ruleitems">
+            <li id="rules-policy">All rules apply to forum posts as well as private messages and cover www.phpbb.com, area51.phpbb.com, and all phpBB IRC channels. <a href="#rules-policy">#</a></li>
+
+            <li id="consequenses">The phpBB Team is responsible for the interpretation and enforcement of these rules. Warnings and bans or placement on the moderation queue will be utilised as necessary to run the site smoothly. <a href="#consequenses">#</a></li>
+
+            <li id="ban-circumvention">Attempts to evade bans or moderation queue will result in further discipline. If you feel you have been treated unfairly by a team member, please contact the relevant team leader. <a href="#ban-circumvention">#</a></li>
+        </ul>
+
+    </div>
+    <div id="extras">
+
+
+        <div class="mini-panel">
+            <div class="inner">
+                <h3>Rules sections</h3>
+                <ul class="menu">
+                    <li><a href="#forum-rules">Forum rules</a></li>
+                    <li><a href="#phpbb-product-support">phpBB Product Support</a></li>
+                    <li><a href="#linking-offsite">Linking offsite</a></li>
+                    <li><a href="#sig-ava-rules">Signature and Avatar rules</a></li>
+                    <li class="last"><a href="#moderating-policies">Moderating policies</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block javascriptFooter %}
+    {{ parent() }}
+
+    <!-- JS for Rule Highlighting -->
+    <script type="text/javascript" src="{{ asset('assets/js/rules.js') }}"></script>
+{% endblock %}

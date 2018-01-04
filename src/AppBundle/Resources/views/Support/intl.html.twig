@@ -1,0 +1,100 @@
+{% extends ':base:base.html.twig' %}
+
+{% block title %}International Support{% endblock title %}
+
+{% block phpbb_body_class %}support irc{% endblock %}
+
+{% block body %}
+
+
+	<ul class="linklist navlinks">
+		<li><a href="{{ home_path }}">Home</a>
+			<strong>&#8249;</strong> <a href="{{ support_path }}">Support</a>
+			<strong>&#8249;</strong> <a href="{{ support_intl_path }}">International Support</a>
+		</li>
+	</ul>
+
+	<div id="main">
+		<h2 class="imgrep intl">International Support</h2>
+		<p>Here you will find links to localised resources for phpBB. Please note that we do not oversee or otherwise maintain these sites and thus cannot guarantee with certainty the validity of information they give. However we do attempt to ensure the listed sites offer a reasonable level of support. If you feel a site listed here is giving poor support or if you know of or maintain a site offering support in a language not listed here, please contact us by using the links available on the right menu. Bon voyage!</p>
+		<div class="column1">
+			<dl class="text">
+				<dt><small>Argentinian Spanish &middot; <span lang="es-ar" xml:lang="es-ar">Español Argentino</span></small></dt>
+				<dd><a class="external" href="http://www.phpbbargentina.com/">http://www.phpbbargentina.com/</a></dd>
+
+				<dt><small>Brazilian Portuguese &middot; <span lang="pt-br" xml:lang="pt-br">Português Brasileiro</span></small></dt>
+				<dd><a class="external" href="http://www.suportephpbb.com.br/">http://www.suportephpbb.com.br/</a></dd>
+
+				<dt><small>Czech &middot; <span lang="cs" xml:lang="cs">Čeština</span></small></dt>
+				<dd><a class="external" href="http://www.phpbb.cz/">http://www.phpbb.cz/</a></dd>
+
+				<dt><small>Danish &middot; <span lang="da" xml:lang="da">Dansk</span></small></dt>
+				<dd><a class="external" href="http://phpbb3.dk/">http://phpbb3.dk/</a></dd>
+
+				<dt><small>Dutch &middot; <span lang="nl" xml:lang="nl">Nederlands</span></small></dt>
+				<dd><a class="external" href="http://www.phpbb.nl/">http://www.phpbb.nl/</a></dd>
+
+				<dt><small>Finnish &middot; <span lang="fi" xml:lang="fi">Suomi</span></small></dt>
+				<dd><a class="external" href="http://www.phpbbsuomi.com/">http://www.phpbbsuomi.com/</a></dd>
+
+				<dt><small>French &middot; <span lang="fr" xml:lang="fr">Français</span></small></dt>
+				<dd><a class="external" href="http://www.phpbb-fr.com/">http://www.phpbb-fr.com/</a></dd>
+
+				<dt><small>German &middot; <span lang="de" xml:lang="de">Deutsch</span></small></dt>
+				<dd><a class="external" href="https://www.phpbb.de/">https://www.phpbb.de/</a></dd>
+
+				<dt><small>Hungarian &middot; <span lang="hu" xml:lang="hu">Magyar</span></small></dt>
+				<dd><a class="external" href="http://phpbb.hu/">http://phpbb.hu/</a></dd>
+			</dl>
+		</div>
+		<div class="column2">
+			<dl class="text">
+				<dt><small>Italian &middot; <span lang="it" xml:lang="it">Italiano</span></small></dt>
+				<dd><a class="external" href="http://www.phpbbitalia.net/">http://www.phpbbitalia.net/</a></dd>
+
+				<dt><small>Mandarin Chinese (Simplified Script) &middot; <span lang="zh_cmn_hans" xml:lang="zh_cmn_hans">普通话</span></small></dt>
+				<dd><a class="external" href="https://www.phpbbchinese.com/">https://www.phpbbchinese.com/</a></dd>
+
+				<dt><small>Mandarin Chinese (Traditional Script) &middot; <span lang="zh-hant" xml:lang="zh-hant">官話</span></small></dt>
+				<dd><a class="external" href="http://www.phpbb-tw.net/">http://www.phpbb-tw.net/</a></dd>
+
+				<dt><small>Persian &middot; <span lang="fa" xml:lang="fa">فارسی</span></small></dt>
+				<dd><a class="external" href="http://www.php-bb.ir/">http://www.php-bb.ir/</a></dd>
+
+				<dt><small>Polish &middot; <span lang="pl" xml:lang="pl">Polski</span></small></dt>
+				<dd><a class="external" href="http://www.phpbb.pl/">http://www.phpbb.pl/</a></dd>
+
+				<dt><small>Portuguese &middot; <span lang="pt" xml:lang="pt">Português</span></small></dt>
+				<dd><a class="external" href="http://www.phpbbportugal.com/">http://www.phpbbportugal.com/</a></dd>
+
+				<dt><small>Romanian &middot; <span lang="ro" xml:lang="ro">Română</span></small></dt>
+				<dd><a class="external" href="http://www.phpbb.ro/">http://www.phpbb.ro/</a></dd>
+
+				<dt><small>Russian &middot; <span lang="ru" xml:lang="ru">Русский</span></small></dt>
+				<dd><a class="external" href="http://www.phpbbguru.net/">http://www.phpbbguru.net/</a></dd>
+
+				<dt><small>Spanish &middot; <span lang="es" xml:lang="es">Español</span></small></dt>
+				<dd><a class="external" href="http://www.phpbb-es.com/">http://www.phpbb-es.com/</a></dd>
+
+				<dt><small>Turkish &middot; <span lang="tr" xml:lang="tr">Türkçe</span></small></dt>
+				<dd><a class="external" href="https://www.phpbbturkey.com/">https://www.phpbbturkey.com/</a></dd>
+			</dl>
+		</div>
+	</div>
+
+	<div id="extras">
+		<div class="mini-panel">
+			<div class="inner">
+				<h3>Further information</h3>
+				<ul class="menu">
+					<li><a href="{{ SUPPORT_INTL_CONTACT }}">Want to submit your site?</a></li>
+					<li class="last"><a href="{{ SUPPORT_INTL_CONTACT }}">Report abuse!</a></li>
+				</ul>
+			</div>
+		</div>
+		{{ include('AppBundle:Support:menu.html.twig') }}
+		{{ include('AppBundle:lists:carbon_ads.html.twig') }}
+	</div>
+
+
+{% endblock %}

@@ -31,8 +31,40 @@ class GlobalController extends Controller
 		}
 		else
 		{
-			$blogFile = @file_get_contents('https://www.phpbb.com/website/wp_announcements.php?password=thisisnotverysecretbutitdoesntreallyneedtobe');
-			$cache->save('blog_announcements_file', $blogFile, 3600);
+            $rss_content = @file_get_contents('https://blog.phpbb.com/rss');
+            $announcements = [];
+            $blogFile = [];
+
+            if (isset($rss_content))
+            {
+                $xml_elements = new \SimpleXMLElement($rss_content);
+                $i = 0;
+
+                foreach ($xml_elements->channel->item as $item)
+                {
+                    $post_time = strtotime($item->pubDate);
+                    $blog_preview = wordwrap(html_entity_decode(strip_tags((string)$item->description)), 200, '>');
+                    $blog_preview = substr($blog_preview, 0, strpos($blog_preview, '>'));
+
+                    $announcements[$post_time] = array(
+                        'DAY' => date('d', $post_time),
+                        'MONTH' => date('M', $post_time),
+                        'YEAR' => date('Y', $post_time),
+                        'U_LINK' => (string) $item->link,
+                        'TITLE' => (string) $item->title,
+                        'FROM_BLOG' => true,
+                        'PREVIEW' => $blog_preview,
+                    );
+
+                    $i++;
+                    if ($i == 3)
+                        break;
+                }
+
+                // JSON Output
+                $blogFile = json_encode($announcements);
+            }
+            $cache->save('blog_announcements_file', $blogFile, 3600);
 			$cacheStatus = 'Miss';
 		}
 
