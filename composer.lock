@@ -1645,12 +1645,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpbb/website-assets.git",
-                "reference": "afaeba81d85e09c20ea434bb6d6ff75d180550ed"
+                "reference": "0e672c671884c3b2459632db246e06984b011281"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpbb/website-assets/zipball/afaeba81d85e09c20ea434bb6d6ff75d180550ed",
-                "reference": "afaeba81d85e09c20ea434bb6d6ff75d180550ed",
+                "url": "https://api.github.com/repos/phpbb/website-assets/zipball/0e672c671884c3b2459632db246e06984b011281",
+                "reference": "0e672c671884c3b2459632db246e06984b011281",
                 "shasum": ""
             },
             "require": {
@@ -1660,7 +1660,7 @@
             "support": {
                 "source": "https://github.com/phpbb/website-assets/tree/master"
             },
-            "time": "2017-12-20 10:28:41"
+            "time": "2018-01-07 19:14:36"
         },
         {
             "name": "psr/log",
@@ -3122,7 +3122,7 @@
                 }
             ],
             "description": "Simple parallel testing execution... with some goodies for functional tests.",
-            "time": "2016-11-13T18:47:13+00:00"
+            "time": "2016-11-13 18:47:13"
         },
         {
             "name": "phpdocumentor/reflection-common",

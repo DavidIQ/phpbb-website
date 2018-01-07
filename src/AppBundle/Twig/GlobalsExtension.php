@@ -485,11 +485,11 @@ class GlobalsExtension extends \Twig_Extension implements \Twig_Extension_Global
 	private function getMiscVars()
 	{
 		$miscVars = array(
-			'package_version'		=> '3.2.1',
-			'package_release_date'	=> '2017-07-16',
-			'PACKAGE_VERSION'		=> '3.2.1',
-			'PACKAGE_ANNOUNCE_URL'	=> '/community/viewtopic.php?f=14&t=2430926',
-			'PACKAGE_RELEASE_DATE'	=> '2017-07-16',
+			'package_version'		=> '3.2.2',
+			'package_release_date'	=> '2018-01-07',
+			'PACKAGE_VERSION'		=> '3.2.2',
+			'PACKAGE_ANNOUNCE_URL'	=> '/community/viewtopic.php?f=14&t=2453381',
+			'PACKAGE_RELEASE_DATE'	=> '2018-01-07',
 
 			'bot'					=> false, // @TODO Set this to true for bots // Usage = 1
 			'is_on_team'			=> false, // @TODO Set this up to use sessions management and see if they are on the team
