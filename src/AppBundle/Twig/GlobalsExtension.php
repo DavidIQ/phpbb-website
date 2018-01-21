@@ -232,6 +232,7 @@ class GlobalsExtension extends \Twig_Extension implements \Twig_Extension_Global
 			'DEV_GSOC_2014'		=> 'https://wiki.phpbb.com/GSoC/2014/Ideas',
 			'DEV_GSOC_2015'		=> 'https://wiki.phpbb.com/GSoC/2015/Ideas',
 			'DEV_GSOC_2016'		=> 'https://wiki.phpbb.com/GSoC/2016/Ideas',
+			'DEV_GSOC_2017'		=> '/development/gsoc/ideas/2017/',
 			'DEV_QA'				=> '/development/qa/',
 			//'DEV_QA_CONTACT'		=> '/community/ucp.php?i=pm&amp;mode=compose&amp;u=' . DEV_QA_CONTACT_ID),
 			'DEV_QA_TOOL'			=> '/development/qa/release/new',

@@ -19,6 +19,20 @@ phpBBWebsite_Development_gsoc_ideas:
         template: AppBundle:Development:gsoc_ideas.html.twig
     methods:  [GET]
 
+phpBBWebsite_Development_gsoc_2018_ideas:
+    path:  /gsoc/ideas/2018/
+    defaults:
+        _controller: AppBundle:StaticTemplate:staticTemplate
+        template: AppBundle:Development:gsoc_ideas.html.twig
+    methods:  [GET]
+
+phpBBWebsite_Development_gsoc_2017_ideas:
+    path:  /gsoc/ideas/2017/
+    defaults:
+        _controller: AppBundle:StaticTemplate:staticTemplate
+        template: AppBundle:Development:gsoc_ideas_2017.html.twig
+    methods:  [GET]
+
 phpBBWebsite_Development_gsoc_guidelines:
     path:  /gsoc/guidelines/
     defaults:

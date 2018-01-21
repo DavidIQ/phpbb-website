@@ -1,6 +1,6 @@
 {% extends ':base:base.html.twig' %}
 
-{% block title %}Google Summer of Code 2018 Ideas &bull; phpBB{% endblock title %}
+{% block title %}Google Summer of Code 2017 Ideas &bull; phpBB{% endblock title %}
 
 {% block phpbb_body_class %}development{% endblock %}
 
@@ -9,18 +9,18 @@
 		<ul class="linklist navlinks">
 			<li><a href="{{ home_path }}">Home</a>
 				<strong>&#8249;</strong> <a href="{{ development_path }}">Development</a>
-				<strong>&#8249;</strong> <a href="{{ gsoc_path }}">GSoC 2018</a>
+				<strong>&#8249;</strong> <a href="{{ gsoc_path }}">GSoC 2017</a>
 			</li>
 		</ul>
 
 		<div id="main">
-			<h2 class="imgrep gsoc">GSoC 2018 Project Ideas</h2>
-			<img style="float:right;margin:10px;" width="96" src="{{ asset('assets/images/images/development/gsoc_17_icon.svg') }}" alt="GSoC 2018 Logo" />
-			<h3 class="gsoc-page">Welcome to the GSoC 2018 Ideas Page</h3>
+			<h2 class="imgrep gsoc">GSoC 2017 Project Ideas</h2>
+			<img style="float:right;margin:10px;" width="96" src="{{ asset('assets/images/images/development/gsoc_17_icon.svg') }}" alt="GSoC 2017 Logo" />
+			<h3 class="gsoc-page">Welcome to the GSoC 2017 Ideas Page</h3>
 			<p>
-				phpBB is applying to participate as a mentor organisation in Google Summer of Code 2018. On this page you can find ideas for projects
-				which might inspire your application. If you wish to submit a proposal based on these ideas, you may want to <a href="{{ GSOC }}#contact">contact</a> the available
-				mentors for more detailed information.
+				phpBB was a mentor organisation in Google Summer of Code 2017. On this page you can find ideas for projects that were listed
+				in 2017 and which might inspire your application. The ideas for Google Summer of Code 2018 can be found on the
+				<a href="{{ GSOC_IDEAS }}" alt="GSoC 2018 Ideas">GSoC 2018 Ideas</a> page.<br><br>
 
 				Feel free to discuss any project ideas you might have in addition to the ones listed here.
 
@@ -30,15 +30,18 @@
 			<h2 class="gsoc-page"><a id="content" href="#content">Content</a></h2>
 			<h3 class="gsoc-page"><a href="#core">Core Ideas</a></h3>
 			<ul>
+				<li><a href="#social-sharing">Social Sharing</a></li>
 				<li><a href="#mentions">User mentions</a></li>
 				<li><a href="#api">REST API</a></li>
+				<li><a href="#push-notifications">Push notifications</a></li>
 				<li><a href="#admin-ui">Admin Control Panel UI/UX</a></li>
 				<li><a href="#converter">Converter Framework</a></li>
+				<li><a href="#styleguide">Advanced Styleguide driven development(SDD) system</a></li>
 				<li><a href="#moderator-tools">Improved moderator tools</a></li>
-				<li><a href="#social-sharing">Social Sharing</a></li>
 			</ul>
 			<h3 class="gsoc-page"><a href="#extensions">Extensions Ideas</a></h3>
 			<ul>
+				<li><a href="#ad-management">Advertisement Management</a></li>
 				<li><a href="#human-urls">Human Readable URLs</a></li>
 			</ul>
 			<h3 class="gsoc-page"><a href="#own-idea">Idea proposals</a></h3>
@@ -48,6 +51,21 @@
 			<br>
 
 			<h2 class="gsoc-page"><a id="core" href="#core">Core Ideas</a></h2>
+
+			<h3 class="gsoc-page"><a id="social-sharing" href="#social-sharing">Social Sharing</a></h3>
+			<h4 class="gsoc-page">Summary</h4>
+			<p>Create an extensible system supporting via an object oriented plugin system any number of 3rd party services to share content to. There may be different options, sharing a link to a topic or a particular post or maybe even a forum, or sharing complete posts or extracts of posts.</p>
+			<h4 class="gsoc-page">Expected results</h4>
+			<p>User interface changes for sharing buttons/dialogs/etc. as well as an administration control panel page with options on configuring the various services which might require API keys to work. A extensible interface that allows extensions to supply further sharing backends.</p>
+			<h4 class="gsoc-page">Knowledge Prerequisites</h4>
+			<ul>
+				<li>Object-oriented PHP</li>
+				<li>Javascript required, jQuery or similar recommended</li>
+				<li>Familiarity with social sharing APIs (Facebook/Twitter) useful but not mandatory</li>
+			</ul>
+			<h4 class="gsoc-page">Available mentors</h4>
+			<p>Marc Alexander</p>
+			<hr>
 
 			<h3 class="gsoc-page"><a id="mentions" href="#mentions">User mentions</a></h3>
 			<h4 class="gsoc-page">Summary</h4>
@@ -84,6 +102,29 @@
 			</ul>
 			<h4 class="gsoc-page">Available mentors</h4>
 			<p>Marc Alexander, Tristan Darricau, Derk Ruitenbeek</p>
+			<hr>
+
+			<h3 class="gsoc-page"><a id="push-notifications" href="#push-notifications">Push notifications</a></h3>
+			<h4 class="gsoc-page">Summary</h4>
+			<p>Adding a feature which allows users to recieve desktop notifications from phpBB in realtime, as well as provide the neccessary backend features for other extension developers to easily extend phpBB with other types of push notifications (e.g. for mobile apps etc).</p>
+			<h4 class="gsoc-page">Expected results</h4>
+			<ul>
+				<li>Implementing the neccessary backend changes and adding events to the core</li>
+				<li>
+					Implementing the desktop notification extension with
+					<ul>
+						<li>Multi-browser support</li>
+						<li>Options for both users and administrators to enable/disable the feature</li>
+					</ul>
+				</li>
+			</ul>
+			<h4 class="gsoc-page">Knowledge Prerequisites</h4>
+			<ul>
+				<li>Required: Strong understanding of OOP fundamentals, as well as, familiarity with PHP and JavaScript</li>
+				<li>Useful: Familiarity with test tools, and JavaScript build tools such as gulp</li>
+			</ul>
+			<h4 class="gsoc-page">Available mentors</h4>
+			<p>Máté Bartus, Marc Alexander</p>
 			<hr>
 
 			<h3 class="gsoc-page"><a id="admin-ui" href="#admin-ui">Admin Control Panel UI/UX</a></h3>
@@ -128,6 +169,30 @@
 			<p>Marc Alexander, Máté Bartus</p>
 			<hr>
 
+			<h3 class="gsoc-page"><a id="styleguide" href="#styleguide">Advanced Styleguide driven development(SDD) system</a></h3>
+			<h4 class="gsoc-page">Summary</h4>
+			<p>
+				Build a NodeJS based app to view, interact with, and dynamically build/manage components in StyleGuides(phpBB theme).
+			</p>
+			<h4 class="gsoc-page">Expected results</h4>
+			<ul>
+				<li>Creating a simple user interface (material design spec) for the app using suggested CSS/SCSS/Twig formats developed in conjunction with mentors for extracting data from files</li>
+				<li>Must allow user to view example(s) of components and framework layer/partials while allowing for scaling between established breakpoints (<a href="https://v4-alpha.getbootstrap.com/layout/grid/#grid-options">Bootstrap Grid System</a>) of responsive design.</li>
+				<li>Must allow viewing/editing of required files (SCSS, TWIG, JS), and allow for adding components.</li>
+				<li>Must integrate into phpBB template system (be able to read from and manipulate within phpBB styles dir).</li>
+				<li>Must be able to switch between styleguides.</li>
+				<li>Must build all styleguides to mentor defined folder structure or allow for customization of folder structure.</li>
+				<li>Must follow all coding standards set by mentors for SCSS, JS, TWIG. Project must use modern best practices and run on a NodeJS backend, relying on ExpressJS and or VueJS for routing & interface interactions.</li>
+			</ul>
+			<h4 class="gsoc-page">Knowledge Prerequisites</h4>
+			<ul>
+				<li>Required: Object-oriented design principles, Javascript, NodeJS, ExpressJS and/or VueJS 2.0, twig.js, GulpJS, JQuery, AJAX, SCSS, CSS, XHTML</li>
+				<li>Useful: PHP, phpBB / phpBB Themes</li>
+			</ul>
+			<h4 class="gsoc-page">Available mentors</h4>
+			<p>Michael Miday</p>
+			<hr>
+
 			<h3 class="gsoc-page"><a id="moderator-tools" href="#moderator-tools">Improved moderator tools</a></h3>
 			<h4 class="gsoc-page">Summary</h4>
 			<p>
@@ -149,26 +214,49 @@
 			</ul>
 			<h4 class="gsoc-page">Available mentors</h4>
 			<p>Christian Schnegelberger, Marc Alexander</p>
-			<hr>
-			
-			<h3 class="gsoc-page"><a id="social-sharing" href="#social-sharing">Social Sharing</a></h3>
+
+			<br>
+			<h2 class="gsoc-page"><a id="extensions" href="#extensions">Extensions Ideas</a></h2>
+
+			<h3 class="gsoc-page"><a id="ad-management" href="#ad-management">Advertisement Management</a></h3>
 			<h4 class="gsoc-page">Summary</h4>
-			<p>Create an extensible system supporting via an object oriented plugin system any number of 3rd party services to share content to. There may be different options, sharing a link to a topic or a particular post or maybe even a forum, or sharing complete posts or extracts of posts.</p>
+			<p>The ability to easily handle advertisements in phpBB is often requested. Create a basic advertisement management extension that allows admins to add HTML/JS advertisement code to a number of predefined locations in the template.</p>
 			<h4 class="gsoc-page">Expected results</h4>
-			<p>User interface changes for sharing buttons/dialogs/etc. as well as an administration control panel page with options on configuring the various services which might require API keys to work. A extensible interface that allows extensions to supply further sharing backends.</p>
+			<ul>
+				<li>A validated phpBB extension which adds advertisement management to phpBB</li>
+				<li>Allow admins to add HTML/JS advertisement code to predefined locations (ie: forum footer, header, after a topic's first post, etc.)</li>
+				<li>If time allows: additional features such as hiding advertisements for specific groups, allow image banner uploads from the ACP, ability to set end dates for specific advertisements.</li>
+			</ul>
 			<h4 class="gsoc-page">Knowledge Prerequisites</h4>
 			<ul>
-				<li>Object-oriented PHP</li>
-				<li>Javascript required, jQuery or similar recommended</li>
-				<li>Familiarity with social sharing APIs (Facebook/Twitter) useful but not mandatory</li>
+				<li>Required: Object-oriented PHP, SQL, JavaScript/jQuery, CSS, Git</li>
+				<li>Useful: phpBB Extensions system</li>
 			</ul>
 			<h4 class="gsoc-page">Available mentors</h4>
-			<p>Marc Alexander</p>
+			<p>Derk Ruitenbeek, Matt Friedman</p>
+			<hr>
+
+			<h3 class="gsoc-page"><a id="human-urls" href="#human-urls">Human Readable URLs</a></h3>
+			<h4 class="gsoc-page">Summary</h4>
+			<p>One of the most requested phpBB features is the ability to use human readable URLs. This extension should use the topic, forum and other page titles in the URL while still redirecting traditional URLs to these enhanced ones for backwards compatibility. (Also see the <a href="https://area51.phpbb.com/phpBB/viewtopic.php?f=108&t=40965">RFC</a> at Area51)</p>
+			<h4 class="gsoc-page">Expected results</h4>
+			<ul>
+				<li>Add sanitised versions of topic and forum titles into the URLs</li>
+				<li>Maintain backward compatibility so regular phpBB URLs created before the enabling of this extension will still be usable and redirect to the Human Readable URLs</li>
+			</ul>
+			<h4 class="gsoc-page">Knowledge Prerequisites</h4>
+			<ul>
+				<li>Required: Object-oriented PHP, SQL, JavaScript/jQuery, CSS, Git</li>
+				<li>Useful: phpBB Extensions system</li>
+			</ul>
+			<h4 class="gsoc-page">Available mentors</h4>
+			<p>Derk Ruitenbeek, Matt Friedman, Paul Sohier</p>
 
 			<br>
 			<h2 class="gsoc-page"><a id="own-idea" href="#own-idea">Proposing your own idea</a></h2>
 			<p>
-				RFCs on <a href="{{ DEV_BOARD }}">Area51</a> are a good source of ideas as they represent what our users already told us they want. Most mentors are available in phpBB's IRC development channel <a href="{{ DEV_IRC_CHAT }}">#phpbb-dev</a> and on <a href="{{ DEV_BOARD }}">Area51</a>.
+				For non-website ideas, RFCs on <a href="{{ DEV_BOARD }}">Area51</a> are a good source of ideas as they represent what our users already told us they want. Most mentors are available in phpBB's IRC development channel <a href="{{ DEV_IRC_CHAT }}">#phpbb-dev</a> and on <a href="{{ DEV_BOARD }}">Area51</a>.
+				For website ideas feel free to contact one of the website mentors (via IRC <a href="https://webchat.freenode.net/?channels=phpbb-www">[#phpbb-www]</a> or email `website [at] phpbb [dot] com`).
 			</p>
 			<p>If you propose an original idea it will have a higher chance of being accepted if it satisfies the following two criteria:</p>
 			<ol>
@@ -190,6 +278,7 @@
 					<h3>GSoC 2017</h3>
 					<ul class="menu">
 						<li class="last"><a href="{{ GSOC }}">GSoC 2018 Instructions</a></li>
+						<li class="last"><a href="{{ DEV_GSOC_IDEAS }}">GSoC 2018 Ideas</a></li>
 						<li class="last"><a href="{{  DEV_GSOC_GUIDELINES }}">GSoC 2018 Student Proposal Guidelines</a></li>
 						<li class="last"><a href="{{ DEV_BOARD }}">Area51 Discussion Board</a></li>
 						<li class="last"><a href="{{ DEV_IRC_CHAT }}">IRC Development Channel</a></li>
