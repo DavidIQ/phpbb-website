@@ -33,13 +33,12 @@
 				<li><a href="#mentions">User mentions</a></li>
 				<li><a href="#api">REST API</a></li>
 				<li><a href="#admin-ui">Admin Control Panel UI/UX</a></li>
+				<li><a href="#dbal">Doctrine DBAL</a></li>
+				<li><a href="#ckeditor">CKEditor5 BBCode parser</a></li>
 				<li><a href="#converter">Converter Framework</a></li>
 				<li><a href="#moderator-tools">Improved moderator tools</a></li>
 				<li><a href="#social-sharing">Social Sharing</a></li>
-			</ul>
-			<h3 class="gsoc-page"><a href="#extensions">Extensions Ideas</a></h3>
-			<ul>
-				<li><a href="#human-urls">Human Readable URLs</a></li>
+				<li><a href="#pm-interface">Chat-like PMs interface</a></li>
 			</ul>
 			<h3 class="gsoc-page"><a href="#own-idea">Idea proposals</a></h3>
 			<ul>
@@ -103,6 +102,40 @@
 			<h4 class="gsoc-page">Available mentors</h4>
 			<p>Michael Miday, Marc Alexander</p>
 			<hr>
+			
+			<h3 class="gsoc-page"><a id="dbal" href="#dbal">Doctrine DBAL</a></h3>
+			<h4 class="gsoc-page">Summary</h4>
+			<p>
+				Replacing the phpBB Database Abstraction Layer (DBAL) with Doctrine DBAL or a similar library. The tasks includes making it possible to use the library's interface directly, and also wrapping it with phpBB's DBAL interface.
+			</p>
+			<h4 class="gsoc-page">Knowledge Prerequisites</h4>
+			<ul>
+				<li>Knowledge of the DBAL library</li>
+				<li>Understanding phpBB's DBAL interface</li>
+				<li>PHP, OOP, database knowledge</li>
+			</ul>
+			<h4 class="gsoc-page">Available mentors</h4>
+			<p>Máté Bartus, Marc Alexander, Tristan Darricau</p>
+			<hr>
+			
+			<h3 class="gsoc-page"><a id="ckeditor" href="#ckeditor">CKEditor5 BBCode parser</a></h3>
+			<h4 class="gsoc-page">Summary</h4>
+			<p>
+				Creating a BBCode output converter and refactoring the current editor backend into an extension.
+			</p>
+			<h4 class="gsoc-page">Expected results</h4>
+			<ul>
+				<li>An extensible BBCode parser for CKEditor which works with the built in BBCodes and provides an interface to extend it</li>
+				<li>Refactoring the editor backend</li>
+			</ul>
+			<h4 class="gsoc-page">Knowledge Prerequisites</h4>
+			<ul>
+				<li>ES6, JavaScript, OOP knowledge and familiarity with JS build tools.</li>
+				<li>Familiarity with PHP and the phpBB extension system</li>
+			</ul>
+			<h4 class="gsoc-page">Available mentors</h4>
+			<p>Máté Bartus, Marc Alexander, Michael Miday</p>
+			<hr>
 
 			<h3 class="gsoc-page"><a id="converter" href="#converter">Converter Framework</a></h3>
 			<h4 class="gsoc-page">Summary</h4>
@@ -164,6 +197,24 @@
 			</ul>
 			<h4 class="gsoc-page">Available mentors</h4>
 			<p>Marc Alexander</p>
+			<hr>
+			
+			<h3 class="gsoc-page"><a id="pm-interface" href="#pm-interface">Chat-like PMs interface</a></h3>
+			<h4 class="gsoc-page">Summary</h4>
+			<p>Current implementation of phpBB's user interface of private messages is hopelessly outdated. Today's standard of private messaging interface is chat-based (think of Skype, Messenger, WhatsApp, Telegram, iMessage, etc.). Review phpBB's PM system and remake it to be chat-based. Don't forget about specific cases - multiple receivers (analogy to group chat) and a group as a receiver.</p>
+			<h4 class="gsoc-page">Expected results</h4>
+			<ul>
+				<li>A changes to the phpBB's core that comply with our <a href="https://area51.phpbb.com/docs/dev/master/development/coding_guidelines.html">Coding Guidelines</a>.</li>
+				<li>Non-realtime chat-based interface as replacement for current PM system.</li>
+				<li>Compatibility with older phpBB versions (ability to update board while retaining all old PMs).</li>
+			</ul>
+			<h4 class="gsoc-page">Knowledge Prerequisites</h4>
+			<ul>
+				<li>Required: Object-oriented PHP, SQL, Git</li>
+				<li>Useful: code structure of phpBB</li>
+			</ul>
+			<h4 class="gsoc-page">Available mentors</h4>
+			<p>Máté Bartus, Derk Ruitenbeek</p>
 
 			<br>
 			<h2 class="gsoc-page"><a id="own-idea" href="#own-idea">Proposing your own idea</a></h2>
