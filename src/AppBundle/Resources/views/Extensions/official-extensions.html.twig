@@ -22,9 +22,9 @@
 
 		{% for extension in extensions %}
 			<h2 class="title"><img src="{{ extension.getIcon() }}" width="32" height="32" alt="{{ extension.getName() }}" class="official-extension-icon" />{{ extension.getName() }}</h2>
-			<p>{{ extension.getDescription() }}</p>
+			<p>{{ extension.getDescription()|raw }}</p>
 			<h3>For Extension Authors</h3>
-			<p>{{ extension.getDescriptionForDevelopers() }}</p>
+			<p>{{ extension.getDescriptionForDevelopers()|raw }}</p>
 			<p style="float:right;"><span class="mini-tag dirty-green">&nbsp;<a href="{{ extension.getContribution() }}">Contribution</a>&nbsp;</span> <span class="mini-tag blue">&nbsp;<a href="{{ extension.getGithub() }}">GitHub repository</a>&nbsp;</span></p>
 			<hr />
 		{% endfor %}
