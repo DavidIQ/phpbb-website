@@ -26,6 +26,15 @@ class ExtensionsController extends Controller
 		$officialExtensions = array();
 
 		$officialExtensions[] = new OfficialExtension(
+			'Advertisement Management',
+			'The Advertisement Management extension allows phpBB board administrators to add and manage advertisements on their forums. Create unlimited advertisements using code snippets (such as Google AdSense) or create your own HTML/JS and banner ads. Display ads in a variety of locations with priority weighting to show important ads more often than others. Ad views and clicks can be counted and set to expire at a certain date or number of clicks and/or views. This extension is a complete management tool for all of a board’s advertising needs.',
+			'This extension was developed during our participation in the 2017 Google Summer of Code (GSoC) program. It was a collaboration between phpBB Customisations team members mentoring a student (Senky) who has since become a member of the phpBB Customisations team. See how the process was tracked on our <a href="https://trello.com/b/N3ZDYzdA/gsoc-2017-ad-management">Trello board</a>.',
+			'https://www.phpbb.com/customise/db/extension/ads/',
+			'https://github.com/phpbb-extensions/ad-management',
+			'/assets/images/images/extensions/admanagement.png'
+		);
+
+		$officialExtensions[] = new OfficialExtension(
 			'Auto Groups',
 			'The Auto Groups extension can automate the process of adding and removing users from groups upon reaching specified quantitative milestones related to their post count, age, membership, and warnings count. This allows board administrators to set up special groups that users will automatically be added to (or removed from) based on their activity.',
 			'The Auto Groups extension comes with a handful of user data conditions that can be used to qualify users for automatic group placement. However, this extension was written with extensibility in mind to allow other extension developers to easily add new user data conditions or integrate Auto Groups into their own extensions. For example, an extension that adds new user data, such as "reputation points," could integrate with Auto Groups to allow a user\'s reputation points to be used as a condition for auto group placement. For more information, see the Wiki page at the Auto Groups GitHub repository to find detailed documentation about extending Auto Groups.',
@@ -64,7 +73,7 @@ class ExtensionsController extends Controller
 		$officialExtensions[] = new OfficialExtension(
 			'Google Analytics',
 			'The Google Analytics Extension simply adds a Google Analytics tracking code with your Property ID to your phpBB forum.',
-			'This extension is the simplest of extensions in form and function. It adds a single new field to the ACP for a Google Analytics Property ID, validates it, and inserts the Universal Analytics a-synchronous javascript code into the head of your board\'s HTML pages, just before the closing </head> tag, as recommended by Google. In addition to allowing boards to easily add Google\'s powerful analytics, this extension is an ideal starting example for new extension authors, demonstrating how to effectively add an ACP config option implement that config setting using template events.',
+			'This extension is the simplest of extensions in form and function. It adds a single new field to the ACP for a Google Analytics Property ID, validates it, and inserts the Universal Analytics a-synchronous javascript code into the head of your board\'s HTML pages, just before the closing &lt;/head&gt; tag, as recommended by Google. In addition to allowing boards to easily add Google\'s powerful analytics, this extension is an ideal starting example for new extension authors, demonstrating how to effectively add an ACP config option implement that config setting using template events.',
 			'https://www.phpbb.com/customise/db/extension/googleanalytics/',
 			'https://github.com/phpbb-extensions/googleanalytics',
 			'/assets/images/images/extensions/googleanalytics.png'
