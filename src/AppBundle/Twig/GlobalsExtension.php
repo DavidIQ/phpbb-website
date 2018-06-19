@@ -593,8 +593,6 @@ class GlobalsExtension extends \Twig_Extension implements \Twig_Extension_Global
 			'U_CDB_SUB'							=> '/customise/db/',
 			'U_EXT_SUB'							=> '/extensions/',
 			'U_EXT_DB_SUB'						=> '/customise/db/extensions-36',
-			'U_MODS_SUB'						=> '/mods/',
-			'U_MODS_DB_SUB'						=> '/customise/db/modifications-1',
 			'U_STYLES_SUB'						=> '/styles/',
 			'U_STYLES_DEMO_SUB'					=> '/styles/demo/3.0/',
 
