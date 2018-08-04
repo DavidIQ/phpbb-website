@@ -1,0 +1,219 @@
+{% extends ':base:base.html.twig' %}
+
+{% block title %}Download phpBB 3.2{% endblock title %}
+
+{% block body %}
+<div id="page-body">
+
+	<ul class="linklist navlinks">
+		<li><a href="{{ home_path }}">Home</a>
+			<strong>&#8249;</strong> <a href="{{ downloads_path }}">Downloads</a>
+			<strong>&#8249;</strong> <a href="{{ downloads_path_32x }}">3.2</a>
+		</li>
+	</ul>
+
+	<div id="main">
+		<div class="download-version-switch">
+			<a href="{{ downloads_path_32x }}" class="button left">3.2</a>
+			<a href="{{ downloads_path_31x }}" class="button right disabled">3.1</a>
+		</div>
+
+		<h2 class="imgrep downloads">Download phpBB<sup>&reg;</sup> 3.2</h2>
+
+		<div class="wide tabs-container ascraeus">
+			<div id="tabs" class="tabs download-tabs sub-panels" data-show-panel="full-package">
+				<ul>
+					<li id="full-package-tab" class="tab{% if not S_VERSION %} activetab{% endif %}"><a href="#install" data-subpanel="full-package">Install phpBB</a></li><!-- DEFINE $DEFAULT = 1 -->
+					<!-- IF S_UPDATE_PACKAGE or not S_VERSION -->
+					<li id="update-panel-tab" class="tab{% if S_VERSION %} activetab{% endif %}"><a href="#update" data-subpanel="update-panel">Automatic Update</a></li><!-- DEFINE $DEFAULT = 1 -->
+					<!-- ENDIF -->
+					<!-- IF S_PATCH_PACKAGE or not S_VERSION -->
+					<li id="patch-panel-tab" class="tab{% if not DEFAULT %} activetab{% endif %}"><a href="#patch" data-subpanel="patch-panel">Patch Files</a></li><!-- DEFINE $DEFAULT = 1 -->
+					<!-- ENDIF -->
+					<!-- IF S_FILES_PACKAGE or not S_VERSION -->
+					<li id="files-panel-tab" class="tab{% if not DEFAULT %} activetab{% endif %}"><a href="#changedfiles" data-subpanel="files-panel">Changed Files</a></li><!-- DEFINE $DEFAULT = 1 -->
+					<!-- ENDIF -->
+				</ul>
+			</div>
+
+			<div class="panel bg3" id="full-package">
+				<div class="inner">
+					<h3>[ <strong class="download-package-header">Full Package</strong> ]</h3>
+					<p>This is the full {RHEA_PACKAGE_VERSION} package which can be used for new installations. It contains the entire phpBB source code and the <strong>British English</strong> language pack. See the link below to download additional language packs.<br /><br />Thank you for using phpBB!</p>
+					<div class="download-container">
+						<div class="download-blocks">
+							<dl class="extra-box download orange">
+								<dt><a href="{U_DOWNLOAD_PATH}phpBB-{RHEA_PACKAGE_VERSION}.zip">Download Latest (.zip)</a></dt>
+								<dd><a href="{U_DOWNLOAD_PATH}phpBB-{RHEA_PACKAGE_VERSION}.zip">Latest stable phpBB: {RHEA_PACKAGE_VERSION}<br />Released: {CURRENT_VERSION_DATE}</a></dd>
+							</dl>
+							<dl class="extra-box download blue">
+								<dt><a href="{U_LANGUAGES_ASCRAEUS}">Download Language Packs</a></dt>
+								<dd><a href="{U_LANGUAGES_ASCRAEUS}">Download language packs and images in your language</a></dd>
+							</dl>
+						</div>
+
+						<!-- BEGIN langrow -->
+						<!-- IF langrow.S_FIRST_ROW --><div class="flash-message"><!-- IF DISABLE_FLAG_IMAGE --><img src="{{ asset('assets/images/images/flags/flag_{langrow.PACKAGE_NAME}.gif') }}" style="vertical-align: middle;" height="25" /><div style="margin-left: 30px; margin-top: -25px;"></div><!-- ENDIF --><div>phpBB is available in your language! Download<!-- ENDIF -->
+								<a href="{langrow.U_LPACK}">{langrow.LPACK_NAME}</a><!-- IF langrow.S_MORE_LANG and not langrow.S_LAST_ROW --> or<!-- ENDIF --><!-- IF langrow.S_LAST_ROW --> for your board.</div></div><!-- ENDIF -->
+						<!-- END langrow -->
+
+						<h3 style="color:#000000">All Formats</h3>
+						<!-- BEGIN full -->
+						<dl>
+							<dt><img src="{{ asset('assets/images/images/icon-dl-{full.FORMAT}.gif') }}" width="20" height="21" style="vertical-align: middle;" alt="{full.ALT}" />
+								<!-- IF not full.U_CUSTOM_LINK -->
+								<strong><a href="{full.U_DOWNLOAD}">{full.ALT}</a></strong>
+								<!-- ELSE -->
+								<a href="https://www.phpbb.com/files/release/{files.FILENAME}">{full.ALT}</a>
+								<!-- ENDIF -->
+							</dt>
+							<dd style="margin-bottom: 2em;">Size: <samp>{full.SIZE}</samp><br />SHA256: <samp>{full.MD5}</samp></dd>
+						</dl>
+						<!-- END full -->
+						<h4>License</h4>
+						<p>phpBB<sup>&reg;</sup> is free and open source software released under the<br /><a href="{{ LICENSE }}">GNU General Public License v2</a>.</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- IF S_UPDATE_PACKAGE or not S_VERSION -->
+			<div class="panel bg3" id="update-panel">
+				<div class="inner">
+
+					<h3>[ <strong class="download-package-header">Automatic Update Package</strong> ]</h3>
+					<p><strong>If updating from phpBB 3.1.x then please see <a href="/support/docs/en/3.2/ug/upgradeguide/upgrade31/">our guide</a> for the recommended updating method.</strong></p>
+					<!-- IF S_SHOW_UPDATE_PACKAGES -->
+					<p>This update package supplies the automatic updater, which is capable of updating modified installations. This is the package that most users should download to update their forums. If you have made no changes, you can use the 'Changed Files' package instead.</p>
+
+					<!-- IF S_UPDATE_PACKAGE -->
+					<div class="download-container">
+						<!-- BEGIN update -->
+						<dl>
+							<dt><img src="{{ asset('assets/images/images/icon-dl-{update.FORMAT}.gif') }}" width="20" height="21" style="vertical-align: middle;" alt="{patch.ALT}" />
+								<!-- IF not update.U_CUSTOM_LINK -->
+								<strong><a href="{update.U_DOWNLOAD}">{update.ALT}</a></strong>
+								<!-- ELSE -->
+								<a href="https://www.phpbb.com/files/release/{update.FILENAME}">{update.ALT}</a>
+								<!-- ENDIF -->
+							</dt>
+							<dd style="margin-bottom: 1em;">Size: <samp>{update.SIZE}</samp><br />SHA256: <samp>{update.MD5}</samp></dd>
+						</dl>
+						<!-- END update -->
+					</div>
+
+					<p><a href="{U_UPDATE_INSTRUCTIONS}#update_auto">How to update phpBB with the Automatic Update Package.</a></p>
+					<!-- ELSE -->
+					<h3 class="download-version-warning"><strong>To download this package, you must first select your current phpbb version.</strong></h3>
+					<form method="get" action="{U_DOWNLOAD_ACTION}">
+						<input type="hidden" class="modeinputhidden" name="mode" value="update" />
+						<p><select name="version" onchange="this.form.submit()">{S_VERSION_OPTIONS}</select>&nbsp; &nbsp;<input type="submit" class="button1" value="Select" /></p>
+					</form>
+					<!-- ENDIF -->
+					<!-- ELSE -->
+					<p><strong>Update packages are not currently available.</strong></p>
+					<p><strong>To update from a previous version of phpBB 3.2.x please follow the <a href="/support/docs/en/3.2/kb/article/updating-32x/">update guide</a>.</strong></p>
+					<!-- ENDIF -->
+				</div>
+			</div>
+			<!-- ENDIF -->
+
+			<!-- IF S_PATCH_PACKAGE or not S_VERSION -->
+			<div class="panel bg3" id="patch-panel">
+				<div class="inner">
+
+					<h3>[ <strong class="download-package-header">Patch Files</strong> ]</h3>
+					<p><strong>If updating from phpBB 3.0.x then please see <a href="/support/docs/en/3.2/ug/upgradeguide/upgrade3/">our guide</a> for the recommended updating method.</strong></p>
+					<p>This update package provides .patch files containing changes made from previous versions of phpBB. This package should only be used if you are familiar and confident with patching.</p>
+					<div class="download-container">
+						<!-- BEGIN patch -->
+						<dl>
+							<dt><img src="{{ asset('assets/images/images/icon-dl-{patch.FORMAT}.gif') }}" width="20" height="21" style="vertical-align: middle;" alt="{patch.ALT}" />
+								<!-- IF not patch.U_CUSTOM_LINK -->
+								<strong><a href="{patch.U_DOWNLOAD}">{patch.ALT}</a></strong>
+								<!-- ELSE -->
+								<a href="https://www.phpbb.com/files/release/{patch.FILENAME}">{patch.ALT}</a>
+								<!-- ENDIF -->
+							</dt>
+							<dd style="margin-bottom: 1em;">Size: <samp>{patch.SIZE}</samp><br />SHA256: <samp>{patch.MD5}</samp></dd>
+						</dl>
+						<!-- END patch -->
+					</div>
+
+					<p><a href="{{ U_UPDATE_INSTRUCTIONS }}#update_patch">How to update phpBB with Patch Files.</a></p>
+
+				</div>
+			</div>
+			<!-- ENDIF -->
+
+			<!-- IF S_FILES_PACKAGE or not S_VERSION -->
+			<div class="panel bg3" id="files-panel">
+				<div class="inner">
+
+					<h3>[ <strong class="download-package-header">Changed Files Only</strong> ]</h3>
+					<p><strong>If updating from phpBB 3.0.x then please see <a href="/support/docs/en/3.2/ug/upgradeguide/upgrade3/">our guide</a> for the recommended updating method.</strong></p>
+					<p>Contains only the files that have been changed since previous versions of phpBB (eg. 3.0.8 => {RHEA_PACKAGE_VERSION}, 3.0.12 => {RHEA_PACKAGE_VERSION}, etc.). Please note that using this package will overwrite any changes that you may have made. For modified installations, consider the 'Automatic Update' package.</p>
+
+					<div class="download-container">
+						<!-- BEGIN files -->
+						<dl>
+							<dt><img src="{{ asset('assets/images/images/icon-dl-{files.FORMAT}.gif') }}" width="20" height="21" style="vertical-align: middle;" alt="{files.ALT}" />
+								<!-- IF not files.U_CUSTOM_LINK -->
+								<strong><a href="{files.U_DOWNLOAD}">{files.ALT}</a></strong>
+								<!-- ELSE -->
+								<a href="https://www.phpbb.com/files/release/{files.FILENAME}">{files.ALT}</a>
+								<!-- ENDIF -->
+							</dt>
+							<dd style="margin-bottom: 1em;">Size: <samp>{files.SIZE}</samp><br />SHA256: <samp>{files.MD5}</samp></dd>
+						</dl>
+						<!-- END files -->
+					</div>
+
+					<p><a href="{{ U_UPDATE_INSTRUCTIONS }}#update_files">How to update phpBB with the Changed Files Package.</a></p>
+
+				</div>
+			</div>
+			<!-- ENDIF -->
+		</div>
+	</div>
+
+	<div id="extras" class="downloads">
+		<div class="mini-panel">
+			<div class="inner">
+				<h3>steps to get started</h3>
+				<ul class="text-links forumatic">
+					<li>
+						<div class="roman-numeral">I.</div>
+						<div class="steps-description"><span>Find Hosting</span><br />Need a host? Check out our list of <a href="{{ HOSTING_FROM_DOWNLOADS }}">suggested providers</a>.</div>
+					</li>
+					<li>
+						<div class="roman-numeral">II.</div>
+						<div class="steps-description"><span>Download phpBB</span><br />Click the huge orange button<br /> to the left.</div>
+					</li>
+					<li>
+						<div class="roman-numeral">III.</div>
+						<div class="steps-description"><span>Customise phpBB</span><br />Select Styles and Extensions in the <a href="{{ U_CUSTOMISE }}">customisation database</a>.</div>
+					</li>
+					<li class="last">
+						<div class="roman-numeral">IIII.</div>
+						<div class="steps-description"><span>Need Help?</span><br />Start with the resources in our <a href="{U_SUPPORT}">support section</a>.</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="mini-panel">
+			<div class="inner">
+				<h3>check out our sponsor</h3>
+				<ul class="text-links">
+					<li class="last">
+						<div><a href="http://www.hostmonster.com/track/phpbbsoftwareltd/downloads"><img src="{{ asset('assets/images/images/hosting/hostmonster-downloads.gif') }}" /></a></div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<dl class="extra-box rocket orange">
+			<dt><a href="{{ about_launch }}">phpBB 3.2 Rhea has landed!</a></dt>
+			<dd><a href="{{ about_launch }}">We've just released phpBB 3.2 - <br />Take a look at what's new.</a></dd>
+		</dl>
+	</div>
+</div>
+{% endblock %}

@@ -1,6 +1,6 @@
 phpBBWebsite_Downloads_home:
     path:  /
-    defaults: { _controller: AppBundle:Downloads:home, branch: 3.1 }
+    defaults: { _controller: AppBundle:Downloads:home }
     methods:  [GET]
 
 phpBBWebsite_Downloads_branch:

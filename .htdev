@@ -62,7 +62,6 @@ RewriteCond %{REQUEST_URI} !^/about/team/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/about/logos/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/api/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/customise/db/{0,1}.*
-RewriteCond %{REQUEST_URI} !^/downloads/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/feeds/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/files/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/forum_files/{0,1}.*

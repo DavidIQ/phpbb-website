@@ -9,6 +9,8 @@
 
 namespace AppBundle\Utilities;
 
+use Symfony\Component\HttpKernel\Config\FileLocator;
+
 class DownloadManager
 {
 	protected $branch;
@@ -19,10 +21,10 @@ class DownloadManager
 	protected $kernel;
 	protected $cache;
 
-	public function __construct($kernel, $cache, $fileLocator)
+	public function __construct($cache, $kernel)
 	{
-		$this->kernel = $kernel;
 		$this->cache = $cache;
+		$this->kernel = $kernel;
 	}
 
 	public function setBranch($branch)
@@ -81,7 +83,7 @@ class DownloadManager
 	private function generatePackageList()
 	{
 		// Get packages
-		$packagesData 		= $this->getPackagesJsonData;
+		$packagesData 		= $this->getPackagesJsonData();
 
 		// Discard those not on this branch
 		$relevantPackages 	= $packagesData[$this->branch];
